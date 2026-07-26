@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Youtube, Music, Radio, Heart } from "lucide-react";
+import { PlayCircle, Music, Radio, Heart } from "lucide-react";
 
 export const YouTubeShowcase = () => {
   const channels = [
@@ -46,7 +46,7 @@ export const YouTubeShowcase = () => {
           className="text-center mb-16 space-y-4"
         >
           <div className="flex items-center justify-center gap-2 text-red-accent mb-4">
-            <Youtube className="w-6 h-6" />
+            <PlayCircle className="w-6 h-6" />
             <span className="font-mono text-sm tracking-[0.2em] uppercase">Media Mafias Network</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-widest text-white">
