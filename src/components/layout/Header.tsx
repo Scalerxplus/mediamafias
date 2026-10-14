@@ -46,8 +46,9 @@ export const Header = () => {
               />
             </motion.div>
           </Link>
-          <span className="hidden md:inline-block text-[10px] font-mono text-secondary tracking-widest uppercase border border-white/10 px-2 py-0.5 bg-neutral-900/50">
-            SECURE_CONN_ESTABLISHED
+          <span className="hidden md:inline-flex items-center gap-1.5 text-[10px] font-mono text-white font-bold tracking-widest uppercase border border-red-accent/40 px-2.5 py-1 bg-red-accent/15 rounded">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-accent animate-ping" />
+            INDO-GANGETIC FOLK
           </span>
         </div>
 
