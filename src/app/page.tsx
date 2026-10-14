@@ -3,11 +3,19 @@ import { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { DspAuthorityBar } from "@/components/sections/DspAuthorityBar";
+import { FolkNicheCategories } from "@/components/sections/FolkNicheCategories";
 import { YouTubeShowcase } from "@/components/sections/YouTubeShowcase";
 
 export const metadata: Metadata = {
-  title: "Produce & Monetize Audio Content | Find Vernacular Creators via API",
-  description: "India's first decentralized audio platform distributing content through API. We empower indie creators and provide B2B platforms with localized vernacular audio.",
+  title: "Media Mafias | High-Fidelity Regional Folk of the Indo-Gangetic Belt",
+  description: "Preserving and modernizing the authentic folk music of Baghelkhand, Awadh, Bundelkhand, and Purvanchal in broadcast-grade cinematic audio. Stream on YouTube & major DSPs.",
+  keywords: [
+    "Bagheli Folk Music", "Bundeli Lokgeet", "Awadhi Folk Songs", "Purvanchal Bhojpuri Music",
+    "Baghelkhand songs", "Alha Udal Bundelkhand", "Sohar songs Bagheli", "Kajri Lokgeet",
+    "High Fidelity Folk", "Urban Mandap Style", "Beatless Wedding BGM", "Media Mafias YouTube",
+    "Media Mafias Roots", "PPL exempt in store music India", "Vernacular Audio Distribution"
+  ]
 };
 
 export default function Home() {
@@ -15,6 +23,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-black text-white selection:bg-red-accent selection:text-white">
       <Header />
       <Hero />
+      <DspAuthorityBar />
+      <FolkNicheCategories />
       <YouTubeShowcase />
       <Footer />
     </main>

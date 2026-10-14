@@ -53,16 +53,51 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Media Mafias - Decentralized Audio Platform",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Web",
-    "description": "India's first decentralized audio platform distributing vernacular content through API, empowering indie artists to monetize their work.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Media Mafias",
-      "url": "https://mediamafias.com" // Domain must match live site exactly
-    }
+    "@graph": [
+      {
+        "@type": "MusicGroup",
+        "@id": "https://mediamafias.com/#musicgroup",
+        "name": "Media Mafias",
+        "alternateName": ["Media Mafias Roots", "Media Mafias Bhakti", "Media Mafias - Topic"],
+        "url": "https://mediamafias.com",
+        "description": "High-Fidelity Regional Folk Music Ecosystem of the Indo-Gangetic Belt (Baghelkhand, Awadh, Bundelkhand, and Purvanchal). Broadcast-grade audio remastering, global DSP distribution via Madverse, and 100% PPL/IPRS-exempt in-store audio.",
+        "genre": [
+          "Bagheli Folk Music",
+          "Bundeli Lokgeet",
+          "Awadhi Folk Songs",
+          "Purvanchali Folk",
+          "Sohar",
+          "Kajri",
+          "Devi Jas",
+          "Alha-Udal",
+          "Nirgun Kabir"
+        ],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "ScalerX Lab",
+          "url": "https://scalerxlab.com"
+        },
+        "sameAs": [
+          "https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg",
+          "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw",
+          "https://www.youtube.com/@MediaMafias",
+          "https://www.youtube.com/@MediaMafiasDevotional",
+          "https://thefutureradio.com",
+          "https://www.facebook.com/TheMediaMafias",
+          "https://www.instagram.com/mediamafias",
+          "https://www.linkedin.com/company/mediamafias"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mediamafias.com/#website",
+        "url": "https://mediamafias.com",
+        "name": "Media Mafias",
+        "publisher": {
+          "@id": "https://mediamafias.com/#musicgroup"
+        }
+      }
+    ]
   };
 
   return (

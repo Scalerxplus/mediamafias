@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Google Cloud Credentials
 google-credentials.json
+
+# Local Python Server artifacts
+local_ai_server/venv/
+local_ai_server/__pycache__/
+local_ai_server/*.exe
+

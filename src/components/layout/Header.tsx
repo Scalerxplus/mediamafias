@@ -13,11 +13,12 @@ export const Header = () => {
 
   const links: { name: string; href: string; external?: boolean }[] = [
     { name: "Creator Academy", href: "/academy" },
+    { name: "In-Store Radio", href: "/b2b-radio" },
+    { name: "OTT Sync", href: "/sync" },
     { name: "Spotlight", href: "/spotlight" },
     { name: "Distribution", href: "/distribution" },
     { name: "Content API", href: "/api-pipeline" },
     { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" }
   ];
 
@@ -63,7 +64,16 @@ export const Header = () => {
               </Link>
             );
           })}
-          <Link href="/upload" className="ml-4 brutalist-border bg-black text-red-accent px-6 py-2 hover:bg-red-accent hover:text-white transition-all whitespace-nowrap">
+          <a 
+            href="https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg?sub_confirmation=1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="ml-2 border border-red-accent/40 bg-red-accent/10 hover:bg-red-accent text-red-accent hover:text-white px-4 py-2 transition-all whitespace-nowrap flex items-center gap-1.5 text-xs font-mono tracking-widest rounded"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-red-accent animate-pulse" />
+            YOUTUBE OAC
+          </a>
+          <Link href="/upload" className="ml-2 brutalist-border bg-black text-white px-5 py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap text-xs font-mono tracking-widest">
             UPLOAD CONTENT
           </Link>
         </nav>
