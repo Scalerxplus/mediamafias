@@ -11,11 +11,11 @@ export const FolkNicheCategories = () => {
       subTag: "#BeatlessWeddingBGM",
       title: "Wedding & Sacred Rituals",
       subtitle: "Vivah Geet • Haldi • Mandap • Bidai",
-      description: "Elevating traditional rituals for modern diaspora and upscale venues. Authentic Awadhi and Bagheli marriage chants arranged with acoustic Shehnai, Sitar, and mellow percussion—free of harsh village distortion.",
+      description: "Elevating traditional rituals for modern diaspora and upscale venues. Authentic Awadhi and Bagheli marriage chants arranged with acoustic Shehnai, Sitar, and mellow percussion—completely free of harsh village distortion.",
       instruments: ["Shehnai", "Sitar", "Acoustic Tanpura", "Mridang"],
       targetDialects: "Awadhi • Bagheli • Bhojpuri",
       highlightTrack: "Ram Banra Ban Aayo Re",
-      icon: <Sparkles className="w-6 h-6 text-amber-400" />
+      tagBg: "bg-[#F9A8D4]" // Pink
     },
     {
       id: "lifecycle",
@@ -27,7 +27,7 @@ export const FolkNicheCategories = () => {
       instruments: ["Dholak", "Manjira", "Bansuri", "Harmonium"],
       targetDialects: "Baghelkhand • Purvanchal • Awadh",
       highlightTrack: "Luturi Jhalariya • Hari Rama Chhai Ghata",
-      icon: <CloudRain className="w-6 h-6 text-sky-400" />
+      tagBg: "bg-[#67E8F9]" // Cyan
     },
     {
       id: "folkpop",
@@ -39,7 +39,7 @@ export const FolkNicheCategories = () => {
       instruments: ["Nagariya", "Chimta", "Dholak", "Sub Bass", "Sarangi"],
       targetDialects: "Bundelkhand • Baghelkhand • Central India",
       highlightTrack: "Bagheli Nachanhai • Alha Udal",
-      icon: <Flame className="w-6 h-6 text-red-accent" />
+      tagBg: "bg-[#FDE047]" // Yellow
     },
     {
       id: "nirgun",
@@ -51,28 +51,27 @@ export const FolkNicheCategories = () => {
       instruments: ["Sarangi", "Ektara", "Ambient Drones", "Santur"],
       targetDialects: "Banaras • Awadh • Kabirpanth",
       highlightTrack: "Jheeni Re Jheeni • Daras",
-      icon: <Compass className="w-6 h-6 text-purple-400" />
+      tagBg: "bg-[#C4B5FD]" // Lilac
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-black border-t-4 border-white text-white relative">
+    <section className="py-20 px-6 bg-[#FED7AA] text-black border-t-4 border-black relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
+        {/* Section Pill & Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black text-black px-4 py-1.5 font-black text-xs md:text-sm uppercase tracking-widest rounded-full shadow-[4px_4px_0px_0px_#fff] mb-4">
-              <span>THE INDO-GANGETIC FOLK TAXONOMY</span>
+            <div className="inline-block bg-[#00E5FF] border-4 border-black px-5 py-2 font-black text-xs sm:text-sm uppercase tracking-widest rounded-full shadow-[4px_4px_0px_0px_#000] mb-4">
+              <span>FOUR CULTURAL DIMENSIONS</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-wider text-white leading-tight">
-              CINEMATIC FOLK IN <br />
-              <span className="text-red-accent underline decoration-4 underline-offset-8">
-                FOUR TRADITIONS
-              </span>
+            
+            <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tight text-black leading-tight">
+              CINEMATIC FOLK FOR THE HEARTLAND
             </h2>
-            <p className="text-secondary max-w-2xl font-mono mt-4 text-base">
-              Recorded with verified grassroots folk vocalists from the heartland, produced and mastered in broadcast-grade cinematic audio.
+            
+            <p className="text-neutral-800 max-w-2xl font-mono mt-3 text-base sm:text-lg">
+              Bridging the gap between low-fi field recordings and corporate studios. Recorded with grassroots folk vocalists, mastered in broadcast-grade audio.
             </p>
           </div>
 
@@ -80,61 +79,58 @@ export const FolkNicheCategories = () => {
             href="https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start md:self-end px-7 py-4 border-2 border-white bg-red-accent text-white font-display text-lg uppercase tracking-widest rounded-xl shadow-[4px_4px_0px_0px_#fff] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#fff] transition-all flex items-center gap-2 shrink-0"
+            className="self-start md:self-end px-8 py-4 border-4 border-black bg-[#FF2E2E] text-white font-black text-base uppercase tracking-wider rounded-full shadow-[4px_4px_0px_0px_#000] hover:bg-[#E5FF00] hover:text-black hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all flex items-center gap-2 shrink-0"
           >
             <span>SUBSCRIBE ON YOUTUBE</span>
             <ArrowUpRight className="w-5 h-5" />
           </a>
         </div>
 
-        {/* 4 Cards Grid - Neo-Brutalist Cards */}
+        {/* 4 Cards Grid - Future Radio Neo-Brutalist White Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className="bg-neutral-950 border-4 border-white p-7 sm:p-9 rounded-2xl shadow-[6px_6px_0px_0px_#ef4444] flex flex-col justify-between hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_#ef4444] transition-all group"
+              className="bg-white border-4 border-black p-8 rounded-2xl shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#000] transition-all"
             >
               <div>
                 {/* Tags row */}
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs font-bold tracking-widest uppercase px-3 py-1 bg-red-accent text-white rounded border border-black shadow-[2px_2px_0px_0px_#fff]">
+                    <span className={`font-mono text-xs font-black tracking-widest uppercase px-3 py-1 ${cat.tagBg} text-black rounded-full border-2 border-black shadow-[2px_2px_0px_0px_#000]`}>
                       {cat.tag}
                     </span>
-                    <span className="font-mono text-[10px] tracking-widest uppercase text-secondary">
+                    <span className="font-mono text-xs font-bold uppercase text-neutral-600">
                       {cat.subTag}
                     </span>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20">
-                    {cat.icon}
                   </div>
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-wider text-white mb-1 group-hover:text-red-accent transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-display font-black uppercase tracking-wide text-black mb-1">
                   {cat.title}
                 </h3>
-                <div className="font-mono text-xs text-amber-400 font-bold tracking-wide mb-4">
+                <div className="font-mono text-xs text-[#FF2E2E] font-black tracking-wide mb-4 uppercase">
                   {cat.subtitle}
                 </div>
 
-                <p className="text-secondary text-sm leading-relaxed mb-6 font-mono">
+                <p className="text-neutral-700 text-sm sm:text-base leading-relaxed mb-6 font-mono">
                   {cat.description}
                 </p>
 
-                {/* Cultural Metadata Pills */}
-                <div className="space-y-2 pt-4 border-t-2 border-white/10 mb-6 bg-black p-4 rounded-xl border border-white/10">
+                {/* Metadata Pills */}
+                <div className="space-y-2 pt-4 border-t-2 border-black/10 mb-6 bg-neutral-50 p-4 rounded-xl border-2 border-black">
                   <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="text-secondary uppercase tracking-widest text-[10px]">Region:</span>
-                    <span className="text-white font-bold">{cat.targetDialects}</span>
+                    <span className="text-neutral-500 uppercase font-black text-[10px]">Dialect Belt:</span>
+                    <span className="text-black font-bold">{cat.targetDialects}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="text-secondary uppercase tracking-widest text-[10px]">Instruments:</span>
-                    <span className="text-white/80">{cat.instruments.join(" • ")}</span>
+                    <span className="text-neutral-500 uppercase font-black text-[10px]">Acoustic Stems:</span>
+                    <span className="text-neutral-700 font-medium">{cat.instruments.join(" • ")}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="text-red-accent uppercase tracking-widest text-[10px]">Flagship:</span>
-                    <span className="text-white font-bold">{cat.highlightTrack}</span>
+                    <span className="text-[#FF2E2E] uppercase font-black text-[10px]">Flagship:</span>
+                    <span className="text-black font-bold">{cat.highlightTrack}</span>
                   </div>
                 </div>
               </div>
@@ -144,7 +140,7 @@ export const FolkNicheCategories = () => {
                 href="https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-between w-full p-4 bg-neutral-900 border-2 border-white text-white hover:bg-red-accent font-display text-base tracking-widest uppercase rounded-xl transition-all shadow-[3px_3px_0px_0px_#fff]"
+                className="inline-flex items-center justify-between w-full p-4 bg-[#E5FF00] hover:bg-[#FF2E2E] hover:text-white border-2 border-black text-black font-black text-sm uppercase tracking-wider rounded-xl transition-all shadow-[3px_3px_0px_0px_#000]"
               >
                 <span>LISTEN ON YOUTUBE (OAC)</span>
                 <ArrowUpRight className="w-5 h-5" />
@@ -152,6 +148,7 @@ export const FolkNicheCategories = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

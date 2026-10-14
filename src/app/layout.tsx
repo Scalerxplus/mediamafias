@@ -108,11 +108,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-black text-white antialiased overflow-x-hidden relative">
-        <div className="fixed inset-0 z-[-1] flex items-center justify-center opacity-5 pointer-events-none mix-blend-screen">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/Logo Main.png" alt="Cartel Watermark" className="w-[80vw] max-w-[800px] h-auto grayscale" />
-        </div>
+      <body className="bg-[#C4B5FD] text-black antialiased overflow-x-hidden relative selection:bg-[#E5FF00] selection:text-black font-sans">
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-74Y8LVKFN6"} />
       </body>
