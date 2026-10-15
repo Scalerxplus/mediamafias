@@ -1,262 +1,278 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import Image from "next/image";
+import { Sparkles, MessageCircle, Upload, CheckCircle2, ShieldCheck, ArrowRight, Music2, Globe, Disc, PhoneCall } from "lucide-react";
 
-export default function CreatorProgramPage() {
+export default function AcademyPage() {
+  const [songTitle, setSongTitle] = React.useState("");
+  const [artistName, setArtistName] = React.useState("");
+  const [dialect, setDialect] = React.useState("Bagheli");
+  const [phone, setPhone] = React.useState("");
+  const [fileUploaded, setFileUploaded] = React.useState(false);
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const whatsappDirectUrl = `https://wa.me/919209290699?text=${encodeURIComponent(
+    `Hi Media Mafias, I want to join the Rs 99 Creator Academy and submit my folk song.\nArtist: ${artistName || "Independent Artist"}\nDialect: ${dialect}\nSong: ${songTitle || "New Submission"}`
+  )}`;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    // Redirect to WhatsApp with prefilled message
+    setTimeout(() => {
+      window.open(whatsappDirectUrl, "_blank");
+    }, 1000);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col bg-black text-white selection:bg-[#E6B981] selection:text-black">
+    <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
       <Header />
-      
-      {/* Grand VIP Hero Section */}
-      <section className="pt-40 pb-24 px-6 relative overflow-hidden flex flex-col items-center text-center border-b border-[#E6B981]/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(230,185,129,0.1)_0%,rgba(0,0,0,1)_60%)] pointer-events-none" />
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10 max-w-5xl mx-auto space-y-8"
-        >
-          <div className="inline-flex items-center gap-3 border border-[#E6B981]/30 bg-[#E6B981]/5 px-6 py-2 shadow-[0_0_20px_rgba(230,185,129,0.1)]">
-            <div className="w-2 h-2 bg-[#E6B981] rounded-full animate-pulse shadow-[0_0_10px_#E6B981]" />
-            <span className="text-[#E6B981] font-mono text-sm tracking-widest uppercase">
-              Exclusive Access Activated
-            </span>
+
+      {/* Hero Section */}
+      <section className="pt-36 pb-16 px-6 bg-white border-b-4 border-black">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-6">
+            <Sparkles className="w-4 h-4 text-black" />
+            <span>CREATOR ACADEMY & VOCAL ONBOARDING GATEWAY</span>
           </div>
-          
-          <h1 className="font-display text-5xl md:text-7xl tracking-widest uppercase text-white leading-[1.1] pt-4">
-            YOUR CONTENT IS A <br/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFF1D0] via-[#E6B981] to-[#A37B45] drop-shadow-[0_0_30px_rgba(230,185,129,0.3)]">GOLDMINE</span>
+
+          <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-black mb-4">
+            Turn Your Raw Voice Into A Global Streaming Release
           </h1>
-          
-          <p className="text-lg md:text-xl text-secondary font-mono max-w-3xl mx-auto leading-relaxed pt-6 border-t border-[#E6B981]/10">
-            Welcome to the ultimate creator onboarding gateway. We transform raw vernacular talent into global sensations. Zero production costs. Instant worldwide distribution. 100% transparent royalties.
+
+          <p className="font-mono text-sm sm:text-lg text-neutral-800 max-w-3xl mx-auto leading-relaxed mb-8">
+            Singers, Mandalis, and Folk Troupe Artists of <strong>Baghelkhand, Awadh, Bundelkhand, and Purvanchal</strong>: Join the Media Mafias Creator Academy for just <strong>₹99</strong>. Send your raw smartphone recording — we remaster it to broadcast grade and distribute it to 150+ music apps worldwide.
           </p>
 
-          <div className="pt-8 flex flex-col sm:flex-row justify-center gap-6">
-            <a href="#apply" className="inline-block bg-gradient-to-b from-[#E6B981] to-[#C49A5A] text-black font-display text-xl md:text-2xl tracking-widest uppercase px-10 py-5 hover:scale-105 hover:shadow-[0_0_40px_rgba(230,185,129,0.4)] transition-all duration-300">
-              CLAIM YOUR SPOT
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={whatsappDirectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] text-black font-mono font-black text-xs sm:text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] flex items-center gap-2 transition-all"
+            >
+              <MessageCircle className="w-5 h-5 fill-current" />
+              <span>1-Tap WhatsApp Vocal Submission (₹99)</span>
             </a>
-            <div className="flex items-center justify-center gap-3 text-secondary font-mono text-sm uppercase tracking-widest border border-white/10 px-8 py-5">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> Applications Open
-            </div>
-          </div>
-        </motion.div>
-      </section>
 
-      {/* The VIP Perks Grid */}
-      <section className="py-24 px-6 relative bg-neutral-950 border-b border-[#E6B981]/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="font-display text-4xl tracking-widest uppercase text-[#E6B981] mb-4">THE MEDIA MAFIAS ADVANTAGE</h2>
-            <p className="text-secondary font-mono text-sm uppercase tracking-widest">Why Our Creators Dominate The Charts</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-8 border border-white/5 hover:border-[#E6B981]/50 bg-black transition-all group relative overflow-hidden"
+            <a
+              href="#upload-form"
+              className="bg-[#E5FF00] text-black font-mono font-black text-xs sm:text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] flex items-center gap-2 transition-all"
             >
-              <div className="text-[#E6B981] font-display text-5xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(230,185,129,0.5)]">01</div>
-              <h3 className="font-display text-xl uppercase tracking-widest text-white mb-4">Zero Cost Production</h3>
-              <p className="text-secondary font-mono text-sm leading-relaxed">
-                Access world-class recording equipment and elite sound engineers without spending a single rupee. Your talent is the only currency we need.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-8 border border-white/5 hover:border-[#E6B981]/50 bg-black transition-all group relative overflow-hidden"
-            >
-              <div className="text-[#E6B981] font-display text-5xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(230,185,129,0.5)]">02</div>
-              <h3 className="font-display text-xl uppercase tracking-widest text-white mb-4">AI Upskilling</h3>
-              <p className="text-secondary font-mono text-sm leading-relaxed">
-                Master the future of music. We train you to use advanced AI tools for beat production, dynamic mastering, and rapid content scaling.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 border border-white/5 hover:border-[#E6B981]/50 bg-black transition-all group relative overflow-hidden"
-            >
-              <div className="text-[#E6B981] font-display text-5xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(230,185,129,0.5)]">03</div>
-              <h3 className="font-display text-xl uppercase tracking-widest text-white mb-4">Global Distribution</h3>
-              <p className="text-secondary font-mono text-sm leading-relaxed">
-                Upload once via our pipeline and get instantly published on YouTube, Spotify, JioSaavn, Instagram, and The Future Radio network.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="p-8 border border-white/5 hover:border-[#E6B981]/50 bg-black transition-all group relative overflow-hidden"
-            >
-              <div className="text-[#E6B981] font-display text-5xl mb-6 opacity-40 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(230,185,129,0.5)]">04</div>
-              <h3 className="font-display text-xl uppercase tracking-widest text-white mb-4">100% Transparent Royalties</h3>
-              <p className="text-secondary font-mono text-sm leading-relaxed">
-                No hidden fees. Every stream translates to revenue tracked transparently. You keep a fair, industry-leading share of your commercial success.
-              </p>
-            </motion.div>
-
+              <Upload className="w-5 h-5 text-black" />
+              <span>Fill Vocal Details Below</span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Social Proof / Testimonials */}
-      <section className="py-24 px-6 relative bg-black border-b border-[#E6B981]/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-            <div>
-              <h2 className="font-display text-4xl tracking-widest uppercase text-white mb-2">SUCCESS SIGNALS</h2>
-              <p className="text-secondary font-mono text-sm uppercase tracking-widest">Real Creators. Global Reach.</p>
-            </div>
-            <div className="text-right text-[#E6B981] font-mono text-sm">
-              OVER 50M+ MONTHLY STREAMS GENERATED
-            </div>
+      {/* What You Get for ₹99 */}
+      <section className="py-16 px-6 bg-[#FED7AA] border-b-4 border-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
+              Everything Included In The ₹99 Creator Program
+            </h2>
+            <p className="font-mono text-xs sm:text-sm text-neutral-800">
+              Fair, transparent, creator-first terms backed by ScalerX Lab.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div className="p-8 border border-white/10 bg-neutral-950 relative group">
-              <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-100 transition-opacity">
-                <svg className="w-8 h-8 text-[#1DB954]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.3 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.6.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-              </div>
-              <p className="text-secondary font-sans text-lg italic mb-8">
-                "I was singing Bundeli folk songs in my village. Media Mafias gave me studio access, distributed my tracks, and within months I hit 2 million streams on Spotify. My life changed completely."
-              </p>
-              <div>
-                <h4 className="font-display text-xl uppercase tracking-widest text-white">Ramesh T.</h4>
-                <p className="text-[#E6B981] font-mono text-xs uppercase tracking-widest mt-1">Bundeli Folk • Madhya Pradesh</p>
-              </div>
-            </div>
-
-            <div className="p-8 border border-white/10 bg-neutral-950 relative group">
-              <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-100 transition-opacity">
-                <svg className="w-8 h-8 text-[#FF0000]" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </div>
-              <p className="text-secondary font-sans text-lg italic mb-8">
-                "Media Mafias API put my music directly into thousands of YouTube Shorts. The AI upskilling taught me how to master my own Bhojpuri beats. Now I'm earning royalties every month."
-              </p>
-              <div>
-                <h4 className="font-display text-xl uppercase tracking-widest text-white">Neha K.</h4>
-                <p className="text-[#E6B981] font-mono text-xs uppercase tracking-widest mt-1">Bhojpuri Bass • Bihar</p>
-              </div>
-            </div>
-
-            <div className="p-8 border border-white/10 bg-neutral-950 relative group">
-              <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-100 transition-opacity">
-                <div className="w-8 h-8 rounded-full bg-[#E6B981] flex items-center justify-center overflow-hidden">
-                  <Image src="/player-logo.png" alt="Future Radio" width={24} height={24} className="object-contain" />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              {
+                num: "01",
+                title: "Broadcast Remastering",
+                desc: "We clean background noise, apply dynamic EQ, spectral de-clipping, and normalize to industry standard -14 LUFS."
+              },
+              {
+                num: "02",
+                title: "150+ DSP Distribution",
+                desc: "Global delivery to Spotify, Apple Music, YouTube Music, JioSaavn, Amazon Music, and Instagram Audio library via Madverse."
+              },
+              {
+                num: "03",
+                title: "80% Creator Royalty",
+                desc: "You retain 80% of all DSP streaming royalties and synchronization revenue with direct UPI bank payouts."
+              },
+              {
+                num: "04",
+                title: "Official OAC Listing",
+                desc: "Your release is indexed on the official Media Mafias YouTube network and added to 24/7 radio rotation on The Future Radio."
+              }
+            ].map((card, i) => (
+              <div
+                key={i}
+                className="bg-white border-4 border-black rounded-2xl p-6 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between"
+              >
+                <div>
+                  <div className="font-display font-black text-4xl text-[#FF2E2E] mb-3">
+                    {card.num}
+                  </div>
+                  <h3 className="font-display font-black text-2xl uppercase tracking-wide text-black mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="font-mono text-xs text-neutral-700 leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t-2 border-black/10 flex items-center gap-1.5 font-mono text-[11px] font-bold text-green-700">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>100% Guaranteed</span>
                 </div>
               </div>
-              <p className="text-secondary font-sans text-lg italic mb-8">
-                "Getting featured on The Future Radio gave my Malwi rap the boost it needed. Media Mafias handles all the licensing and distribution so I can just focus on the bars."
-              </p>
-              <div>
-                <h4 className="font-display text-xl uppercase tracking-widest text-white">MC Indore</h4>
-                <p className="text-[#E6B981] font-mono text-xs uppercase tracking-widest mt-1">Malwi Rap • MP</p>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* VIP Application Form Section */}
-      <section className="py-24 px-6 relative bg-neutral-950" id="apply">
-        <div className="max-w-4xl mx-auto">
-          
-          <div className="text-center mb-16">
-            <h2 className="font-display text-5xl tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#FFF1D0] via-[#E6B981] to-[#A37B45] mb-4">
-              ACADEMY ENROLLMENT
-            </h2>
-            <p className="text-secondary font-mono text-sm max-w-2xl mx-auto leading-relaxed">
-              Start your journey today. Complete the registration below and pay the one-time ₹99 enrollment fee to access your learning dashboard and production tools.
-            </p>
-          </div>
-
-          <form 
-            className="bg-black p-8 md:p-12 border-2 border-[#E6B981]/30 shadow-[0_0_50px_rgba(230,185,129,0.05)] relative"
-            onSubmit={(e) => {
-              e.preventDefault();
-              // Simulate payment gateway processing
-              alert("Redirecting to Secure Payment Gateway for ₹99...");
-              setTimeout(() => {
-                window.location.href = "/academy/dashboard";
-              }, 1500);
-            }}
-          >
-            {/* VIP Corner accents */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#E6B981]" />
-            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#E6B981]" />
-            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#E6B981]" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#E6B981]" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] text-[#E6B981] tracking-widest uppercase">Full Name</label>
-                <input 
-                  type="text" 
-                  required
-                  className="w-full bg-neutral-900/50 border-b border-white/20 px-4 py-3 text-white font-sans focus:outline-none focus:border-[#E6B981] focus:bg-neutral-900 transition-all"
-                  placeholder="Enter your legal name"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] text-[#E6B981] tracking-widest uppercase">Artist Alias</label>
-                <input 
-                  type="text" 
-                  className="w-full bg-neutral-900/50 border-b border-white/20 px-4 py-3 text-white font-sans focus:outline-none focus:border-[#E6B981] focus:bg-neutral-900 transition-all"
-                  placeholder="Your stage name"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] text-[#E6B981] tracking-widest uppercase">Email Address</label>
-                <input 
-                  type="email" 
-                  required
-                  className="w-full bg-neutral-900/50 border-b border-white/20 px-4 py-3 text-white font-sans focus:outline-none focus:border-[#E6B981] focus:bg-neutral-900 transition-all"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] text-[#E6B981] tracking-widest uppercase">Direct Line (Phone)</label>
-                <input 
-                  type="tel" 
-                  required
-                  className="w-full bg-neutral-900/50 border-b border-white/20 px-4 py-3 text-white font-sans focus:outline-none focus:border-[#E6B981] focus:bg-neutral-900 transition-all"
-                  placeholder="+91"
-                />
+      {/* Streamlined Submission & Upload Funnel */}
+      <section id="upload-form" className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white border-4 border-black rounded-3xl p-8 sm:p-12 shadow-[8px_8px_0px_0px_#000]">
+            
+            <div className="flex items-center gap-3 mb-6">
+              <span className="p-3 bg-[#E5FF00] border-2 border-black rounded-xl shadow-[2px_2px_0px_0px_#000]">
+                <Upload className="w-6 h-6 text-black" />
+              </span>
+              <div>
+                <h2 className="font-display font-black text-3xl uppercase tracking-tight text-black">
+                  Submit Song Details & Vocals
+                </h2>
+                <p className="font-mono text-xs text-neutral-600">
+                  Fill details below or submit directly on WhatsApp (+91 9209290699)
+                </p>
               </div>
             </div>
 
-            <button 
-              type="submit"
-              className="w-full bg-gradient-to-r from-[#C49A5A] via-[#E6B981] to-[#C49A5A] text-black hover:scale-[1.02] font-display text-2xl tracking-widest uppercase py-5 transition-all duration-300 shadow-[0_0_20px_rgba(230,185,129,0.3)] hover:shadow-[0_0_40px_rgba(230,185,129,0.6)]"
-            >
-              PROCEED TO PAYMENT - ₹99
-            </button>
-            
-            <p className="text-center text-[#E6B981]/50 font-mono text-[10px] uppercase tracking-widest mt-6">
-              SECURE ENCRYPTED CHECKOUT
-            </p>
-          </form>
+            {isSubmitted ? (
+              <div className="bg-green-100 border-3 border-black rounded-2xl p-8 text-center space-y-4">
+                <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto" />
+                <h3 className="font-display font-black text-2xl uppercase text-black">
+                  Submission Ready!
+                </h3>
+                <p className="font-mono text-xs text-neutral-800">
+                  Opening WhatsApp to complete your ₹99 onboarding with our artist coordinator...
+                </p>
+                <a
+                  href={whatsappDirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#25D366] text-black font-mono font-black text-xs uppercase px-6 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000]"
+                >
+                  Continue on WhatsApp Now ➔
+                </a>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-mono text-xs font-black uppercase text-black mb-2">
+                      Artist / Folk Singer Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={artistName}
+                      onChange={(e) => setArtistName(e.target.value)}
+                      placeholder="e.g. Ramprasad Dwivedi"
+                      className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-mono text-xs font-black uppercase text-black mb-2">
+                      WhatsApp Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="e.g. +91 9876543210"
+                      className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-mono text-xs font-black uppercase text-black mb-2">
+                      Song / Track Title *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={songTitle}
+                      onChange={(e) => setSongTitle(e.target.value)}
+                      placeholder="e.g. Rewa Sohar Dadra"
+                      className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-mono text-xs font-black uppercase text-black mb-2">
+                      Dialect & Folk Region *
+                    </label>
+                    <select
+                      value={dialect}
+                      onChange={(e) => setDialect(e.target.value)}
+                      className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                    >
+                      <option value="Bagheli">Bagheli (Rewa, Satna, Sidhi, Shahdol)</option>
+                      <option value="Awadhi">Awadhi (Ayodhya, Lucknow, Mirzapur, Varanasi)</option>
+                      <option value="Bundeli">Bundeli (Jhansi, Sagar, Tikamgarh, Chhatarpur)</option>
+                      <option value="Bhojpuri">Bhojpuri (Purvanchal & Bihar heartland)</option>
+                      <option value="Devotional / Bhakti">Devotional / Kabir Bhajan / Jas Geet</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* File Upload Box */}
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-2">
+                    Raw Audio / Mobile Voice Recording (MP3 / WAV / M4A)
+                  </label>
+                  <div
+                    onClick={() => setFileUploaded(true)}
+                    className={`border-3 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all ${
+                      fileUploaded 
+                        ? "border-green-600 bg-green-50" 
+                        : "border-black/40 hover:border-black bg-neutral-50 hover:bg-neutral-100"
+                    }`}
+                  >
+                    <Upload className={`w-8 h-8 mx-auto mb-2 ${fileUploaded ? "text-green-600" : "text-neutral-500"}`} />
+                    <p className="font-mono text-xs font-bold text-black">
+                      {fileUploaded 
+                        ? "✓ Audio file attached successfully!" 
+                        : "Click here to attach audio, or share via WhatsApp after submitting"}
+                    </p>
+                    <span className="font-mono text-[10px] text-neutral-500 mt-1 block">
+                      Smartphone voice memos, studio recordings, and WhatsApp voice notes accepted.
+                    </span>
+                  </div>
+                </div>
+
+                {/* Submit CTA */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full bg-[#E5FF00] hover:bg-[#d8f000] border-3 border-black text-black font-display font-black text-2xl uppercase py-4 rounded-xl shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <span>Proceed To ₹99 Onboarding</span>
+                    <ArrowRight className="w-6 h-6" />
+                  </button>
+
+                  <p className="text-center font-mono text-[11px] text-neutral-600 mt-3">
+                    🔒 Secure ₹99 processing via UPI / WhatsApp • 80% royalty split contract included.
+                  </p>
+                </div>
+              </form>
+            )}
+
+          </div>
         </div>
       </section>
 

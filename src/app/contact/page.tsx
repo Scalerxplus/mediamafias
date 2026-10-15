@@ -1,11 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
+import { Mail, MessageCircle, Building2, Send, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -35,102 +33,144 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col bg-black text-white selection:bg-red-accent selection:text-white">
+    <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
       <Header />
       
-      <section className="flex-1 pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <h1 className="font-display text-6xl md:text-8xl tracking-widest uppercase text-white leading-none">
-              Initiate <br /> <span className="text-red-accent">Contact</span>
+      <section className="pt-36 pb-20 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          
+          {/* Left Column: Direct Contacts */}
+          <div className="bg-white border-4 border-black rounded-3xl p-8 sm:p-12 shadow-[8px_8px_0px_0px_#000] space-y-6">
+            <div className="inline-block bg-[#E5FF00] border-2 border-black px-3 py-1 rounded font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000]">
+              DIRECT EXECUTIVE DESK
+            </div>
+
+            <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-black leading-none">
+              Get In Touch
             </h1>
-            
-            <div className="space-y-6 pt-8">
-              <div>
-                <h4 className="font-display text-xl tracking-widest text-red-accent uppercase mb-2">Direct Line</h4>
-                <a href="https://wa.me/919209290699" className="text-xl font-sans hover:text-red-accent transition-colors">+91 9209290699</a>
-              </div>
-              
-              <div>
-                <h4 className="font-display text-xl tracking-widest text-red-accent uppercase mb-2">Electronic Mail</h4>
-                <a href="mailto:cartel@mediamafias.com" className="text-xl font-sans hover:text-red-accent transition-colors">cartel@mediamafias.com</a>
+
+            <p className="font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed">
+              For B2B commercial in-store audio, film sync licensing, creator onboarding queries, or press relations:
+            </p>
+
+            <div className="space-y-4 pt-4 border-t-2 border-black/10">
+              <div className="p-4 bg-neutral-50 border-2 border-black rounded-2xl shadow-[2px_2px_0px_0px_#000]">
+                <div className="font-mono text-[10px] font-black uppercase text-neutral-500 mb-1">WhatsApp & Call (Direct)</div>
+                <a href="https://wa.me/919209290699" target="_blank" rel="noopener noreferrer" className="font-display font-black text-2xl text-black hover:text-[#25D366] transition-colors flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5 text-green-600" />
+                  <span>+91 9209290699</span>
+                </a>
               </div>
 
-              <div>
-                <h4 className="font-display text-xl tracking-widest text-red-accent uppercase mb-2">Platform</h4>
-                <a href="https://thefutureradio.com" className="text-xl font-sans hover:text-red-accent transition-colors" target="_blank" rel="noopener noreferrer">thefutureradio.com</a>
+              <div className="p-4 bg-neutral-50 border-2 border-black rounded-2xl shadow-[2px_2px_0px_0px_#000]">
+                <div className="font-mono text-[10px] font-black uppercase text-neutral-500 mb-1">Official Licensing Email</div>
+                <a href="mailto:contact@mediamafias.com" className="font-display font-black text-2xl text-black hover:text-[#FF2E2E] transition-colors flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-red-600" />
+                  <span>contact@mediamafias.com</span>
+                </a>
               </div>
-            </div>
 
-            <div className="bg-neutral-950 border border-white/10 p-8 mt-12">
-              <h2 className="font-display text-2xl tracking-widest uppercase mb-4 text-white border-b border-white/10 pb-4">Legal Disclaimer</h2>
-              <div className="space-y-4 text-sm text-secondary font-sans leading-relaxed">
-                <p>
-                  Media Mafias is an independent collective. All content, broadcasts, and proprietary technologies are intellectual property of Media Mafias.
-                </p>
-                <p>
-                  By accessing this platform, you agree to our terms of transmission. Privacy is paramount. We do not sell data to third-party brokers.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-neutral-950 border border-white/10 p-8 shadow-2xl relative min-h-[500px] flex flex-col justify-center"
-          >
-            <div className="absolute top-0 left-0 w-full h-1 bg-red-accent" />
-            
-            {status === "success" ? (
-              <div className="text-center space-y-4 py-12">
-                <div className="w-16 h-16 rounded-full border-2 border-red-accent flex items-center justify-center mx-auto mb-4">
-                  <span className="text-red-accent text-2xl font-bold">✓</span>
+              <div className="p-4 bg-[#FED7AA] border-2 border-black rounded-2xl shadow-[2px_2px_0px_0px_#000]">
+                <div className="font-mono text-[10px] font-black uppercase text-neutral-700 mb-1">Parent Enterprise</div>
+                <div className="font-display font-black text-xl text-black">
+                  ScalerX Lab
                 </div>
-                <h4 className="font-display text-3xl tracking-widest uppercase text-white">Transmission Sent</h4>
-                <p className="text-secondary font-sans text-sm">We have received your message.</p>
+                <div className="font-mono text-xs text-neutral-800">
+                  MSME Registration: UDYAM-MP-38-0052942
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Contact Form */}
+          <div className="bg-white border-4 border-black rounded-3xl p-8 sm:p-12 shadow-[8px_8px_0px_0px_#000]">
+            <h2 className="font-display font-black text-3xl uppercase tracking-wide text-black mb-2">
+              Send Us A Message
+            </h2>
+            <p className="font-mono text-xs text-neutral-600 mb-6">
+              Our licensing and creator coordination team responds within 24 hours.
+            </p>
+
+            {status === "success" ? (
+              <div className="p-8 bg-green-100 border-3 border-black rounded-2xl text-center space-y-3">
+                <CheckCircle2 className="w-10 h-10 text-green-600 mx-auto" />
+                <h3 className="font-display font-black text-2xl uppercase text-black">Message Sent!</h3>
+                <p className="font-mono text-xs text-neutral-800">
+                  Thank you. A member of our team will reach out to you shortly.
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-widest">Name / Alias</label>
-                  <Input name="name" required placeholder="Enter name" />
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-1">Your Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Enter full name"
+                    className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                  />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-widest">Contact Email</label>
-                  <Input name="email" required type="email" placeholder="hello@example.com" />
+
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-1">Email Address *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="you@company.com"
+                    className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                  />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-widest">Subject</label>
-                  <Input name="subject" required placeholder="Nature of inquiry" />
+
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-1">Phone / WhatsApp</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+91..."
+                    className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                  />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-secondary uppercase tracking-widest">Message</label>
-                  <textarea 
+
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-1">Inquiry Type</label>
+                  <select
+                    name="intent"
+                    className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
+                  >
+                    <option value="B2B Radio">In-Store AI Radio (PPL/IPRS Exempt)</option>
+                    <option value="Sync Licensing">OTT / Film / Commercial Sync</option>
+                    <option value="Creator Academy">Creator Academy (₹99 Vocal Onboarding)</option>
+                    <option value="Wedding BGM">Bespoke Wedding Audio (#UrbanMandapStyle)</option>
+                    <option value="General">General Inquiry / Press</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block font-mono text-xs font-black uppercase text-black mb-1">Message *</label>
+                  <textarea
                     name="message"
                     required
                     rows={4}
-                    className="flex w-full rounded-sm border border-neutral-800 bg-neutral-950 px-3 py-2 text-sm text-white placeholder:text-neutral-500 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-accent resize-none"
-                    placeholder="Enter transmission..."
+                    placeholder="Tell us about your project, location, or song..."
+                    className="w-full p-3.5 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black outline-none focus:bg-white shadow-[2px_2px_0px_0px_#000]"
                   />
                 </div>
-                
-                {status === "error" && (
-                  <p className="text-red-accent text-xs tracking-widest uppercase">Transmission failed. Try again.</p>
-                )}
 
-                <Button type="submit" disabled={status === "submitting"} className="w-full font-display text-xl tracking-widest pt-1">
-                  {status === "submitting" ? "Transmitting..." : "Send Transmission"}
-                </Button>
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="w-full bg-[#E5FF00] hover:bg-[#d8f000] border-3 border-black text-black font-display font-black text-2xl uppercase py-3.5 rounded-xl shadow-[3px_3px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_#000] transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <Send className="w-5 h-5" />
+                  <span>{status === "submitting" ? "Sending..." : "Send Message"}</span>
+                </button>
               </form>
             )}
-          </motion.div>
+
+          </div>
+
         </div>
       </section>
 
