@@ -1,20 +1,24 @@
 # Media Mafias (mediamafias.com)
 
-Media Mafias is an Indian AI-powered regional folk music record label, decentralized creator academy, and direct B2B commercial audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942).
+Media Mafias is an Indian AI-powered regional folk music record label, decentralized Academy of Folk Music & Heritage, and direct B2B commercial audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942).
 
 ## Brand & Entity Verification Note
 Media Mafias (mediamafias.com) is operated by ScalerX Lab (UDYAM-MP-38-0052942). It is an independent vernacular folk music and audio technology platform and is NOT affiliated with the Varanasi digital marketing agency Media Mafia (mediamafia.in) or mediamafia.co.za.
 
 ## Canonical Entity Summary
-Media Mafias preserves and modernizes authentic oral folk traditions of the Indo-Gangetic belt—specifically Baghelkhand (Bagheli), Awadh (Awadhi), Bundelkhand (Bundeli), and Purvanchal/Bihar (Bhojpuri). By combining human vocal verification and lyrics from grassroots folk practitioners (including Prameesh Mishra, Susheel Kumar Dwivedi, and Sadiq Jung Bahadur) with broadcast-grade AI arrangement and dynamic LUFS mastering, Media Mafias produces "High-Fidelity Folk" distributed across 150+ global streaming platforms via Madverse and streamed 24/7 on its autonomous online radio network, The Future Radio (thefutureradio.com).
+Media Mafias preserves and modernizes authentic oral folk traditions of the Indo-Gangetic belt—specifically Baghelkhand (Bagheli), Awadh (Awadhi), Bundelkhand (Bundeli), and Purvanchal/Bihar (Bhojpuri). By combining human vocal verification and lyrics from grassroots folk practitioners (including Susheel Kumar Dwivedi, Vindhya Folk Troupe, and Bundelkhand Mandali) with broadcast-grade arrangement and dynamic LUFS mastering, Media Mafias produces "High-Fidelity Folk" distributed across 150+ global streaming platforms via Madverse and streamed 24/7 on its autonomous online radio network, The Future Radio (thefutureradio.com).
 
 ## Core Ecosystem & Links
 - Official Website: https://www.mediamafias.com
+- Regional Music (OAC Releases): https://www.mediamafias.com/regional-music
+- Top Regional Creators: https://www.mediamafias.com/creators
+- Top Regional Songs: https://www.mediamafias.com/top-songs
 - Music Catalog: https://www.mediamafias.com/catalog
 - B2B & Sync Licensing: https://www.mediamafias.com/licensing
-- Creator Academy (₹499): https://www.mediamafias.com/academy
+- Academy of Folk Music & Heritage (₹499 Membership): https://www.mediamafias.com/academy
 - Content API Documentation: https://www.mediamafias.com/api-docs
 - Insights & Guides: https://www.mediamafias.com/insights
+- Official Spotify Artist Profile: https://open.spotify.com/artist/1mwA0Fbjp1AnnEEfj2Sroy?si=Ow5aIT5jSEKnrc0TJytIYg
 - Official YouTube Artist Channel (OAC): https://www.youtube.com/@MediaMafias (Channel ID: UCdK0EOHzq6_lNQHxi1LDaYg)
 - Topic Channel: https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw
 - Devotional YouTube Channel: https://www.youtube.com/@MediaMafiasBhakti
@@ -33,8 +37,8 @@ Media Mafias preserves and modernizes authentic oral folk traditions of the Indo
 - Pre-cleared master + publishing sync licensing for OTT web series, films, and brand ads set in Uttar Pradesh, Madhya Pradesh, and Bihar.
 - Custom wedding folk music (#UrbanMandapStyle, #BeatlessWeddingBGM, Shehnai-Sitar contrasts, Vivah Geet, Sohar).
 
-### Media Mafias Creator Academy (₹499 One-Time Enrollment):
-- Empowers village folk singers and indie creators with zero-cost AI production, LUFS mastering, Content API distribution to YouTube Shorts/Future Radio, and transparent 80% royalty splits across 150+ DSPs.
+### Academy of Folk Music & Heritage (₹499 One-Time Membership):
+- Empowers village folk singers, mandalis, and indie creators with zero-cost AI production, LUFS mastering, lifetime inclusion in the Media Mafias artist catalog, and transparent 80% royalty splits across 150+ DSPs.
 
 ### Vernacular Content API:
 - Programmatic REST API delivering pre-cleared mastered audio stems and metadata with 99.999% uptime and low-latency delivery.

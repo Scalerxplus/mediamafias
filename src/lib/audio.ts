@@ -13,6 +13,12 @@ export const R2_PUBLIC_BASE =
   process.env.NEXT_PUBLIC_R2_AUDIO_BASE_URL ||
   "https://pub-ba863acf4a4544f3b2c82ccd32b37e18.r2.dev";
 
+export const SPOTIFY_ARTIST_URL =
+  "https://open.spotify.com/artist/1mwA0Fbjp1AnnEEfj2Sroy?si=Ow5aIT5jSEKnrc0TJytIYg";
+
+export const YOUTUBE_OAC_URL =
+  "https://www.youtube.com/@MediaMafias";
+
 export const getAudioUrl = (audioSrc?: string): string => {
   if (!audioSrc) {
     return `${R2_PUBLIC_BASE}/local_audio_vault/roots/5_Music/Ram%20Banra%20Ban%20Aayo%20Re%20-%20Banara.mp3`;

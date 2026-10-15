@@ -14,7 +14,7 @@ export default function AcademyPage() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   const whatsappDirectUrl = `https://wa.me/919209290699?text=${encodeURIComponent(
-    `Hi Media Mafias, I want to join the Rs 499 Creator Academy and submit my folk song.\nArtist: ${artistName || "Independent Artist"}\nDialect: ${dialect}\nSong: ${songTitle || "New Submission"}`
+    `Hi Media Mafias, I want to join the Academy of Folk Music & Heritage (₹499 Membership) and submit my folk song.\nArtist: ${artistName || "Independent Artist"}\nDialect: ${dialect}\nSong: ${songTitle || "New Submission"}`
   )}`;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,15 +35,18 @@ export default function AcademyPage() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-6">
             <Sparkles className="w-4 h-4 text-black" />
-            <span>CREATOR ACADEMY &amp; VOCAL ONBOARDING GATEWAY</span>
+            <span>ACADEMY OF FOLK MUSIC &amp; HERITAGE • LIFETIME ARTIST MEMBERSHIP</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-black mb-4">
-            Turn Your Raw Voice Into A Global Streaming Release
+            Academy of Folk Music &amp; Heritage
           </h1>
+          <div className="font-sans font-bold text-xl sm:text-2xl text-[#FF2E2E] mb-6">
+            (लोक संगीत एवं सांस्कृतिक विरासत अकादमी)
+          </div>
 
           <p className="font-mono text-sm sm:text-lg text-neutral-800 max-w-3xl mx-auto leading-relaxed mb-8">
-            Singers, Mandalis, and Folk Troupe Artists of <strong>Baghelkhand, Awadh, Bundelkhand, and Purvanchal</strong>: Join the Media Mafias Creator Academy for just <strong>₹499</strong>. Send your raw smartphone recording — we remaster it to broadcast grade and distribute it to 150+ music apps worldwide.
+            Singers, Mandalis, and Folk Troupe Artists of <strong>Baghelkhand, Awadh, Bundelkhand, and Purvanchal</strong>: Enroll in the <strong>Academy of Folk Music &amp; Heritage</strong> with a one-time <strong>₹499 membership fee</strong> to become a permanent member of the Media Mafias catalog. Send your raw smartphone recording — we remaster it to broadcast grade and distribute it to 150+ music apps worldwide with 80% direct creator royalties.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -54,7 +57,7 @@ export default function AcademyPage() {
               className="bg-[#25D366] text-black font-mono font-black text-xs sm:text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] flex items-center gap-2 transition-all"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>1-Tap WhatsApp Vocal Submission (₹499)</span>
+              <span>1-Tap WhatsApp Enrollment (₹499 Fee)</span>
             </a>
 
             <a
@@ -62,7 +65,7 @@ export default function AcademyPage() {
               className="bg-[#E5FF00] text-black font-mono font-black text-xs sm:text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] flex items-center gap-2 transition-all"
             >
               <Upload className="w-5 h-5 text-black" />
-              <span>Fill Vocal Details Below</span>
+              <span>Submit Song Details Below</span>
             </a>
           </div>
         </div>
@@ -73,10 +76,10 @@ export default function AcademyPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
-              Everything Included In The ₹499 Creator Program
+              Lifetime Membership Benefits (₹499 One-Time)
             </h2>
             <p className="font-mono text-xs sm:text-sm text-neutral-800">
-              Fair, transparent, creator-first terms backed by ScalerX Lab.
+              Join the Media Mafias artist catalog with fair, transparent terms backed by ScalerX Lab.
             </p>
           </div>
 
