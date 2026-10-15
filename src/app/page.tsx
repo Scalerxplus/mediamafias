@@ -20,7 +20,33 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.mediamafias.com/",
-  }
+  },
+  openGraph: {
+    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    url: "https://www.mediamafias.com/",
+    siteName: "Media Mafias",
+    images: [
+      {
+        url: "https://www.mediamafias.com/logo-square.png",
+        width: 1200,
+        height: 1200,
+        alt: "Media Mafias Official Logo",
+      },
+      {
+        url: "https://www.mediamafias.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Media Mafias — Central India Regional Folk Music Record Label",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    images: ["https://www.mediamafias.com/og-image.png"],
+  },
 };
 
 export default function Home() {

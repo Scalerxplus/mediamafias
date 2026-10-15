@@ -34,6 +34,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mediamafias.com/",
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.png', sizes: '48x48', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -41,11 +50,32 @@ export const metadata: Metadata = {
     siteName: "Media Mafias",
     title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
     description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    images: [
+      {
+        url: "https://www.mediamafias.com/logo-square.png",
+        width: 1200,
+        height: 1200,
+        alt: "Media Mafias — Official Logo & Regional Folk Music Label",
+      },
+      {
+        url: "https://www.mediamafias.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Media Mafias — Central India Regional Folk Music Record Label",
+      },
+      {
+        url: "https://www.mediamafias.com/Logo%20Main.png",
+        width: 4500,
+        height: 4500,
+        alt: "Media Mafias Official Emblem",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
     description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    images: ["https://www.mediamafias.com/og-image.png"],
   }
 };
 
@@ -64,6 +94,18 @@ export default function RootLayout({
         "legalName": "Media Mafias (A ScalerX Lab Platform - UDYAM-MP-38-0052942)",
         "disambiguatingDescription": "Media Mafias (mediamafias.com) is an Indian AI-powered regional folk music record label, decentralized audio distribution platform, creator academy, and B2B in-store radio provider operated by ScalerX Lab. It is an independent music and audio technology platform and is NOT affiliated with the Varanasi digital marketing agency Media Mafia (mediamafia.in) or mediamafia.co.za.",
         "url": "https://www.mediamafias.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.mediamafias.com/logo-square.png",
+          "caption": "Media Mafias Official Logo",
+          "width": 1200,
+          "height": 1200
+        },
+        "image": [
+          "https://www.mediamafias.com/logo-square.png",
+          "https://www.mediamafias.com/og-image.png",
+          "https://www.mediamafias.com/Logo%20Main.png"
+        ],
         "email": "contact@mediamafias.com",
         "telephone": "+91-9209290699",
         "description": "Media Mafias is an Indian AI-powered regional folk music label, decentralized creator academy, and direct B2B audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942). Specializing in human-verified Bagheli, Awadhi, Bundeli, and Bhojpuri music.",
@@ -124,6 +166,10 @@ export default function RootLayout({
         "@id": "https://www.mediamafias.com/#webpage",
         "url": "https://www.mediamafias.com/",
         "name": "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://www.mediamafias.com/logo-square.png"
+        },
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["#entity-summary", ".voice-answer"]
