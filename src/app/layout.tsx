@@ -22,30 +22,29 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mediamafias.com'),
-  title: {
-    default: "Media Mafias | High-Fidelity Regional Folk of the Indo-Gangetic Belt",
-    template: "%s | Media Mafias",
-  },
-  description: "Official record label and audio ecosystem preserving Baghelkhand, Awadh, Bundelkhand, and Purvanchal folk music. 100% PPL/IPRS-exempt In-Store AI Radio, OTT sync licensing, and ₹99 Creator Academy.",
+  title: "Media Mafias | Authentic Indian Folk Music, AI Creator Academy & B2B Audio Licensing",
+  description: "Media Mafias is India's premier AI-powered regional folk music label, Creator Academy, and PPL/IPRS-exempt B2B commercial audio platform. Stream Bagheli, Awadhi, Bundeli & Bhojpuri music across 150+ platforms and 24/7 on The Future Radio.",
   keywords: [
-    "Media Mafias", "Media Mafias YouTube", "Bagheli Folk Music", "Bundeli Lokgeet",
-    "Awadhi Folk Songs", "Purvanchal Bhojpuri Music", "Baghelkhand songs", "Alha Udal Bundelkhand",
-    "Sohar songs Bagheli", "Kajri Lokgeet", "High Fidelity Folk", "Urban Mandap Style",
-    "Beatless Wedding BGM", "PPL exempt in store music India", "IPRS exempt background music",
-    "The Future Radio", "Vernacular Audio Distribution India", "ScalerX Lab"
+    "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Awadhi Vivah Geet", "अवधी विवाह गीत",
+    "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस",
+    "PPL IPRS exempt background music India", "In-Store AI Radio", "OTT Sync Licensing India",
+    "Urban Mandap Wedding BGM", "AI Music Creator Academy India", "The Future Radio", "ScalerX Lab"
   ],
+  alternates: {
+    canonical: "https://www.mediamafias.com/",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://www.mediamafias.com",
+    url: "https://www.mediamafias.com/",
     siteName: "Media Mafias",
-    title: "Media Mafias | High-Fidelity Regional Folk of the Indo-Gangetic Belt",
-    description: "Preserving and modernizing the living folk heritage of Baghelkhand, Awadh, Bundelkhand, and Purvanchal in broadcast-grade cinematic audio.",
+    title: "Media Mafias | Authentic Folk Music, Creator Academy & Commercial Audio",
+    description: "Human-verified Bagheli, Awadhi, Bundeli & Bhojpuri folk music scaled by broadcast AI. 100% direct IP for OTT sync, luxury weddings, and PPL/IPRS-exempt In-Store Radio.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Mafias | High-Fidelity Regional Folk Music",
-    description: "Preserving and modernizing the living folk heritage of the Indo-Gangetic Belt.",
+    title: "Media Mafias | Authentic Folk Music, Creator Academy & Commercial Audio",
+    description: "Human-verified Bagheli, Awadhi, Bundeli & Bhojpuri folk music scaled by broadcast AI. 100% direct IP for OTT sync, luxury weddings, and PPL/IPRS-exempt In-Store Radio.",
   }
 };
 
@@ -58,81 +57,68 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://mediamafias.com/#organization",
+        "@type": ["Organization", "MusicGroup"],
+        "@id": "https://www.mediamafias.com/#organization",
         "name": "Media Mafias",
-        "legalName": "ScalerX Lab",
-        "identifier": "UDYAM-MP-38-0052942",
-        "url": "https://mediamafias.com",
-        "logo": "https://www.mediamafias.com/Logo%20Main.png",
+        "url": "https://www.mediamafias.com/",
         "email": "contact@mediamafias.com",
-        "telephone": "+919209290699",
-        "description": "Decentralized vernacular folk audio ecosystem and record label producing broadcast-grade regional music and 100% PPL/IPRS-exempt in-store background radio across India.",
+        "telephone": "+91-9209290699",
+        "description": "Media Mafias is an Indian AI-powered regional folk music label, decentralized creator academy, and direct B2B audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942). Specializing in human-verified Bagheli, Awadhi, Bundeli, and Bhojpuri music.",
+        "genre": [
+          "Indian Folk Music",
+          "Bagheli Folk",
+          "Awadhi Folk",
+          "Bundeli Folk Pop",
+          "Bhojpuri Folk",
+          "Sufi Devotional",
+          "Indian Wedding Instrumental"
+        ],
         "parentOrganization": {
           "@type": "Organization",
           "name": "ScalerX Lab",
-          "url": "https://scalerxlab.com"
+          "url": "https://scalerxlab.com/",
+          "identifier": "UDYAM-MP-38-0052942"
         },
         "sameAs": [
           "https://www.youtube.com/@MediaMafias",
           "https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg",
-          "https://thefutureradio.com",
-          "https://www.facebook.com/TheMediaMafias",
-          "https://www.instagram.com/mediamafias",
-          "https://www.linkedin.com/company/mediamafias"
-        ]
-      },
-      {
-        "@type": "MusicGroup",
-        "@id": "https://mediamafias.com/#musicgroup",
-        "name": "Media Mafias",
-        "url": "https://mediamafias.com",
-        "description": "High-Fidelity Regional Folk Music Ecosystem of the Indo-Gangetic Belt (Baghelkhand, Awadh, Bundelkhand, and Purvanchal).",
-        "genre": [
-          "Bagheli Folk Music",
-          "Bundeli Lokgeet",
-          "Awadhi Folk Songs",
-          "Purvanchali Folk",
-          "Sohar",
-          "Kajri",
-          "Devi Jas",
-          "Alha-Udal",
-          "Nirgun Kabir Bhajans",
-          "Urban Mandap Wedding BGM"
-        ],
-        "sameAs": [
-          "https://www.youtube.com/@MediaMafias",
-          "https://www.youtube.com/channel/UCdK0EOHzq6_lNQHxi1LDaYg",
-          "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw"
+          "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw",
+          "https://www.youtube.com/@MediaMafiasBhakti",
+          "https://thefutureradio.com/",
+          "https://www.facebook.com/TheMediaMafias"
         ]
       },
       {
         "@type": "RadioStation",
-        "@id": "https://thefutureradio.com/#station",
+        "@id": "https://thefutureradio.com/#radiostation",
         "name": "The Future Radio",
-        "url": "https://thefutureradio.com",
-        "description": "Autonomous AI-powered vernacular broadcast network streaming 24/7 dialect audio with zero third-party licensing obligations (100% PPL/IPRS exempt)."
+        "url": "https://thefutureradio.com/",
+        "parentOrganization": {
+          "@id": "https://www.mediamafias.com/#organization"
+        },
+        "description": "India's first 24/7 autonomous AI-powered vernacular radio network and PPL/IPRS-exempt B2B in-store audio platform broadcasting across the Indo-Gangetic belt."
       },
       {
         "@type": "Course",
-        "@id": "https://mediamafias.com/academy/#course",
-        "name": "Media Mafias Creator Academy",
-        "description": "Grassroots folk artist onboarding gateway. Submit raw vocals via WhatsApp, receive studio-grade AI remastering to -14 LUFS, and distribute to 150+ DSPs with 80% revenue share.",
+        "@id": "https://www.mediamafias.com/academy#course",
+        "name": "Media Mafias Creator Academy & Audio Syndicate",
+        "description": "Learn AI beat production, dynamic LUFS mastering, and vernacular audio scaling with zero-cost studio production and global distribution to 150+ DSPs.",
         "provider": {
-          "@id": "https://mediamafias.com/#organization"
+          "@id": "https://www.mediamafias.com/#organization"
         },
         "offers": {
           "@type": "Offer",
-          "price": "99",
+          "price": "99.00",
           "priceCurrency": "INR",
-          "category": "Membership"
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.mediamafias.com/academy"
         }
       },
       {
         "@type": "WebPage",
-        "@id": "https://mediamafias.com/#webpage",
-        "url": "https://mediamafias.com",
-        "name": "Media Mafias | High-Fidelity Regional Folk of the Indo-Gangetic Belt",
+        "@id": "https://www.mediamafias.com/#webpage",
+        "url": "https://www.mediamafias.com/",
+        "name": "Media Mafias | Official Website",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["#entity-summary", ".voice-answer"]
@@ -140,38 +126,30 @@ export default function RootLayout({
       },
       {
         "@type": "FAQPage",
-        "@id": "https://mediamafias.com/#faq",
+        "@id": "https://www.mediamafias.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is Media Mafias and what music genres does it produce?",
+            "name": "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Media Mafias is an AI-powered vernacular folk music label and audio platform incubated by ScalerX Lab. We produce broadcast-grade cinematic audio for the Indo-Gangetic heartland, specializing in Bagheli, Awadhi, Bundeli, and Bhojpuri traditions including Sohar, Kajri, Alha-Udal, and meditative wedding BGM."
+              "text": "To play background music legally in an Indian store, hospital, cafe, or hotel without paying Rs 18,800 to Rs 40,000 in annual PPL, IPRS, or Novex fees, subscribe to The Future Radio by Media Mafias. Media Mafias owns 100% of both master and publishing rights, providing full direct copyright indemnification."
             }
           },
           {
             "@type": "Question",
-            "name": "How does Media Mafias provide 100% PPL and IPRS exempt in-store radio?",
+            "name": "How can regional folk singers distribute Bagheli, Awadhi, Bundeli, or Bhojpuri songs to Spotify and YouTube?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Media Mafias owns 100% of the master sound recordings and underlying musical works in our catalog directly from creators and AI synthesis. Because our music is not assigned to collection societies like PPL, IPRS, or Novex, commercial businesses require no statutory license fees and receive full legal indemnity."
+              "text": "Regional folk vocalists and independent creators can join the Media Mafias Creator Academy for a one-time Rs 99 enrollment fee. Creators submit raw vocal recordings via the website or WhatsApp and receive zero-cost AI arrangement, LUFS mastering, and global distribution across 150+ streaming platforms with transparent royalty splits."
             }
           },
           {
             "@type": "Question",
-            "name": "How can folk creators join the Media Mafias Creator Academy for ₹99?",
+            "name": "Where can I license authentic UP, MP, and Bihar folk music for OTT web series or modern Indian weddings?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Folk singers and musicians can join our Creator Academy for a one-time onboarding fee of ₹99. Creators simply send a raw voice recording via WhatsApp (+91 9209290699). Our studio remasters the audio to broadcast grade and distributes it across 150+ DSPs with an 80% royalty split."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can I listen to Media Mafias music?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can stream our complete discography on the official Media Mafias YouTube channel (@MediaMafias), 24/7 on The Future Radio (thefutureradio.com), and across major music streaming services including Spotify, Apple Music, JioSaavn, and Amazon Music."
+              "text": "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and beatless Urban Mandap wedding instrumentals. Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
             }
           }
         ]

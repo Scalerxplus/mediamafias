@@ -11,25 +11,25 @@ export const TrustBar = () => {
     },
     {
       value: "2,400+",
-      label: "Folk Creators Onboarded",
+      label: "Syndicate Creators",
       icon: Users,
       color: "bg-[#FED7AA]"
     },
     {
       value: "12,000+",
-      label: "Live Radio Streams",
+      label: "Live Radio Listeners",
       icon: Radio,
       color: "bg-[#00E5FF]"
     },
     {
       value: "150+",
-      label: "Global DSPs via Madverse",
+      label: "Global Streaming Platforms",
       icon: Globe,
       color: "bg-[#FF69B4]"
     },
     {
       value: "100%",
-      label: "Direct IP Ownership & Indemnity",
+      label: "Direct Copyright Ownership",
       icon: ShieldCheck,
       color: "bg-[#F59E0B]"
     }

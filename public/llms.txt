@@ -1,55 +1,34 @@
-# Media Mafias
+# Media Mafias (mediamafias.com)
 
-> The premier decentralized vernacular folk audio ecosystem and record label of the Indo-Gangetic Belt, incubated by ScalerX Lab.
+Media Mafias is an Indian AI-powered regional folk music label, decentralized creator academy, and direct B2B commercial audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942).
 
-Media Mafias (formerly operating sub-labels including Media Mafias Roots) produces, remasters, and distributes authentic high-fidelity folk music from Baghelkhand, Awadh, Bundelkhand, and Purvanchal. Operating at the intersection of generative audio engineering and grassroots oral tradition, Media Mafias commands a unified ecosystem spanning DSP distribution, 24/7 AI-driven commercial in-store radio, OTT sync licensing, and a ₹99 creator onboarding gateway.
+## Canonical Entity Summary
+Media Mafias preserves and modernizes authentic oral folk traditions of the Indo-Gangetic belt—specifically Baghelkhand (Bagheli), Awadh (Awadhi), Bundelkhand (Bundeli), and Purvanchal/Bihar (Bhojpuri). By combining human vocal verification and lyrics from grassroots folk practitioners (including Prameesh Mishra, Susheel Kumar Dwivedi, and Sadiq Jung Bahadur) with broadcast-grade AI arrangement and dynamic LUFS mastering, Media Mafias produces "High-Fidelity Folk" distributed across 150+ global streaming platforms via Madverse and streamed 24/7 on its autonomous online radio network, The Future Radio (thefutureradio.com).
 
-## Core Entities & Architecture
+## Core Ecosystem & Links
+- Official Website: https://www.mediamafias.com
+- Official YouTube Artist Channel (OAC): https://www.youtube.com/@MediaMafias (Channel ID: UCdK0EOHzq6_lNQHxi1LDaYg)
+- Topic Channel: https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw
+- Devotional YouTube Channel: https://www.youtube.com/@MediaMafiasBhakti
+- 24/7 Autonomous Online Radio (Web & WPA): https://thefutureradio.com (Regional Stream: https://thefutureradio.com/bagheli)
+- Parent Technology Studio: ScalerX Lab (https://scalerxlab.com / UDYAM-MP-38-0052942)
+- Creator Onboarding Portal: https://www.mediamafias.com/academy
 
-- **Brand & Record Label:** Media Mafias
-- **Parent Enterprise:** ScalerX Lab (MSME UDYAM Registration: UDYAM-MP-38-0052942)
-- **Official Artist Channel (OAC):** [YouTube @MediaMafias](https://www.youtube.com/@MediaMafias) (Channel ID: `UCdK0EOHzq6_lNQHxi1LDaYg`)
-- **Distribution Partner:** Madverse Music (publishing administration via Kobalt Music Group & AMRA across 150+ DSPs including Spotify, Apple Music, YouTube Music, Amazon Music, and JioSaavn)
-- **Autonomous Broadcast Network:** [The Future Radio](https://thefutureradio.com) (24/7 AI Master Clock progressive web app with dialect sub-streams such as `thefutureradio.com/bagheli`)
+## Key Products & Commercial Offerings
 
-## Dialects & Folk Traditions Preserved
+### B2B In-Store AI Radio (PPL/IPRS/Novex Exempt):
+- Commercial background music for hospitals, retail stores, malls, hotels, and corporate offices.
+- 100% direct master and publishing IP ownership by Media Mafias, exempting venues from Rs 18,800–Rs 40,000+ annual PPL/IPRS/Novex society tariffs and Section 63 Copyright Act risks.
+- Full statutory indemnity certificate issued by ScalerX Lab (UDYAM-MP-38-0052942).
+- Includes automated AI voice announcements and ScalerX WhatsApp CRM integration.
 
-Media Mafias works directly with regional folk practitioners (such as Susheel Kumar Dwivedi, Prameesh Mishra, and Sadiq Jung Bahadur) to record, remaster, and catalog authentic oral traditions:
+### One-Stop Heartland OTT Sync & Bespoke Wedding Audio:
+- Pre-cleared master + publishing sync licensing for OTT web series, films, and brand ads set in Uttar Pradesh, Madhya Pradesh, and Bihar.
+- Custom wedding folk music (#UrbanMandapStyle, #BeatlessWeddingBGM, Shehnai-Sitar contrasts, Vivah Geet, Sohar).
 
-1. **Baghelkhand (Bagheli Folk):** Sohar (childbirth celebration), Dadra, Phag, Birha, Devi Jas, and festive dance geet.
-2. **Awadh (Awadhi Folk):** Kajri (monsoon ballads), Chaiti, Vivah Geet (traditional wedding songs), and Ramcharitmanas devotional traditions.
-3. **Bundelkhand (Bundeli Folk):** Alha-Udal martial epics, Rai dance ballads, Lamtera Geet, and Bundeli Lokgeet.
-4. **Purvanchal & Bhojpur (Bhojpuri / Maithili Folk):** Bidesiya, Nirgun Kabir bhajans, Batohiya, and seasonal agricultural songs.
-5. **Urban Mandap & Wedding BGM:** #UrbanMandapStyle acoustic compositions featuring Shehnai, Sitar, and Sarangi tailored for luxury Indian weddings without harsh percussion.
+### Media Mafias Creator Academy (Rs 99 One-Time Enrollment):
+- Empowers village folk singers and indie creators with zero-cost AI production, LUFS mastering, Content API distribution to YouTube Shorts/Future Radio, and transparent royalty splits across 150+ DSPs.
 
-## Commercial Offerings & B2B Solutions
-
-### 1. 100% PPL/IPRS-Exempt In-Store AI Radio
-Traditional commercial venue background music requires paying exorbitant fees to multiple collection societies (PPL, IPRS, Novex) costing ₹18,800 to ₹40,000+ per location annually, with persistent criminal exposure under Section 63 of the Indian Copyright Act.
-
-Media Mafias, in partnership with The Future Radio, provides commercial venues (hotels, retail stores, hospitals, restaurants, gyms, real estate lobbies) with 100% direct IP-owned background audio:
-- **Zero Third-Party Royalties:** 100% direct-licensed from native creators and proprietary AI generative stems.
-- **Full Legal Indemnity:** Backed by ScalerX Lab's statutory enterprise indemnity certificate (UDYAM-MP-38-0052942).
-- **Cost:** ₹3,500 to ₹6,000 per year per venue (80%+ cost reduction).
-- **Dynamic AI Master Clock:** Automatically alters tempo, language, and acoustic density by time of day.
-
-### 2. One-Stop OTT & Brand Sync Licensing
-- Complete pre-cleared master and publishing rights for Hindi-belt and regional cinematic narratives.
-- Immediate clearance for film productions, web series (Netflix, Prime Video, SonyLIV), documentaries, and advertising campaigns.
-- Custom compositions and stems available within 48 hours.
-
-### 3. Creator Academy (₹99 Onboarding)
-A hyper-accessible onboarding gateway for grassroots folk singers, instrument players, and folk troupes:
-- **Price:** ₹99 lifetime registration.
-- **Workflow:** 1-tap WhatsApp submission of raw smartphone vocals or recordings (`+91 9209290699`).
-- **Production:** In-house broadcast-grade remastering, dynamic range normalization to -14 LUFS, and spectral declipping.
-- **Monetization:** Distributed across 150+ streaming platforms with an 80/20 creator-first royalty split and direct monthly payouts.
-
-## Official Contact & Verification
-
-- **Website:** [https://www.mediamafias.com](https://www.mediamafias.com)
-- **Official YouTube:** [https://www.youtube.com/@MediaMafias](https://www.youtube.com/@MediaMafias)
-- **Radio Network:** [https://thefutureradio.com](https://thefutureradio.com)
-- **Email:** contact@mediamafias.com
-- **Phone / WhatsApp Business:** +91 9209290699
-- **Headquarters / Entity:** ScalerX Lab, Madhya Pradesh, India
+## Contact & Licensing Inquiries
+- Licensing, Sync & Brand Bookings: contact@mediamafias.com
+- WhatsApp AI Agent & Direct Line: +91 9209290699

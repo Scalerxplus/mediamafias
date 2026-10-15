@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles, Building2, ShieldCheck, ArrowRight, Play, Radio } from "lucide-react";
+import { Sparkles, Building2, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -10,35 +10,38 @@ export const Hero = () => {
       
       <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
         
-        {/* Top Badges */}
+        {/* Eyebrow Tag */}
         <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-4 border-black px-6 py-2 rounded-full shadow-[6px_6px_0px_0px_#000] mb-8 transform -rotate-1">
           <span className="w-2.5 h-2.5 bg-red-600 rounded-full animate-ping mr-1"></span>
           <span className="font-black text-black uppercase tracking-widest text-xs sm:text-sm">
-            INDO-GANGETIC VERNACULAR AUDIO ECOSYSTEM
+            INDIA&apos;S VERNACULAR AI MUSIC LABEL &amp; DIRECT LICENSING NETWORK
           </span>
         </div>
 
-        {/* Big 3D Stroked Title */}
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-display font-black leading-[1.0] tracking-tight uppercase mb-6 max-w-5xl">
-          <span className="block text-[#FF69B4] [-webkit-text-stroke:3px_black] md:[-webkit-text-stroke:4px_black] [text-shadow:5px_5px_0px_#000] md:[text-shadow:8px_8px_0px_#000] mb-2">
+        {/* Brand Display Title */}
+        <div className="text-6xl sm:text-8xl lg:text-[110px] font-display font-black leading-[0.9] tracking-tight uppercase mb-4">
+          <span className="block text-[#FF69B4] [-webkit-text-stroke:3px_black] md:[-webkit-text-stroke:4px_black] [text-shadow:6px_6px_0px_#000] md:[text-shadow:10px_10px_0px_#000]">
             MEDIA MAFIAS
           </span>
-          <span className="block text-black text-3xl sm:text-5xl lg:text-6xl tracking-wider">
-            HIGH-FIDELITY REGIONAL FOLK MUSIC
-          </span>
+        </div>
+
+        {/* H1 Heading */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black uppercase tracking-tight text-black mb-8 max-w-5xl leading-tight">
+          Authentic Indo-Gangetic Folk Music. <br className="hidden sm:inline" />
+          <span className="text-neutral-900">Verified by Local Artists, Scaled by AI.</span>
         </h1>
 
-        {/* #entity-summary Paragraph for AI, GEO, and Voice Search Crawlers */}
+        {/* #entity-summary Paragraph (Speakable for Voice & AI Search) */}
         <div className="w-full max-w-4xl bg-white border-4 border-black rounded-2xl p-6 sm:p-8 shadow-[8px_8px_0px_0px_#000] mb-12 text-left sm:text-center">
           <p id="entity-summary" className="text-base sm:text-lg font-sans text-neutral-900 leading-relaxed font-medium">
-            <strong>Media Mafias</strong> is the premier decentralized vernacular folk audio ecosystem and record label dedicated to the living oral traditions of <strong>Baghelkhand (Bagheli), Awadh (Awadhi), Bundelkhand (Bundeli), and Purvanchal (Bhojpuri)</strong>. Incubated by <strong>ScalerX Lab</strong> (UDYAM-MP-38-0052942), we remaster authentic grassroots folk songs into broadcast-grade cinematic audio distributed across 150+ global DSPs, while powering 100% PPL/IPRS-exempt In-Store AI Radio via <strong>The Future Radio</strong>.
+            Media Mafias is India&apos;s premier AI-powered regional music label, creator academy, and commercial audio platform. Collaborating with authentic local artists across Baghelkhand, Awadh, Bundelkhand, and Purvanchal, we craft broadcast-grade Bagheli, Awadhi, Bundeli, and Bhojpuri music (बघेली, अवधी, बुंदेली और भोजपुरी लोकगीत)—streaming globally on 150+ platforms and 24/7 on The Future Radio.
           </p>
         </div>
 
-        {/* Dual Intent Cards: Creators vs. B2B Commercial Buyers */}
+        {/* Dual Intent Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl text-left">
           
-          {/* Card A: Creator Academy ₹99 */}
+          {/* Card 1 — For Folk Singers & Indie Creators */}
           <Link
             href="/academy"
             className="bg-[#FED7AA] border-4 border-black p-8 rounded-2xl shadow-[8px_8px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#000] transition-all flex flex-col justify-between group"
@@ -46,7 +49,7 @@ export const Hero = () => {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-xs font-black uppercase bg-[#E5FF00] border-2 border-black px-3 py-1 rounded shadow-[2px_2px_0px_0px_#000]">
-                  FOR FOLK CREATORS
+                  FOR FOLK SINGERS &amp; CREATORS
                 </span>
                 <span className="font-display font-black text-2xl text-black">
                   ₹99 ONLY
@@ -54,18 +57,18 @@ export const Hero = () => {
               </div>
 
               <h2 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-wide text-black mb-3 group-hover:text-neutral-900">
-                Creator Academy & Vocal Onboarding
+                Turn Your Raw Voice into Global Royalties
               </h2>
 
               <p className="font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed mb-6">
-                Singers & folk troupes: Turn raw smartphone vocals into broadcast-grade -14 LUFS releases. We handle AI mastering, metadata, and 150+ DSP distribution with an 80% direct royalty payout.
+                Zero-cost AI beat arrangement, Apple/Spotify LUFS mastering, and instant distribution to 150+ platforms, YouTube Shorts, and Future Radio.
               </p>
             </div>
 
             <div className="pt-4 border-t-2 border-black/20 flex items-center justify-between font-black font-mono text-sm uppercase">
               <span className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-black" />
-                Join & Submit Vocals
+                Join Creator Academy — ₹99
               </span>
               <span className="bg-black text-white p-2 rounded-lg group-hover:bg-[#E5FF00] group-hover:text-black transition-colors">
                 <ArrowRight className="w-5 h-5" />
@@ -73,7 +76,7 @@ export const Hero = () => {
             </div>
           </Link>
 
-          {/* Card B: Commercial & Sync Licensing */}
+          {/* Card 2 — For Businesses, OTT & Weddings */}
           <Link
             href="/licensing"
             className="bg-[#FDE047] border-4 border-black p-8 rounded-2xl shadow-[8px_8px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#000] transition-all flex flex-col justify-between group"
@@ -81,26 +84,26 @@ export const Hero = () => {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-xs font-black uppercase bg-[#00E5FF] border-2 border-black px-3 py-1 rounded shadow-[2px_2px_0px_0px_#000]">
-                  B2B COMMERCIAL & OTT
+                  FOR BUSINESSES, OTT &amp; WEDDINGS
                 </span>
                 <span className="font-mono text-xs font-black bg-white border-2 border-black px-2.5 py-1 rounded">
-                  100% PPL EXEMPT
+                  100% DIRECT IP
                 </span>
               </div>
 
               <h2 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-wide text-black mb-3 group-hover:text-neutral-900">
-                In-Store AI Radio & Sync Licensing
+                100% Direct-IP Commercial &amp; Sync Audio
               </h2>
 
               <p className="font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed mb-6">
-                Hotels, retail spaces & OTT filmmakers: Save ₹30,000+/year on PPL/IPRS/Novex fees with 100% direct-owned background audio backed by statutory ScalerX Lab indemnity.
+                Save up to 85% on annual PPL/IPRS store licenses with In-Store AI Radio, or license pre-cleared heartland folk &amp; #UrbanMandapStyle wedding BGM.
               </p>
             </div>
 
             <div className="pt-4 border-t-2 border-black/20 flex items-center justify-between font-black font-mono text-sm uppercase">
               <span className="flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-black" />
-                Explore B2B Solutions
+                Get Commercial / Sync License
               </span>
               <span className="bg-black text-white p-2 rounded-lg group-hover:bg-[#00E5FF] group-hover:text-black transition-colors">
                 <ArrowRight className="w-5 h-5" />

@@ -5,46 +5,24 @@ import Link from "next/link";
 export const ComplianceComparison = () => {
   const comparisonRows = [
     {
-      feature: "Annual Licensing Cost",
-      traditional: "₹18,800 – ₹40,000+ per year (per location)",
-      traditionalBad: true,
-      mediaMafias: "₹3,500 – ₹6,000 per year (flat commercial rate)",
-      mediaMafiasGood: true
+      feature: "Annual Venue Cost",
+      traditional: "₹18,800 to ₹40,000+ per outlet/year",
+      mediaMafias: "₹3,500 to ₹6,000 per outlet/year (Direct Subscription)",
     },
     {
-      feature: "Collection Societies Demands",
-      traditional: "3 separate licenses required: PPL + IPRS + Novex",
-      traditionalBad: true,
-      mediaMafias: "0 licenses needed. 100% Direct IP Ownership",
-      mediaMafiasGood: true
+      feature: "Legal & Police Risk",
+      traditional: "Requires 3 separate licenses; Sec. 63 non-bailable risk if lapsed",
+      mediaMafias: "100% Direct-IP Indemnified (Master + Publishing owned by Media Mafias)",
     },
     {
-      feature: "Section 63 Risk (Criminal Copyright)",
-      traditional: "Constant threat of surprise raids, FIRs & legal notices",
-      traditionalBad: true,
-      mediaMafias: "Zero risk. 100% pre-cleared direct creator catalog",
-      mediaMafiasGood: true
+      feature: "Audio Experience",
+      traditional: "Generic playlists; consumer Spotify/JioSaavn is illegal for business",
+      mediaMafias: "24/7 AI Master Clock (Meditative Hospital BGM, Heritage Retail Folk, Custom AI Voice Ads)",
     },
     {
-      feature: "Statutory Legal Indemnity",
-      traditional: "No indemnity. Venue owner held strictly liable",
-      traditionalBad: true,
-      mediaMafias: "Full indemnity certificate from ScalerX Lab (UDYAM-MP-38-0052942)",
-      mediaMafiasGood: true
-    },
-    {
-      feature: "Acoustic Curation & Dayparting",
-      traditional: "Static pendrives or repetitive radio loops with ads",
-      traditionalBad: true,
-      mediaMafias: "24/7 AI Master Clock (The Future Radio) dynamic dayparting",
-      mediaMafiasGood: true
-    },
-    {
-      feature: "Setup & Activation",
-      traditional: "3–6 weeks bureaucratic society paperwork",
-      traditionalBad: true,
-      mediaMafias: "Instant activation via Web App or plug-and-play stream",
-      mediaMafiasGood: true
+      feature: "OTT & Wedding Sync",
+      traditional: "₹20,000–₹45,000/30s IPRS tariff + weeks of label clearance",
+      mediaMafias: "One-Stop 24-Hour Clearance for UP/MP/Bihar OTT series & bespoke family wedding songs",
     }
   ];
 
@@ -55,32 +33,32 @@ export const ComplianceComparison = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-block bg-[#00E5FF] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            SECTION 4 • B2B COMPLIANCE & SAVINGS
+            SECTION 4 • B2B COMMERCIAL ARBITRAGE &amp; OTT SYNC
           </div>
-          <h2 className="font-display font-black text-4xl sm:text-5xl uppercase tracking-tight text-black mb-3">
-            B2B Commercial Audio: Cost & Compliance
+          <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-3">
+            Direct IP Licensing for Commercial Spaces, OTT Series &amp; Luxury Weddings
           </h2>
           <p className="font-mono text-sm sm:text-base text-neutral-800 max-w-3xl mx-auto">
-            Traditional Indian commercial background audio exposes your business to triple collection society fees and criminal copyright liability under Section 63. Here is how Media Mafias eliminates both.
+            Traditional commercial background music exposes venues to criminal copyright liability and triple society fees. Here is how Media Mafias provides direct copyright indemnification.
           </p>
         </div>
 
-        {/* Responsive Comparison Table Container */}
+        {/* Comparison Table */}
         <div className="overflow-x-auto mb-10">
-          <div className="min-w-[650px] border-4 border-black rounded-2xl overflow-hidden shadow-[8px_8px_0px_0px_#000] bg-white">
+          <div className="min-w-[700px] border-4 border-black rounded-2xl overflow-hidden shadow-[8px_8px_0px_0px_#000] bg-white">
             
             {/* Table Header */}
             <div className="grid grid-cols-12 bg-black text-white font-display text-lg uppercase tracking-wider py-4 px-6 border-b-4 border-black">
-              <div className="col-span-4 font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest flex items-center">
-                Compliance Criteria
+              <div className="col-span-3 font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest flex items-center">
+                Feature
               </div>
               <div className="col-span-4 text-red-400 flex items-center gap-1.5 font-black">
-                <ShieldAlert className="w-5 h-5" />
-                <span>Traditional (PPL/IPRS)</span>
+                <ShieldAlert className="w-5 h-5 shrink-0" />
+                <span>Traditional (PPL + IPRS + Novex)</span>
               </div>
-              <div className="col-span-4 text-[#E5FF00] flex items-center gap-1.5 font-black">
-                <ShieldCheck className="w-5 h-5" />
-                <span>Media Mafias × Future Radio</span>
+              <div className="col-span-5 text-[#E5FF00] flex items-center gap-1.5 font-black">
+                <ShieldCheck className="w-5 h-5 shrink-0" />
+                <span>Media Mafias × The Future Radio In-Store AI</span>
               </div>
             </div>
 
@@ -89,11 +67,11 @@ export const ComplianceComparison = () => {
               {comparisonRows.map((row, idx) => (
                 <div 
                   key={idx}
-                  className={`grid grid-cols-12 py-4 px-6 font-mono text-xs sm:text-sm items-center transition-colors ${
+                  className={`grid grid-cols-12 py-5 px-6 font-mono text-xs sm:text-sm items-center transition-colors ${
                     idx % 2 === 0 ? "bg-white" : "bg-neutral-50"
                   }`}
                 >
-                  <div className="col-span-4 font-black text-neutral-900 pr-4">
+                  <div className="col-span-3 font-black text-neutral-900 pr-4">
                     {row.feature}
                   </div>
                   
@@ -101,14 +79,14 @@ export const ComplianceComparison = () => {
                     <span className="p-0.5 rounded bg-red-100 text-red-700 mt-0.5 shrink-0">
                       <X className="w-4 h-4 stroke-[3]" />
                     </span>
-                    <span>{row.traditional}</span>
+                    <span className="leading-snug">{row.traditional}</span>
                   </div>
 
-                  <div className="col-span-4 text-black font-bold pl-2 flex items-start gap-2 bg-[#E5FF00]/15 -my-4 py-4 pr-2">
+                  <div className="col-span-5 text-black font-bold pl-3 flex items-start gap-2 bg-[#E5FF00]/15 -my-5 py-5 pr-3">
                     <span className="p-0.5 rounded bg-green-500 text-black mt-0.5 shrink-0">
                       <Check className="w-4 h-4 stroke-[3]" />
                     </span>
-                    <span>{row.mediaMafias}</span>
+                    <span className="leading-snug">{row.mediaMafias}</span>
                   </div>
                 </div>
               ))}
@@ -117,14 +95,14 @@ export const ComplianceComparison = () => {
           </div>
         </div>
 
-        {/* Bottom CTA Card */}
+        {/* Action Callout */}
         <div className="bg-[#FED7AA] border-4 border-black rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-wide text-black mb-1">
-              Ready to eliminate PPL/IPRS risk for your premises?
+              Save up to 85% on annual venue music fees today
             </h3>
             <p className="font-mono text-xs sm:text-sm text-neutral-800 max-w-xl">
-              Get an instant quotation and free 7-day trial stream for retail chains, cafes, luxury resorts, and hospitals.
+              100% direct IP ownership backed by ScalerX Lab statutory enterprise indemnity (UDYAM-MP-38-0052942).
             </p>
           </div>
 
@@ -133,7 +111,7 @@ export const ComplianceComparison = () => {
               href="/licensing"
               className="bg-black hover:bg-[#E5FF00] hover:text-black text-white font-mono font-black text-xs uppercase px-6 py-3.5 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] transition-all flex items-center gap-2"
             >
-              <span>View Licensing Plans</span>
+              <span>Explore Licensing Plans</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
