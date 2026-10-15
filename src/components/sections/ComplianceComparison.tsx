@@ -32,8 +32,9 @@ export const ComplianceComparison = () => {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block bg-[#00E5FF] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            SECTION 4 • B2B COMMERCIAL ARBITRAGE &amp; OTT SYNC
+          <div className="inline-flex items-center gap-2 bg-[#00E5FF] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
+            <ShieldCheck className="w-4 h-4 text-black" />
+            <span>COMMERCIAL COMPLIANCE &amp; SYNC LICENSING</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-3">
             Direct IP Licensing for Commercial Spaces, OTT Series &amp; Luxury Weddings

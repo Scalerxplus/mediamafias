@@ -41,9 +41,9 @@ export const VoiceSearchFaq = () => {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-1.5 bg-[#E5FF00] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
             <Volume2 className="w-4 h-4 text-black" />
-            <span>SECTION 5 • HIGH-INTENT VOICE &amp; AI FAQ ACCORDION</span>
+            <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
             Frequently Asked Questions

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Play, Pause, Radio, MessageCircle, X, ChevronUp, ExternalLink, Sparkles } from "lucide-react";
+import { getAudioUrl } from "@/lib/audio";
 
 export const PersistentAudioDock = () => {
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -53,7 +54,7 @@ export const PersistentAudioDock = () => {
       {/* Hidden Audio Element pointing to audio asset / stream */}
       <audio
         ref={audioRef}
-        src="/Latency Buffering.mp3"
+        src={getAudioUrl("/Latency Buffering.mp3")}
         preload="none"
         onEnded={() => setIsPlaying(false)}
         onError={() => setIsPlaying(false)}

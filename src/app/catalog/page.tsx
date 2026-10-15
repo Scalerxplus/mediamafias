@@ -4,6 +4,7 @@ import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Play, Pause, ExternalLink, Radio, Search, Filter, Disc3, Sparkles } from "lucide-react";
+import { getAudioUrl } from "@/lib/audio";
 
 interface Song {
   id: string;
@@ -18,6 +19,8 @@ interface Song {
   featuredArtists: string;
   description: string;
   youtubeUrl: string;
+  spotifyUrl?: string;
+  audioSrc?: string;
 }
 
 const CATALOG_DATA: Song[] = [
@@ -276,6 +279,10 @@ const YoutubeIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 );
 
+const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+);
+
 export default function CatalogPage() {
   const [selectedFilter, setSelectedFilter] = React.useState<string>("all");
   const [searchQuery, setSearchQuery] = React.useState<string>("");
@@ -302,13 +309,13 @@ export default function CatalogPage() {
     return matchesFilter && matchesSearch;
   });
 
-  const handleTogglePlay = (id: string) => {
+  const handleTogglePlay = (id: string, audioSrc?: string) => {
     if (!audioRef.current) return;
     if (playingId === id) {
       audioRef.current.pause();
       setPlayingId(null);
     } else {
-      audioRef.current.src = "/Latency Buffering.mp3";
+      audioRef.current.src = getAudioUrl(audioSrc || "/Latency Buffering.mp3");
       audioRef.current.play().then(() => {
         setPlayingId(id);
       }).catch((e) => console.warn(e));
@@ -433,7 +440,7 @@ export default function CatalogPage() {
 
                   <div className="space-y-2.5 pt-4 border-t-2 border-black/10">
                     <button
-                      onClick={() => handleTogglePlay(song.id)}
+                      onClick={() => handleTogglePlay(song.id, song.audioSrc)}
                       className={`w-full py-2.5 px-4 rounded-xl border-2 border-black font-mono font-black text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
                         isPlaying
                           ? "bg-[#FF2E2E] text-white"
@@ -453,26 +460,38 @@ export default function CatalogPage() {
                       )}
                     </button>
 
-                    <div className="flex gap-2">
+                    <div className="grid grid-cols-2 gap-2">
+                      <a
+                        href={song.spotifyUrl || `https://open.spotify.com/search/${encodeURIComponent(song.title + " Media Mafias")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-1.5 px-2 bg-white hover:bg-[#1DB954] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                        title="Listen on Spotify"
+                      >
+                        <SpotifyIcon className="w-3.5 h-3.5 fill-current" />
+                        <span>Spotify</span>
+                      </a>
+
                       <a
                         href={song.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 py-2 px-3 bg-white hover:bg-neutral-100 border-2 border-black rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center gap-1 shadow-[2px_2px_0px_0px_#000]"
+                        className="py-1.5 px-2 bg-white hover:bg-[#FF2E2E] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                        title="Watch on YouTube"
                       >
-                        <YoutubeIcon className="w-3.5 h-3.5 fill-[#FF2E2E]" />
-                        <span>Watch Video</span>
-                      </a>
-
-                      <a
-                        href={`https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20license%20the%20track%20"${encodeURIComponent(song.title)}"%20for%20sync%20or%20wedding.`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="py-2 px-3 bg-[#FED7AA] hover:bg-[#fbc281] border-2 border-black rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center shadow-[2px_2px_0px_0px_#000]"
-                      >
-                        License Track ➔
+                        <YoutubeIcon className="w-3.5 h-3.5 fill-current" />
+                        <span>YouTube</span>
                       </a>
                     </div>
+
+                    <a
+                      href={`https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20license%20the%20track%20"${encodeURIComponent(song.title)}"%20for%20sync%20or%20wedding.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 px-3 bg-[#FED7AA] hover:bg-[#fbc281] border-2 border-black rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center shadow-[2px_2px_0px_0px_#000] transition-colors"
+                    >
+                      <span>Direct Sync / Wedding License ➔</span>
+                    </a>
                   </div>
 
                 </div>

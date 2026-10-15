@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Play, Pause, ExternalLink, Radio, Disc3 } from "lucide-react";
+import { getAudioUrl } from "@/lib/audio";
 
 interface Track {
   id: string;
@@ -12,6 +13,7 @@ interface Track {
   bpm: number;
   description: string;
   youtubeUrl: string;
+  spotifyUrl?: string;
   audioSrc: string;
 }
 
@@ -244,6 +246,10 @@ const YoutubeIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 );
 
+const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+);
+
 export const SoundscapeGrid = () => {
   const [activeTab, setActiveTab] = React.useState<string>("bagheli");
   const [playingTrackId, setPlayingTrackId] = React.useState<string | null>(null);
@@ -279,10 +285,11 @@ export const SoundscapeGrid = () => {
     <section className="py-20 px-6 bg-[#FED7AA] border-b-4 border-black text-black">
       <div className="max-w-6xl mx-auto">
         
-        {/* Section Header */}
+        {/* Category Badge & Section Title */}
         <div className="text-center mb-12">
-          <div className="inline-block bg-[#E5FF00] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            SECTION 3 • STRICTLY CURATED MUSIC CATALOG GRID
+          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
+            <Disc3 className="w-4 h-4 text-black animate-spin" />
+            <span>CURATED REGIONAL ARCHIVE</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
             Explore High-Fidelity Regional Soundscapes
@@ -332,6 +339,8 @@ export const SoundscapeGrid = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {currentCategory.tracks.map((track) => {
             const isThisPlaying = playingTrackId === track.id;
+            const spotifySearchUrl = track.spotifyUrl || `https://open.spotify.com/search/${encodeURIComponent(track.title + " Media Mafias")}`;
+
             return (
               <div
                 key={track.id}
@@ -339,7 +348,7 @@ export const SoundscapeGrid = () => {
               >
                 <audio
                   ref={(el) => { audioRefs.current[track.id] = el; }}
-                  src={track.audioSrc}
+                  src={getAudioUrl(track.audioSrc)}
                   preload="none"
                   onEnded={() => setPlayingTrackId(null)}
                 />
@@ -367,10 +376,10 @@ export const SoundscapeGrid = () => {
                 </div>
 
                 <div className="space-y-2 pt-3 border-t-2 border-black/10">
-                  {/* HTML5 Preview Button */}
+                  {/* In-Browser Audio Preview Button (Streams from Cloudflare R2 / Local) */}
                   <button
                     onClick={() => handlePlayToggle(track.id)}
-                    className={`w-full py-2 px-3 rounded-lg border-2 border-black font-mono font-black text-[11px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
+                    className={`w-full py-2.5 px-3 rounded-xl border-2 border-black font-mono font-black text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
                       isThisPlaying
                         ? "bg-[#FF2E2E] text-white"
                         : "bg-[#E5FF00] text-black hover:bg-[#d4ec00]"
@@ -379,7 +388,7 @@ export const SoundscapeGrid = () => {
                     {isThisPlaying ? (
                       <>
                         <Pause className="w-3.5 h-3.5 fill-current" />
-                        <span>PAUSE</span>
+                        <span>PAUSE PREVIEW</span>
                       </>
                     ) : (
                       <>
@@ -389,16 +398,30 @@ export const SoundscapeGrid = () => {
                     )}
                   </button>
 
-                  {/* Outbound Media Mafias YouTube link */}
-                  <a
-                    href={track.youtubeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2 px-3 bg-white hover:bg-neutral-100 border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
-                  >
-                    <YoutubeIcon className="w-3 h-3 fill-[#FF2E2E]" />
-                    <span>Watch Release</span>
-                  </a>
+                  {/* Dual Outbound Links: Spotify & YouTube */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={spotifySearchUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-1.5 px-2 bg-white hover:bg-[#1DB954] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                      title="Listen on Spotify"
+                    >
+                      <SpotifyIcon className="w-3.5 h-3.5 fill-current" />
+                      <span>Spotify</span>
+                    </a>
+
+                    <a
+                      href={track.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-1.5 px-2 bg-white hover:bg-[#FF2E2E] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                      title="Watch on YouTube"
+                    >
+                      <YoutubeIcon className="w-3.5 h-3.5 fill-current" />
+                      <span>YouTube</span>
+                    </a>
+                  </div>
                 </div>
 
               </div>
