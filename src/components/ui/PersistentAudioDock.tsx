@@ -54,7 +54,7 @@ export const PersistentAudioDock = () => {
       {/* Hidden Audio Element pointing to audio asset / stream */}
       <audio
         ref={audioRef}
-        src={getAudioUrl("/Latency Buffering.mp3")}
+        src={getAudioUrl("Ram Banra Ban Aayo Re - Banara.mp3")}
         preload="none"
         onEnded={() => setIsPlaying(false)}
         onError={() => setIsPlaying(false)}

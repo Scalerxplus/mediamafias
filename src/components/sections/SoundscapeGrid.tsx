@@ -25,47 +25,47 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "bagh-1",
-        title: "Bagheli Nachanhai Folk Pop",
-        hindiTitle: "बघेली नचनहाई फोक पॉप",
+        title: "More Raja (Bagheli Lokgeet)",
+        hindiTitle: "मोरे राजा - बघेली लोकगीत",
         dialect: "Bagheli",
         genre: "Folk Pop",
         bpm: 118,
         description: "High-energy Rewa celebratory folk song blending authentic rustic Dholak with broadcast stereo mastering.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "More Raja - Bagheli Lokgeet.mp3"
       },
       {
         id: "bagh-2",
         title: "Bagheli Sohar Dadra (Male Version)",
-        hindiTitle: "बघेली सोहर दादरा",
+        hindiTitle: "एही अँगना म लाखन लुटाई देब (सोहर दादरा)",
         dialect: "Bagheli",
         genre: "Sohar / Dadra",
         bpm: 96,
         description: "Soulful traditional Bagheli birth celebratory Dadra with acoustic harmonium and deep local resonance.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "एही अँगना म लाखन लुटाई देब - Sohar Dadra Male Version.mp3"
       },
       {
         id: "bagh-3",
-        title: "Luturi Jhalariya (Bagheli Sohar)",
-        hindiTitle: "लुटुरी झलरिया - बघेली सोहर",
+        title: "Lakhan Lutai Deb (Female Version)",
+        hindiTitle: "लाखन लुटाई देब - सोहर दादरा",
         dialect: "Bagheli",
         genre: "Traditional Sohar",
         bpm: 94,
         description: "Authentic Bagheli newborn celebration song recorded with grassroots Rewa village folk singers.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Lakhan Lutai Deb - Sohar Dadra Female Version.mp3"
       },
       {
         id: "bagh-4",
-        title: "Mahua Ujari Ga",
-        hindiTitle: "महुआ उजरि गा (बघेली)",
+        title: "Jal Bharao Hilore (Sohar Dadar)",
+        hindiTitle: "जल भराव हिलोरे (सोहर दादर)",
         dialect: "Bagheli",
         genre: "Pastoral Country Folk",
         bpm: 104,
-        description: "Classic Vindhya harvest ballad depicting the seasonal mahua flowering and collection cycle.",
+        description: "Classic Vindhya harvest and water celebration ballad depicting pastoral village traditions.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Jal Bharao Hilore - Sohar Dadar.mp3"
       }
     ]
   },
@@ -76,36 +76,36 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "bund-1",
-        title: "Alha Udal Veer Gatha",
-        hindiTitle: "आल्हा ऊदल वीर रस गाथा",
+        title: "Badariya Kari Re Hari",
+        hindiTitle: "बदरिया कारी रे हरी (बुंदेली भाव)",
         dialect: "Bundeli",
-        genre: "Veer Ras Epic",
+        genre: "Veer Ras / Monsoon",
         bpm: 112,
-        description: "Historic 52-battle saga of warriors Alha and Udal with energetic Dholak, Nagariya, and Jhanjh.",
+        description: "Traditional Bundelkhand monsoon ballad with thunderous rustic Dholak and energetic regional cadence.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Badariya Kari Re Hari.mp3"
       },
       {
         id: "bund-2",
-        title: "Chale Aaba More Raja",
-        hindiTitle: "चले आबा मोरे राजा (बुंदेली विरह)",
+        title: "Garda Udaay Deb",
+        hindiTitle: "गरदा उड़ाय देब (देसी बुंदेली जोश)",
         dialect: "Bundeli",
-        genre: "Viraha Lokgeet",
-        bpm: 102,
-        description: "Rustic Bundeli migration ballad depicting the emotional yearning of left-behind village households.",
+        genre: "Rustic Folk Anthem",
+        bpm: 120,
+        description: "High-voltage Bundeli rustic celebration anthem reflecting the raw pride and festive verve of the region.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Garda Udaay Deb.mp3"
       },
       {
         id: "bund-3",
-        title: "Bundeli Lamtera Geet",
-        hindiTitle: "बुंदेली लमटेरा गीत",
+        title: "Dekhi Leb (Bundeli Viraha)",
+        hindiTitle: "देखि लेब (बुंदेली विरह एवं भावना)",
         dialect: "Bundeli",
-        genre: "Lamtera / Festive Lok",
+        genre: "Viraha Lokgeet",
         bpm: 98,
-        description: "Seasonal agrarian harvest chanting traditionally sung across the plains of Bundelkhand.",
+        description: "Intimate acoustic Bundeli composition capturing heartland emotional narratives and rustic harmonium.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Dekhi Leb.mp3"
       }
     ]
   },
@@ -116,36 +116,36 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "ab-1",
-        title: "Resham Ki Dori (Bhojpuri Acoustic)",
-        hindiTitle: "रेशम की डोरी (भोजपुरी भाव गीत)",
+        title: "Jani Ja Bideshba (Bhojpuri Acoustic)",
+        hindiTitle: "जनी जा विदेशवा (भोजपुरी विरह)",
         dialect: "Bhojpuri",
         genre: "Bhojpuri Acoustic Folk",
         bpm: 98,
-        description: "Flagship Bhojpuri release featured on Media Mafias - Topic channel, arranged with clean acoustic strings.",
+        description: "Historic Bholanath Gahmari composition depicting the pain of migration, performed with acoustic intimacy.",
         youtubeUrl: "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Jani Ja Bideshba.mp3"
       },
       {
         id: "ab-2",
-        title: "Hari Rama Chhai Ghata Ghanghor (Kajri)",
-        hindiTitle: "हरी रामा छाई घटा घनघोर - कजरी",
+        title: "Bagiya Ma Aaye Bhagwan (Kajari)",
+        hindiTitle: "बगिया म आए भगवान - कजरी",
         dialect: "Awadhi",
         genre: "Monsoon Kajri",
         bpm: 88,
         description: "Timeless Awadhi monsoon rain ballad of Varanasi and Mirzapur with authentic harmonium accompaniment.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Bagiya Ma Aaye Bhagwan - Kajari.mp3"
       },
       {
         id: "ab-3",
-        title: "Saiyaan Na Aaye (Awadhi Viraha)",
-        hindiTitle: "सइयां न आए (अवधी विरह लोक)",
+        title: "Dhan Dhan Nagar Ayodhya (Sohar)",
+        hindiTitle: "धन धन नगर अयोध्या - सोहर",
         dialect: "Awadhi",
-        genre: "Viraha Geet",
-        bpm: 86,
-        description: "Awadhi classical-folk viraha composition with bansuri swells and intimate stereo presence.",
+        genre: "Awadhi Sohar",
+        bpm: 92,
+        description: "Auspicious Awadhi birth celebration Sohar celebrating the arrival of Sri Ram in Ayodhya.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Dhan Dhan Nagar Ayodhya - Sohar.mp3"
       }
     ]
   },
@@ -156,47 +156,47 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "wm-1",
-        title: "Ram Banra Ban Aayo Re (Vivah Geet)",
+        title: "Ram Banra Ban Aayo Re (Banara)",
         hindiTitle: "राम बनरा बन आयो रे - विवाह गीत",
         dialect: "Heartland Vivah",
         genre: "Vivah Geet",
         bpm: 92,
         description: "Traditional groom arrival wedding ceremonial song tailored for auspicious Mandap entry and Tilak.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Ram Banra Ban Aayo Re - Banara.mp3"
       },
       {
         id: "wm-2",
-        title: "Beatless Wedding BGM",
-        hindiTitle: "बीटलेस वेडिंग बीजीएम (शालीन मंडप)",
+        title: "Sohaag (Vivaah Geet)",
+        hindiTitle: "सुहाग - मांगलिक विवाह गीत",
         dialect: "Acoustic Classical",
         genre: "#UrbanMandapStyle",
         bpm: 76,
-        description: "Pure acoustic Shehnai and Tanpura score designed for sacred wedding rituals without loud intrusive percussion.",
+        description: "Sacred matrimonial folk ballad capturing bride vidai and shringar blessings with acoustic purity.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Sohaag - Vivaah Geet.mp3"
       },
       {
         id: "wm-3",
-        title: "Shehnai-Sitar Contrast",
-        hindiTitle: "शहनाई-सितार जुगलबंदी (विवाह पृष्ठभूमि)",
-        dialect: "Acoustic Jugalbandi",
+        title: "Biyah Laye Raghubar (Parchhan Geet)",
+        hindiTitle: "ब्याह लाए रघुबर - परछन गीत",
+        dialect: "Acoustic Ceremonial",
         genre: "Mandap Ambient BGM",
         bpm: 82,
-        description: "Auspicious instrumental duet creating an elegant, aristocratic ambiance for luxury hotel mandaps.",
+        description: "Auspicious wedding ritual melody sung during the traditional welcome of the groom procession.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Biyah Laye Raghubar - Parchhan Geet.mp3"
       },
       {
         id: "wm-4",
-        title: "Haldi Shringar Dhun",
-        hindiTitle: "हल्दी श्रृंगार धुन (मांगलिक वादन)",
+        title: "Leen Dhanush Banna (Bagheli Vivaah)",
+        hindiTitle: "लीन धनुष बन्ना - बघेली विवाह गीत",
         dialect: "Ceremonial Folk",
-        genre: "Haldi Ritual BGM",
+        genre: "Wedding BGM",
         bpm: 84,
-        description: "Intimate family acoustic arrangement for morning turmeric and bride shringar ceremonies.",
+        description: "Heartwarming traditional vivah composition celebrating the auspicious Sita-Ram Swayamvar theme.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "लीन धनुष बन्ना - Bagheli Vivaah Geet.mp3"
       }
     ]
   },
@@ -207,36 +207,36 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "sb-1",
-        title: "Karein Bhagat Mai Aarti Dui Biriya (Devi Jas)",
-        hindiTitle: "करैं भगत माई आरती दुइ बिरिया (बघेली देवी जस)",
-        dialect: "Bagheli Devotional",
-        genre: "Devi Jas / Sharda Stuti",
-        bpm: 116,
-        description: "Authentic Maihar Sharda temple stuti in native Bagheli with Timki, Manjira, and chorus.",
-        youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
-      },
-      {
-        id: "sb-2",
-        title: "Jheeni Re Jheeni (Das Kabir)",
-        hindiTitle: "झीनी रे झीनी बीनी चदरिया (दास कबीर)",
+        title: "Chadariya Jheeni (Nirgun Kabir Bhajan)",
+        hindiTitle: "चदरिया झीनी रे बीनी - निर्गुण भजन",
         dialect: "Sant Bhasha",
         genre: "Nirgun Kabir Bhajan",
         bpm: 80,
-        description: "Philosophical reflection on mortality arranged with meditative Tanpura and resonant Sarangi.",
+        description: "Philosophical Sant Kabir reflection on mortality arranged with meditative Tanpura and resonant acoustic depth.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "Chadariya Jheeni - Nirgun Bhajan.mp3"
+      },
+      {
+        id: "sb-2",
+        title: "Jagannath Raksha Stotram",
+        hindiTitle: "जगन्नाथ रक्ष माम् (शाश्वत स्तुति)",
+        dialect: "Sanskrit Devotional",
+        genre: "Sacred Stotram",
+        bpm: 72,
+        description: "Deep meditative Sanskrit chant honoring Lord Jagannath paired with serene acoustic resonance.",
+        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        audioSrc: "जगन्नाथ रक्ष माम्.mp3"
       },
       {
         id: "sb-3",
-        title: "Jagannath Raksha Stotram (Acoustic Lofi)",
-        hindiTitle: "जगन्नाथ रक्षा स्तोत्रम् (लो-फाई भक्ति)",
-        dialect: "Sanskrit Devotional",
-        genre: "Acoustic Lofi Stotram",
-        bpm: 72,
-        description: "Peaceful meditative Sanskrit chanting paired with acoustic warmth for daily contemplation.",
+        title: "Ram Gaadi Wale (Nirgun Bhajan)",
+        hindiTitle: "राम गाड़ी वाले - निर्गुण भजन",
+        dialect: "Folk Devotional",
+        genre: "Nirgun Bhajan",
+        bpm: 78,
+        description: "Profound rustic spiritual allegory depicting the soul journey with earthy vocals and chiming Manjira.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
+        audioSrc: "राम गाड़ी वाले - Birgun Bhajan.mp3"
       }
     ]
   }
