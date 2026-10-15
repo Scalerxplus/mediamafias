@@ -21,7 +21,7 @@ import {
   Flame,
   Volume2
 } from "lucide-react";
-import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL } from "@/lib/audio";
+import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 interface Creator {
   id: string;
@@ -399,17 +399,36 @@ const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
 
 export default function CreatorsPage() {
   const [playingId, setPlayingId] = React.useState<string | null>(null);
+  const [previewTime, setPreviewTime] = React.useState(0);
+  const [previewEndedId, setPreviewEndedId] = React.useState<string | null>(null);
   const [activeFilter, setActiveFilter] = React.useState<string>("all");
   const [pioneerFilter, setPioneerFilter] = React.useState<string>("all");
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
+
+  const handleTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const current = audioRef.current.currentTime;
+    setPreviewTime(Math.min(AUDIO_PREVIEW_DURATION, Math.floor(current)));
+    if (current >= AUDIO_PREVIEW_DURATION) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setPreviewEndedId(playingId);
+      setPlayingId(null);
+      setPreviewTime(0);
+    }
+  };
 
   const handleTogglePlay = (id: string, audioSrc: string) => {
     if (!audioRef.current) return;
     if (playingId === id) {
       audioRef.current.pause();
       setPlayingId(null);
+      setPreviewTime(0);
     } else {
+      setPreviewEndedId(null);
+      setPreviewTime(0);
       audioRef.current.src = getAudioUrl(audioSrc);
+      audioRef.current.currentTime = 0;
       audioRef.current.play().then(() => {
         setPlayingId(id);
       }).catch((e) => console.warn(e));
@@ -430,7 +449,15 @@ export default function CreatorsPage() {
     <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
       <Header />
 
-      <audio ref={audioRef} preload="none" onEnded={() => setPlayingId(null)} />
+      <audio
+        ref={audioRef}
+        preload="none"
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => {
+          setPlayingId(null);
+          setPreviewTime(0);
+        }}
+      />
 
       {/* Hero Header */}
       <section className="pt-36 pb-12 px-6 border-b-4 border-black bg-white">
@@ -578,7 +605,7 @@ export default function CreatorsPage() {
                       <div className="min-w-0 flex-1">
                         <div className="text-[9px] font-mono font-bold uppercase text-neutral-700 flex items-center gap-1">
                           <Volume2 className="w-3 h-3" />
-                          <span>R2 Preview</span>
+                          <span>20s Preview {isPlaying && `(${previewTime}s/${AUDIO_PREVIEW_DURATION}s)`}</span>
                         </div>
                         <div className="font-display font-black text-[11px] uppercase truncate text-black">
                           {creator.notableTrack}
@@ -598,6 +625,29 @@ export default function CreatorsPage() {
                         )}
                       </button>
                     </div>
+
+                    {/* Progress Bar */}
+                    {isPlaying && (
+                      <div className="w-full bg-neutral-200 border border-black rounded-full h-1.5 overflow-hidden">
+                        <div
+                          className="bg-[#FF2E2E] h-full transition-all duration-200"
+                          style={{ width: `${(previewTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
+                        />
+                      </div>
+                    )}
+
+                    {/* Preview Finished Notice */}
+                    {previewEndedId === creator.id && !isPlaying && (
+                      <div className="bg-[#1DB954]/20 border border-black p-2 rounded-lg text-center space-y-0.5">
+                        <div className="font-mono text-[10px] font-black uppercase text-black flex items-center justify-center gap-1">
+                          <Sparkles className="w-3 h-3 text-[#1DB954]" />
+                          <span>20s Preview Finished</span>
+                        </div>
+                        <p className="font-mono text-[9px] text-neutral-800">
+                          Stream full track on Spotify or YouTube:
+                        </p>
+                      </div>
+                    )}
 
                     <div className="grid grid-cols-2 gap-1.5">
                       <a

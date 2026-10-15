@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Play, Pause, Flame, TrendingUp, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
-import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL } from "@/lib/audio";
+import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 interface TopSong {
   rank: number;
@@ -153,15 +153,34 @@ const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
 
 export default function TopSongsPage() {
   const [playingId, setPlayingId] = React.useState<number | null>(null);
+  const [previewTime, setPreviewTime] = React.useState(0);
+  const [previewEndedId, setPreviewEndedId] = React.useState<number | null>(null);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
+
+  const handleTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const current = audioRef.current.currentTime;
+    setPreviewTime(Math.min(AUDIO_PREVIEW_DURATION, Math.floor(current)));
+    if (current >= AUDIO_PREVIEW_DURATION) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setPreviewEndedId(playingId);
+      setPlayingId(null);
+      setPreviewTime(0);
+    }
+  };
 
   const handleTogglePlay = (rank: number, audioSrc: string) => {
     if (!audioRef.current) return;
     if (playingId === rank) {
       audioRef.current.pause();
       setPlayingId(null);
+      setPreviewTime(0);
     } else {
+      setPreviewEndedId(null);
+      setPreviewTime(0);
       audioRef.current.src = getAudioUrl(audioSrc);
+      audioRef.current.currentTime = 0;
       audioRef.current.play().then(() => {
         setPlayingId(rank);
       }).catch((e) => console.warn(e));
@@ -172,7 +191,15 @@ export default function TopSongsPage() {
     <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
       <Header />
 
-      <audio ref={audioRef} preload="none" onEnded={() => setPlayingId(null)} />
+      <audio
+        ref={audioRef}
+        preload="none"
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => {
+          setPlayingId(null);
+          setPreviewTime(0);
+        }}
+      />
 
       {/* Hero Header */}
       <section className="pt-36 pb-14 px-6 border-b-4 border-black bg-white">
@@ -268,6 +295,30 @@ export default function TopSongsPage() {
                       <div className="font-mono text-xs text-neutral-600 mt-1">
                         Artists: {song.featuredArtists}
                       </div>
+
+                      {/* 20s Preview Live Progress */}
+                      {isPlaying && (
+                        <div className="mt-2 space-y-1">
+                          <div className="flex items-center justify-between text-[10px] font-mono font-bold text-neutral-700">
+                            <span>20s Studio Preview</span>
+                            <span>{previewTime}s / {AUDIO_PREVIEW_DURATION}s</span>
+                          </div>
+                          <div className="w-full bg-neutral-200 border border-black rounded-full h-1.5 overflow-hidden">
+                            <div
+                              className="bg-[#FF2E2E] h-full transition-all duration-200"
+                              style={{ width: `${(previewTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
+                            />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Preview Finished Alert */}
+                      {previewEndedId === song.rank && !isPlaying && (
+                        <div className="mt-2 bg-[#1DB954]/20 border border-black p-2 rounded-lg text-xs font-mono font-bold text-black flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 text-[#1DB954] shrink-0" />
+                          <span>20s Preview Finished. Listen to the full master on Spotify or YouTube:</span>
+                        </div>
+                      )}
                     </div>
                   </div>
 

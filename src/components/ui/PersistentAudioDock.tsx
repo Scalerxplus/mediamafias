@@ -2,19 +2,38 @@
 
 import * as React from "react";
 import { Play, Pause, Radio, MessageCircle, X, ChevronUp, ExternalLink, Sparkles } from "lucide-react";
-import { getAudioUrl } from "@/lib/audio";
+import { getAudioUrl, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 export const PersistentAudioDock = () => {
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [previewTime, setPreviewTime] = React.useState(0);
+  const [previewEnded, setPreviewEnded] = React.useState(false);
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = React.useState(false);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
+
+  const handleTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const current = audioRef.current.currentTime;
+    setPreviewTime(Math.min(AUDIO_PREVIEW_DURATION, Math.floor(current)));
+    if (current >= AUDIO_PREVIEW_DURATION) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+      setPreviewEnded(true);
+      setPreviewTime(0);
+    }
+  };
 
   const toggleRadio = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
+      setPreviewTime(0);
     } else {
+      setPreviewEnded(false);
+      setPreviewTime(0);
+      audioRef.current.currentTime = 0;
       audioRef.current.play().then(() => {
         setIsPlaying(true);
       }).catch((err) => {
@@ -51,13 +70,20 @@ export const PersistentAudioDock = () => {
 
   return (
     <>
-      {/* Hidden Audio Element pointing to audio asset / stream */}
+      {/* Hidden Audio Element pointing to audio asset / stream with 20s cutoff */}
       <audio
         ref={audioRef}
         src={getAudioUrl("Ram Banra Ban Aayo Re - Banara.mp3")}
         preload="none"
-        onEnded={() => setIsPlaying(false)}
-        onError={() => setIsPlaying(false)}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => {
+          setIsPlaying(false);
+          setPreviewTime(0);
+        }}
+        onError={() => {
+          setIsPlaying(false);
+          setPreviewTime(0);
+        }}
       />
 
       {/* Floating WhatsApp Modal */}
@@ -151,8 +177,12 @@ export const PersistentAudioDock = () => {
                 <ExternalLink className="w-3 h-3 text-neutral-400" />
               </a>
             </div>
-            <p className="font-mono text-[11px] text-neutral-600 truncate max-w-[180px] sm:max-w-xs">
-              {isPlaying ? "Streaming Broadcast Master Audio..." : "Click play to listen • 100% PPL/IPRS Exempt"}
+            <p className="font-mono text-[11px] text-neutral-600 truncate max-w-[200px] sm:max-w-xs">
+              {isPlaying
+                ? `Playing 20s Studio Preview (${previewTime}s/${AUDIO_PREVIEW_DURATION}s)...`
+                : previewEnded
+                ? "20s Preview Finished • Stream on Spotify / YouTube ↗"
+                : "Click play for 20s studio preview • 100% PPL/IPRS Exempt"}
             </p>
           </div>
         </div>

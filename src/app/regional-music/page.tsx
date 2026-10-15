@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Play, Pause, ExternalLink, Radio, Search, Filter, Disc3, Sparkles, CheckCircle2 } from "lucide-react";
-import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL } from "@/lib/audio";
+import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 interface Release {
   id: string;
@@ -293,6 +293,8 @@ function RegionalMusicContent() {
   const [selectedDialect, setSelectedDialect] = React.useState<string>(initialDialect);
   const [searchQuery, setSearchQuery] = React.useState<string>("");
   const [playingId, setPlayingId] = React.useState<string | null>(null);
+  const [previewTime, setPreviewTime] = React.useState(0);
+  const [previewEndedId, setPreviewEndedId] = React.useState<string | null>(null);
   const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
   React.useEffect(() => {
@@ -315,13 +317,30 @@ function RegionalMusicContent() {
     return matchesDialect && matchesSearch;
   });
 
+  const handleTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const current = audioRef.current.currentTime;
+    setPreviewTime(Math.min(AUDIO_PREVIEW_DURATION, Math.floor(current)));
+    if (current >= AUDIO_PREVIEW_DURATION) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setPreviewEndedId(playingId);
+      setPlayingId(null);
+      setPreviewTime(0);
+    }
+  };
+
   const handleTogglePlay = (id: string, audioSrc: string) => {
     if (!audioRef.current) return;
     if (playingId === id) {
       audioRef.current.pause();
       setPlayingId(null);
+      setPreviewTime(0);
     } else {
+      setPreviewEndedId(null);
+      setPreviewTime(0);
       audioRef.current.src = getAudioUrl(audioSrc);
+      audioRef.current.currentTime = 0;
       audioRef.current.play().then(() => {
         setPlayingId(id);
       }).catch((e) => console.warn("Audio playback err:", e));
@@ -340,7 +359,15 @@ function RegionalMusicContent() {
     <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
       <Header />
 
-      <audio ref={audioRef} preload="none" onEnded={() => setPlayingId(null)} />
+      <audio
+        ref={audioRef}
+        preload="none"
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={() => {
+          setPlayingId(null);
+          setPreviewTime(0);
+        }}
+      />
 
       {/* Top Heritage OAC Channel Banner */}
       <section className="pt-36 pb-12 px-6 border-b-4 border-black bg-white">
@@ -529,7 +556,7 @@ function RegionalMusicContent() {
                   {/* OAC Action Hub */}
                   <div className="p-5 pt-0 space-y-2.5">
                     
-                    {/* In-Browser Preview Button */}
+                    {/* In-Browser Preview Button with 20s Limit */}
                     <button
                       onClick={() => handleTogglePlay(release.id, release.audioSrc)}
                       className={`w-full py-2.5 px-4 rounded-xl border-2 border-black font-mono font-black text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
@@ -541,15 +568,38 @@ function RegionalMusicContent() {
                       {isPlaying ? (
                         <>
                           <Pause className="w-4 h-4 fill-current" />
-                          <span>PAUSE PREVIEW</span>
+                          <span>PAUSE PREVIEW ({previewTime}s / {AUDIO_PREVIEW_DURATION}s)</span>
                         </>
                       ) : (
                         <>
                           <Play className="w-4 h-4 fill-current" />
-                          <span>LISTEN PREVIEW (R2)</span>
+                          <span>20s STUDIO PREVIEW</span>
                         </>
                       )}
                     </button>
+
+                    {/* Live Progress Bar for 20s Preview */}
+                    {isPlaying && (
+                      <div className="w-full bg-neutral-200 border border-black rounded-full h-2 overflow-hidden">
+                        <div
+                          className="bg-[#FF2E2E] h-full transition-all duration-200"
+                          style={{ width: `${(previewTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
+                        />
+                      </div>
+                    )}
+
+                    {/* Preview Completion Notice */}
+                    {previewEndedId === release.id && !isPlaying && (
+                      <div className="bg-[#1DB954]/20 border-2 border-black p-2.5 rounded-xl text-center space-y-1">
+                        <div className="font-mono text-[11px] font-black uppercase text-black flex items-center justify-center gap-1">
+                          <Sparkles className="w-3.5 h-3.5 text-[#1DB954]" />
+                          <span>20s Preview Finished</span>
+                        </div>
+                        <p className="font-mono text-[10px] text-neutral-800">
+                          Stream the complete master recording on:
+                        </p>
+                      </div>
+                    )}
 
                     {/* Dual Platform Links */}
                     <div className="grid grid-cols-2 gap-2">

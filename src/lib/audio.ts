@@ -19,6 +19,13 @@ export const SPOTIFY_ARTIST_URL =
 export const YOUTUBE_OAC_URL =
   "https://www.youtube.com/@MediaMafias";
 
+/**
+ * Strict preview duration limit (in seconds)
+ * Previews are strictly capped to 20 seconds to route listeners to Spotify & YouTube OAC
+ */
+export const AUDIO_PREVIEW_DURATION = 20;
+export const AUDIO_PREVIEW_START = 0;
+
 export const getAudioUrl = (audioSrc?: string): string => {
   if (!audioSrc) {
     return `${R2_PUBLIC_BASE}/local_audio_vault/roots/5_Music/Ram%20Banra%20Ban%20Aayo%20Re%20-%20Banara.mp3`;
