@@ -194,7 +194,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#C4B5FD] text-black antialiased overflow-x-hidden relative selection:bg-[#E5FF00] selection:text-black font-sans pb-24 md:pb-20">
+      <body className="bg-[#0B0B0E] text-[#F5F5F0] antialiased overflow-x-hidden relative selection:bg-[#D4AF37] selection:text-black font-sans pb-24 md:pb-20">
         {children}
         <PersistentAudioDock />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-74Y8LVKFN6"} />

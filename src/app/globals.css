@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-yellow: #E5FF00;
-  --color-brand-pink: #FF69B4;
-  --color-brand-cyan: #00E5FF;
-  --color-brand-red: #FF2E2E;
-  --color-brand-purple: #C4B5FD;
-  --color-brand-peach: #FED7AA;
-  --color-red-accent: #FF2E2E;
+  --color-studio-black: #0B0B0E;
+  --color-studio-surface: #121115;
+  --color-studio-elevated: #1A1920;
+  --color-amber-gold: #D4AF37;
+  --color-amber-bright: #F59E0B;
+  --color-folk-crimson: #E11D48;
+  --color-folk-emerald: #10B981;
+  
+  /* Legacy Color mappings */
+  --color-brand-yellow: #F59E0B;
+  --color-brand-pink: #EC4899;
+  --color-brand-cyan: #0284C7;
+  --color-brand-red: #E11D48;
+  --color-brand-purple: #1E1B4B;
+  --color-brand-peach: #292524;
+  --color-red-accent: #E11D48;
+  
   --font-display: var(--font-bebas);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
@@ -15,47 +25,42 @@
 
 @layer base {
   body {
-    background-color: #C4B5FD;
-    color: #000000;
+    background-color: #0B0B0E;
+    color: #F5F5F0;
     font-family: var(--font-inter), sans-serif;
     overflow-x: hidden;
   }
 }
 
-/* Neo-Brutalist Hard Shadows */
-.brutal-shadow {
-  box-shadow: 4px 4px 0px 0px #000000;
+/* Studio Luxury Glass & Hairline Surfaces */
+.studio-glass {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.brutal-shadow-lg {
-  box-shadow: 6px 6px 0px 0px #000000;
+.studio-glass:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
-.brutal-shadow-xl {
-  box-shadow: 8px 8px 0px 0px #000000;
+.studio-glow-amber {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
 }
 
-.brutal-border {
-  border: 4px solid #000000;
+/* Custom fine scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-
-.brutal-border-2 {
-  border: 2px solid #000000;
+::-webkit-scrollbar-track {
+  background: #0B0B0E;
 }
-
-/* Button hover press effect */
-.brutal-btn {
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0px 0px #000000;
-  transition: all 0.15s ease-in-out;
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
 }
-
-.brutal-btn:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #000000;
-}
-
-.brutal-btn:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px 0px #000000;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
 }
