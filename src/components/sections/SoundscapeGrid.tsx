@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Play, Pause, ExternalLink, Radio, Disc3 } from "lucide-react";
-import { getAudioUrl } from "@/lib/audio";
+import { Play, Pause, ExternalLink, Radio, Disc3, Sparkles } from "lucide-react";
+import { getAudioUrl, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 interface Track {
   id: string;
@@ -253,7 +253,22 @@ const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
 export const SoundscapeGrid = () => {
   const [activeTab, setActiveTab] = React.useState<string>("bagheli");
   const [playingTrackId, setPlayingTrackId] = React.useState<string | null>(null);
+  const [previewTimes, setPreviewTimes] = React.useState<Record<string, number>>({});
+  const [previewEndedId, setPreviewEndedId] = React.useState<string | null>(null);
   const audioRefs = React.useRef<Record<string, HTMLAudioElement | null>>({});
+
+  const handleTimeUpdate = (trackId: string) => {
+    const audio = audioRefs.current[trackId];
+    if (!audio) return;
+    const current = audio.currentTime;
+    setPreviewTimes((prev) => ({ ...prev, [trackId]: Math.min(AUDIO_PREVIEW_DURATION, Math.floor(current)) }));
+    if (current >= AUDIO_PREVIEW_DURATION) {
+      audio.pause();
+      audio.currentTime = 0;
+      setPlayingTrackId(null);
+      setPreviewEndedId(trackId);
+    }
+  };
 
   const handlePlayToggle = (trackId: string) => {
     if (playingTrackId && playingTrackId !== trackId) {
@@ -271,6 +286,9 @@ export const SoundscapeGrid = () => {
       targetAudio.pause();
       setPlayingTrackId(null);
     } else {
+      setPreviewEndedId(null);
+      setPreviewTimes((prev) => ({ ...prev, [trackId]: 0 }));
+      targetAudio.currentTime = 0;
       targetAudio.play().then(() => {
         setPlayingTrackId(trackId);
       }).catch((err) => {
@@ -282,25 +300,25 @@ export const SoundscapeGrid = () => {
   const currentCategory = CATEGORIES[activeTab] || CATEGORIES["bagheli"];
 
   return (
-    <section className="py-20 px-6 bg-[#FED7AA] border-b-4 border-black text-black">
+    <section className="py-20 px-6 bg-[#0B0B0E] border-b border-white/10 text-[#F5F5F0]">
       <div className="max-w-6xl mx-auto">
         
         {/* Category Badge & Section Title */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            <Disc3 className="w-4 h-4 text-black animate-spin" />
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase text-amber-300 mb-4">
+            <Disc3 className="w-4 h-4 text-amber-400 animate-spin" />
             <span>CURATED REGIONAL ARCHIVE</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white mb-2">
             Explore High-Fidelity Regional Soundscapes
           </h2>
-          <div className="font-sans font-bold text-base sm:text-lg text-neutral-800">
+          <div className="font-sans font-medium text-base sm:text-lg text-amber-400/90">
             (हाई-फिडेलिटी लोकगीत एवं भक्ति संगीत)
           </div>
         </div>
 
-        {/* 5 Category Filter Tabs with Strict Dialect Separation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {/* 5 Category Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-2.5 mb-8">
           {Object.entries(CATEGORIES).map(([key, cat]) => {
             const isActive = activeTab === key;
             return (
@@ -313,16 +331,16 @@ export const SoundscapeGrid = () => {
                   }
                   setActiveTab(key);
                 }}
-                className={`px-5 py-3 rounded-xl border-3 border-black transition-all shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] cursor-pointer text-center ${
+                className={`px-5 py-2.5 rounded-xl border transition-all cursor-pointer text-center ${
                   isActive 
-                    ? "bg-[#E5FF00] text-black shadow-[2px_2px_0px_0px_#000] translate-x-[2px] translate-y-[2px]" 
-                    : "bg-white text-black hover:bg-neutral-100"
+                    ? "bg-amber-500/15 border-amber-500/50 text-amber-300 shadow-[0_0_15px_rgba(212,175,55,0.25)]" 
+                    : "bg-white/[0.03] border-white/10 text-neutral-400 hover:text-white hover:bg-white/[0.06]"
                 }`}
               >
-                <div className="font-display font-black text-base sm:text-lg uppercase tracking-wider">
+                <div className="font-display font-bold text-base uppercase tracking-wider">
                   {cat.label}
                 </div>
-                <div className="font-sans font-bold text-xs text-neutral-700">
+                <div className="font-sans text-xs opacity-80">
                   {cat.hindiLabel}
                 </div>
               </button>
@@ -331,7 +349,7 @@ export const SoundscapeGrid = () => {
         </div>
 
         {/* Category Description */}
-        <p className="text-center font-mono text-xs sm:text-sm text-neutral-800 italic mb-10 max-w-2xl mx-auto">
+        <p className="text-center font-mono text-xs sm:text-sm text-neutral-400 italic mb-10 max-w-2xl mx-auto">
           {currentCategory.desc}
         </p>
 
@@ -340,63 +358,88 @@ export const SoundscapeGrid = () => {
           {currentCategory.tracks.map((track) => {
             const isThisPlaying = playingTrackId === track.id;
             const spotifySearchUrl = track.spotifyUrl || `https://open.spotify.com/search/${encodeURIComponent(track.title + " Media Mafias")}`;
+            const currentTime = previewTimes[track.id] || 0;
 
             return (
               <div
                 key={track.id}
-                className="bg-white border-4 border-black rounded-2xl p-5 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[4px_4px_0px_0px_#000] transition-all"
+                className="bg-white/[0.03] border border-white/10 hover:border-amber-500/40 rounded-2xl p-5 backdrop-blur-md transition-all shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.7)] flex flex-col justify-between group"
               >
                 <audio
                   ref={(el) => { audioRefs.current[track.id] = el; }}
                   src={getAudioUrl(track.audioSrc)}
                   preload="none"
+                  onTimeUpdate={() => handleTimeUpdate(track.id)}
                   onEnded={() => setPlayingTrackId(null)}
                 />
 
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="font-mono text-[10px] font-black uppercase bg-[#00E5FF] border-2 border-black px-2 py-0.5 rounded shadow-[1px_1px_0px_0px_#000]">
+                    <span className="font-mono text-[10px] font-bold uppercase bg-amber-500/10 border border-amber-500/30 text-amber-300 px-2 py-0.5 rounded">
                       {track.dialect}
                     </span>
-                    <span className="font-mono text-[10px] font-bold text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded border border-black/20">
+                    <span className="font-mono text-[10px] text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
                       {track.bpm} BPM
                     </span>
                   </div>
 
-                  <h3 className="font-display font-black text-xl uppercase tracking-wide text-black mb-1 leading-tight">
+                  <h3 className="font-display font-bold text-xl uppercase tracking-wide text-white mb-1 leading-tight group-hover:text-amber-300 transition-colors">
                     {track.title}
                   </h3>
-                  <div className="font-sans font-bold text-xs text-[#FF2E2E] mb-3">
+                  <div className="font-sans font-bold text-xs text-amber-400/90 mb-3">
                     {track.hindiTitle}
                   </div>
 
-                  <p className="font-mono text-[11px] text-neutral-700 leading-relaxed mb-4">
+                  <p className="font-mono text-[11px] text-neutral-400 leading-relaxed mb-4 line-clamp-3">
                     {track.description}
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-3 border-t-2 border-black/10">
-                  {/* In-Browser Audio Preview Button (Streams from Cloudflare R2 / Local) */}
+                <div className="space-y-2 pt-3 border-t border-white/10">
+                  {/* 20s In-Browser Preview Button */}
                   <button
                     onClick={() => handlePlayToggle(track.id)}
-                    className={`w-full py-2.5 px-3 rounded-xl border-2 border-black font-mono font-black text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
+                    className={`w-full py-2.5 px-3 rounded-xl border font-mono font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
                       isThisPlaying
-                        ? "bg-[#FF2E2E] text-white"
-                        : "bg-[#E5FF00] text-black hover:bg-[#d4ec00]"
+                        ? "bg-red-600 text-white border-red-500"
+                        : "bg-amber-500 text-black hover:bg-amber-400 border-amber-400"
                     }`}
                   >
                     {isThisPlaying ? (
                       <>
                         <Pause className="w-3.5 h-3.5 fill-current" />
-                        <span>PAUSE PREVIEW</span>
+                        <span>PAUSE ({currentTime}s / {AUDIO_PREVIEW_DURATION}s)</span>
                       </>
                     ) : (
                       <>
                         <Play className="w-3.5 h-3.5 fill-current" />
-                        <span>PLAY PREVIEW</span>
+                        <span>20s STUDIO PREVIEW</span>
                       </>
                     )}
                   </button>
+
+                  {/* Progress bar */}
+                  {isThisPlaying && (
+                    <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="bg-red-500 h-full transition-all duration-200"
+                        style={{ width: `${(currentTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
+                      />
+                    </div>
+                  )}
+
+                  {/* Preview Finished Alert */}
+                  {previewEndedId === track.id && !isThisPlaying && (
+                    <div className="bg-[#1DB954]/15 border border-[#1DB954]/30 p-2 rounded-lg text-center space-y-0.5">
+                      <div className="font-mono text-[10px] font-bold uppercase text-emerald-400 flex items-center justify-center gap-1">
+                        <Sparkles className="w-3 h-3" />
+                        <span>20s Preview Finished</span>
+                      </div>
+                      <p className="font-mono text-[9px] text-neutral-300">
+                        Stream full song on Spotify / YouTube:
+                      </p>
+                    </div>
+                  )}
 
                   {/* Dual Outbound Links: Spotify & YouTube */}
                   <div className="grid grid-cols-2 gap-2">
@@ -404,7 +447,7 @@ export const SoundscapeGrid = () => {
                       href={spotifySearchUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-1.5 px-2 bg-white hover:bg-[#1DB954] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                      className="py-1.5 px-2 bg-white/5 hover:bg-[#1DB954] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                       title="Listen on Spotify"
                     >
                       <SpotifyIcon className="w-3.5 h-3.5 fill-current" />
@@ -415,7 +458,7 @@ export const SoundscapeGrid = () => {
                       href={track.youtubeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-1.5 px-2 bg-white hover:bg-[#FF2E2E] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                      className="py-1.5 px-2 bg-white/5 hover:bg-[#FF2E2E] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                       title="Watch on YouTube"
                     >
                       <YoutubeIcon className="w-3.5 h-3.5 fill-current" />
@@ -430,19 +473,19 @@ export const SoundscapeGrid = () => {
         </div>
 
         {/* Complete Catalog CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border-4 border-black p-6 rounded-2xl shadow-[6px_6px_0px_0px_#000]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-amber-500/10 to-amber-600/5 border border-amber-500/30 p-6 rounded-2xl shadow-xl">
           <div>
-            <div className="font-display font-black text-2xl uppercase tracking-wider text-black">
+            <div className="font-display font-bold text-2xl uppercase tracking-wider text-white">
               Explore Complete Catalog &amp; Dialect Filters
             </div>
-            <p className="font-mono text-xs text-neutral-700">
+            <p className="font-mono text-xs text-neutral-400">
               Filter by Bagheli, Bundeli, Awadhi, Bhojpuri, and Urban Mandap wedding scores.
             </p>
           </div>
           <div className="flex gap-3 shrink-0">
             <a
-              href="/catalog"
-              className="bg-[#E5FF00] hover:bg-black hover:text-[#E5FF00] text-black font-mono font-black text-xs uppercase px-5 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] transition-all"
+              href="/regional-music"
+              className="bg-amber-500 hover:bg-amber-400 text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-amber-400 transition-all shadow-md"
             >
               Open Full Catalog ➔
             </a>
@@ -450,9 +493,9 @@ export const SoundscapeGrid = () => {
               href="https://www.youtube.com/@MediaMafias"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#FF2E2E] hover:bg-black text-white font-mono font-black text-xs uppercase px-5 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] flex items-center gap-1.5 transition-all"
+              className="bg-red-500/15 border border-red-500/40 hover:bg-red-600 text-red-300 hover:text-white font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl flex items-center gap-1.5 transition-all"
             >
-              <YoutubeIcon className="w-4 h-4 fill-white" />
+              <YoutubeIcon className="w-4 h-4 fill-current" />
               <span>YouTube @MediaMafias</span>
             </a>
           </div>

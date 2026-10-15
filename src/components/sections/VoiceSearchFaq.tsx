@@ -36,19 +36,19 @@ export const VoiceSearchFaq = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-[#C4B5FD] text-black">
+    <section className="py-20 px-6 bg-[#0B0B0E] text-[#F5F5F0]">
       <div className="max-w-4xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            <Volume2 className="w-4 h-4 text-black" />
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 px-4 py-1.5 rounded-full font-mono text-xs font-bold uppercase text-amber-300 mb-4">
+            <Volume2 className="w-4 h-4 text-amber-400" />
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
+          <h2 className="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white mb-2">
             Frequently Asked Questions
           </h2>
-          <div className="font-sans font-bold text-base sm:text-lg text-neutral-800">
+          <div className="font-sans font-medium text-base sm:text-lg text-amber-400/90">
             (अक्सर पूछे जाने वाले सवाल)
           </div>
         </div>
@@ -59,24 +59,26 @@ export const VoiceSearchFaq = () => {
             <details
               key={idx}
               open={idx === 0}
-              className="group bg-white border-4 border-black rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_#000] open:shadow-[4px_4px_0px_0px_#000] transition-all"
+              className="group bg-white/[0.03] border border-white/10 hover:border-amber-500/30 rounded-2xl overflow-hidden backdrop-blur-md transition-all shadow-lg"
             >
-              <summary className="p-5 sm:p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-display font-black text-xl sm:text-2xl uppercase tracking-wide text-black hover:bg-neutral-50 select-none">
+              <summary className="p-5 sm:p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-display font-bold text-lg sm:text-xl uppercase tracking-wide text-white hover:bg-white/[0.02] select-none">
                 <div className="flex flex-col text-left">
-                  <span>{faq.q}</span>
-                  <span className="font-sans font-bold text-xs sm:text-sm text-neutral-600 mt-1">
+                  <span className="group-hover:text-amber-300 transition-colors">{faq.q}</span>
+                  <span className="font-sans font-normal text-xs sm:text-sm text-neutral-400 mt-1">
                     {faq.qSub}
                   </span>
                 </div>
-                <div className="p-2 border-2 border-black rounded-lg bg-[#E5FF00] group-open:bg-[#FF2E2E] group-open:text-white shrink-0 transition-colors">
-                  <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180" />
+                <div className="p-2 border border-white/15 rounded-lg bg-white/5 text-amber-400 group-open:bg-amber-500 group-open:text-black transition-colors shrink-0">
+                  <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
                 </div>
               </summary>
 
-              <div className="px-5 sm:px-6 pb-6 pt-2 border-t-2 border-black/10 font-mono text-xs sm:text-sm text-neutral-800">
-                <div className="bg-[#FED7AA]/40 p-4 border-2 border-black rounded-xl">
-                  <div className="font-bold text-[10px] uppercase text-black/70 mb-1">CANONICAL VOICE &amp; AI ANSWER</div>
-                  <p className="voice-answer leading-relaxed text-sm sm:text-base font-sans font-medium text-neutral-900">
+              <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-white/10 font-mono text-xs sm:text-sm text-neutral-300">
+                <div className="bg-white/[0.02] p-4 border border-white/10 rounded-xl">
+                  <div className="font-bold text-[10px] uppercase text-amber-400/80 mb-1">
+                    CANONICAL VOICE &amp; AI ANSWER
+                  </div>
+                  <p className="voice-answer leading-relaxed text-sm sm:text-base font-sans text-neutral-300">
                     {faq.answer}
                   </p>
                 </div>
