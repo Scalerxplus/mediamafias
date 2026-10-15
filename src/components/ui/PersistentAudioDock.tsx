@@ -26,11 +26,11 @@ export const PersistentAudioDock = () => {
 
   const whatsappIntents = [
     {
-      label: "Creator Academy (₹99)",
+      label: "Creator Academy (₹499)",
       badge: "CREATORS",
       badgeColor: "bg-[#E5FF00]",
       desc: "Join academy, submit raw vocals via WhatsApp & get distributed to 150+ DSPs.",
-      url: "https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20join%20the%20Rs%2099%20Creator%20Academy%20and%20submit%20my%20folk%20song."
+      url: "https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20join%20the%20Rs%20499%20Creator%20Academy%20and%20submit%20my%20folk%20song."
     },
     {
       label: "B2B In-Store AI Radio",

@@ -16,52 +16,92 @@ interface Track {
 }
 
 const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: string; tracks: Track[] }> = {
-  "bagheli-bundeli": {
-    label: "Bagheli & Bundeli Folk",
-    hindiLabel: "बघेली और बुंदेली लोकगीत",
-    desc: "Authentic Vindhya heartland grooves, heroic epics, and pastoral country ballads.",
+  "bagheli": {
+    label: "Bagheli Folk",
+    hindiLabel: "बघेली लोकगीत",
+    desc: "Strictly Bagheli oral traditions of Rewa, Satna, and the Vindhya belt.",
     tracks: [
       {
-        id: "bb-1",
+        id: "bagh-1",
         title: "Bagheli Nachanhai Folk Pop",
         hindiTitle: "बघेली नचनहाई फोक पॉप",
         dialect: "Bagheli",
-        genre: "Rhythmic Folk Pop",
+        genre: "Folk Pop",
         bpm: 118,
-        description: "High-energy Rewa celebratory folk pop blending authentic Dholak rhythm with modern stereo mastering.",
+        description: "High-energy Rewa celebratory folk song blending authentic rustic Dholak with broadcast stereo mastering.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
-        id: "bb-2",
-        title: "Bagheli Sohar Dadra",
-        hindiTitle: "बघेली सोहर दादरा (मेल वर्जन)",
+        id: "bagh-2",
+        title: "Bagheli Sohar Dadra (Male Version)",
+        hindiTitle: "बघेली सोहर दादरा",
         dialect: "Bagheli",
         genre: "Sohar / Dadra",
         bpm: 96,
-        description: "Heartfelt traditional childbirth celebratory Dadra sung with deep resonance and acoustic harmonium.",
+        description: "Soulful traditional Bagheli birth celebratory Dadra with acoustic harmonium and deep local resonance.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
-        id: "bb-3",
+        id: "bagh-3",
+        title: "Luturi Jhalariya (Bagheli Sohar)",
+        hindiTitle: "लुटुरी झलरिया - बघेली सोहर",
+        dialect: "Bagheli",
+        genre: "Traditional Sohar",
+        bpm: 94,
+        description: "Authentic Bagheli newborn celebration song recorded with grassroots Rewa village folk singers.",
+        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        audioSrc: "/Latency Buffering.mp3"
+      },
+      {
+        id: "bagh-4",
         title: "Mahua Ujari Ga",
-        hindiTitle: "महुआ उजरि गा (लोकगीत)",
-        dialect: "Bagheli Folk",
-        genre: "Vindhya Country Folk",
+        hindiTitle: "महुआ उजरि गा (बघेली)",
+        dialect: "Bagheli",
+        genre: "Pastoral Country Folk",
         bpm: 104,
-        description: "Classic pastoral harvest ballad celebrating the seasonal mahua cycle of village heartlands.",
+        description: "Classic Vindhya harvest ballad depicting the seasonal mahua flowering and collection cycle.",
+        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        audioSrc: "/Latency Buffering.mp3"
+      }
+    ]
+  },
+  "bundeli": {
+    label: "Bundeli Folk",
+    hindiLabel: "बुंदेली लोकगीत",
+    desc: "Strictly Bundeli martial epics, hero sagas, and rustic Lokgeet of Jhansi, Mahoba, and Sagar.",
+    tracks: [
+      {
+        id: "bund-1",
+        title: "Alha Udal Veer Gatha",
+        hindiTitle: "आल्हा ऊदल वीर रस गाथा",
+        dialect: "Bundeli",
+        genre: "Veer Ras Epic",
+        bpm: 112,
+        description: "Historic 52-battle saga of warriors Alha and Udal with energetic Dholak, Nagariya, and Jhanjh.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
-        id: "bb-4",
+        id: "bund-2",
         title: "Chale Aaba More Raja",
-        hindiTitle: "चले आबा मोरे राजा (बुंदेली-बघेली)",
-        dialect: "Bundeli-Bagheli",
+        hindiTitle: "चले आबा मोरे राजा (बुंदेली विरह)",
+        dialect: "Bundeli",
         genre: "Viraha Lokgeet",
         bpm: 102,
-        description: "Soulful migration and longing song crossing Bundelkhand and Baghelkhand folk traditions.",
+        description: "Rustic Bundeli migration ballad depicting the emotional yearning of left-behind village households.",
+        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        audioSrc: "/Latency Buffering.mp3"
+      },
+      {
+        id: "bund-3",
+        title: "Bundeli Lamtera Geet",
+        hindiTitle: "बुंदेली लमटेरा गीत",
+        dialect: "Bundeli",
+        genre: "Lamtera / Festive Lok",
+        bpm: 98,
+        description: "Seasonal agrarian harvest chanting traditionally sung across the plains of Bundelkhand.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       }
@@ -69,50 +109,39 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
   },
   "awadhi-bhojpuri": {
     label: "Awadhi & Bhojpuri",
-    hindiLabel: "अवधी और भोजपुरी लोकगीत",
-    desc: "Monsoon Kajris, migration laments, and lyrical traditions of Eastern UP & Bihar.",
+    hindiLabel: "अवधी एवं भोजपुरी",
+    desc: "Soulful monsoons from Awadh and verified acoustic releases from Purvanchal / Bihar.",
     tracks: [
       {
         id: "ab-1",
-        title: "Saiyaan Na Aaye",
-        hindiTitle: "सइयां न आए (अवधी विरह लोक)",
-        dialect: "Awadhi Folk",
-        genre: "Viraha Geet",
-        bpm: 86,
-        description: "Deeply emotional heartland viraha ballad with gentle acoustic guitar and bansuri accompaniment.",
-        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        title: "Resham Ki Dori (Bhojpuri Acoustic)",
+        hindiTitle: "रेशम की डोरी (भोजपुरी भाव गीत)",
+        dialect: "Bhojpuri",
+        genre: "Bhojpuri Acoustic Folk",
+        bpm: 98,
+        description: "Flagship Bhojpuri release featured on Media Mafias - Topic channel, arranged with clean acoustic strings.",
+        youtubeUrl: "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
         id: "ab-2",
-        title: "Luturi Jhalariya Sohar",
-        hindiTitle: "लुटुरी झलरिया सोहर",
-        dialect: "Bagheli-Bhojpuri",
-        genre: "Sohar Geet",
-        bpm: 94,
-        description: "Celebrated lifecycle song with 2,100+ views, recorded with authentic rural folk practitioners.",
+        title: "Hari Rama Chhai Ghata Ghanghor (Kajri)",
+        hindiTitle: "हरी रामा छाई घटा घनघोर - कजरी",
+        dialect: "Awadhi",
+        genre: "Monsoon Kajri",
+        bpm: 88,
+        description: "Timeless Awadhi monsoon rain ballad of Varanasi and Mirzapur with authentic harmonium accompaniment.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
         id: "ab-3",
-        title: "Hari Rama Kajri",
-        hindiTitle: "हरी रामा छाई घटा घनघोर (कजरी)",
+        title: "Saiyaan Na Aaye (Awadhi Viraha)",
+        hindiTitle: "सइयां न आए (अवधी विरह लोक)",
         dialect: "Awadhi",
-        genre: "Monsoon Kajri",
-        bpm: 88,
-        description: "Classic monsoon rain ballad of Varanasi and Mirzapur with rich harmonium and rustic percussion.",
-        youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
-      },
-      {
-        id: "ab-4",
-        title: "Resham Ki Dori",
-        hindiTitle: "रेशम की डोरी",
-        dialect: "Purvanchal Folk",
-        genre: "Bhojpuri Acoustic",
-        bpm: 98,
-        description: "Poetic romantic folk ballad arranged with clean acoustic instrumentation and stereo clarity.",
+        genre: "Viraha Geet",
+        bpm: 86,
+        description: "Awadhi classical-folk viraha composition with bansuri swells and intimate stereo presence.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       }
@@ -121,38 +150,49 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
   "wedding-mandap": {
     label: "Urban Mandap & Wedding BGM",
     hindiLabel: "विवाह गीत एवं शहनाई-सितार",
-    desc: "Refined beatless acoustic arrangements for luxury Mandaps and sacred Indian rituals (#UrbanMandapStyle).",
+    desc: "Strictly wedding and sacred matrimonial music (#UrbanMandapStyle) — beatless acoustic refinement.",
     tracks: [
       {
         id: "wm-1",
-        title: "Beatless Wedding BGM",
-        hindiTitle: "बीटलेस वेडिंग बीजीएम (शालीन मंडप)",
-        dialect: "Acoustic Classical",
-        genre: "#UrbanMandapStyle",
-        bpm: 76,
-        description: "Calm, beatless Shehnai and Tanpura background score designed for sacred rituals without loud percussion.",
+        title: "Ram Banra Ban Aayo Re (Vivah Geet)",
+        hindiTitle: "राम बनरा बन आयो रे - विवाह गीत",
+        dialect: "Heartland Vivah",
+        genre: "Vivah Geet",
+        bpm: 92,
+        description: "Traditional groom arrival wedding ceremonial song tailored for auspicious Mandap entry and Tilak.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
         id: "wm-2",
-        title: "Shehnai-Sitar Contrast",
-        hindiTitle: "शहनाई-सितार जुगलबंदी",
-        dialect: "Acoustic Folk-Classical",
-        genre: "Mandap Ambience",
-        bpm: 82,
-        description: "Harmonious acoustic jugalbandi between master Shehnai and Sitar players creating an auspicious aura.",
+        title: "Beatless Wedding BGM",
+        hindiTitle: "बीटलेस वेडिंग बीजीएम (शालीन मंडप)",
+        dialect: "Acoustic Classical",
+        genre: "#UrbanMandapStyle",
+        bpm: 76,
+        description: "Pure acoustic Shehnai and Tanpura score designed for sacred wedding rituals without loud intrusive percussion.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
       {
         id: "wm-3",
-        title: "Ram Banra Ban Aayo Re",
-        hindiTitle: "राम बनरा बन आयो रे (विवाह गीत)",
-        dialect: "Heartland Folk",
-        genre: "Vivah Geet",
-        bpm: 92,
-        description: "Traditional groom arrival Vivah Geet celebrating cultural wedding heritage in broadcast fidelity.",
+        title: "Shehnai-Sitar Contrast",
+        hindiTitle: "शहनाई-सितार जुगलबंदी (विवाह पृष्ठभूमि)",
+        dialect: "Acoustic Jugalbandi",
+        genre: "Mandap Ambient BGM",
+        bpm: 82,
+        description: "Auspicious instrumental duet creating an elegant, aristocratic ambiance for luxury hotel mandaps.",
+        youtubeUrl: "https://www.youtube.com/@MediaMafias",
+        audioSrc: "/Latency Buffering.mp3"
+      },
+      {
+        id: "wm-4",
+        title: "Haldi Shringar Dhun",
+        hindiTitle: "हल्दी श्रृंगार धुन (मांगलिक वादन)",
+        dialect: "Ceremonial Folk",
+        genre: "Haldi Ritual BGM",
+        bpm: 84,
+        description: "Intimate family acoustic arrangement for morning turmeric and bride shringar ceremonies.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       }
@@ -161,16 +201,16 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
   "sufi-bhakti": {
     label: "Sufi & Devotional",
     hindiLabel: "देवी जस, निर्गुण कबीर और सूफी",
-    desc: "Maihar Sharda temple stutis, Kabir philosophy, and meditative acoustic river bhajans.",
+    desc: "Sacred temple stutis, Kabir philosophy, and meditative acoustic river bhajans.",
     tracks: [
       {
         id: "sb-1",
-        title: "Karein Bhagat Mai Aarti Dui Biriya",
+        title: "Karein Bhagat Mai Aarti Dui Biriya (Devi Jas)",
         hindiTitle: "करैं भगत माई आरती दुइ बिरिया (बघेली देवी जस)",
         dialect: "Bagheli Devotional",
         genre: "Devi Jas / Sharda Stuti",
         bpm: 116,
-        description: "Sacred Maihar temple stuti sung in authentic Bagheli dialect with Timki and dynamic temple chorus.",
+        description: "Authentic Maihar Sharda temple stuti in native Bagheli with Timki, Manjira, and chorus.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
@@ -181,7 +221,7 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
         dialect: "Sant Bhasha",
         genre: "Nirgun Kabir Bhajan",
         bpm: 80,
-        description: "Timeless Kabir verse on human mortality arranged with Tanpura, Sarangi, and reflective acoustic depth.",
+        description: "Philosophical reflection on mortality arranged with meditative Tanpura and resonant Sarangi.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       },
@@ -192,18 +232,7 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
         dialect: "Sanskrit Devotional",
         genre: "Acoustic Lofi Stotram",
         bpm: 72,
-        description: "Peaceful meditative Sanskrit chanting paired with acoustic warmth for daily meditation and puja.",
-        youtubeUrl: "https://www.youtube.com/@MediaMafias",
-        audioSrc: "/Latency Buffering.mp3"
-      },
-      {
-        id: "sb-4",
-        title: "Daras & Kanhaiya Medley",
-        hindiTitle: "दरस एवं कन्हैया (भाव लोक)",
-        dialect: "Heartland Bhakti",
-        genre: "Krishna Bhakti",
-        bpm: 84,
-        description: "Devotional yearning rendered in acoustic intimacy with soulful flute and harmonium swells.",
+        description: "Peaceful meditative Sanskrit chanting paired with acoustic warmth for daily contemplation.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
         audioSrc: "/Latency Buffering.mp3"
       }
@@ -212,11 +241,11 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
 };
 
 const YoutubeIcon = ({ className = "w-4 h-4 fill-current" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 );
 
 export const SoundscapeGrid = () => {
-  const [activeTab, setActiveTab] = React.useState<string>("bagheli-bundeli");
+  const [activeTab, setActiveTab] = React.useState<string>("bagheli");
   const [playingTrackId, setPlayingTrackId] = React.useState<string | null>(null);
   const audioRefs = React.useRef<Record<string, HTMLAudioElement | null>>({});
 
@@ -244,7 +273,7 @@ export const SoundscapeGrid = () => {
     }
   };
 
-  const currentCategory = CATEGORIES[activeTab] || CATEGORIES["bagheli-bundeli"];
+  const currentCategory = CATEGORIES[activeTab] || CATEGORIES["bagheli"];
 
   return (
     <section className="py-20 px-6 bg-[#FED7AA] border-b-4 border-black text-black">
@@ -253,7 +282,7 @@ export const SoundscapeGrid = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-block bg-[#E5FF00] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
-            SECTION 3 • INTERACTIVE MUSIC CATALOG GRID
+            SECTION 3 • STRICTLY CURATED MUSIC CATALOG GRID
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
             Explore High-Fidelity Regional Soundscapes
@@ -263,7 +292,7 @@ export const SoundscapeGrid = () => {
           </div>
         </div>
 
-        {/* 4 Category Filter Tabs */}
+        {/* 5 Category Filter Tabs with Strict Dialect Separation */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {Object.entries(CATEGORIES).map(([key, cat]) => {
             const isActive = activeTab === key;
@@ -283,7 +312,7 @@ export const SoundscapeGrid = () => {
                     : "bg-white text-black hover:bg-neutral-100"
                 }`}
               >
-                <div className="font-display font-black text-base sm:text-xl uppercase tracking-wider">
+                <div className="font-display font-black text-base sm:text-lg uppercase tracking-wider">
                   {cat.label}
                 </div>
                 <div className="font-sans font-bold text-xs text-neutral-700">
@@ -362,13 +391,13 @@ export const SoundscapeGrid = () => {
 
                   {/* Outbound Media Mafias YouTube link */}
                   <a
-                    href="https://www.youtube.com/@MediaMafias"
+                    href={track.youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-2 px-3 bg-white hover:bg-neutral-100 border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
                   >
                     <YoutubeIcon className="w-3 h-3 fill-[#FF2E2E]" />
-                    <span>Watch on Media Mafias</span>
+                    <span>Watch Release</span>
                   </a>
                 </div>
 
@@ -381,10 +410,10 @@ export const SoundscapeGrid = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border-4 border-black p-6 rounded-2xl shadow-[6px_6px_0px_0px_#000]">
           <div>
             <div className="font-display font-black text-2xl uppercase tracking-wider text-black">
-              Explore 100+ Studio Tracks in Music Catalog
+              Explore Complete Catalog &amp; Dialect Filters
             </div>
             <p className="font-mono text-xs text-neutral-700">
-              Filter by dialect, BPM, ritual context, and license master stems.
+              Filter by Bagheli, Bundeli, Awadhi, Bhojpuri, and Urban Mandap wedding scores.
             </p>
           </div>
           <div className="flex gap-3 shrink-0">

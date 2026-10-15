@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
 
 const YoutubeIcon = ({ className = "w-4 h-4 fill-current" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 );
 
 export const Header = () => {
@@ -18,7 +18,7 @@ export const Header = () => {
   const links = [
     { name: "Music Catalog", href: "/catalog" },
     { name: "Business & Sync", href: "/licensing" },
-    { name: "Creator Academy ₹99", href: "/academy" },
+    { name: "Creator Academy ₹499", href: "/academy" },
     { name: "Insights", href: "/insights" }
   ];
 
@@ -28,7 +28,7 @@ export const Header = () => {
         
         {/* Left: Unified Brand Name */}
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2 hover:-translate-y-0.5 transition-transform">
+          <Link href="/" className="flex items-center gap-2 hover:-translate-y-0.5 transition-transform" aria-label="Media Mafias Home">
             <span className="font-display font-black text-2xl md:text-3xl tracking-wider uppercase text-black">
               MEDIA<span className="text-[#FF2E2E]">MAFIAS</span>
             </span>
@@ -40,7 +40,7 @@ export const Header = () => {
         </div>
 
         {/* Desktop Nav: 4 Core Links + Primary CTA */}
-        <nav className="hidden lg:flex gap-3 items-center text-xs font-bold font-mono uppercase">
+        <nav className="hidden lg:flex gap-3 items-center text-xs font-bold font-mono uppercase" aria-label="Main Navigation">
           {links.map((link) => {
             const isActive = pathname === link.href || (link.href === "/insights" && pathname.startsWith("/blog"));
             return (
@@ -63,19 +63,20 @@ export const Header = () => {
             href="https://www.youtube.com/@MediaMafias" 
             target="_blank" 
             rel="noopener noreferrer" 
+            aria-label="Media Mafias YouTube Official Artist Channel"
             className="ml-2 bg-[#FF2E2E] text-white border-2 border-black px-3.5 py-2 font-black text-xs uppercase tracking-wider shadow-[3px_3px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_#000] transition-all flex items-center gap-1.5 rounded-lg"
           >
             <YoutubeIcon className="w-4 h-4 fill-white" />
             <span>YOUTUBE</span>
           </a>
 
-          {/* Primary CTA: Join Academy ₹99 */}
+          {/* Primary CTA: Join Academy ₹499 */}
           <Link 
             href="/academy" 
             className="ml-2 bg-[#E5FF00] text-black border-2 border-black px-4 py-2 font-black text-xs uppercase tracking-wider shadow-[3px_3px_0px_0px_#000] hover:bg-[#F59E0B] transition-all rounded-lg flex items-center gap-1.5"
           >
             <Sparkles className="w-3.5 h-3.5 text-black" />
-            <span>JOIN ACADEMY ₹99</span>
+            <span>JOIN ACADEMY ₹499</span>
           </Link>
         </nav>
 
@@ -107,6 +108,7 @@ export const Header = () => {
                 <button 
                   className="p-2 border-2 border-black bg-white shadow-[2px_2px_0px_0px_#000] rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  aria-label="Close menu"
                 >
                   <X className="w-7 h-7 text-black" />
                 </button>
@@ -133,7 +135,7 @@ export const Header = () => {
                 className="w-full py-4 bg-[#E5FF00] border-4 border-black text-black font-display text-xl uppercase tracking-wider shadow-[4px_4px_0px_0px_#000] rounded-xl flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-5 h-5 text-black" />
-                <span>JOIN CREATOR ACADEMY (₹99)</span>
+                <span>JOIN CREATOR ACADEMY (₹499)</span>
               </Link>
 
               <a

@@ -52,7 +52,7 @@ export const Hero = () => {
                   FOR FOLK SINGERS &amp; CREATORS
                 </span>
                 <span className="font-display font-black text-2xl text-black">
-                  ₹99 ONLY
+                  ₹499 ONLY
                 </span>
               </div>
 
@@ -68,7 +68,7 @@ export const Hero = () => {
             <div className="pt-4 border-t-2 border-black/20 flex items-center justify-between font-black font-mono text-sm uppercase">
               <span className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-black" />
-                Join Creator Academy — ₹99
+                Join Creator Academy — ₹499
               </span>
               <span className="bg-black text-white p-2 rounded-lg group-hover:bg-[#E5FF00] group-hover:text-black transition-colors">
                 <ArrowRight className="w-5 h-5" />

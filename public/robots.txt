@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /dashboard/
-Disallow: /api/generate/
 
 User-agent: GPTBot
 Allow: /
@@ -16,9 +14,6 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.mediamafias.com/sitemap.xml

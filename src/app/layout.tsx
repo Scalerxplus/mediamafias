@@ -22,13 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mediamafias.com'),
-  title: "Media Mafias | Authentic Indian Folk Music, AI Creator Academy & B2B Audio Licensing",
-  description: "Media Mafias is India's premier AI-powered regional folk music label, Creator Academy, and PPL/IPRS-exempt B2B commercial audio platform. Stream Bagheli, Awadhi, Bundeli & Bhojpuri music across 150+ platforms and 24/7 on The Future Radio.",
+  title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+  description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
   keywords: [
     "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Awadhi Vivah Geet", "अवधी विवाह गीत",
     "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस",
     "PPL IPRS exempt background music India", "In-Store AI Radio", "OTT Sync Licensing India",
-    "Urban Mandap Wedding BGM", "AI Music Creator Academy India", "The Future Radio", "ScalerX Lab"
+    "Urban Mandap Wedding BGM", "AI Music Creator Academy India", "The Future Radio", "ScalerX Lab",
+    "Vernacular Content API India", "Indie Music Distribution India"
   ],
   alternates: {
     canonical: "https://www.mediamafias.com/",
@@ -38,13 +39,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.mediamafias.com/",
     siteName: "Media Mafias",
-    title: "Media Mafias | Authentic Folk Music, Creator Academy & Commercial Audio",
-    description: "Human-verified Bagheli, Awadhi, Bundeli & Bhojpuri folk music scaled by broadcast AI. 100% direct IP for OTT sync, luxury weddings, and PPL/IPRS-exempt In-Store Radio.",
+    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Mafias | Authentic Folk Music, Creator Academy & Commercial Audio",
-    description: "Human-verified Bagheli, Awadhi, Bundeli & Bhojpuri folk music scaled by broadcast AI. 100% direct IP for OTT sync, luxury weddings, and PPL/IPRS-exempt In-Store Radio.",
+    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
   }
 };
 
@@ -60,6 +61,8 @@ export default function RootLayout({
         "@type": ["Organization", "MusicGroup"],
         "@id": "https://www.mediamafias.com/#organization",
         "name": "Media Mafias",
+        "legalName": "Media Mafias (A ScalerX Lab Platform - UDYAM-MP-38-0052942)",
+        "disambiguatingDescription": "Media Mafias (mediamafias.com) is an Indian AI-powered regional folk music record label, decentralized audio distribution platform, creator academy, and B2B in-store radio provider operated by ScalerX Lab. It is an independent music and audio technology platform and is NOT affiliated with the Varanasi digital marketing agency Media Mafia (mediamafia.in) or mediamafia.co.za.",
         "url": "https://www.mediamafias.com/",
         "email": "contact@mediamafias.com",
         "telephone": "+91-9209290699",
@@ -85,7 +88,9 @@ export default function RootLayout({
           "https://www.youtube.com/channel/UC_Ua983PgNUkRzg2X0ENQxw",
           "https://www.youtube.com/@MediaMafiasBhakti",
           "https://thefutureradio.com/",
-          "https://www.facebook.com/TheMediaMafias"
+          "https://www.facebook.com/TheMediaMafias",
+          "https://www.instagram.com/mediamafias",
+          "https://www.linkedin.com/company/mediamafias"
         ]
       },
       {
@@ -108,7 +113,7 @@ export default function RootLayout({
         },
         "offers": {
           "@type": "Offer",
-          "price": "99.00",
+          "price": "499.00",
           "priceCurrency": "INR",
           "availability": "https://schema.org/InStock",
           "url": "https://www.mediamafias.com/academy"
@@ -118,7 +123,7 @@ export default function RootLayout({
         "@type": "WebPage",
         "@id": "https://www.mediamafias.com/#webpage",
         "url": "https://www.mediamafias.com/",
-        "name": "Media Mafias | Official Website",
+        "name": "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["#entity-summary", ".voice-answer"]
@@ -130,6 +135,14 @@ export default function RootLayout({
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "What is Media Mafias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Media Mafias is India's premier AI-powered regional folk music label, decentralized audio distribution platform, and creator academy incubated by ScalerX Lab. We preserve authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -138,10 +151,26 @@ export default function RootLayout({
           },
           {
             "@type": "Question",
-            "name": "How can regional folk singers distribute Bagheli, Awadhi, Bundeli, or Bhojpuri songs to Spotify and YouTube?",
+            "name": "How do independent creators and folk artists earn royalties on Media Mafias?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Regional folk vocalists and independent creators can join the Media Mafias Creator Academy for a one-time Rs 99 enrollment fee. Creators submit raw vocal recordings via the website or WhatsApp and receive zero-cost AI arrangement, LUFS mastering, and global distribution across 150+ streaming platforms with transparent royalty splits."
+              "text": "Folk vocalists join the ₹499 Creator Academy, submit raw vocals via WhatsApp (+91 9209290699), and receive studio-mastered releases distributed to 150+ platforms with an 80% creator-first streaming and sync royalty share paid directly via UPI."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which streaming platforms does Media Mafias distribute music to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Media Mafias distributes audio across 150+ platforms worldwide via Madverse, including Spotify, Apple Music, YouTube Music, Amazon Music, JioSaavn, Instagram Audio, and 24/7 autonomous radio on The Future Radio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Media Mafias Content API work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Media Mafias Content API provides programmatic REST access to pre-cleared, mastered vernacular audio stems, metadata, and radio streams with 99.999% uptime, powering autonomous B2B In-Store Radio and YouTube Shorts distribution."
             }
           },
           {

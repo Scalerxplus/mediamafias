@@ -14,7 +14,7 @@ export default function AcademyPage() {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   const whatsappDirectUrl = `https://wa.me/919209290699?text=${encodeURIComponent(
-    `Hi Media Mafias, I want to join the Rs 99 Creator Academy and submit my folk song.\nArtist: ${artistName || "Independent Artist"}\nDialect: ${dialect}\nSong: ${songTitle || "New Submission"}`
+    `Hi Media Mafias, I want to join the Rs 499 Creator Academy and submit my folk song.\nArtist: ${artistName || "Independent Artist"}\nDialect: ${dialect}\nSong: ${songTitle || "New Submission"}`
   )}`;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,7 +35,7 @@ export default function AcademyPage() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-4 py-1.5 rounded-full font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-6">
             <Sparkles className="w-4 h-4 text-black" />
-            <span>CREATOR ACADEMY & VOCAL ONBOARDING GATEWAY</span>
+            <span>CREATOR ACADEMY &amp; VOCAL ONBOARDING GATEWAY</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-black mb-4">
@@ -43,7 +43,7 @@ export default function AcademyPage() {
           </h1>
 
           <p className="font-mono text-sm sm:text-lg text-neutral-800 max-w-3xl mx-auto leading-relaxed mb-8">
-            Singers, Mandalis, and Folk Troupe Artists of <strong>Baghelkhand, Awadh, Bundelkhand, and Purvanchal</strong>: Join the Media Mafias Creator Academy for just <strong>₹99</strong>. Send your raw smartphone recording — we remaster it to broadcast grade and distribute it to 150+ music apps worldwide.
+            Singers, Mandalis, and Folk Troupe Artists of <strong>Baghelkhand, Awadh, Bundelkhand, and Purvanchal</strong>: Join the Media Mafias Creator Academy for just <strong>₹499</strong>. Send your raw smartphone recording — we remaster it to broadcast grade and distribute it to 150+ music apps worldwide.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -54,7 +54,7 @@ export default function AcademyPage() {
               className="bg-[#25D366] text-black font-mono font-black text-xs sm:text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] flex items-center gap-2 transition-all"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>1-Tap WhatsApp Vocal Submission (₹99)</span>
+              <span>1-Tap WhatsApp Vocal Submission (₹499)</span>
             </a>
 
             <a
@@ -68,12 +68,12 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* What You Get for ₹99 */}
+      {/* What You Get for ₹499 */}
       <section className="py-16 px-6 bg-[#FED7AA] border-b-4 border-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
-              Everything Included In The ₹99 Creator Program
+              Everything Included In The ₹499 Creator Program
             </h2>
             <p className="font-mono text-xs sm:text-sm text-neutral-800">
               Fair, transparent, creator-first terms backed by ScalerX Lab.
@@ -139,7 +139,7 @@ export default function AcademyPage() {
               </span>
               <div>
                 <h2 className="font-display font-black text-3xl uppercase tracking-tight text-black">
-                  Submit Song Details & Vocals
+                  Submit Song Details &amp; Vocals
                 </h2>
                 <p className="font-mono text-xs text-neutral-600">
                   Fill details below or submit directly on WhatsApp (+91 9209290699)
@@ -154,7 +154,7 @@ export default function AcademyPage() {
                   Submission Ready!
                 </h3>
                 <p className="font-mono text-xs text-neutral-800">
-                  Opening WhatsApp to complete your ₹99 onboarding with our artist coordinator...
+                  Opening WhatsApp to complete your ₹499 onboarding with our artist coordinator...
                 </p>
                 <a
                   href={whatsappDirectUrl}
@@ -214,7 +214,7 @@ export default function AcademyPage() {
 
                   <div>
                     <label className="block font-mono text-xs font-black uppercase text-black mb-2">
-                      Dialect & Folk Region *
+                      Dialect &amp; Folk Region *
                     </label>
                     <select
                       value={dialect}
@@ -224,7 +224,7 @@ export default function AcademyPage() {
                       <option value="Bagheli">Bagheli (Rewa, Satna, Sidhi, Shahdol)</option>
                       <option value="Awadhi">Awadhi (Ayodhya, Lucknow, Mirzapur, Varanasi)</option>
                       <option value="Bundeli">Bundeli (Jhansi, Sagar, Tikamgarh, Chhatarpur)</option>
-                      <option value="Bhojpuri">Bhojpuri (Purvanchal & Bihar heartland)</option>
+                      <option value="Bhojpuri">Bhojpuri (Purvanchal &amp; Bihar heartland)</option>
                       <option value="Devotional / Bhakti">Devotional / Kabir Bhajan / Jas Geet</option>
                     </select>
                   </div>
@@ -261,12 +261,12 @@ export default function AcademyPage() {
                     type="submit"
                     className="w-full bg-[#E5FF00] hover:bg-[#d8f000] border-3 border-black text-black font-display font-black text-2xl uppercase py-4 rounded-xl shadow-[4px_4px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <span>Proceed To ₹99 Onboarding</span>
+                    <span>Proceed To ₹499 Onboarding</span>
                     <ArrowRight className="w-6 h-6" />
                   </button>
 
                   <p className="text-center font-mono text-[11px] text-neutral-600 mt-3">
-                    🔒 Secure ₹99 processing via UPI / WhatsApp • 80% royalty split contract included.
+                    🔒 Secure ₹499 processing via UPI / WhatsApp • 80% royalty split contract included.
                   </p>
                 </div>
               </form>

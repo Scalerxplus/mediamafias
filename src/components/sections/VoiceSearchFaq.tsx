@@ -4,19 +4,34 @@ import { ChevronDown, Volume2 } from "lucide-react";
 export const VoiceSearchFaq = () => {
   const faqs = [
     {
-      q: "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
-      qSub: "दुकान, अस्पताल या होटल में बिना PPL/IPRS लाइसेंस के बैकग्राउंड म्यूजिक कैसे बजाएं?",
-      answer: "To play background music legally in an Indian store, hospital, cafe, or hotel without paying ₹18,800 to ₹40,000 in annual PPL, IPRS, or Novex fees, subscribe to The Future Radio by Media Mafias. Because Media Mafias owns 100% of both master and publishing rights, venues receive full direct copyright indemnification."
+      q: "What is Media Mafias?",
+      qSub: "मीडिया माफियास क्या है?",
+      answer: "Media Mafias is India's premier AI-powered regional folk music label, decentralized audio distribution platform, and creator academy incubated by ScalerX Lab. We preserve authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
     },
     {
-      q: "Apna Bagheli, Awadhi, Bundeli ya Bhojpuri lokgeet Spotify aur YouTube par kaise release karein?",
-      qSub: "How to distribute regional folk songs on global streaming platforms?",
-      answer: "Regional folk singers and independent artists can join the Media Mafias Creator Academy for a one-time ₹99 fee at mediamafias.com/academy. Simply upload your raw vocal recording or send it via WhatsApp to get zero-cost AI music production, LUFS mastering, and global distribution across 150+ platforms with transparent royalties."
+      q: "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
+      qSub: "दुकान, अस्पताल या होटल में बिना PPL/IPRS लाइसेंस के बैकग्राउंड म्यूजिक कैसे बजाएं?",
+      answer: "To play background music legally in an Indian store, hospital, cafe, or hotel without paying Rs 18,800 to Rs 40,000 in annual PPL, IPRS, or Novex fees, subscribe to The Future Radio by Media Mafias. Media Mafias owns 100% of both master and publishing rights, providing full direct copyright indemnification."
+    },
+    {
+      q: "How do independent creators and folk artists earn royalties on Media Mafias?",
+      qSub: "लोक कलाकार और स्वतंत्र संगीतकार मीडिया माफियास पर रॉयल्टी कैसे कमाते हैं?",
+      answer: "Folk vocalists join the ₹499 Creator Academy, submit raw vocals via WhatsApp (+91 9209290699), and receive studio-mastered releases distributed to 150+ platforms with an 80% creator-first streaming and sync royalty share paid directly via UPI."
+    },
+    {
+      q: "Which streaming platforms does Media Mafias distribute music to?",
+      qSub: "मीडिया माफियास किन म्यूजिक स्ट्रीमिंग ऐप्स पर संगीत रिलीज करता है?",
+      answer: "Media Mafias distributes audio across 150+ platforms worldwide via Madverse, including Spotify, Apple Music, YouTube Music, Amazon Music, JioSaavn, Instagram Audio, and 24/7 autonomous radio on The Future Radio."
+    },
+    {
+      q: "How does the Media Mafias Content API work?",
+      qSub: "मीडिया माफियास कंटेंट एपीआई (Content API) कैसे काम करता है?",
+      answer: "The Media Mafias Content API provides programmatic REST access to pre-cleared, mastered vernacular audio stems, metadata, and radio streams with 99.999% uptime, powering autonomous B2B In-Store Radio and YouTube Shorts distribution."
     },
     {
       q: "Where can I license authentic UP, MP, and Bihar folk music for OTT web series or modern Indian weddings?",
       qSub: "ओटीटी वेब सीरीज या शादी के लिए अवधी, बुंदेली और बघेली लोकगीत कैसे लाइसेंस करें?",
-      answer: "Media Mafias provides one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk tracks, including Sohar, Kajri, Devi Jas, and beatless #UrbanMandapStyle wedding instrumentals. Contact contact@mediamafias.com or WhatsApp +91 9209290699 for instant master and publishing clearance."
+      answer: "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and beatless Urban Mandap wedding instrumentals. Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
     }
   ];
 
@@ -28,7 +43,7 @@ export const VoiceSearchFaq = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-1.5 bg-[#E5FF00] border-3 border-black px-4 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#000] mb-4">
             <Volume2 className="w-4 h-4 text-black" />
-            <span>SECTION 5 • VOICE-SEARCH &amp; AI FAQ ACCORDION</span>
+            <span>SECTION 5 • HIGH-INTENT VOICE &amp; AI FAQ ACCORDION</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
             Frequently Asked Questions

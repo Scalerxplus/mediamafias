@@ -9,15 +9,18 @@ import { ComplianceComparison } from "@/components/sections/ComplianceComparison
 import { VoiceSearchFaq } from "@/components/sections/VoiceSearchFaq";
 
 export const metadata: Metadata = {
-  title: "Media Mafias | High-Fidelity Regional Folk of the Indo-Gangetic Belt",
-  description: "Preserving and modernizing the authentic folk music of Baghelkhand, Awadh, Bundelkhand, and Purvanchal. 100% PPL/IPRS-exempt In-Store AI Radio and ₹99 Creator Academy.",
+  title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+  description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
   keywords: [
-    "Media Mafias", "Bagheli Folk Music", "Bundeli Lokgeet", "Awadhi Folk Songs",
-    "Purvanchal Bhojpuri Music", "Baghelkhand songs", "Alha Udal Bundelkhand",
-    "Sohar songs Bagheli", "Kajri Lokgeet", "High Fidelity Folk", "Urban Mandap Style",
-    "Beatless Wedding BGM", "PPL exempt in store music India", "The Future Radio",
-    "Vernacular Audio Distribution"
-  ]
+    "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Awadhi Vivah Geet", "अवधी विवाह गीत",
+    "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस",
+    "PPL IPRS exempt background music India", "In-Store AI Radio", "OTT Sync Licensing India",
+    "Urban Mandap Wedding BGM", "AI Music Creator Academy India", "The Future Radio",
+    "Vernacular Audio Distribution India", "Content API India", "ScalerX Lab"
+  ],
+  alternates: {
+    canonical: "https://www.mediamafias.com/",
+  }
 };
 
 export default function Home() {

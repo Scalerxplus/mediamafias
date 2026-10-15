@@ -17,7 +17,7 @@ export default function AboutPage() {
           {/* Header Card */}
           <div className="bg-white border-4 border-black rounded-3xl p-8 sm:p-12 shadow-[8px_8px_0px_0px_#000]">
             <div className="inline-block bg-[#E5FF00] border-2 border-black px-3 py-1 rounded font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-4">
-              ABOUT SCALERX LAB & MEDIA MAFIAS
+              ABOUT SCALERX LAB &amp; MEDIA MAFIAS
             </div>
 
             <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-black mb-4">
@@ -36,6 +36,19 @@ export default function AboutPage() {
                 MSME: UDYAM-MP-38-0052942
               </span>
             </div>
+          </div>
+
+          {/* Visible Brand & Entity Verification Note */}
+          <div className="bg-white border-4 border-black rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#000]">
+            <div className="flex items-center gap-2 mb-2">
+              <ShieldCheck className="w-5 h-5 text-green-600" />
+              <span className="font-mono text-xs font-black uppercase text-neutral-900 tracking-wider">
+                Official Brand &amp; Entity Disambiguation Note
+              </span>
+            </div>
+            <p className="font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed">
+              Media Mafias (<a href="https://www.mediamafias.com/" className="underline font-bold text-black">mediamafias.com</a>) is an Indian AI-powered regional folk music record label, decentralized audio distribution platform, creator academy, and B2B in-store radio provider operated by ScalerX Lab. It is an independent music and audio technology platform and is NOT affiliated with the Varanasi digital marketing agency Media Mafia (mediamafia.in) or mediamafia.co.za.
+            </p>
           </div>
 
           {/* Mission & Vision Grid */}
@@ -71,7 +84,7 @@ export default function AboutPage() {
           <div className="bg-[#FDE047] border-4 border-black rounded-2xl p-6 sm:p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="font-display font-black text-2xl uppercase text-black mb-1">
-                Direct Enterprise Licensing & Creator Support
+                Direct Enterprise Licensing &amp; Creator Support
               </h3>
               <p className="font-mono text-xs sm:text-sm text-neutral-800 max-w-xl">
                 Operated from Madhya Pradesh, India. Contact our executive desk for commercial sync licensing or join the Creator Academy.
@@ -83,7 +96,7 @@ export default function AboutPage() {
                 href="/academy"
                 className="bg-black text-white hover:bg-[#FF2E2E] font-mono font-black text-xs uppercase px-5 py-3 rounded-xl border-2 border-black shadow-[2px_2px_0px_0px_#000] transition-colors"
               >
-                Join Academy (₹99)
+                Join Academy (₹499)
               </Link>
               <Link
                 href="/licensing"
