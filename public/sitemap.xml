@@ -13,6 +13,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://www.mediamafias.com/regional-music/lyrics</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://www.mediamafias.com/creators</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
