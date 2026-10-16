@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Check, X, ShieldAlert, ShieldCheck, ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import Link from "next/link";
 
 export const ComplianceComparison = () => {
@@ -120,9 +120,10 @@ export const ComplianceComparison = () => {
               href="https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20need%20PPL-IPRS%20exempt%20In-Store%20AI%20Radio%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba59] text-black font-mono font-bold text-xs uppercase px-6 py-3.5 rounded-xl transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)]"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-black font-mono font-bold text-xs uppercase px-6 py-3.5 rounded-xl transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)]"
             >
-              WhatsApp Commercial Desk ➔
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
+              <span>WhatsApp Commercial Desk ➔</span>
             </a>
           </div>
         </div>

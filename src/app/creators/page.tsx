@@ -15,7 +15,6 @@ import {
   MapPin,
   Sparkles,
   PhoneCall,
-  MessageCircle,
   Disc3
 } from "lucide-react";
 import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
@@ -516,7 +515,7 @@ export default function CreatorsPage() {
                 Media Mafias Core Artists
               </h2>
               <p className="font-mono text-xs text-neutral-400 mt-1 max-w-2xl">
-                Real performing artists with broadcast-grade master recordings. Stream 20s previews or connect directly for event and wedding bookings.
+                Real performing artists with broadcast-grade master recordings. Stream 20s previews and official discography on Spotify &amp; YouTube.
               </p>
             </div>
 
@@ -639,36 +638,25 @@ export default function CreatorsPage() {
                     </div>
                   </div>
 
-                  {/* Outbound Links & Direct Booking */}
-                  <div className="space-y-2 pt-2 border-t border-white/5">
-                    {/* Direct WhatsApp Booking Button for Regional Organizers */}
-                    <a
-                      href={`https://wa.me/919209290699?text=Namaste%20Media%20Mafias%2C%20I%20want%20to%20inquire%20about%20booking%20artist%20"${encodeURIComponent(creator.name)}%20(${encodeURIComponent(creator.hindiName)})"%20for%20event%2Flive%20show.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2 px-3 bg-[#10B981]/15 hover:bg-[#10B981] text-[#10B981] hover:text-black border border-[#10B981]/30 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 transition-all"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5" />
-                      <span>Book Artist via WhatsApp</span>
-                    </a>
-
+                  {/* Outbound Links */}
+                  <div className="pt-2 border-t border-white/5">
                     <div className="grid grid-cols-2 gap-2">
                       <a
                         href={SPOTIFY_ARTIST_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#1DB954] hover:text-black border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1 text-neutral-300 transition-colors"
+                        className="py-2 px-2 bg-[#181820] hover:bg-[#1DB954] hover:text-black border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                       >
-                        <SpotifyIcon className="w-3 h-3" />
+                        <SpotifyIcon className="w-3.5 h-3.5" />
                         <span>Spotify</span>
                       </a>
                       <a
                         href={YOUTUBE_OAC_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#C0392B] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1 text-neutral-300 transition-colors"
+                        className="py-2 px-2 bg-[#181820] hover:bg-[#C0392B] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                       >
-                        <YoutubeIcon className="w-3 h-3" />
+                        <YoutubeIcon className="w-3.5 h-3.5" />
                         <span>YouTube</span>
                       </a>
                     </div>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export const Footer = () => {
   return (
@@ -32,8 +33,8 @@ export const Footer = () => {
             </span>
           </div>
 
-          {/* Visible Brand & Entity Disambiguation Note */}
-          <div className="mt-4 p-4 bg-white/[0.02] border border-white/10 rounded-xl">
+          {/* Hidden Brand & Entity Disambiguation Note for Search Bots Only */}
+          <div className="hidden" aria-hidden="true">
             <div className="font-mono text-[10px] font-black uppercase text-amber-400/80 mb-1">
               BRAND &amp; ENTITY VERIFICATION NOTE
             </div>
@@ -48,6 +49,7 @@ export const Footer = () => {
           <h4 className="font-display text-xl font-bold tracking-wider text-white uppercase">Navigation</h4>
           <ul className="space-y-2 font-mono text-xs uppercase font-medium text-neutral-400">
             <li><Link href="/regional-music" className="hover:text-amber-300 transition-colors">Regional Music (लोक संगीत)</Link></li>
+            <li><Link href="/regional-music/lyrics" className="hover:text-amber-300 transition-colors">Folk Lyrics Vault (लोकगीत बोल)</Link></li>
             <li><Link href="/creators" className="hover:text-amber-300 transition-colors">Top Regional Creators</Link></li>
             <li><Link href="/top-songs" className="hover:text-amber-300 transition-colors">Top Regional Songs</Link></li>
             <li><Link href="/licensing" className="hover:text-amber-300 transition-colors">Business &amp; Sync Licensing</Link></li>
@@ -68,8 +70,8 @@ export const Footer = () => {
               <a href="mailto:contact@mediamafias.com" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
                 <span className="text-amber-400">➔</span> contact@mediamafias.com
               </a>
-              <a href="https://wa.me/919209290699" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
-                <span className="text-emerald-400">➔</span> +91 9209290699 (WhatsApp)
+              <a href="https://wa.me/919209290699" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300 transition-colors flex items-center gap-2">
+                <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" /> +91 9209290699 (WhatsApp)
               </a>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Play, Pause, Radio, MessageCircle, X, ChevronUp, ExternalLink, Sparkles } from "lucide-react";
+import { Play, Pause, Radio, X, ChevronUp, ExternalLink, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { getAudioUrl, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 export const PersistentAudioDock = () => {
@@ -99,7 +100,7 @@ export const PersistentAudioDock = () => {
 
             <div className="flex items-center gap-3 mb-2">
               <span className="p-2.5 bg-[#25D366]/20 border border-[#25D366]/40 rounded-xl">
-                <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
               </span>
               <div>
                 <h3 className="font-display font-bold text-xl uppercase tracking-wider text-white">
@@ -137,7 +138,7 @@ export const PersistentAudioDock = () => {
             </div>
 
             <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-400">
-              <span>ScalerX Lab Desk · Rewa / Bangalore</span>
+              <span>Media Mafias Desk · Rewa / Delhi / Bangalore</span>
               <span className="text-emerald-400 font-bold">● Active 24/7</span>
             </div>
           </div>
@@ -206,7 +207,7 @@ export const PersistentAudioDock = () => {
             onClick={() => setIsWhatsAppModalOpen(true)}
             className="bg-[#25D366] hover:bg-[#20ba59] text-black font-bold uppercase text-xs sm:text-sm px-3.5 sm:px-4 py-2 rounded-xl flex items-center gap-2 shadow-[0_0_15px_rgba(37,211,102,0.3)] hover:scale-[1.02] active:scale-98 transition-all cursor-pointer"
           >
-            <MessageCircle className="w-4 h-4 text-black fill-current" />
+            <WhatsAppIcon className="w-4 h-4 text-black fill-current" />
             <span className="font-display tracking-wider text-sm sm:text-base">WHATSAPP</span>
           </button>
         </div>

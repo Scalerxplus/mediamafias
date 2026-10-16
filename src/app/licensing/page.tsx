@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ShieldCheck, Radio, Film, Heart, CheckCircle2, ArrowRight, MessageCircle, FileText, Sparkles } from "lucide-react";
+import { ShieldCheck, Radio, Film, Heart, CheckCircle2, ArrowRight, FileText, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import Link from "next/link";
 
 export default function LicensingPage() {
@@ -36,7 +37,7 @@ export default function LicensingPage() {
               rel="noopener noreferrer"
               className="bg-[#10B981] hover:bg-[#059669] text-black font-mono font-bold text-xs sm:text-sm uppercase px-6 py-3.5 rounded-xl flex items-center gap-2 transition-all shadow-lg"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
+              <WhatsAppIcon className="w-5 h-5 fill-current" />
               <span>In-Store Radio Inquiry (WhatsApp)</span>
             </a>
 

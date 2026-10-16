@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Suspense } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -595,8 +596,16 @@ function RegionalMusicContent() {
               </div>
             </div>
 
-            {/* Global Streaming Outbound CTAs */}
+            {/* Global Streaming & Lyrics Vault CTAs */}
             <div className="flex flex-wrap sm:flex-nowrap gap-3 shrink-0">
+              <Link
+                href="/regional-music/lyrics"
+                className="bg-[#D4AF37] hover:bg-[#e5be47] text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-black/40"
+              >
+                <BookOpen className="w-4 h-4 text-black" />
+                <span>Lyrics Vault (बोल संग्रह)</span>
+              </Link>
+
               <a
                 href={SPOTIFY_ARTIST_URL}
                 target="_blank"
@@ -604,7 +613,7 @@ function RegionalMusicContent() {
                 className="bg-[#1DB954] hover:bg-[#1aa34a] text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-black/40"
               >
                 <SpotifyIcon className="w-4 h-4 fill-current" />
-                <span>Spotify Artist Channel</span>
+                <span>Spotify Channel</span>
               </a>
 
               <a
@@ -886,6 +895,14 @@ function RegionalMusicContent() {
             <p className="font-mono text-xs sm:text-sm text-neutral-400 leading-relaxed">
               बघेलखंड, बुंदेलखंड, अवध और पूर्वांचल के पारंपरिक शादी-विवाह की समस्त रस्मों, ऋतु गीतों और वीर गाथाओं का प्रामाणिक संदर्भ।
             </p>
+            <div className="pt-2">
+              <Link
+                href="/regional-music/lyrics"
+                className="inline-flex items-center gap-2 bg-[#D4AF37]/15 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-black border border-[#D4AF37]/40 font-mono text-xs font-bold uppercase px-4 py-2 rounded-xl transition-all"
+              >
+                <span>Read &amp; Copy Complete Lyrics in Lyrics Vault ➔</span>
+              </Link>
+            </div>
           </div>
 
           {/* Wedding Rituals Section */}

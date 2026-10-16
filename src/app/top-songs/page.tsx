@@ -13,9 +13,9 @@ import {
   ShieldCheck,
   Sparkles,
   Radio,
-  MessageCircle,
   ExternalLink
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
 interface TopSong {
@@ -369,7 +369,7 @@ export default function TopSongsPage() {
                       rel="noopener noreferrer"
                       className="px-3 py-2 bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-black border border-[#D4AF37]/30 rounded-lg font-mono font-bold text-xs uppercase flex items-center gap-1.5 transition-all"
                     >
-                      <MessageCircle className="w-3.5 h-3.5" />
+                      <WhatsAppIcon className="w-3.5 h-3.5" />
                       <span>License</span>
                     </a>
                   </div>

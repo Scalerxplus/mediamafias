@@ -2,7 +2,8 @@ import * as React from "react";
 import { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ShieldCheck, AlertTriangle, Radio, CheckCircle2, Building2, Hospital, ShoppingBag, Utensils, MessageSquare, ArrowRight, Sparkles } from "lucide-react";
+import { ShieldCheck, AlertTriangle, Radio, CheckCircle2, Building2, Hospital, ShoppingBag, Utensils, ArrowRight, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "100% PPL & IPRS Exempt In-Store AI Radio | Commercial Audio Licensing India",
@@ -77,7 +78,7 @@ export default function B2bRadioPage() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-red-accent hover:bg-white text-white hover:text-red-accent font-mono text-xs uppercase tracking-widest font-bold transition-all duration-300 flex items-center justify-center gap-2 rounded shadow-lg shadow-red-accent/20"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
               <span>GET ANNUAL LICENSE (₹3,500/YR)</span>
             </a>
             
@@ -231,7 +232,8 @@ export default function B2bRadioPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-red-accent hover:bg-white text-white hover:text-black font-mono text-xs uppercase tracking-widest font-bold transition-all rounded shadow-xl"
             >
-              <span>CONNECT ON WHATSAPP & GET CERTIFIED</span>
+              <WhatsAppIcon className="w-4 h-4 fill-current" />
+              <span>CONNECT ON WHATSAPP &amp; GET CERTIFIED</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

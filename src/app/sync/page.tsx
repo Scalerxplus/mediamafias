@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Film, CheckCircle2, Clock, ShieldCheck, Download, Mail, ArrowUpRight, Music2, Sliders } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export const metadata: Metadata = {
   title: "Heartland OTT & Film Music Sync Licensing | Media Mafias One-Stop",
@@ -112,7 +113,8 @@ export default function SyncPage() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 border border-white/20 bg-neutral-900/60 hover:bg-white hover:text-black font-mono text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 rounded"
             >
-              <span>WHATSAPP A&R DESK</span>
+              <WhatsAppIcon className="w-4 h-4 fill-current text-[#25D366]" />
+              <span>WHATSAPP A&amp;R DESK</span>
             </a>
           </div>
         </div>

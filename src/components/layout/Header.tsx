@@ -32,15 +32,16 @@ export const Header = () => {
     { name: "बुंदेली (Bundeli Folk)", href: "/regional-music?dialect=bundeli", desc: "Jhansi & Mahoba Veer Ras & Lokgeet" },
     { name: "अवधी (Awadhi Folk)", href: "/regional-music?dialect=awadhi", desc: "Monsoon Kajri & Vivah Banara" },
     { name: "पूर्वी / भोजपुरी (Purbi Folk)", href: "/regional-music?dialect=purbi", desc: "Purvanchal Viraha & Acoustic Lok" },
+    { name: "Lyrics Vault (बोल संग्रह)", href: "/regional-music/lyrics", desc: "Parchhan, Gari, Banna Banni & Sohar Lyrics" },
     { name: "All Regional Music", href: "/regional-music", desc: "Complete Indo-Gangetic Master Archive" }
   ];
 
   // 6 Other Navigation Links
-  const navItems = [
+  const navItems: { name: string; href: string; badge?: string }[] = [
     { name: "Top Creators", href: "/creators" },
     { name: "Top Songs", href: "/top-songs" },
     { name: "Business & Sync", href: "/licensing" },
-    { name: "Academy", href: "/academy", badge: "₹499" },
+    { name: "Academy", href: "/academy" },
     { name: "Insights", href: "/insights" },
     { name: "About Us", href: "/about" }
   ];
@@ -311,7 +312,7 @@ export const Header = () => {
                 className="w-full py-3 bg-amber-500 text-black font-mono font-bold text-xs uppercase rounded-xl flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>Join Academy (₹499)</span>
+                <span>Join Academy</span>
               </Link>
             </div>
           </motion.div>

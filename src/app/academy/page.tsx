@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Sparkles, CheckCircle2, Upload, MessageCircle, ArrowRight, ShieldCheck, Headphones, Globe2, Radio, Music } from "lucide-react";
+import { Sparkles, CheckCircle2, Upload, ArrowRight, ShieldCheck, Headphones, Globe2, Radio, Music } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export default function AcademyPage() {
   const [artistName, setArtistName] = React.useState("");
@@ -58,7 +59,7 @@ export default function AcademyPage() {
               rel="noopener noreferrer"
               className="bg-[#10B981] hover:bg-[#059669] text-black font-mono font-bold text-xs sm:text-sm uppercase px-8 py-3.5 rounded-xl flex items-center gap-2 transition-all shadow-lg"
             >
-              <MessageCircle className="w-5 h-5 fill-current" />
+              <WhatsAppIcon className="w-5 h-5 fill-current" />
               <span>1-Tap WhatsApp Enrollment (₹499 Fee)</span>
             </a>
 
@@ -178,9 +179,10 @@ export default function AcademyPage() {
                   href={whatsappDirectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#10B981] hover:bg-[#059669] text-black font-mono font-bold text-xs uppercase px-6 py-3 rounded-xl transition-all"
+                  className="inline-flex items-center gap-2 bg-[#10B981] hover:bg-[#059669] text-black font-mono font-bold text-xs uppercase px-6 py-3 rounded-xl transition-all"
                 >
-                  Continue on WhatsApp Now ➔
+                  <WhatsAppIcon className="w-4 h-4 fill-current" />
+                  <span>Continue on WhatsApp Now ➔</span>
                 </a>
               </div>
             ) : (

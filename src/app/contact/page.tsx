@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Mail, Phone, MessageCircle, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export default function ContactPage() {
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -72,7 +73,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="font-display font-black text-2xl text-white hover:text-[#10B981] transition-colors flex items-center gap-2"
                 >
-                  <MessageCircle className="w-5 h-5 text-[#10B981]" />
+                  <WhatsAppIcon className="w-5 h-5 text-[#10B981]" />
                   <span>+91 9209290699</span>
                 </a>
               </div>
