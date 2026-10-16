@@ -1,25 +1,22 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import {
-  Sparkles,
   Play,
   Pause,
   ExternalLink,
-  CheckCircle2,
-  Mic2,
-  Music4,
   Award,
-  MapPin,
-  BookOpen,
-  Scroll,
+  Music2,
+  CheckCircle2,
   Landmark,
-  Radio,
-  Flame,
-  Volume2
+  BookOpen,
+  MapPin,
+  Sparkles,
+  PhoneCall,
+  MessageCircle,
+  Disc3
 } from "lucide-react";
 import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
@@ -29,7 +26,7 @@ interface Creator {
   hindiName: string;
   region: string;
   dialect: string;
-  dialectCategory: "all" | "bagheli" | "awadhi" | "bundeli" | "contemporary";
+  dialectCategory: "bagheli" | "bundeli" | "awadhi" | "contemporary" | "all";
   role: string;
   bio: string;
   notableTrack: string;
@@ -65,7 +62,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "More Raja (Bagheli Lokgeet)",
     audioSrc: "More Raja - Bagheli Lokgeet.mp3",
     catalogCount: 18,
-    avatarBg: "from-[#F59E0B] to-[#D97706]"
+    avatarBg: "from-[#991B1B] to-[#450A0A]"
   },
   {
     id: "cr-2",
@@ -79,7 +76,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Lakhan Lutai Deb (Sohar Dadra)",
     audioSrc: "Lakhan Lutai Deb - Sohar Dadra Female Version.mp3",
     catalogCount: 24,
-    avatarBg: "from-[#EC4899] to-[#BE185D]"
+    avatarBg: "from-[#831843] to-[#500724]"
   },
   {
     id: "cr-3",
@@ -93,7 +90,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Shiva Panchakshara Stotram (Shiva Shambhoo Mix)",
     audioSrc: "Shiva Panchakshara Stotram - Shiva Shambhoo Mix.mp3",
     catalogCount: 15,
-    avatarBg: "from-[#3B82F6] to-[#1D4ED8]"
+    avatarBg: "from-[#1E3A8A] to-[#172554]"
   },
   {
     id: "cr-4",
@@ -107,7 +104,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Bagiya Ma Aaye Bhagwan (Kajari)",
     audioSrc: "Bagiya Ma Aaye Bhagwan - Kajari.mp3",
     catalogCount: 16,
-    avatarBg: "from-[#10B981] to-[#047857]"
+    avatarBg: "from-[#065F46] to-[#022C22]"
   },
   {
     id: "cr-5",
@@ -121,7 +118,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Garda Udaay Deb (Club Mix)",
     audioSrc: "Garda Udaay Deb.mp3",
     catalogCount: 19,
-    avatarBg: "from-[#FF2E2E] to-[#991B1B]"
+    avatarBg: "from-[#7F1D1D] to-[#450A0A]"
   },
   {
     id: "cr-6",
@@ -135,7 +132,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Badariya Kari Re Hari",
     audioSrc: "Badariya Kari Re Hari.mp3",
     catalogCount: 14,
-    avatarBg: "from-[#F97316] to-[#C2410C]"
+    avatarBg: "from-[#7C2D12] to-[#431407]"
   },
   {
     id: "cr-7",
@@ -149,7 +146,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Jagannath Raksha Stotram",
     audioSrc: "जगन्नाथ रक्ष माम्.mp3",
     catalogCount: 21,
-    avatarBg: "from-[#8B5CF6] to-[#6D28D9]"
+    avatarBg: "from-[#581C87] to-[#3B0764]"
   },
   {
     id: "cr-8",
@@ -163,7 +160,7 @@ const CREATORS_DATA: Creator[] = [
     notableTrack: "Ram Banra Ban Aayo Re (Banara)",
     audioSrc: "Ram Banra Ban Aayo Re - Banara.mp3",
     catalogCount: 28,
-    avatarBg: "from-[#00E5FF] to-[#0284C7]"
+    avatarBg: "from-[#0E7490] to-[#164E63]"
   }
 ];
 
@@ -180,7 +177,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Legendary playwright, lyricist, actor, and social reformer who revolutionized Indian vernacular folk theatre. Creator of the immortal 'Bidesiya' (बिदेसिया) folk dance-drama that gave poignant voice to rural migration and women's longing.",
     masterpieces: ["Bidesiya (बिदेसिया)", "Gabarghichor (गबरघिचोर)", "Beti Bechwa (बेटी बेचवा)", "Kalyug Prem (कलयुग प्रेम)"],
     referenceUrl: "https://hi.wikipedia.org/wiki/%E0%A4%AD%E0%A4%BF%E0%A4%96%E0%A4%BE%E0%A4%B0%E0%A5%80_%E0%A4%A0%E0%A4%BE%E0%A4%95%E0%A5%81%E0%A4%B0",
-    accentBg: "bg-[#FFEDD5] border-[#EA580C]"
+    accentBg: "border-[#D4AF37]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-sharda-sinha",
@@ -193,7 +190,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "The peerless cultural voice of Bihar and Purvanchal. Her soulful renditions of Chhath Mahaparv songs ('Kelwa Ke Paat Par'), Maithili & Bhojpuri vivah geet, and sohar are permanently woven into India's cultural DNA.",
     masterpieces: ["Chhath Mahaparv Geet", "Babul Ki Duayein / Vivah Geet", "Patna Se Baida Bulaai Da", "Koyal Bin Khetiya"],
     referenceUrl: "https://en.wikipedia.org/wiki/Sharda_Sinha",
-    accentBg: "bg-[#FEE2E2] border-[#DC2626]"
+    accentBg: "border-[#C0392B]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-bholanath-gahmari",
@@ -206,7 +203,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Iconic Bhojpuri folk lyricist and balladeer whose Purvi, Viraha, and Nirgun compositions captured the pathos of rural departure, railway stations, and seasonal separation with unmatched acoustic authenticity.",
     masterpieces: ["Jani Ja Bideshba", "Purvi Lok Gaatha", "Viraha & Nirgun Samhita"],
     referenceUrl: "https://bh.wikipedia.org/wiki/%E0%A4%AD%E0%A5%8B%E0%A4%B2%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%A5_%E0%A4%97%E0%A4%B9%E0%A4%AE%E0%A4%B0%E0%A5%80",
-    accentBg: "bg-[#FEF3C7] border-[#D97706]"
+    accentBg: "border-[#D4AF37]/30 bg-[#15151C]"
   },
 
   // Bagheli Dialect Poets & Icons
@@ -221,7 +218,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Pioneering literary figure who gave monumental philosophical and romantic depth to Bagheli oral traditions. Celebrated for pioneering anthologies that established Bagheli as a rich literary medium.",
     masterpieces: ["Raskheer (रसखीर)", "Amar Uti (अमर ऊती - Bagheli Songs)", "Ajuri Bhar Ajor (अजुरी भर अंजोर)"],
     referenceUrl: "https://www.google.com/search?kgmid=%2Fg%2F11lts88cvt&q=Shri+Nivas+Shukla+%27Saras%27",
-    accentBg: "bg-[#E0E7FF] border-[#4F46E5]"
+    accentBg: "border-[#3B82F6]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-babulal-dahiya",
@@ -234,7 +231,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Padma Shri recipient, organic farmer, and revered Bagheli poet who dedicated his life to collecting indigenous folk songs, agricultural proverbs, traditional riddles, and over 200 ancestral rice varieties.",
     masterpieces: ["Bagheli Lokgeet Samgraha", "Krishi Kahawat Kosh", "Baghali Lok Sanskruti"],
     referenceUrl: "https://en.wikipedia.org/wiki/Babulal_Dahiya",
-    accentBg: "bg-[#DCFCE7] border-[#16A34A]"
+    accentBg: "border-[#10B981]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-saifuddin-siddiqui",
@@ -247,7 +244,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Highly celebrated folk poet who enriched Bagheli dialect literature through razor-sharp social wit, effortless rhyming meter, and deep affinity with grassroots rural life.",
     masterpieces: ["Bagheli Hasya-Vyangya Sangrah", "Desaj Chhandaavali", "Gramin Pravah"],
     referenceUrl: "https://www.google.com/search?q=Saifuddin+Siddiqui+Saifu+Ji+Bagheli",
-    accentBg: "bg-[#F3E8FF] border-[#9333EA]"
+    accentBg: "border-[#A855F7]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-sukhai-prasad-atal",
@@ -260,7 +257,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Renowned for wielding Bagheli poetry as an instrument of social justice. His verses fearlessly attacked feudal hypocrisy, caste boundaries, and orthodox societal inconsistencies with biting satire.",
     masterpieces: ["Samajik Chetna Ke Bagheli Chhand", "Kritighna Virodh", "Lok Vyangya"],
     referenceUrl: "https://www.google.com/search?q=Sukhai+Prasad+Atal+Bagheli+poet",
-    accentBg: "bg-[#FFE4E6] border-[#E11D48]"
+    accentBg: "border-[#E11D48]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-shambhu-kaku",
@@ -273,7 +270,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Beloved vernacular storyteller and folk composer whose rustic cadence, humor, and domestic anecdotes defined the fireside storytelling culture across Vindhya villages.",
     masterpieces: ["Bagheli Gaon Gatha", "Kaku Ke Kisse", "Chaupal Sangeet"],
     referenceUrl: "https://www.google.com/search?q=Shambhu+Kaku+Bagheli",
-    accentBg: "bg-[#CFFAFE] border-[#0891B2]"
+    accentBg: "border-[#06B6D4]/30 bg-[#15151C]"
   },
 
   // Awadhi Literary Masters & Legends
@@ -288,7 +285,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "The fountainhead of Awadhi spiritual literature. His epic 'Shri Ramcharitmanas', 'Hanuman Chalisa', 'Gitavali', and 'Kavitavali' established Awadhi as the premier language of devotion across the globe.",
     masterpieces: ["Ramcharitmanas (रामचरितमानस)", "Hanuman Chalisa (हनुमान चालीसा)", "Gitavali (गीतावली)", "Vinaya Patrika (विनय पत्रिका)"],
     referenceUrl: "https://en.wikipedia.org/wiki/Tulsidas",
-    accentBg: "bg-[#FEF08A] border-[#CA8A04]"
+    accentBg: "border-[#D4AF37]/40 bg-[#15151C]"
   },
   {
     id: "pioneer-jayasi",
@@ -301,7 +298,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Immortal Sufi poet of Awadh who composed 'Padmavat' (1540 CE) in classical Awadhi dialect, blending Sufi allegorical mysticism with native regional proverbs, seasonal Barahmasa, and lyrical depth.",
     masterpieces: ["Padmavat (पद्मावत - 1540 CE)", "Akharavat (अखरावट)", "Akhiri Kalam (आखिरी कलाम)"],
     referenceUrl: "https://en.wikipedia.org/wiki/Malik_Muhammad_Jayasi",
-    accentBg: "bg-[#E0F2FE] border-[#0284C7]"
+    accentBg: "border-[#0284C7]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-ramai-kaka",
@@ -314,7 +311,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Beloved radio dramatist and poet whose iconic 'Panchayat' broadcasts on Akashvani Lucknow championed Awadhi folk idiom, rural welfare, and sparkling humor for over three decades.",
     masterpieces: ["Bauchhar (बौछार)", "Bar Kanya (बर कन्या)", "Netaji (नेताजी नाटक)", "Bhinusar (भिनुसार)"],
     referenceUrl: "https://hi.wikipedia.org/wiki/%E0%A4%B0%E0%A4%AE%E0%A4%BE%E0%A4%88_%E0%A4%95%E0%A4%BE%E0%A4%95%E0%A4%BE",
-    accentBg: "bg-[#EDE9FE] border-[#7C3AED]"
+    accentBg: "border-[#8B5CF6]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-jumai-khan-azad",
@@ -327,7 +324,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Celebrated Awadhi folk poet known for blending rustic village dialects with patriotic fervor, communal brotherhood, and soulful devotion to Indian soil.",
     masterpieces: ["Awadhi Desh Gaan", "Mati Ki Mahak", "Kisan Jagriti Kavya"],
     referenceUrl: "https://www.google.com/search?q=Jumai+Khan+Azad+Awadhi+poet",
-    accentBg: "bg-[#CCFBF1] border-[#0D9488]"
+    accentBg: "border-[#14B8A6]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-rambhadracharya",
@@ -340,7 +337,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Sanskrit scholar and blind-from-infancy polymath who composed monumental modern epics in literary Awadhi, including 'Arundhati' and 'Raghav Geet Gunjan', reviving classical metrics.",
     masterpieces: ["Arundhati (अरुन्धती महाकाव्य)", "Raghav Geet Gunjan (राघव गीत गुंजन)", "Bhrikutidutam"],
     referenceUrl: "https://en.wikipedia.org/wiki/Rambhadracharya",
-    accentBg: "bg-[#FFEDD5] border-[#EA580C]"
+    accentBg: "border-[#F97316]/30 bg-[#15151C]"
   },
 
   // Bundelkhand Epic Bards & Masters of Phag
@@ -355,7 +352,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Immortal folk genius who created the four-line Bundeli Phag (चौकड़िया फाग). His spontaneous, romantic, and deeply philosophical verses are sung in every village square across Bundelkhand during Holi and harvest.",
     masterpieces: ["Isuri Ki Phag (ईसुरी की फागें)", "Isuri Prakash", "Chaukiya Phag Samhita"],
     referenceUrl: "https://hi.wikipedia.org/wiki/%E0%A4%88%E0%A4%B8%E0%A5%81%E0%A4%B0%E0%A5%80",
-    accentBg: "bg-[#FBCFE8] border-[#DB2777]"
+    accentBg: "border-[#EC4899]/30 bg-[#15151C]"
   },
   {
     id: "pioneer-jagnik",
@@ -368,7 +365,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "Author of the heroic 52-battle martial folk epic 'Alha-Khand' (Parmal Raso), celebrating the unyielding valor of warriors Alha and Udal. Recited across North India to the thundering beat of the Nagariya during monsoon months.",
     masterpieces: ["Alha-Khand / Parmal Raso (आल्हा-खण्ड)", "52 Ladai Gatha", "Veer Ras Paridrishya"],
     referenceUrl: "https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%97%E0%A4%A8%E0%A4%BF%E0%A4%95",
-    accentBg: "bg-[#FED7AA] border-[#C2410C]"
+    accentBg: "border-[#C0392B]/40 bg-[#15151C]"
   },
   {
     id: "pioneer-vrihadalayi-trio",
@@ -381,7 +378,7 @@ const HERITAGE_PIONEERS: HeritagePioneer[] = [
     description: "The celebrated triumvirate of Gangadhar Vyas, Gunasagar, and Khyalram who codified Bundeli folk theatre, Khyal, Devi Jas, and Navratri temple chants, ensuring Bundeli poetic meters thrived for generations.",
     masterpieces: ["Gangadhar Vyas Padavali", "Gunasagar Phag Sangrah", "Khyalram Folk Samvad"],
     referenceUrl: "https://www.google.com/search?q=Bundeli+Vrihadalayi+Gangadhar+Vyas+Gunasagar+Khyalram",
-    accentBg: "bg-[#DDD6FE] border-[#6D28D9]"
+    accentBg: "border-[#A855F7]/30 bg-[#15151C]"
   }
 ];
 
@@ -446,7 +443,7 @@ export default function CreatorsPage() {
   }, [pioneerFilter]);
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
+    <main className="flex min-h-screen flex-col bg-[#0B0B0E] text-[#F5F5F0] selection:bg-[#D4AF37] selection:text-black font-sans">
       <Header />
 
       <audio
@@ -459,42 +456,44 @@ export default function CreatorsPage() {
         }}
       />
 
-      {/* Hero Header */}
-      <section className="pt-36 pb-12 px-6 border-b-4 border-black bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#E5FF00] border-2 border-black px-3.5 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-4">
-            <Award className="w-3.5 h-3.5 text-black" />
+      {/* Hero Header: Heritage Noir & Studio Bronze */}
+      <section className="relative pt-36 pb-14 px-6 border-b border-white/10 bg-radial-[at_top_center] from-[#1A1A22] via-[#0B0B0E] to-[#0B0B0E] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(212,175,55,0.1),rgba(255,255,255,0))] pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold text-[#D4AF37] tracking-wider uppercase mb-5">
+            <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>AUTHENTIC FOLK VOICES &amp; TIMELESS LITERARY LEGENDS</span>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-black mb-2">
+            <div className="max-w-3xl">
+              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white mb-2 leading-tight">
                 Top Regional Creators
               </h1>
-              <div className="font-sans font-bold text-lg sm:text-2xl text-[#FF2E2E] mb-3">
-                (हमारे शीर्ष क्षेत्रीय लोक कलाकार एवं अमर सांस्कृतिक धरोहर)
+              <div className="font-sans font-bold text-xl sm:text-3xl text-[#D4AF37] mb-4">
+                हमारे शीर्ष क्षेत्रीय लोक कलाकार एवं अमर सांस्कृतिक धरोहर
               </div>
-              <p className="font-mono text-xs sm:text-sm text-neutral-700 max-w-2xl leading-relaxed">
-                Meet our real performing artists, vocal masters, and sound architects who record authentic regional music for Media Mafias, alongside the historic literary pioneers of Baghelkhand, Awadh, Bundelkhand, and Purvanchal who laid the bedrock of Indian folk.
+              <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-2xl leading-relaxed">
+                Meet our real performing artists, vocal masters, and sound architects recording for Media Mafias, alongside the historic literary pioneers of Baghelkhand, Awadh, Bundelkhand, and Purvanchal who laid the bedrock of Indian folk.
               </p>
             </div>
 
-            {/* Quick Stats */}
-            <div className="bg-[#FED7AA] border-3 border-black p-4 rounded-xl shadow-[4px_4px_0px_0px_#000] flex gap-5 shrink-0 font-mono text-center">
+            {/* Quick Stats in Bronze Glass */}
+            <div className="bg-[#141419] border border-[#D4AF37]/30 p-4 rounded-xl flex gap-5 shrink-0 font-mono text-center shadow-lg shadow-black/50">
               <div>
-                <div className="font-display font-black text-2xl text-black">8</div>
-                <div className="text-[10px] uppercase font-bold text-neutral-700">Active Roster</div>
+                <div className="font-display font-black text-2xl text-[#D4AF37]">8</div>
+                <div className="text-[10px] uppercase font-bold text-neutral-400">Core Roster</div>
               </div>
-              <div className="w-[2px] bg-black/20" />
+              <div className="w-[1px] bg-white/10" />
               <div>
-                <div className="font-display font-black text-2xl text-black">15+</div>
-                <div className="text-[10px] uppercase font-bold text-neutral-700">Folk Pioneers</div>
+                <div className="font-display font-black text-2xl text-white">15+</div>
+                <div className="text-[10px] uppercase font-bold text-neutral-400">Folk Pioneers</div>
               </div>
-              <div className="w-[2px] bg-black/20" />
+              <div className="w-[1px] bg-white/10" />
               <div>
-                <div className="font-display font-black text-2xl text-black">150+</div>
-                <div className="text-[10px] uppercase font-bold text-neutral-700">DSPs Distributed</div>
+                <div className="font-display font-black text-2xl text-[#10B981]">150+</div>
+                <div className="text-[10px] uppercase font-bold text-neutral-400">DSPs Distributed</div>
               </div>
             </div>
           </div>
@@ -502,41 +501,41 @@ export default function CreatorsPage() {
       </section>
 
       {/* SECTION 1: ACTIVE PERFORMING ROSTER */}
-      <section className="py-14 px-6 border-b-4 border-black bg-[#FAF5FF]">
+      <section className="py-16 px-6 border-b border-white/10 bg-[#0E0E12]">
         <div className="max-w-6xl mx-auto">
           {/* Section Subheading */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="w-3 h-3 rounded-full bg-[#10B981] animate-ping" />
-                <span className="font-mono text-xs font-black uppercase text-[#10B981]">
-                  ACTIVE RECORDING ROSTER
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-ping" />
+                <span className="font-mono text-xs font-bold uppercase text-[#10B981] tracking-wider">
+                  ACTIVE RECORDING ROSTER (रीवा, सतना, वाराणसी, अयोध्या)
                 </span>
               </div>
-              <h2 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-black">
+              <h2 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-white">
                 Media Mafias Core Artists
               </h2>
-              <p className="font-mono text-xs text-neutral-600 mt-1">
-                Live regional master recordings with high-fidelity Cloudflare R2 streaming preview &amp; official Spotify profiles.
+              <p className="font-mono text-xs text-neutral-400 mt-1 max-w-2xl">
+                Real performing artists with broadcast-grade master recordings. Stream 20s previews or connect directly for event and wedding bookings.
               </p>
             </div>
 
             {/* Dialect Filter */}
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "All Artists", value: "all" },
-                { label: "Bagheli", value: "bagheli" },
-                { label: "Awadhi", value: "awadhi" },
-                { label: "Bundeli", value: "bundeli" },
-                { label: "Contemporary / Beats", value: "contemporary" }
+                { label: "All Artists (सभी)", value: "all" },
+                { label: "Bagheli (बघेली)", value: "bagheli" },
+                { label: "Awadhi (अवधी)", value: "awadhi" },
+                { label: "Bundeli (बुंदेली)", value: "bundeli" },
+                { label: "Contemporary Beats", value: "contemporary" }
               ].map((filter) => (
                 <button
                   key={filter.value}
                   onClick={() => setActiveFilter(filter.value)}
-                  className={`font-mono text-xs font-bold uppercase px-3 py-1.5 rounded-lg border-2 border-black transition-all cursor-pointer ${
+                  className={`font-mono text-xs font-bold uppercase px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${
                     activeFilter === filter.value
-                      ? "bg-[#E5FF00] shadow-[2px_2px_0px_0px_#000] -translate-y-0.5"
-                      : "bg-white hover:bg-neutral-100 shadow-[1px_1px_0px_0px_#000]"
+                      ? "bg-[#D4AF37] text-black border-[#D4AF37] font-black shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                      : "bg-[#141419] text-neutral-300 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
                   }`}
                 >
                   {filter.label}
@@ -553,120 +552,123 @@ export default function CreatorsPage() {
               return (
                 <div
                   key={creator.id}
-                  className="bg-white border-4 border-black rounded-2xl p-5 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[4px_4px_0px_0px_#000] transition-all"
+                  className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-5 flex flex-col justify-between transition-all group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
                 >
                   <div>
                     {/* Creator Header with Avatar & Region */}
-                    <div className="flex items-start gap-3 mb-3 pb-3 border-b-2 border-black/10">
+                    <div className="flex items-start gap-3 mb-3.5 pb-3.5 border-b border-white/10">
                       <div
-                        className={`w-12 h-12 rounded-xl border-3 border-black bg-gradient-to-br ${creator.avatarBg} flex items-center justify-center text-white font-display font-black text-xl shrink-0 shadow-[2px_2px_0px_0px_#000]`}
+                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${creator.avatarBg} flex items-center justify-center text-white font-display font-black text-xl shrink-0 shadow-md border border-white/10`}
                       >
                         {creator.name[0]}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1">
-                          <h3 className="font-display font-black text-base uppercase tracking-tight text-black truncate">
+                        <div className="flex items-center gap-1.5">
+                          <h3 className="font-display font-black text-base uppercase tracking-tight text-white truncate group-hover:text-[#D4AF37] transition-colors">
                             {creator.name}
                           </h3>
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
                         </div>
-                        <div className="font-sans font-bold text-xs text-[#FF2E2E]">
+                        <div className="font-sans font-bold text-xs text-[#D4AF37]">
                           {creator.hindiName}
                         </div>
-                        <div className="flex items-center gap-1 font-mono text-[10px] text-neutral-600 mt-0.5">
-                          <MapPin className="w-3 h-3 text-neutral-500 shrink-0" />
+                        <div className="flex items-center gap-1 font-mono text-[10px] text-neutral-400 mt-1">
+                          <MapPin className="w-3 h-3 text-[#C0392B] shrink-0" />
                           <span className="truncate">{creator.region}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Dialect & Catalog Badges */}
-                    <div className="flex flex-wrap gap-1.5 mb-2.5">
-                      <span className="font-mono text-[9px] font-black uppercase bg-[#00E5FF] border border-black px-2 py-0.5 rounded shadow-[1px_1px_0px_0px_#000]">
-                        {creator.dialect}
-                      </span>
-                      <span className="font-mono text-[9px] font-bold bg-neutral-100 border border-black/20 px-2 py-0.5 rounded text-neutral-700">
-                        {creator.catalogCount} Tracks
-                      </span>
-                    </div>
-
-                    <div className="font-mono text-[11px] font-bold text-neutral-900 mb-1">
+                    {/* Role & Bio */}
+                    <div className="font-mono text-[11px] font-bold text-neutral-300 mb-2">
                       {creator.role}
                     </div>
-
-                    <p className="font-mono text-[11px] text-neutral-700 leading-relaxed mb-4 line-clamp-4">
+                    <p className="font-sans text-xs text-neutral-400 leading-relaxed mb-4">
                       {creator.bio}
                     </p>
-                  </div>
 
-                  {/* Representative Track Audio Player & External Links */}
-                  <div className="space-y-2.5 pt-3 border-t-2 border-black/10">
-                    <div className="bg-[#FED7AA] border-2 border-black p-2.5 rounded-xl flex items-center justify-between gap-2 shadow-[2px_2px_0px_0px_#000]">
-                      <div className="min-w-0 flex-1">
-                        <div className="text-[9px] font-mono font-bold uppercase text-neutral-700 flex items-center gap-1">
-                          <Volume2 className="w-3 h-3" />
-                          <span>20s Preview {isPlaying && `(${previewTime}s/${AUDIO_PREVIEW_DURATION}s)`}</span>
-                        </div>
-                        <div className="font-display font-black text-[11px] uppercase truncate text-black">
-                          {creator.notableTrack}
-                        </div>
+                    {/* Notable Track Preview Box */}
+                    <div className="bg-[#181820] border border-white/5 rounded-xl p-3 mb-4 space-y-2">
+                      <div className="flex items-center justify-between font-mono text-[10px] text-neutral-400">
+                        <span className="flex items-center gap-1 text-[#D4AF37]">
+                          <Music2 className="w-3 h-3" />
+                          Notable Master
+                        </span>
+                        <span>{creator.catalogCount} Masters</span>
                       </div>
+                      <div className="font-sans font-bold text-xs text-white truncate">
+                        {creator.notableTrack}
+                      </div>
+
+                      {/* 20s Audio Player */}
                       <button
                         onClick={() => handleTogglePlay(creator.id, creator.audioSrc)}
-                        className={`w-8 h-8 rounded-full border-2 border-black flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000] cursor-pointer transition-transform active:scale-95 ${
-                          isPlaying ? "bg-[#FF2E2E] text-white" : "bg-[#E5FF00] text-black"
+                        className={`w-full py-2 px-3 rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                          isPlaying
+                            ? "bg-[#C0392B] text-white shadow-[0_0_15px_rgba(192,57,43,0.4)]"
+                            : "bg-[#202028] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black border border-[#D4AF37]/30"
                         }`}
-                        aria-label={`Play track by ${creator.name}`}
                       >
                         {isPlaying ? (
-                          <Pause className="w-3.5 h-3.5 fill-current" />
+                          <>
+                            <Pause className="w-3.5 h-3.5 fill-current" />
+                            <span>Pause ({previewTime}s / {AUDIO_PREVIEW_DURATION}s)</span>
+                          </>
                         ) : (
-                          <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                          <>
+                            <Play className="w-3.5 h-3.5 fill-current" />
+                            <span>20s Audio Preview</span>
+                          </>
                         )}
                       </button>
-                    </div>
 
-                    {/* Progress Bar */}
-                    {isPlaying && (
-                      <div className="w-full bg-neutral-200 border border-black rounded-full h-1.5 overflow-hidden">
-                        <div
-                          className="bg-[#FF2E2E] h-full transition-all duration-200"
-                          style={{ width: `${(previewTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
-                        />
-                      </div>
-                    )}
-
-                    {/* Preview Finished Notice */}
-                    {previewEndedId === creator.id && !isPlaying && (
-                      <div className="bg-[#1DB954]/20 border border-black p-2 rounded-lg text-center space-y-0.5">
-                        <div className="font-mono text-[10px] font-black uppercase text-black flex items-center justify-center gap-1">
-                          <Sparkles className="w-3 h-3 text-[#1DB954]" />
-                          <span>20s Preview Finished</span>
+                      {isPlaying && (
+                        <div className="w-full bg-neutral-800 rounded-full h-1 overflow-hidden">
+                          <div
+                            className="bg-[#D4AF37] h-full transition-all duration-200"
+                            style={{ width: `${(previewTime / AUDIO_PREVIEW_DURATION) * 100}%` }}
+                          />
                         </div>
-                        <p className="font-mono text-[9px] text-neutral-800">
-                          Stream full track on Spotify or YouTube:
-                        </p>
-                      </div>
-                    )}
+                      )}
 
-                    <div className="grid grid-cols-2 gap-1.5">
+                      {previewEndedId === creator.id && !isPlaying && (
+                        <div className="text-[10px] font-mono text-[#10B981] text-center pt-1">
+                          ✓ 20s preview finished • Stream full track on Spotify
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Outbound Links & Direct Booking */}
+                  <div className="space-y-2 pt-2 border-t border-white/5">
+                    {/* Direct WhatsApp Booking Button for Regional Organizers */}
+                    <a
+                      href={`https://wa.me/919209290699?text=Namaste%20Media%20Mafias%2C%20I%20want%20to%20inquire%20about%20booking%20artist%20"${encodeURIComponent(creator.name)}%20(${encodeURIComponent(creator.hindiName)})"%20for%20event%2Flive%20show.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 px-3 bg-[#10B981]/15 hover:bg-[#10B981] text-[#10B981] hover:text-black border border-[#10B981]/30 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 transition-all"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Book Artist via WhatsApp</span>
+                    </a>
+
+                    <div className="grid grid-cols-2 gap-2">
                       <a
                         href={SPOTIFY_ARTIST_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-white hover:bg-[#1DB954] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[9px] uppercase flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_0px_#000] transition-colors"
+                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#1DB954] hover:text-black border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1 text-neutral-300 transition-colors"
                       >
-                        <SpotifyIcon className="w-3 h-3 fill-current" />
+                        <SpotifyIcon className="w-3 h-3" />
                         <span>Spotify</span>
                       </a>
-
                       <a
                         href={YOUTUBE_OAC_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-white hover:bg-[#FF2E2E] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[9px] uppercase flex items-center justify-center gap-1 shadow-[1.5px_1.5px_0px_0px_#000] transition-colors"
+                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#C0392B] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1 text-neutral-300 transition-colors"
                       >
-                        <YoutubeIcon className="w-3 h-3 fill-current" />
+                        <YoutubeIcon className="w-3 h-3" />
                         <span>YouTube</span>
                       </a>
                     </div>
@@ -679,40 +681,40 @@ export default function CreatorsPage() {
       </section>
 
       {/* SECTION 2: CULTURAL HERITAGE PIONEERS & LITERARY LEGENDS */}
-      <section className="py-16 px-6 bg-[#C4B5FD] flex-1">
+      <section className="py-16 px-6 bg-[#0B0B0E] flex-1">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="mb-10">
-            <div className="inline-flex items-center gap-2 bg-black text-[#E5FF00] border-2 border-black px-3.5 py-1 rounded-full font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#fff] mb-3">
-              <Landmark className="w-3.5 h-3.5 text-[#E5FF00]" />
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-3.5 py-1 rounded-full font-mono text-xs font-bold uppercase tracking-wider mb-3">
+              <Landmark className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>TIMELESS HERITAGE &amp; FOLK LITERARY GUARDIANS</span>
             </div>
-            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black mb-2">
+            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-2">
               Cultural Heritage Pioneers
             </h2>
-            <div className="font-sans font-bold text-lg sm:text-2xl text-[#6B21A8] mb-3">
-              (सांस्कृतिक धरोहर एवं अमर साहित्यकार)
+            <div className="font-sans font-bold text-lg sm:text-2xl text-[#D4AF37] mb-3">
+              सांस्कृतिक धरोहर, लोक प्रवर्तक एवं अमर साहित्यकार
             </div>
-            <p className="font-mono text-xs sm:text-sm text-neutral-800 max-w-3xl leading-relaxed">
-              We pay homage to the legendary poets, bards, and bidesiya playwrights of the Indo-Gangetic heartland — from Bhikhari Thakur and Sharda Sinha to Isuri and Tulsidas — whose immortal verses and folk traditions form the sacred foundation of Media Mafias.
+            <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-3xl leading-relaxed">
+              We pay homage to the legendary poets, bards, and bidesiya playwrights of the Indo-Gangetic heartland — from Bhikhari Thakur and Sharda Sinha to Isuri, Tulsidas, and Shri Nivas Shukla 'Saras' — whose immortal verses form the sacred foundation of Media Mafias.
             </p>
 
             {/* Region / Category Filter */}
             <div className="flex flex-wrap gap-2 mt-6">
               {[
-                { label: "All Heritage Legends", value: "all" },
-                { label: "Bhojpuri & Purvanchal", value: "bhojpuri" },
-                { label: "Baghelkhand", value: "bagheli" },
-                { label: "Awadh", value: "awadhi" },
-                { label: "Bundelkhand", value: "bundeli" }
+                { label: "All Heritage Legends (सभी)", value: "all" },
+                { label: "Bhojpuri & Purvanchal (भोजपुरी)", value: "bhojpuri" },
+                { label: "Baghelkhand (बघेलखंड)", value: "bagheli" },
+                { label: "Awadh (अवध)", value: "awadhi" },
+                { label: "Bundelkhand (बुंदेलखंड)", value: "bundeli" }
               ].map((pFilter) => (
                 <button
                   key={pFilter.value}
                   onClick={() => setPioneerFilter(pFilter.value)}
-                  className={`font-mono text-xs font-bold uppercase px-3.5 py-2 rounded-xl border-3 border-black transition-all cursor-pointer ${
+                  className={`font-mono text-xs font-bold uppercase px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${
                     pioneerFilter === pFilter.value
-                      ? "bg-black text-[#E5FF00] shadow-[3px_3px_0px_0px_#fff] -translate-y-0.5"
-                      : "bg-white text-black hover:bg-neutral-100 shadow-[2px_2px_0px_0px_#000]"
+                      ? "bg-[#D4AF37] text-black border-[#D4AF37] font-black shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                      : "bg-[#141419] text-neutral-300 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
                   }`}
                 >
                   {pFilter.label}
@@ -726,102 +728,74 @@ export default function CreatorsPage() {
             {filteredPioneers.map((pioneer) => (
               <div
                 key={pioneer.id}
-                className={`border-4 border-black rounded-2xl p-6 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[4px_4px_0px_0px_#000] transition-all bg-white`}
+                className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 flex flex-col justify-between transition-all group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
               >
                 <div>
                   {/* Top Badge: Category & Era */}
-                  <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b-2 border-black/10">
-                    <span className="font-mono text-[10px] font-black uppercase bg-[#E5FF00] border-2 border-black px-2.5 py-0.5 rounded shadow-[1px_1px_0px_0px_#000]">
+                  <div className="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-white/10">
+                    <span className="font-mono text-[10px] font-bold uppercase bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-2.5 py-0.5 rounded">
                       {pioneer.category.toUpperCase()}
                     </span>
-                    <span className="font-mono text-[10px] font-bold text-neutral-600 bg-neutral-100 border border-black/20 px-2 py-0.5 rounded">
+                    <span className="font-mono text-[10px] font-bold text-neutral-400 bg-white/5 border border-white/10 px-2 py-0.5 rounded">
                       {pioneer.era}
                     </span>
                   </div>
 
                   {/* Name in English & Hindi */}
                   <div className="mb-2">
-                    <h3 className="font-display font-black text-2xl uppercase tracking-tight text-black leading-tight">
+                    <h3 className="font-display font-black text-2xl uppercase tracking-tight text-white group-hover:text-[#D4AF37] transition-colors leading-tight">
                       {pioneer.name}
                     </h3>
-                    <div className="font-sans font-black text-base text-[#FF2E2E]">
+                    <div className="font-sans font-bold text-base text-[#D4AF37]">
                       {pioneer.hindiName}
                     </div>
                   </div>
 
-                  {/* Honorific / Title */}
-                  <div className="inline-block font-mono text-xs font-black text-[#1E3A8A] bg-[#DBEAFE] border border-blue-900/30 px-2 py-1 rounded mb-3">
-                    {pioneer.honorific}
+                  {/* Honorific & Region */}
+                  <div className="space-y-1 mb-3">
+                    <div className="font-mono text-xs font-bold text-neutral-300">
+                      {pioneer.honorific}
+                    </div>
+                    <div className="flex items-center gap-1 font-mono text-[10px] text-neutral-400">
+                      <MapPin className="w-3 h-3 text-[#C0392B] shrink-0" />
+                      <span>{pioneer.region}</span>
+                    </div>
                   </div>
 
-                  {/* Origin */}
-                  <div className="flex items-center gap-1.5 font-mono text-xs text-neutral-600 mb-3">
-                    <MapPin className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
-                    <span>{pioneer.region}</span>
-                  </div>
-
-                  {/* Bio / Description */}
-                  <p className="font-mono text-xs text-neutral-700 leading-relaxed mb-4">
+                  {/* Description */}
+                  <p className="font-sans text-xs text-neutral-300 leading-relaxed mb-4">
                     {pioneer.description}
                   </p>
 
-                  {/* Masterpieces */}
-                  <div className="mb-4 bg-neutral-50 border-2 border-black/20 p-3 rounded-xl">
-                    <div className="font-mono text-[10px] font-bold uppercase text-neutral-600 mb-1.5 flex items-center gap-1">
-                      <Scroll className="w-3 h-3" />
-                      <span>Immortal Works &amp; Legacy:</span>
+                  {/* Masterpieces List */}
+                  <div className="bg-[#181820] border border-white/5 rounded-xl p-3 mb-4 space-y-1.5">
+                    <div className="font-mono text-[10px] font-bold uppercase text-[#D4AF37] flex items-center gap-1">
+                      <BookOpen className="w-3 h-3" />
+                      <span>Key Masterpieces &amp; Verses:</span>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <ul className="space-y-1">
                       {pioneer.masterpieces.map((work, idx) => (
-                        <span
-                          key={idx}
-                          className="font-mono text-[10px] font-bold bg-white border border-black/30 px-2 py-0.5 rounded text-neutral-900 shadow-[1px_1px_0px_0px_#000]"
-                        >
-                          {work}
-                        </span>
+                        <li key={idx} className="font-mono text-[11px] text-neutral-300 flex items-center gap-1.5">
+                          <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
+                          <span>{work}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </div>
 
-                {/* Reference Link */}
-                <div className="pt-3 border-t-2 border-black/10">
-                  <a
-                    href={pioneer.referenceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2 px-3 bg-neutral-100 hover:bg-[#E5FF00] border-2 border-black rounded-lg font-mono font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-colors"
-                  >
-                    <BookOpen className="w-3.5 h-3.5" />
-                    <span>Historical Archive / Bio</span>
-                    <ExternalLink className="w-3 h-3 ml-auto text-neutral-500" />
-                  </a>
-                </div>
+                {/* Cultural Archive Link */}
+                <a
+                  href={pioneer.referenceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 px-3 bg-[#181820] hover:bg-[#D4AF37] hover:text-black border border-white/10 rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
+                >
+                  <span>Explore Cultural Archive</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             ))}
-          </div>
-
-          {/* Join Academy Banner */}
-          <div className="bg-[#E5FF00] border-4 border-black p-8 sm:p-10 rounded-2xl shadow-[8px_8px_0px_0px_#000] flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="max-w-2xl">
-              <span className="font-mono text-xs font-black uppercase bg-black text-[#E5FF00] px-3 py-1 rounded border-2 border-black mb-3 inline-block">
-                ARE YOU A FOLK SINGER OR LYRICIST?
-              </span>
-              <h2 className="font-display font-black text-3xl sm:text-4xl uppercase tracking-tight text-black mb-2">
-                Join Academy of Folk Music &amp; Heritage
-              </h2>
-              <p className="font-mono text-xs sm:text-sm text-neutral-800 leading-relaxed">
-                Pay a one-time ₹499 membership fee to become a lifetime verified member of the Media Mafias artist catalog. Submit your raw mobile vocals via WhatsApp, receive broadcast LUFS mastering, and get distributed to Spotify, Apple Music &amp; 150+ DSPs with 80% direct royalties.
-              </p>
-            </div>
-
-            <Link
-              href="/academy"
-              className="bg-black hover:bg-neutral-900 text-white font-mono font-black text-sm uppercase px-8 py-4 rounded-xl border-3 border-black shadow-[4px_4px_0px_0px_#000] shrink-0 flex items-center gap-2 hover:translate-x-[1px] hover:translate-y-[1px] transition-all"
-            >
-              <Sparkles className="w-4 h-4 text-[#E5FF00]" />
-              <span>Enroll For ₹499 ➔</span>
-            </Link>
           </div>
         </div>
       </section>

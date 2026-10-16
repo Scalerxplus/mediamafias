@@ -4,7 +4,7 @@ import * as React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Play, Pause, ExternalLink, Radio, Search, Filter, Disc3, Sparkles } from "lucide-react";
-import { getAudioUrl } from "@/lib/audio";
+import { getAudioUrl, YOUTUBE_OAC_URL } from "@/lib/audio";
 
 interface Song {
   id: string;
@@ -370,33 +370,38 @@ export default function CatalogPage() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
+    <main className="flex min-h-screen flex-col bg-[#0B0B0E] text-[#F5F5F0] selection:bg-[#D4AF37] selection:text-black font-sans">
       <Header />
       
       <audio ref={audioRef} preload="none" onEnded={() => setPlayingId(null)} />
 
-      {/* Header Banner */}
-      <section className="pt-36 pb-12 px-6 border-b-4 border-black bg-white">
-        <div className="max-w-6xl mx-auto">
+      {/* Header Banner: Heritage Noir & Studio Bronze */}
+      <section className="relative pt-36 pb-12 px-6 border-b border-white/10 bg-radial-[at_top_center] from-[#1A1A22] via-[#0B0B0E] to-[#0B0B0E] overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(212,175,55,0.1),rgba(255,255,255,0))] pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="inline-block bg-[#E5FF00] border-2 border-black px-3 py-1 rounded font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-3">
-                OFFICIAL RECORDINGS ARCHIVE
+              <div className="inline-block bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold text-[#D4AF37] uppercase tracking-wider mb-3">
+                OFFICIAL RECORDINGS ARCHIVE • 100% DIRECT IP
               </div>
-              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-black">
+              <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white">
                 Music Catalog
               </h1>
-              <p className="font-mono text-sm sm:text-base text-neutral-800 max-w-2xl mt-2">
-                Browse strictly curated regional folk recordings across Baghelkhand, Awadh, Bundelkhand, and Purvanchal. Stream on YouTube &amp; DSPs or license for commercial projects.
+              <div className="font-sans font-bold text-xl sm:text-2xl text-[#D4AF37] mt-1 mb-2">
+                समस्त लोकगीत, विवाह धुनें एवं भक्ति संग्रह
+              </div>
+              <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-2xl mt-2 leading-relaxed">
+                Browse strictly curated regional folk recordings across Baghelkhand, Awadh, Bundelkhand, and Purvanchal. Stream on YouTube &amp; DSPs or license directly for weddings, OTT, and retail sync.
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <a
-                href="https://www.youtube.com/@MediaMafias"
+                href={YOUTUBE_OAC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#FF2E2E] text-white font-mono font-black text-xs uppercase px-5 py-3 rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] flex items-center gap-2 hover:bg-black transition-all"
+                className="bg-[#C0392B] hover:bg-[#a93226] text-white font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl flex items-center gap-2 transition-all shadow-lg shadow-black/50"
               >
                 <YoutubeIcon className="w-4 h-4 fill-white" />
                 <span>Open YouTube OAC</span>
@@ -405,29 +410,29 @@ export default function CatalogPage() {
           </div>
 
           {/* Search Bar & Client-Side Filter Pills */}
-          <div className="mt-8 pt-8 border-t-2 border-black/10 space-y-4">
+          <div className="mt-8 pt-6 border-t border-white/10 space-y-4">
             <div className="relative max-w-md">
-              <Search className="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-500" />
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-500" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by song, dialect, or genre..."
-                className="w-full pl-11 pr-4 py-3 bg-neutral-50 border-3 border-black rounded-xl font-mono text-xs sm:text-sm text-black placeholder:text-neutral-500 shadow-[3px_3px_0px_0px_#000] outline-none focus:bg-white"
+                placeholder="Search song, dialect, or genre..."
+                className="w-full pl-10 pr-4 py-2.5 bg-[#141419] border border-white/10 focus:border-[#D4AF37] rounded-xl font-mono text-xs text-white placeholder:text-neutral-500 outline-none transition-colors"
               />
             </div>
 
-            <div className="flex flex-wrap gap-2.5 pt-2">
+            <div className="flex flex-wrap gap-2 pt-1">
               {filterPills.map((pill) => {
                 const isActive = selectedFilter === pill.id;
                 return (
                   <button
                     key={pill.id}
                     onClick={() => setSelectedFilter(pill.id)}
-                    className={`px-4 py-2 rounded-xl font-display font-black text-base uppercase tracking-wider border-2 border-black transition-all cursor-pointer shadow-[3px_3px_0px_0px_#000] hover:translate-x-[1px] hover:translate-y-[1px] ${
+                    className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                       isActive 
-                        ? "bg-[#E5FF00] text-black shadow-[1px_1px_0px_0px_#000] translate-x-[2px] translate-y-[2px]" 
-                        : "bg-white text-black hover:bg-neutral-100"
+                        ? "bg-[#D4AF37] text-black border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)] font-black" 
+                        : "bg-[#141419] text-neutral-300 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
                     }`}
                   >
                     {pill.label}
@@ -440,14 +445,14 @@ export default function CatalogPage() {
       </section>
 
       {/* Catalog Grid */}
-      <section className="py-14 px-6">
+      <section className="py-14 px-6 bg-[#0E0E12] flex-1">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <span className="font-mono text-xs font-bold text-neutral-800 uppercase tracking-wider">
+          <div className="flex items-center justify-between mb-6 pb-2 border-b border-white/10">
+            <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-wider">
               Showing {filteredSongs.length} verified compositions
             </span>
-            <span className="font-mono text-xs font-bold bg-white border-2 border-black px-2.5 py-1 rounded shadow-[2px_2px_0px_0px_#000]">
-              100% DIRECT IP OWNED
+            <span className="font-mono text-xs font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3 py-1 rounded-full">
+              100% DIRECT MASTER RIGHTS
             </span>
           </div>
 
@@ -457,41 +462,41 @@ export default function CatalogPage() {
               return (
                 <div
                   key={song.id}
-                  className="bg-white border-4 border-black rounded-2xl p-6 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[4px_4px_0px_0px_#000] transition-all"
+                  className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 flex flex-col justify-between transition-all group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-[10px] font-black uppercase bg-[#00E5FF] border-2 border-black px-2 py-0.5 rounded shadow-[1px_1px_0px_0px_#000]">
+                      <span className="font-mono text-[10px] font-bold uppercase bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-2.5 py-0.5 rounded">
                         {song.dialect}
                       </span>
-                      <span className="font-mono text-[10px] font-bold text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded border border-black/20">
+                      <span className="font-mono text-[10px] font-bold text-neutral-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
                         {song.duration} • {song.bpm} BPM
                       </span>
                     </div>
 
-                    <h3 className="font-display font-black text-2xl uppercase tracking-wide text-black mb-1">
+                    <h3 className="font-display font-black text-2xl uppercase tracking-wide text-white group-hover:text-[#D4AF37] transition-colors mb-1">
                       {song.title}
                     </h3>
-                    <div className="font-sans font-bold text-sm text-[#FF2E2E] mb-2">
+                    <div className="font-sans font-bold text-sm text-[#D4AF37] mb-2">
                       {song.hindiTitle}
                     </div>
 
-                    <p className="font-mono text-xs text-neutral-600 mb-2">
-                      <strong className="text-black">Artists:</strong> {song.featuredArtists}
+                    <p className="font-mono text-xs text-neutral-400 mb-2">
+                      <strong className="text-neutral-200">Artists:</strong> {song.featuredArtists}
                     </p>
 
-                    <p className="font-mono text-xs text-neutral-700 leading-relaxed mb-6">
+                    <p className="font-mono text-xs text-neutral-300 leading-relaxed mb-6">
                       {song.description}
                     </p>
                   </div>
 
-                  <div className="space-y-2.5 pt-4 border-t-2 border-black/10">
+                  <div className="space-y-2.5 pt-4 border-t border-white/5">
                     <button
                       onClick={() => handleTogglePlay(song.id, song.audioSrc)}
-                      className={`w-full py-2.5 px-4 rounded-xl border-2 border-black font-mono font-black text-xs uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer ${
+                      className={`w-full py-2.5 px-4 rounded-xl font-mono font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all cursor-pointer ${
                         isPlaying
-                          ? "bg-[#FF2E2E] text-white"
-                          : "bg-[#E5FF00] text-black hover:bg-[#d4ec00]"
+                          ? "bg-[#C0392B] text-white shadow-[0_0_15px_rgba(192,57,43,0.4)]"
+                          : "bg-[#1A1A22] text-[#D4AF37] border border-[#D4AF37]/30 hover:bg-[#D4AF37] hover:text-black"
                       }`}
                     >
                       {isPlaying ? (
@@ -512,7 +517,7 @@ export default function CatalogPage() {
                         href={song.spotifyUrl || `https://open.spotify.com/search/${encodeURIComponent(song.title + " Media Mafias")}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-white hover:bg-[#1DB954] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#1DB954] hover:text-black border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                         title="Listen on Spotify"
                       >
                         <SpotifyIcon className="w-3.5 h-3.5 fill-current" />
@@ -523,7 +528,7 @@ export default function CatalogPage() {
                         href={song.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-1.5 px-2 bg-white hover:bg-[#FF2E2E] hover:text-white border-2 border-black rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 shadow-[2px_2px_0px_0px_#000] transition-colors"
+                        className="py-1.5 px-2 bg-[#181820] hover:bg-[#C0392B] hover:text-white border border-white/10 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center gap-1.5 text-neutral-300 transition-colors"
                         title="Watch on YouTube"
                       >
                         <YoutubeIcon className="w-3.5 h-3.5 fill-current" />
@@ -532,10 +537,10 @@ export default function CatalogPage() {
                     </div>
 
                     <a
-                      href={`https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20license%20the%20track%20"${encodeURIComponent(song.title)}"%20for%20sync%20or%20wedding.`}
+                      href={`https://wa.me/919209290699?text=Hi%20Media%20Mafias%2C%20I%20want%20to%20license%20the%20track%20"${encodeURIComponent(song.title)}"%20for%20wedding%20or%20sync.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-2 px-3 bg-[#FED7AA] hover:bg-[#fbc281] border-2 border-black rounded-lg font-mono font-bold text-[11px] uppercase flex items-center justify-center shadow-[2px_2px_0px_0px_#000] transition-colors"
+                      className="w-full py-2 px-3 bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-black border border-[#D4AF37]/30 rounded-lg font-mono font-bold text-[10px] uppercase flex items-center justify-center transition-all"
                     >
                       <span>Direct Sync / Wedding License ➔</span>
                     </a>

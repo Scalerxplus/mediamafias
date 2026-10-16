@@ -51,7 +51,7 @@ export const FolkNicheCategories = () => {
       instruments: ["Sarangi", "Ektara", "Ambient Drones", "Santur"],
       targetDialects: "Banaras • Awadh • Kabirpanth",
       highlightTrack: "Jheeni Re Jheeni • Daras",
-      tagBg: "bg-[#C4B5FD]" // Lilac
+      tagBg: "bg-[#D4AF37]/20"
     }
   ];
 

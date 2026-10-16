@@ -13,58 +13,63 @@ export const metadata: Metadata = {
 
 export default function InsightsPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#C4B5FD] text-black selection:bg-[#E5FF00] selection:text-black font-sans">
+    <main className="flex min-h-screen flex-col bg-[#0B0B0E] text-[#F5F5F0] selection:bg-[#D4AF37] selection:text-black font-sans">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-36 pb-16 px-6 bg-white border-b-4 border-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="inline-block bg-[#E5FF00] border-2 border-black px-3.5 py-1 rounded font-mono text-xs font-black uppercase shadow-[2px_2px_0px_0px_#000] mb-4">
-            KNOWLEDGE BASE & INDUSTRY GUIDES
+      <section className="relative pt-36 pb-16 px-6 bg-radial-[at_top_center] from-[#1A1A22] via-[#0B0B0E] to-[#0B0B0E] border-b border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(212,175,55,0.1),rgba(255,255,255,0))] pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="inline-block bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3.5 py-1.5 rounded-full font-mono text-xs font-bold text-[#D4AF37] uppercase tracking-wider mb-4">
+            KNOWLEDGE BASE &amp; INDUSTRY GUIDES
           </div>
-          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-black mb-3">
-            Insights & Guides
+          <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white mb-2 leading-tight">
+            Insights &amp; Guides
           </h1>
-          <p className="font-mono text-sm sm:text-base text-neutral-800 max-w-2xl leading-relaxed">
+          <div className="font-sans font-bold text-xl sm:text-2xl text-[#D4AF37] mb-3">
+            लोक संगीत उद्योग, साउंड इंजीनियरिंग व वितरण मार्गदर्शिका
+          </div>
+          <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-2xl leading-relaxed">
             Technical breakdowns, metadata standards, and commercial licensing insights for vernacular creators, OTT music supervisors, and sound engineers.
           </p>
         </div>
       </section>
 
       {/* Guides Grid */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-[#0E0E12] flex-1">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {REAL_POSTS.map((post) => (
               <article
                 key={post.id}
-                className="bg-white border-4 border-black rounded-2xl p-6 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[4px_4px_0px_0px_#000] transition-all group"
+                className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 shadow-xl flex flex-col justify-between transition-all group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-[10px] font-black uppercase bg-[#00E5FF] border-2 border-black px-2.5 py-0.5 rounded shadow-[1px_1px_0px_0px_#000]">
+                    <span className="font-mono text-[10px] font-bold uppercase bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-2.5 py-0.5 rounded">
                       {post.category}
                     </span>
-                    <span className="font-mono text-[11px] text-neutral-600 flex items-center gap-1">
+                    <span className="font-mono text-[11px] text-neutral-400 flex items-center gap-1">
                       <Clock className="w-3 h-3 text-neutral-500" />
                       {post.readTime}
                     </span>
                   </div>
 
-                  <h2 className="font-display font-black text-2xl uppercase tracking-wide text-black mb-3 group-hover:text-[#FF2E2E] transition-colors leading-tight">
+                  <h2 className="font-display font-black text-2xl uppercase tracking-wide text-white mb-3 group-hover:text-[#D4AF37] transition-colors leading-tight">
                     {post.title}
                   </h2>
 
-                  <p className="font-mono text-xs text-neutral-700 leading-relaxed mb-6">
+                  <p className="font-mono text-xs text-neutral-300 leading-relaxed mb-6">
                     {post.excerpt}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t-2 border-black/10 flex items-center justify-between font-mono text-xs font-black">
+                <div className="pt-4 border-t border-white/5 flex items-center justify-between font-mono text-xs font-bold">
                   <span className="text-neutral-500 text-[11px]">{post.date}</span>
                   <Link
                     href={`/insights/${post.id}`}
-                    className="inline-flex items-center gap-1.5 bg-[#E5FF00] group-hover:bg-[#FF2E2E] group-hover:text-white border-2 border-black px-3.5 py-1.5 rounded-lg shadow-[2px_2px_0px_0px_#000] transition-all text-black"
+                    className="inline-flex items-center gap-1.5 bg-[#1F1F28] hover:bg-[#D4AF37] hover:text-black border border-white/10 px-3.5 py-1.5 rounded-lg transition-all text-neutral-200"
                   >
                     <span>Read Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
