@@ -18,7 +18,8 @@ import {
   Music2,
   MapPin,
   ChevronRight,
-  Disc3
+  Disc3,
+  Feather
 } from "lucide-react";
 import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
@@ -31,261 +32,745 @@ interface LyricEntry {
   dialect: string;
   ritualContext: string;
   description: string;
+  authorNote?: string;
   audioSrc?: string;
   devanagariLyrics: string[];
   romanLyrics: string[];
 }
 
 const LYRICS_DATA: LyricEntry[] = [
+  // 1. DUAARCHAAR GEET
   {
-    id: "parchhan-geet",
-    title: "Parchhan Geet (द्वार परछावन)",
-    hindiTitle: "आए हैं दुलहा द्वारे - परछन गीत",
+    id: "duarchaar-geet",
+    title: "Duarchaar Geet (दुआचार विवाह संस्कार)",
+    hindiTitle: "लीन धनुष बन्ना ठाढ़ो री - दुआचार गीत",
     category: "vivah",
-    categoryLabel: "विवाह संस्कार • द्वार आगमन",
-    dialect: "बघेली व अवधी (रीवा, सतna, अयोध्या)",
-    ritualContext: "बारात के मंडप के मुख्य द्वार पर पहुँचने पर वधु की माता व कुल की स्त्रियाँ कांस्य थाली में दीपक, रोली और हल्दी से दूल्हे की आरती व परछन करती हैं।",
-    description: "दूल्हे के रूप-सौंदर्य और गृहस्थ जीवन में मंगल प्रवेश की प्रार्थना का मधुर लोकगीत।",
-    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    categoryLabel: "विवाह संस्कार • द्वार आगमन व दुआचार",
+    dialect: "बघेली व अवधी (रीवा, सतना, जनकपुर)",
+    ritualContext: "जब बारात कन्या के मुख्य द्वार पर पहुँचती है और वर (दूल्हा) धनुषधारी मर्यादा पुरुषोत्तम श्रीराम के स्वरूप में द्वार पर उपस्थित होता है, तब सखियां व महिलाएं युगल जोड़ी की मंगल कामना में यह गीत गाती हैं।",
+    description: "दूल्हे के धनुष, मौर और कलगी के शृंगार के साथ माता सीता और श्रीराम की अलौकिक जोड़ी मिलाने की पवित्र प्रार्थना।",
+    audioSrc: "Ram Banra Ban Aayo Re - Banara.mp3",
     devanagariLyrics: [
-      "आए हैं दुलहा द्वारे, आरती उतारो री माई।",
-      "कंचन थार कपूर की बाती, मोतिन चौक पुराओ री माई॥",
-      "माथे मुकुट कुंडल छवि सोहे, नजर न लागे मोरे राजदुलारे को।",
-      "सासु ठाढ़ी आरती उतारे, हँसि-हँसि तिलक लगावे री माई॥",
-      "हल्दी अक्षत चन्दन घोरी, मंगल कलश सजाओ री माई।",
-      "आए हैं दुलहा द्वारे, आरती उतारो री माई॥"
+      "लीन धनुष बन्ना ठाढ़ो री कोउ जोड़ी तो मिलाय दो।",
+      "माऽथे पे मौरैं बांधे राजा बन्ना रे,",
+      "कलऽगि सम्हारे सिया जानकी कोउ जोड़ी तो मिलाय दो।",
+      "लीन धनुष बन्ना ठाढ़ो री कोउ जोड़ी तो मिलाय दो॥",
+      "काने बना जी के कुंडल सोहै,",
+      "झुमकि सम्हारे सिया जानकी कोउ जोड़ी तो मिलाय दो।",
+      "लीन धनुष बन्ना ठाढ़ो री कोउ जोड़ी तो मिलाय दो॥"
     ],
     romanLyrics: [
-      "Aaye hain dulaha dwaare, aarti utaaro ri maai.",
-      "Kanchan thaar kapoor ki baati, motin chauk puraao ri maai.",
-      "Maathe mukut kundal chhavi sohe, nazar na laage more raaj dulaare ko.",
-      "Saasu thaadhi aarti utaare, hansi-hansi tilak lagaave ri maai.",
-      "Haldii akshat chandan ghori, mangal kalash sajaao ri maai.",
-      "Aaye hain dulaha dwaare, aarti utaaro ri maai."
+      "Leen dhanush banna thaadho ri kou jodi to milaay do.",
+      "Maathe pe mauren baandhe raja banna re,",
+      "Kalagi samhaare Siya Jaanaki kou jodi to milaay do.",
+      "Leen dhanush banna thaadho ri kou jodi to milaay do.",
+      "Kaane bana ji ke kundal sohai,",
+      "Jhumaki samhaare Siya Jaanaki kou jodi to milaay do.",
+      "Leen dhanush banna thaadho ri kou jodi to milaay do."
     ]
   },
+
+  // 2. BANNA BANNI GEET
   {
-    id: "duarchar-geet",
-    title: "Duarchar & Kanyadaan (दुआचार व कन्यादान)",
-    hindiTitle: "बाबा जे मांगेले गइया के दानवा - दुआचार",
+    id: "banna-banni-geet",
+    title: "Banna Banni Vivah Geet (बन्ना-बन्नी)",
+    hindiTitle: "मोरे दशरथ राज दुलार आज बनरा बन आयो रे",
     category: "vivah",
-    categoryLabel: "विवाह संस्कार • मंडप व कन्यादान",
-    dialect: "बघेली व अवधी (विंध्य व पूर्वांचल)",
-    ritualContext: "दुआचार के समय वेदी पर पिता द्वारा गोदान व कन्यादान का पावन क्षण, जहाँ माता-पिता के त्याग और कुल-मर्यादा का गान होता है।",
-    description: "भारतीय विवाह का सबसे भावुक और शास्त्रीय क्षण, जहाँ बेटी के दान को संसार का सर्वोच्च दान माना गया है।",
+    categoryLabel: "विवाह संस्कार • बन्ना शृंगार व उल्लास",
+    dialect: "बघेली व अवधी (विंध्य व अवध)",
+    ritualContext: "वर के सेहरा, मौर, वैजयंती माला और धनुष-बाण के शृंगार के समय मंगल मंडली द्वारा आनंदपूर्वक गाया जाने वाला सर्वप्रिय बन्ना गीत।",
+    description: "महाराज दशरथ के राजदुलारे श्रीराम के जनकपुर द्वार पर वर बनकर आने का भव्य व उल्लासमय वर्णन।",
+    audioSrc: "Ram Banra Ban Aayo Re - Banara.mp3",
     devanagariLyrics: [
-      "बाबा जे मांगेले गइया के दानवा, मइया मँगेली सिन्दूर हो।",
-      "चाचा जे मांगेले सोने के कंगनवा, दुलहिन मांगेली सुहाग हो॥",
-      "हाथ में कुसवा, अँचरा में अक्षत, बाबा करेले कन्यादान।",
-      "सातो जनम के नेह निबाहब, राखब कुल के मान हो॥",
-      "गंगा की धार जइसे बहती विदाई, नयनन जल छलकाए हो।"
+      "मोरे दशरथ राज दुलार आज बनरा बन आयो रे।",
+      "मोरे जनकराज जि के द्वार राम बनरा बन आयो रे॥",
+      "माथे म उनके मौर बिराजै,",
+      "चन्दन भरा है लिलार आज बनरा बन आयो रे।",
+      "मोरे दशरथ राज दुलार आज बनरा बन आयो रे॥",
+      "काने म उनके कुण्डल सोहै,",
+      "गले बैजंती हार राम बनरा बन आयो रे।",
+      "मोरे दशरथ राज दुलार आज बनरा बन आयो रे॥",
+      "हाथे म उनके कंगन सोहै,",
+      "लिहे धनुष अउर बाण राम बनरा बन आयो रे।",
+      "मोरे दशरथ राज दुलार आज बनरा बन आयो रे।",
+      "मोरे जनकराज जि के द्वार राम बनरा बन आयो रे, राम बनरा बन आयो रे॥"
     ],
     romanLyrics: [
-      "Baaba je maangele gaiya ke daanawa, maiya mangeli sindoor ho.",
-      "Chaacha je maangele sone ke kanganwa, dulahin maangeli suhaag ho.",
-      "Haath mein kusawa, anchara mein akshat, baaba karele kanyadaan.",
-      "Saato janam ke neh nibaahab, raakhab kul ke maan ho.",
-      "Ganga ki dhaar jaise bahati vidaai, nayanan jal chhalakaaye ho."
+      "More Dasharath raaj dulaar aaj banara ban aayo re.",
+      "More Janakraaj ji ke dwaar Ram banara ban aayo re.",
+      "Maathe ma unke maur biraajai, chandan bhara hai lilaar aaj banara ban aayo re.",
+      "More Dasharath raaj dulaar aaj banara ban aayo re.",
+      "Kaane ma unke kundal sohai, gale baijanti haar Ram banara ban aayo re.",
+      "More Dasharath raaj dulaar aaj banara ban aayo re.",
+      "Haathe ma unke kangan sohai, lihe dhanush aur baan Ram banara ban aayo re.",
+      "More Dasharath raaj dulaar aaj banara ban aayo re.",
+      "More Janakraaj ji ke dwaar Ram banara ban aayo re, Ram banara ban aayo re."
     ]
   },
+
+  // 3. PARCHHAN VIVAAH GEET
   {
-    id: "banna-banni",
-    title: "Banna Banni Geet (बन्ना-बन्नी)",
-    hindiTitle: "मोरा बन्ना बड़ा अलबेला - बन्ना बन्नी",
+    id: "parchhan-vivaah-geet",
+    title: "Parchhan Vivaah Geet (परछन विवाह संस्कार)",
+    hindiTitle: "बिआहि लाये रघुबर जानकी का - परछन गीत",
     category: "vivah",
-    categoryLabel: "विवाह संस्कार • शृंगार व उल्लास",
-    dialect: "बघेली, बुंदेली व अवधी (संपूर्ण मध्य भारत)",
-    ritualContext: "विवाह से पूर्व तेल-हल्दी (मटमंगरा) की रस्म में दोनों पक्षों में गाया जाने वाला चुलबुला व आनंदमयी शृंगार गीत।",
-    description: "दूल्हे और दुल्हन के रूप, सेहरे, पायल और हंसी-ठिठोली पर केंद्रित सर्वप्रिय लोकगीत।",
-    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    categoryLabel: "विवाह संस्कार • द्वार परछन व स्वागत",
+    dialect: "बघेली व अवधी (रीवा, सतना, सीधी)",
+    ritualContext: "वर द्वारा वधु का पाणिग्रहण कर जब बारात मंडप या वधु द्वार पर आरती के लिए उपस्थित होती है, तब कांस्य थाली में कपूर आरती के साथ गाया जाने वाला परछन गीत।",
+    description: "श्री रघुबर द्वारा जानकी जी के लिए पागा-पिछौरा, चुनरी, मोतियों की माला, नथनी और म्याना (डोली) लाने का अनुपम सांस्कृतिक गान।",
+    audioSrc: "Biyah Laye Raghubar - Parchhan Geet.mp3",
     devanagariLyrics: [
-      "मोरा बन्ना बड़ा अलबेला, सेहरे में फूल गुलाब।",
-      "हाथों में कँगना खनके, चाल चले मस्तानी॥",
-      "बन्नी बैठी महल अटरिया, देखे बन्ना की शान।",
-      "माथे टीकम, पाँव महावर, रूप सलोना जान॥",
-      "ढोलक बाजे, झांझ झनके, झूमे सारा गाँव।",
-      "मोरा बन्ना बड़ा अलबेला, सेहरे में फूल गुलाब॥"
+      "बिआहि लाये रघुबर जानकी का,",
+      "बिआहि लाये रघुबर जानकी का॥",
+      "अपने का लाये पागा पिछौरा,",
+      "रंगाय लाये चुनरी जानकी का।",
+      "बिआहि लाये रघुबर जानकी का॥",
+      "अपने का लाये मोतियन के माला,",
+      "गढ़ाई लाये नथनी जानकी का।",
+      "बिआहि लाये रघुबर जानकी का॥",
+      "अपने का लाये हाथी अउर घोड़ा,",
+      "सजाई लाये म्याना जानकी का।",
+      "बिआहि लाये रघुबर जानकी का, बिआहि लाये रघुबर जानकी का॥"
     ],
     romanLyrics: [
-      "Mora banna bada albela, sehare mein phool gulaab.",
-      "Haathon mein kangana khanake, chaal chale mastaani.",
-      "Banni baithi mahal atariya, dekhe banna ki shaan.",
-      "Maathe teekam, paanv mahaavar, roop salona jaan.",
-      "Dholak baaje, jhaanjh jhanake, jhoome saara gaanv.",
-      "Mora banna bada albela, sehare mein phool gulaab."
+      "Biaahi laaye Raghubar Jaanaki ka, biaahi laaye Raghubar Jaanaki ka.",
+      "Apne ka laaye paaga pichhaura, rangaay laaye chunari Jaanaki ka.",
+      "Biaahi laaye Raghubar Jaanaki ka.",
+      "Apne ka laaye motiyan ke maala, gadhaai laaye nathani Jaanaki ka.",
+      "Biaahi laaye Raghubar Jaanaki ka.",
+      "Apne ka laaye haathi aur ghoda, sajaai laaye myaana Jaanaki ka.",
+      "Biaahi laaye Raghubar Jaanaki ka, biaahi laaye Raghubar Jaanaki ka."
     ]
   },
+
+  // 4. BELNHAI GEET 1
   {
-    id: "jeonaar-gari",
-    title: "Jeonaar Samdhi Gari (जेवनार व गाली गीत)",
-    hindiTitle: "समधी के पेटवा में कौआ बोले - जेवनार गारी",
+    id: "belnhai-geet-1",
+    title: "Belnhai Vivaah Geet 1 (बेलनहाई संस्कार)",
+    hindiTitle: "राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी क जाँय",
     category: "vivah",
-    categoryLabel: "विवाह संस्कार • पंगत व लोक परिहास",
-    dialect: "बघेली (रीवा, सतना, सीधी) व भोजपुरी",
-    ritualContext: "बारातियों के पंगत में भोजन (जेवनार) करते समय वधु पक्ष की महिलाएं थाली-लोटा बजाकर समधियों से मधुर परिहास करती हैं।",
-    description: "भारतीय लोक संस्कृति की अनुपम परंपरा जहाँ गाली भी प्रेम, सत्कार और आत्मीयता का प्रतीक बन जाती है।",
+    categoryLabel: "विवाह संस्कार • कड़ाही व बेलनहाई",
+    dialect: "बघेली व अवधी (विंध्य क्षेत्र)",
+    ritualContext: "विवाह भोज प्रारंभ होने से पूर्व 'कड़ाही चढ़ाने' और चूल्हा पूजन की पवित्र रस्म। इसमें बढ़ई द्वारा प्रकृति संरक्षण, चंदन, नीम और पीपल वृक्षों के देवत्व का आदर किया जाता है।",
+    description: "जनकपुर विवाह में कड़ाही चढ़ने और लकड़ी लाने के बहाने भगवान, शीतलता और पीपल में बसे देवों के पूजन का अनुपम लोकगीत।",
+    audioSrc: "Ram Banra Ban Aayo Re - Banara.mp3",
     devanagariLyrics: [
-      "समधी के पेटवा में कौआ बोले, जेवना मगन भये समधी।",
-      "काहे की भाजी काहे का रायता, पूरी गटक गये समधी॥",
-      "रसगुल्ला देखि समधी ललचाए, धोती सम्हारे न जाए।",
-      "मीठी गारी देहिं सखी सब, हँसि-हँसि ताल बजाये॥",
-      "सत्कार में गारी देत हम, बुरा न मानब समधी।",
-      "समधी के पेटवा में कौआ बोले, जेवना मगन भये समधी॥"
+      "ए जी, राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी क जाँय?",
+      "ए जी, राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी को जाँय?॥",
+      "ए जी, एक बन गए हैं, दुसर बन गए हैं, तिसिरे मा चंदन के पेड़,",
+      "चंदन पेड़ न काटे हो बढ़ईया... चंदन चढ़ै भगवान!",
+      "ए जी, राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी क जाँय?॥",
+      "ए जी, एक बन गए हैं, दुसर बन गए हैं, तिसिरे मा निमिया के पेड़,",
+      "निमिया के पेड़ न काटे हो बढ़ईया... निमिया के शीतल छाँव!",
+      "ए जी, राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी क जाँय?॥",
+      "ए जी, एक बन गए हैं, दुसर बन गए हैं, तिसिरे मा पीपर के पेड़,",
+      "पीपर पेड़ न काटे हो बढ़ईया... पीपर बसें भगवान!",
+      "ए जी, राजा जनकजी के चढ़ा रे करहबा, कउने बन लकड़ी क जाँय!॥"
     ],
     romanLyrics: [
-      "Samadhi ke petwa mein kaua bole, jevana magan bhaye samadhi.",
-      "Kaahe ki bhaaji kaahe ka raayata, poori gatak gaye samadhi.",
-      "Rasgulla dekhi samadhi lalchaaye, dhoti samhaare na jaaye.",
-      "Meethi gaari dehin sakhi sab, hansi-hansi taal bajaaye.",
-      "Satkaar mein gaari det hum, bura na maanab samadhi.",
-      "Samadhi ke petwa mein kaua bole, jevana magan bhaye samadhi."
+      "Ae ji, Raja Janakji ke chadha re karahaba, kaune ban lakadi ka jaay?",
+      "Ae ji, ek ban gaye hain, dusar ban gaye hain, tisire ma chandan ke ped,",
+      "Chandan ped na kaato ho badhaiya, chandan chadhai Bhagwan!",
+      "Ae ji, ek ban gaye hain, dusar ban gaye hain, tisire ma nimiya ke ped,",
+      "Nimiya ke ped na kaato ho badhaiya, nimiya ke sheetal chhaanv!",
+      "Ae ji, ek ban gaye hain, dusar ban gaye hain, tisire ma peepar ke ped,",
+      "Peepar ped na kaato ho badhaiya, peepar basen Bhagwan!",
+      "Ae ji, Raja Janakji ke chadha re karahaba, kaune ban lakadi ka jaay!"
     ]
   },
+
+  // 5. BELNHAI GEET 2
   {
-    id: "anjuri-gailhai",
-    title: "Anjuri & Gailhai (अंजुरी व गैलहाई - विदाई)",
-    hindiTitle: "काहे को ब्याही बिदेस - विदाई व गैलहाई",
+    id: "belnhai-geet-2",
+    title: "Belnhai Vivaah Geet 2 (अयोध्या नगर वर्णन)",
+    hindiTitle: "नगर अयोध्या बहुत नीक लागै, जहाँ राजा राम कुमार",
     category: "vivah",
-    categoryLabel: "विवाह संस्कार • विदाई व करुण रस",
-    dialect: "बघेली (विंध्य) व अवधी",
-    ritualContext: "विदाई के समय जब वधु पीछे की ओर अक्षत (चावल) की अंजुली फेंकती है और डोली प्रस्थान करती है, तब गाँव की सीमा तक 'गैलहाई' गाई जाती है।",
-    description: "भारतीय लोक संगीत की सबसे कारुणिक रचना, जो पिता-पुत्री और मातृभूमि के शाश्वत प्रेम को प्रकट करती है।",
-    devanagariLyrics: [
-      "काहे को ब्याही बिदेस रे लखिया बाबुल मोरे।",
-      "भैया को दीन्हे महल दो महला, हमको दियो परदेस॥",
-      "अंजुरी भर अक्षत डारि के रोवे, रोवे सहेली और माई।",
-      "डोली कहार उठावत काँपे, छूटल गँवई गाँव री माई॥",
-      "आशीष देव सब बुजुर्ग गाँव के, सदा सुहागिन रहो री लली।"
-    ],
-    romanLyrics: [
-      "Kaahe ko byaahi bidesh re lakhiya baabul more.",
-      "Bhaiya ko deenhe mahal do mahala, hamko diyo pardes.",
-      "Anjuri bhar akshat daari ke rowe, rowe saheli aur maai.",
-      "Doli kahaar uthaawat kaanpe, chhootall ganwai gaanv ri maai.",
-      "Aasheesh dev sab buzurg gaanv ke, sada suhaagin raho ri lali."
-    ]
-  },
-  {
-    id: "sohar-dadra",
-    title: "Sohar Dadra (सोहर दादरा - जन्मोत्सव)",
-    hindiTitle: "एही अँगना म लाखन लुटाई देब - सोहर दादरा",
-    category: "sohar",
-    categoryLabel: "जन्मोत्सव • सोहर व बधाई",
-    dialect: "बघेली (रीवा, सतना) व अवधी",
-    ritualContext: "संतान जन्मोत्सव और नामकरण संस्कार पर कुल की महिलाएं आंगन में एकत्र होकर ढोलक की थाप पर सोहर गाती हैं।",
-    description: "नवजात शिशु के शुभागमन पर परिवार और ननिहाल के उल्लास का पारंपरिक बघेली सोहर।",
-    audioSrc: "एही अँगना म लाखन लुटाई देब - Sohar Dadra Male Version.mp3",
-    devanagariLyrics: [
-      "एही अँगना म लाखन लुटाई देब, ललना के जनमवा भये।",
-      "बाजे मृदंग झांझ और ढोलक, खुशियाँ मनावे सखी॥",
-      "दादी लुटावे सोने के मोहरें, बुआ लुटावे सुहाग।",
-      "चाचा-चाची गावे बधाइयाँ, जागे कुल के भाग॥",
-      "जुग-जुग जिए मोरा कुल के उजियारा, मातु-पिता बलिहारी।"
-    ],
-    romanLyrics: [
-      "Ehi angana ma laakhan lutaaee deb, lalana ke janamwa bhaye.",
-      "Baaje mridang jhaanjh aur dholak, khushiyaan manaave sakhi.",
-      "Daadi lutaave sone ke moharen, bua lutaave suhaag.",
-      "Chaacha-chaachi gaave badhaiyaan, jaage kul ke bhaag.",
-      "Jug-jug jiye mora kul ke ujiyaara, maatu-pita balihaari."
-    ]
-  },
-  {
-    id: "kajri-geet",
-    title: "Kajri Geet (कजरी - सावन वर्षा)",
-    hindiTitle: "बरसन लागी बदरिया सावन की - कजरी",
-    category: "seasonal",
-    categoryLabel: "ऋतु लोकगीत • सावन व वर्षा",
-    dialect: "अवधी व मिर्ज़ापुरी (वाराणसी, मिर्ज़ापुर, रीवा)",
-    ritualContext: "सावन मास में हरियाली तीज और रक्षाबंधन के समय नीम की डालों पर झूले डालकर गाई जाने वाली पारंपरिक कजरी।",
-    description: "घनघोर घटाओं, विरह और राधा-कृष्ण के झूले का शास्त्रीय व लोक माधुर्य।",
+    categoryLabel: "विवाह संस्कार • सखी संवाद व नगर शोभा",
+    dialect: "अवधी व बघेली (अयोध्या, विंध्य)",
+    ritualContext: "विवाह की तैयारियों के दौरान सखियों द्वारा परस्पर संवाद में अयोध्या धाम की शोभा, शिव, विष्णु, देवी के वाहनों और सीता जी के विवाह की स्वर्ण हवेली का गान।",
+    description: "अत्यंत मधुर और गतिशील लोक संवाद शैली, जिसमें नंदी, रथ और सिंह की सवारी का शास्त्रीय व लोक समन्वय है।",
     audioSrc: "Bagiya Ma Aaye Bhagwan - Awadhi Folk Song.mp3",
     devanagariLyrics: [
-      "बरसन लागी बदरिया सावन की, झूला झूलें सिया-राम।",
-      "हरिहर दूब मगन मन मोरा, कोयल बोले अमवा की डार॥",
-      "रिमझिम-रिमझिम बूँदें बरसे, भीजे सखियन के चीर।",
-      "पिया परदेस बसे नहीं आए, नैनन छलके नीर॥",
-      "सावन आयो री सखी, झूलो कदम की छैयाँ।"
+      "हे जी... नगर अयोध्या बहुत नीक लागै, जहाँ राजा राम कुमार!",
+      "हे जी... नगर अयोध्या बहुत नीक लागै, जहाँ राजा राम कुमार!॥",
+      "हे जी... काहे चढ़े शिव शंकर आमय, काहे चढ़े आमय भगवान?",
+      "हे जी... काहे चढ़े देवी गरजतियामय, लाल ध्वजा फहराय?",
+      "हे जी... नंदी चढ़े शिव शंकर आमय, रथवा चढ़े भगवान,",
+      "हे जी... सिंह चढ़े देवी गरजतियामय, लाल ध्वजा फहराय॥",
+      "हे जी... नगर अयोध्या बहुत नीक लागै, जहाँ राजा राम कुमार!",
+      "हे जी... उहै जग-करता के बखरी बतावा, जहाँ सीता ब्याहन जाय?",
+      "हे जी... बखरी बनी है सोने-सकरी लगी है, हथनी बंधी उनके द्वार!",
+      "हे जी... नगर अयोध्या बहुत नीक लागै, जहाँ राजा राम कुमार!॥"
     ],
     romanLyrics: [
-      "Barasan laagi badariya saawan ki, jhoola jhoolen Siya-Raam.",
-      "Harihar doob magan man mora, koyal bole amawa ki daar.",
-      "Rimjhim-rimjhim boonden barase, bheeje sakhiyan ke cheer.",
-      "Piya pardes base nahi aaye, nayanan chhalake neer.",
-      "Saawan aayo ri sakhi, jhoolo kadam ki chhaiyaan."
+      "He ji, nagar Ayodhya bahut neek laagai, jahaan Raja Ram kumar!",
+      "He ji, kaahe chadhe Shiv Shankar aamay, kaahe chadhe aamay Bhagwan?",
+      "He ji, kaahe chadhe Devi garjatiyaamay, laal dhwaja phaharaay?",
+      "He ji, Nandi chadhe Shiv Shankar aamay, rathawa chadhe Bhagwan,",
+      "He ji, Singh chadhe Devi garjatiyaamay, laal dhwaja phaharaay.",
+      "He ji, nagar Ayodhya bahut neek laagai, jahaan Raja Ram kumar!",
+      "He ji, uhai jag-karta ke bakhari bataawa, jahaan Seeta byaahan jaay?",
+      "He ji, bakhari bani hai sone-sakari lagi hai, hathani bandhi unke dwaar!",
+      "He ji, nagar Ayodhya bahut neek laagai, jahaan Raja Ram kumar!"
     ]
   },
+
+  // 6. GAILHAI FOLK SONG 1
   {
-    id: "phaag-bundeli-rai",
-    title: "Phaag & Bundeli Rai (फाग व बुंदेली राई)",
-    hindiTitle: "उड़त गुलाल लाल भये बादर - बुंदेली फाग",
-    category: "seasonal",
-    categoryLabel: "ऋतु लोकगीत • होली व फाग",
-    dialect: "बुंदेली (झांसी, सागर, छतरपुर)",
-    ritualContext: "होली उत्सव और कटाई के समय नगाड़िया और टिमकी की तेज थाप पर ईसुरी की चौघड़ियों के साथ गाई जाने वाली फाग।",
-    description: "बुंदेलखंड की मर्दाना आन-बान और अबीर-गुलाल के रंगों से सराबोर द्रुत गति का लोक नृत्य-गीत।",
+    id: "gailhai-amiliya",
+    title: "Gailhai Folk Song 1 (विदाई व प्रतीक्षा)",
+    hindiTitle: "झरी गए अमिलिया के पाती हो, मोरे सैंयाँ ना आए - गैलहाई",
+    category: "vivah",
+    categoryLabel: "विवाह विदाई व गैलहाई • विरह भाव",
+    dialect: "बघेली (रीवा, सतना, मैहर)",
+    ritualContext: "विदाई के बाद जब डोली गाँव की गलियों से निकलती है, तब विरहिणी के इंतजार, ठंडे पानी की गगरिया, सोने की थाली में भोजन और लौंग-इलायची के पान बीड़ा बासी होने का दर्द गाती हैं।",
+    description: "विंध्य अंचल की सबसे गहरी और मर्मस्पर्शी गैलहाई, जो हर आँगन की विदाई और मिलन की प्रतीक्षा को वाणी देती है।",
+    audioSrc: "Sohaag - Vivaah Geet.mp3",
     devanagariLyrics: [
-      "उड़त गुलाल लाल भये बादर, खेलें फाग ब्रज के यार।",
-      "चंग ढोलक झांझ बजावे, रंग बरसे अपार॥",
-      "पिचकारी भर मारत कान्हा, गोपी करत पुकार।",
-      "बुंदेलखंड के वीरों की टोली, नाचे राई ताल अपार॥",
-      "ईसुरी की फागें गूंजे, महुआ के बन मझार।"
+      "झरी गए अमिलिया के पाती हो, मोरे सैंयाँ ना आए...॥",
+      "जूड़-जूड़ पानी के भरों मैं गगरिया,",
+      "पनियो त होएगा है बासी रे, मोरे सैंयाँ ना आए...।",
+      "झरी गए अमिलिया के पाती हो, मोरे सैंयाँ ना आए...॥",
+      "सोने की थाली मां जेमना परोस्यों,",
+      "जेमनओ त होएगा है बासी रे, मोरे सैंयाँ ना आए...।",
+      "झरी गए अमिलिया के पाती हो, मोरे सैंयाँ ना आए...॥",
+      "लौंगा इलायची के बीरा लगायों,",
+      "बीरौ त होएगा है बासी हो, मोरे सैंयाँ ना आए...।",
+      "झरी गए अमिलिया के पाती हो, मोरे सैंयाँ ना आए...॥"
     ],
     romanLyrics: [
-      "Udat gulaal laal bhaye baadar, khelen phaag Braj ke yaar.",
-      "Chang dholak jhaanjh bajaave, rang barase apaar.",
-      "Pichkaari bhar maarat Kaana, gopi karat pukaar.",
-      "Bundelkhand ke veeron ki toli, naache raai taal apaar.",
-      "Eesuri ki phaagen goonje, mahua ke ban majhaar."
+      "Jhari gaye amiliya ke paati ho, more sainyaan na aaye...",
+      "Jood-jood paani ke bharon main gagariya, paniyo ta hoega hai baasi re, more sainyaan na aaye.",
+      "Jhari gaye amiliya ke paati ho, more sainyaan na aaye...",
+      "Sone ki thaali maa jemana parosyon, jemanao ta hoega hai baasi re, more sainyaan na aaye.",
+      "Jhari gaye amiliya ke paati ho, more sainyaan na aaye...",
+      "Launga ilaayachi ke beera lagaayon, beerau ta hoega hai baasi ho, more sainyaan na aaye.",
+      "Jhari gaye amiliya ke paati ho, more sainyaan na aaye..."
     ]
   },
+
+  // 7. GAILHAI FOLK SONG 2
   {
-    id: "devi-jas-maihar",
-    title: "Devi Jas & Pachra (देवी जस - मैहर शारदा माई)",
-    hindiTitle: "निमिया की डार मैया झुलेली झुलनवा - देवी जस",
+    id: "gailhai-lachhiman-baan",
+    title: "Gailhai Folk Song 2 (पौराणिक आख्यान)",
+    hindiTitle: "लछिमन लिहे बाण रामा, हिरनिया मारैं - गैलहाई",
+    category: "vivah",
+    categoryLabel: "विदाई व गैलहाई • पौराणिक गाथा",
+    dialect: "बघेली (विंध्य क्षेत्र)",
+    ritualContext: "विदाई और वन गमन के पौराणिक प्रसंग से जुड़ी उच्च ऊर्जा की युगल लोक गैलहाई, जो बगीचे, कुएँ और तालाब पर हिरणी शिकार और विरह का रूपक प्रस्तुत करती है।",
+    description: "सारंगी, ढोलक और खंजरी पर गाई जाने वाली द्रुत गति की पारंपरिक विंध्य गैलहाई।",
+    audioSrc: "Sohaag - Vivaah Geet.mp3",
+    devanagariLyrics: [
+      "लछिमन लिहे बाण रामा, हिरनिया मारैं,",
+      "लछिमन लिहे बाण रामा, हिरनिया मारैं॥",
+      "पहली हिरनिया बगइचा बिच मारंय, बगइचा बिच मारैं,",
+      "फुलबन के ओट रामा हिरनिया मारैं।",
+      "लछिमन लिहे बाण रामा, हिरनिया मारैं॥",
+      "दुसरी हिरनिया कुआना बिच मारंय, कुआना बिच मारैं,",
+      "रसरि के ओट रामा हिरनिया मारंय।",
+      "लछिमन लिहे बाण रामा, हिरनिया मारैं॥",
+      "तिसरी हिरनिया तलाये बिच मारंय, बिच मारैं,",
+      "घाटन के ओट रामा हिरनिया मारंय।",
+      "लछिमन लिहे बाण रामा, हिरनिया मारैं, लछिमन लिहे बाण रामा, हिरनिया मारैं॥"
+    ],
+    romanLyrics: [
+      "Lachhiman lihe baan Rama, hiraniya maarain, Lachhiman lihe baan Rama, hiraniya maarain.",
+      "Pahali hiraniya bagaicha bich maaran, bagaicha bich maarain, phulban ke ot Rama hiraniya maarain.",
+      "Lachhiman lihe baan Rama, hiraniya maarain.",
+      "Dusari hiraniya kuaana bich maaran, kuaana bich maarain, rasari ke ot Rama hiraniya maaran.",
+      "Lachhiman lihe baan Rama, hiraniya maarain.",
+      "Tisari hiraniya talaaye bich maaran, bich maarain, ghaatan ke ot Rama hiraniya maaran.",
+      "Lachhiman lihe baan Rama, hiraniya maarain."
+    ]
+  },
+
+  // 8. GAILHAI FOLK SONG 3
+  {
+    id: "gailhai-rama-lakhan",
+    title: "Gailhai Folk Song 3 (साधु वनगमन)",
+    hindiTitle: "रामा लखन तपसी दोनों भइया, साधु बनय चले जाय - गैलहाई",
+    category: "vivah",
+    categoryLabel: "विदाई व गैलहाई • करुण गाथा",
+    dialect: "बघेली व अवधी",
+    ritualContext: "बेटी की विदाई के समय श्रीराम-लक्ष्मण के वन प्रस्थान के त्याग की तुलना करते हुए मालिन, कहरिन और रानी द्वारा सेवा प्रस्ताव व साधु धर्म की मर्यादा का गान।",
+    description: "विंध्य-अवध की अत्यंत मार्मिक गैलहाई जो वैराग्य, मर्यादा और त्याग को अश्रुपूर्ण स्वर देती है।",
+    audioSrc: "Sohaag - Vivaah Geet.mp3",
+    devanagariLyrics: [
+      "रामा लखन तपसी दोनों भइया, साधु बनय चले जाय मोरे लाल।",
+      "अरे रामा लखन तपसी दोनों भइया, साधु बनय चले जाय मोरे लाल॥",
+      "चलते चलते बागा म पहुंचे, मालिन उठी हर्षाय मोरे लाल।",
+      "ठहरो ठहरो ओ साधु भइया, माला पहिन चले जाओ मोरे लाल।",
+      "तोर गुहा माला न पहिनब मालिन, साधू धरम घटी जाय मोरे लाल॥",
+      "चलते चलते कुआना म पहुंचे, कहरिन उठी हर्षाय मोरे लाल।",
+      "ठहरो ठहरो ओ साधु भइया, पनिया पिये चले जाओ मोरे लाल।",
+      "तोर भरा पानी न पियब कहरिन, साधू धरम घटी जाय मोरे लाल॥",
+      "चलते चलते महलन म पहुंचे, रानी उठी हर्षाय मोरे लाल।",
+      "ठहरो ठहरो ओ साधु भइया, भोजन करत चले जाओ मोरे लाल।",
+      "तोर बना भोजन न करब माता, साधू धरम घटी जाय मोरे लाल।",
+      "रामा लखन तपसी दोनों भइया, साधु बनय चले जाय मोरे लाल॥"
+    ],
+    romanLyrics: [
+      "Rama Lakhan tapasi dono bhaiya, saadhu banay chale jaay more laal.",
+      "Chalte chalte baaga ma pahunche, maalin uthi harshaay more laal.",
+      "Thaharo thaharo o saadhu bhaiya, maala pahin chale jaao more laal.",
+      "Tor guha maala na pahinab maalin, saadhu dharam ghati jaay more laal.",
+      "Chalte chalte kuaana ma pahunche, kaharin uthi harshaay more laal.",
+      "Thaharo thaharo o saadhu bhaiya, paniya piye chale jaao more laal.",
+      "Tor bhara paani na piyab kaharin, saadhu dharam ghati jaay more laal.",
+      "Chalte chalte mahalan ma pahunche, rani uthi harshaay more laal.",
+      "Thaharo thaharo o saadhu bhaiya, bhojan karat chale jaao more laal.",
+      "Tor bana bhojan na karab maata, saadhu dharam ghati jaay more laal."
+    ]
+  },
+
+  // 9. SOHAR DADARA (LAKHAN LUTAI DEB)
+  {
+    id: "sohar-dadra-lakhan",
+    title: "Sohar Dadara (सोहर दादरा - जन्मोत्सव नेग)",
+    hindiTitle: "एही अँगना म लाखन लुटाई देब - सोहर दादरा",
+    category: "sohar",
+    categoryLabel: "जन्मोत्सव • सोहर दादरा व बधाई",
+    dialect: "बघेली (रीवा, सतना, सीधी)",
+    ritualContext: "संतान जन्मोत्सव पर सासू द्वारा पीपर पीसने पर झुलनी गढ़ाने/उतारने और जेठानी द्वारा लड्डू बाँधने पर बेसरिया देने की हास-परिहास युक्त नेग परंपरा।",
+    description: "बघेलखंड का सर्वप्रिय सोहर दादरा जो हर नवजात शिशु के आगमन पर आँगन में ढोलक की तेज थाप पर गूंजता है।",
+    audioSrc: "एही अँगना म लाखन लुटाई देब - Sohar Dadra Male Version.mp3",
+    devanagariLyrics: [
+      "एही अँगना म... एही अँगना म!",
+      "एही अँगना म लाखन लुटाई देब, एही अँगना म लाखन लुटाई देब॥",
+      "सासु जो अईंहैं पीपर पीसय, माँगयं आपन नेग,",
+      "ए हो... झुलनिया गढ़ाए देब!",
+      "एही अँगना म झुलनिया गढ़ाए देब, एही अँगना म लाखन लुटाई देब।",
+      "जो दुरुर-दुरुर पिसबू... जो दुरुर-दुरुर पिसबू, झुलनिया उतारि लेब!",
+      "एही अँगना म झुलनिया उतारि लेब, एही अँगना म लाखन लुटाई देब॥",
+      "जेठि जो अईंहैं लड्डू बाँधय, माँगय आपन नेग,",
+      "ए हो... बेसरिया गढ़ाए देब!",
+      "एही अँगना म बेसरिया गढ़ाए देब, एही अँगना म लाखन लुटाई देब।",
+      "जो छोट-बड़ा बँधबू... जो छोट-बड़ा बँधबू, बेसरिया उतारि लेब!",
+      "एही अँगना म बेसरिया उतारि लेब, एही अँगना म लाखन लुटाई देब॥",
+      "अरे लाखन लुटाई देब! एही अँगना म लाखन लुटाई देब॥"
+    ],
+    romanLyrics: [
+      "Ehi angana ma laakhan lutaaee deb, ehi angana ma laakhan lutaaee deb.",
+      "Saasu jo aeenhain peepar peesay, maangayan aapan neg, e ho... jhulanaiya gadhaaye deb!",
+      "Ehi angana ma jhulanaiya gadhaaye deb, ehi angana ma laakhan lutaaee deb.",
+      "Jo durur-durur pisaboo, jhulanaiya utaari leb!",
+      "Ehi angana ma jhulanaiya utaari leb, ehi angana ma laakhan lutaaee deb.",
+      "Jethi jo aeenhain laddu baandhay, maangay aapan neg, e ho... besariya gadhaaye deb!",
+      "Ehi angana ma besariya gadhaaye deb, ehi angana ma laakhan lutaaee deb.",
+      "Jo chhot-bada bandhaboo, besariya utaari leb!",
+      "Ehi angana ma besariya utaari leb, ehi angana ma laakhan lutaaee deb."
+    ]
+  },
+
+  // 10. KRISHNA JANM SOHAR
+  {
+    id: "krishna-janm-sohar",
+    title: "Krishna Janm Sohar (श्रीकृष्ण जन्मोत्सव)",
+    hindiTitle: "जनमे हैं कृष्ण मुरारी जगत हितकारी - सोहर गीत",
+    category: "sohar",
+    categoryLabel: "जन्मोत्सव • श्रीकृष्ण सोहर व बधाई",
+    dialect: "बघेली व अवधी (विंध्य आंगन परंपरा)",
+    ritualContext: "भाद्रपद कृष्ण अष्टमी (जन्माष्टमी) और घर में पुत्र/कन्या जन्मोत्सव पर रोहिणी नक्षत्र में मथुरा अवतार और गोकुल पलना झूलने का दिव्य सोहर।",
+    description: "अत्यंत शांत, अलौकिक और भक्ति-विभोर सोहर जो मातृत्व और ईश्वर के शिशु रूप के वात्सल्य को साकार करता है।",
+    audioSrc: "Lakhan Lutai Deb - Sohar Dadra Female Version.mp3",
+    devanagariLyrics: [
+      "जनमे हैं कृष्ण मुरारी जगत हितकारी, जगत हितकारी हो...",
+      "जनमे हैं कृष्ण मुरारी जगत हितकारी, जगत हितकारी हो॥",
+      "अब मथुरा म लिहिन अवतार गोकुल झूलैं पलना, गोकुल झूलैं पलna हो...",
+      "प्रभु मथुरा म लिहिन अवतार गोकुल झूलैं पलना, गोकुल झूलैं पलना हो॥",
+      "तिथि अष्टमी राति भादौं बड़ी शुभ बेरिया, बड़ी शुभ बेरिया हो...",
+      "तिथि अष्टमी राति भादौं बड़ी शुभ बेरिया, बड़ी शुभ बेरिया हो॥",
+      "अब रोहिणी नछत्र आधी रतिया कन्हइया मोरे जनमे, हाँ शुभ घड़ी जनमे हो...",
+      "कान्हा रोहिणी नछत्र आधी रतिया कन्हइया मोरे जनमे, हाँ शुभ घड़ी जनमे हो॥",
+      "जनमे हैं कृष्ण मुरारी जगत हितकारी, जगत हितकारी हो..."
+    ],
+    romanLyrics: [
+      "Janme hain Krishna Muraari jagat hitkaari, jagat hitkaari ho.",
+      "Ab Mathura ma lihin awataar Gokul jhoolain palana, Gokul jhoolain palana ho.",
+      "Tithi ashtami raati bhaadaun badi shubh beriya, badi shubh beriya ho.",
+      "Ab Rohini nachhatra aadhi ratiya Kanhaiya more janme, haan shubh ghadi janme ho.",
+      "Janme hain Krishna Muraari jagat hitkaari, jagat hitkaari ho."
+    ]
+  },
+
+  // 11. GHAAT POOJAN / KUAN POOJAN
+  {
+    id: "ghaat-poojan-kuaan",
+    title: "Ghaat Poojan / Kuaan Poojan (कुआँ पूजन संस्कार)",
+    hindiTitle: "जल भरौं हिलोर हिलोर रेशम की डोरी - कुआँ पूजन",
+    category: "sohar",
+    categoryLabel: "शिशु संस्कार • जलवा व कुआँ पूजन",
+    dialect: "बघेली (रीवा, सतना, सीधी)",
+    ritualContext: "प्रसूति उपरांत माता द्वारा नवजात शिशु के मंगल के लिए जल देवता, कुआँ और घाट पूजन (जलवा पूजन) के समय सोने की गगरी और रेशम की डोरी के साथ गाया जाने वाला गीत।",
+    description: "सोने की घइलना (कलश), गोटा लहंगा, गोदी में ललना और काशी में मुंडन के मंगल संकल्प का हृदयस्पर्शी संस्कार गीत।",
+    audioSrc: "Jal Bharao Hilore - Sohar Dadar.mp3",
+    devanagariLyrics: [
+      "जल भरौं हिलोर हिलोर रेशम की डोरी,",
+      "ओ जल भरौं हिलोर हिलोर रेशम की डोरी॥",
+      "रेशम डोरी तब निक लागय,",
+      "जब सोने घइलना होए, रेशम की डोरी।",
+      "जल भरौं हिलोर हिलोर रेशम की डोरी॥",
+      "सोने घइलना तब निक लागय,",
+      "जब गोटा के लहंगा होए, रेशम की डोरी।",
+      "जल भरौं हिलोर हिलोर रेशम की डोरी॥",
+      "गोटा के लहंगा तब निक लागय,",
+      "जब गोदी म ललना होए, रेशम की डोरी।",
+      "जल भरौं हिलोर हिलोर रेशम की डोरी॥",
+      "गोदी म ललना तब निक लागय,",
+      "जब काशी मा मूंड़न होए, रेशम की डोरी।",
+      "जल भरौं हिलोर हिलोर रेशम की डोरी॥"
+    ],
+    romanLyrics: [
+      "Jal bharon hilor hilor resham ki dori, o jal bharon hilor hilor resham ki dori.",
+      "Resham dori tab nik laagay, jab sone ghailana hoye, resham ki dori.",
+      "Sone ghailana tab nik laagay, jab gota ke lahanga hoye, resham ki dori.",
+      "Gota ke lahanga tab nik laagay, jab godi ma lalana hoye, resham ki dori.",
+      "Godi ma lalana tab nik laagay, jab Kaashi ma moondan hoye, resham ki dori.",
+      "Jal bharon hilor hilor resham ki dori."
+    ]
+  },
+
+  // 12. NACHANHAI PHAAG 1 (JARAI BHINSAARE)
+  {
+    id: "nachanhai-phaag-jarai",
+    title: "Nachanhai Phaag 1 (महुआ उजरि गा - हास्य फागुआ)",
+    hindiTitle: "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा",
+    category: "seasonal",
+    categoryLabel: "ऋतु लोकगीत • नचनहाई फाग व हास-परिहास",
+    dialect: "बघेली (रीवा, सतना, विंध्याचल)",
+    ritualContext: "फागुन में महुआ बीनने के समय ससुराल में सास-ससुर, जेठ-जेठानी, देवर-ननद के बहानों और प्रातःकाल की नींद पर ग्रामीण महिलाओं की तीखी, चुलबुली व्यंग्य फाग।",
+    description: "बघेलखंड का सर्वाधिक लोकप्रिय लोक व्यंग्य गीत, जो घरेलू सजीवता और अदम्य ग्रामीण ऊर्जा से परिपूर्ण है।",
+    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    devanagariLyrics: [
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा।",
+      "ससुरु न जागें, मोर सासू न जागीं, जागै न लहुरी ननदिया हो मोर महुआ उजरि गा॥",
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा।",
+      "जेठा न जागें, जेठानी न जागीं, जागै न लहुरा देवरबा हो मोर महुआ उजरि गा॥",
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा।",
+      "ससुरु कहैं मोरा बाखा धरे है, सासू कै करिहा पिरानी हो मोर महुआ उजरि गा॥",
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा।",
+      "जेठा कहैं मोहे खेतबा निरन है, जेठी कै ओठर को जानी हो मोर महुआ उजरि गा॥",
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा।",
+      "ननदी कहैं मोहे पनिया भरन है, देवरा करै मनमानी हो मोर महुआ उजरि गा।",
+      "जरै भिनसारे कै निंदिया हो मोर महुआ उजरि गा॥"
+    ],
+    romanLyrics: [
+      "Jarai bhinsaare kai nindiya ho mor mahua ujari ga.",
+      "Sasuru na jaagen, mor saasu na jaageen, jaagai na lahuri nanadiya ho mor mahua ujari ga.",
+      "Jetha na jaagen, jethaani na jaageen, jaagai na lahura dewarba ho mor mahua ujari ga.",
+      "Sasuru kahain mora baakha dhare hai, saasu kai kariha piraani ho mor mahua ujari ga.",
+      "Jetha kahain mohe khetba niran hai, jethi kai othhar ko jaani ho mor mahua ujari ga.",
+      "Nanadi kahain mohe paniya bharan hai, dewara karai manamaani ho mor mahua ujari ga.",
+      "Jarai bhinsaare kai nindiya ho mor mahua ujari ga."
+    ]
+  },
+
+  // 13. NACHANHAI PHAAG 2 (KAHAU BAAJAT HAI BEEN)
+  {
+    id: "nachanhai-phaag-been",
+    title: "Nachanhai Phaag 2 (बीन व रसिया संवाद)",
+    hindiTitle: "कहौं बाजत है बीन सुनौ रसिया - नचनहाई फाग",
+    category: "seasonal",
+    categoryLabel: "ऋतु लोकगीत • फाग व बीन जुगलबंदी",
+    dialect: "बघेली व बुंदेली (विंध्य-बुंदेलखंड)",
+    ritualContext: "फागुन में बीन और नगाड़िया पर सखी और रसिया के रूप, रंग, लाल पलंग, हरियर तकिया, रूठने और मान जाने का तेज लयबद्ध नृत्य गीत।",
+    description: "ढोलक की थाप और बीन के घुंघरुओं पर आधारित बुंदेलखंड व बघेलखंड का सदाबहार फागुआ नृत्य।",
+    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    devanagariLyrics: [
+      "कहौं बाजत है बीन सुनौ रसिया,",
+      "कहौं बाजत है बीन सुनौ रसिया॥",
+      "कउन रंग गोरी, कउन रंग रसिया?",
+      "अरे कइसन पलंग, कइसन तकिया?",
+      "कहौं बाजत है बीन सुनौ रसिया॥",
+      "गोर रंग गोरी, साँवर रंग रसिया,",
+      "अरे लाल पलंग, हरियर तकिया।",
+      "कहौं बाजत है बीन सुनौ रसिया॥",
+      "रूठि गय गोरी, रूठि गैं रसिया,",
+      "अरे रोवै पलंग, सिसकै तकिया।",
+      "कहौं बाजत है बीन सुनौ रसिया॥",
+      "मानि गय गोरी, मानि गैं रसिया,",
+      "अरे हँसै पलंग, खिलि गय तकिया।",
+      "कहौं बाजत है बीन सुनौ रसिया, कहौं बाजत है बीन सुनौ रसिया॥"
+    ],
+    romanLyrics: [
+      "Kahau baajat hai been sunau rasiya, kahau baajat hai been sunau rasiya.",
+      "Kaun rang gori, kaun rang rasiya? Are kaisan palang, kaisan takiya?",
+      "Gor rang gori, saanwar rang rasiya, are laal palang, hariyar takiya.",
+      "Roothi gay gori, roothi gain rasiya, are rowai palang, sisakai takiya.",
+      "Maani gay gori, maani gain rasiya, are hansai palang, khili gay takiya.",
+      "Kahau baajat hai been sunau rasiya."
+    ]
+  },
+
+  // 14. NACHANHAI PHAAG 3 (CHALE AAWA MORE RAJA)
+  {
+    id: "nachanhai-phaag-raja",
+    title: "Nachanhai Phaag 3 (महलिया म बुलावा)",
+    hindiTitle: "चले आवा मोरे राजा महलिया म - नचनहाई फाग",
+    category: "seasonal",
+    categoryLabel: "ऋतु लोकगीत • फाग व मान-मनौव्वल",
+    dialect: "बघेली (रीवा, सतना)",
+    ritualContext: "होली और वसंतोत्सव में घर की अटरिया, खिड़की, दुअरिया के बड़े नीम और ओढ़नी के गोटे की पहचान कराकर पति को महल में बुलाने का उल्लासमय गीत।",
+    description: "नगाड़े और ढोलक के तेज कहरवा पर गाया जाने वाला पारंपरिक बघेली प्रेम और उल्लास फाग।",
+    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    devanagariLyrics: [
+      "ओ चले आवा मोरे राजा महलिया म,",
+      "चले आवा मोरे राजा महलिया म॥",
+      "जो मोरे राजा ढूँढ़े न पावा,",
+      "देखा खिड़की लगी है अटरिया म, चले आवा मोरे राजा महलिया म।",
+      "अरे खिड़की लगी है अटरिया म, चले आवा मोरे राजा महलिया म॥",
+      "जो मोरे राजा हेरे न पावा,",
+      "बड़ा नीम लगा है दुअरिया म, चले आवा मोरे राजा महलिया म।",
+      "देखा नीम लगा है दुअरिया म, चले आवा मोरे राजा महलिया म॥",
+      "जो मोरे राजा चीन्हे न पावा,",
+      "सुन्दर गोटा लगा है ओढ़निया म, चले आवा मोरे राजा महलिया म।",
+      "अरे गोटा लगा है ओढ़निया म, चले आवा मोरे राजा महलिया म॥"
+    ],
+    romanLyrics: [
+      "O chale aawa more raja mahaliya ma, chale aawa more raja mahaliya ma.",
+      "Jo more raja dhoondhe na paawa, dekha khidki lagi hai atariya ma, chale aawa more raja mahaliya ma.",
+      "Jo more raja here na paawa, bada neem laga hai duariya ma, chale aawa more raja mahaliya ma.",
+      "Jo more raja cheenhe na paawa, sundar gota laga hai odhaniya ma, chale aawa more raja mahaliya ma."
+    ]
+  },
+
+  // 15. KAJARI GEET (PIYA GAYE HAIN PARDES)
+  {
+    id: "kajari-piya-pardes",
+    title: "Kajari Folk Geet (पिया गए परदेस - विरह कजरी)",
+    hindiTitle: "पिया गए हैं परदेस न भाए ससुरारी - बघेली कजरी",
+    category: "seasonal",
+    categoryLabel: "ऋतु लोकगीत • सावन व विरह कजरी",
+    dialect: "बघेली व मिर्ज़ापुरी (विंध्य अंचल)",
+    ritualContext: "सावन मास में घनघोर कारी बदरिया छाने पर पति के परदेस में होने से सूने आंगन, देहरी पर टकटकी लगाए नैन और ससुराल न भाने का कारुणिक सावन गीत।",
+    description: "दादरा ताल (6/4) और जोगिया सारंगी के आर्तनाद पर आधारित विशुद्ध ग्रामीण कजरी।",
+    audioSrc: "Bagiya Ma Aaye Bhagwan - Awadhi Folk Song.mp3",
+    devanagariLyrics: [
+      "ओ हरे रमा, पिया गए हैं परदेस न भाए ससुरारी रे हारी,",
+      "हाँ हरे रमा, पिया गए हैं परदेस न भाए ससुरारी रे हारी॥",
+      "हरे रमा, सून परा है अँगना अउर दुअरिया,",
+      "ओ हरे रमा, डेहरी ताकैं नैन, न भाए ससुरारी रे हारी।",
+      "हाँ हरे रमा, पिया गए हैं परदेस न भाए ससुरारी रे हारी॥",
+      "हरे रमा, बरसत हैं दिन रात बदरिया रामा,",
+      "हरे रमा, जिया न लागै मोर, न भाए ससुरारी रे हारी।",
+      "हरे रमा, पिया गए हैं परदेस न भाए ससुरारी रे हारी॥",
+      "हरे रमा छा-ई घ-टा घनघोर बदरिया कारी रे हारी,",
+      "बदरिया कारी रे हारी, बदरिया कारी रे हारी॥"
+    ],
+    romanLyrics: [
+      "O hare Rama, piya gaye hain pardes na bhaaye sasuraari re haari,",
+      "Haan hare Rama, piya gaye hain pardes na bhaaye sasuraari re haari.",
+      "Hare Rama, soon para hai angana aur duariya,",
+      "O hare Rama, dehari taakain nain, na bhaaye sasuraari re haari.",
+      "Hare Rama, barasat hain din raat badariya Rama, jia na laagai mor, na bhaaye sasuraari re haari.",
+      "Hare Rama chhaayee ghata ghanghor badariya kaari re haari."
+    ]
+  },
+
+  // 16. SEASONAL GAILHAI FOR RAINY SEASON
+  {
+    id: "seasonal-gailhai-rainy",
+    title: "Seasonal Gailhai (बरखा व सखी झूला)",
+    hindiTitle: "बरसय बड़े बूंद रामा चुनरिया भींजै - वर्षा गैलहाई",
+    category: "seasonal",
+    categoryLabel: "ऋतु लोकगीत • वर्षा, झूला व पुरवैया",
+    dialect: "बघेली (रीवा, सतना)",
+    ritualContext: "वर्षा ऋतु में बादलों के गरजने, बिजली चमकने, पुरवैया हवा बहने और पीपल की डाल पर झूला डालकर सखियों के संग भीगने का उल्लासमय लोकगीत।",
+    description: "ढोलक की छमक और मंजीरे पर सखियों के उन्मुक्त आनंद और ग्रामीण सावन का सजीव चित्रण।",
+    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    devanagariLyrics: [
+      "बरसय बड़े बूंद रामा चुनरिया भींजै...॥",
+      "बरसय बड़े बूंद रामा चुनरिया भींजै...॥",
+      "छाये ह बदरा चमक उठी बिजुरी,",
+      "ओ गरजय बड़ा ज़ोर रामा, चुनरिया भींजै...॥",
+      "सर-सर बहत ही पवन पुरवैया,",
+      "ओ नाचंय सखी मोर रामा, चुनरिया भींजै...॥",
+      "डारिन हैं झुलना पीपर के डारी,",
+      "ओ झूलैंय सखी मोर रामा, चुनरिया भींजै...॥",
+      "बरसय बड़े बूंद रामा चुनरिया भींजै...",
+      "बरसय बड़े बूंद रामा चुनरिया भींजै...॥"
+    ],
+    romanLyrics: [
+      "Barasay bade boond Rama chunariya bheenjai...",
+      "Chhaaye ha badara chamak uthi bijuri, o garajay bada zor Rama, chunariya bheenjai...",
+      "Sar-sar bahat hi pawan purwaiya, o naachan sakhi mor Rama, chunariya bheenjai...",
+      "Daarin hain jhulana peepar ke daari, o jhoolain sakhi mor Rama, chunariya bheenjai...",
+      "Barasay bade boond Rama chunariya bheenjai..."
+    ]
+  },
+
+  // 17. SEASONAL ROPAI PURBI GEET
+  {
+    id: "seasonal-ropai-purbi",
+    title: "Seasonal Ropai Purbi (धान रोपाई व मेघ संवाद)",
+    hindiTitle: "पनिया भरन गए ससुरे सगरवा, मेघा छेकेई पनिया के घटवा",
+    category: "seasonal",
+    categoryLabel: "कृषि व ऋतु • धान रोपाई लोक गाथा",
+    dialect: "पूर्वी व भोजपुरी (पूर्वांचल व विंध्य)",
+    ritualContext: "धान की रोपाई के समय खेतों में महिलाओं द्वारा समूह में गाई जाने वाली पुरातन लोक गाथा, जिसमें पनिहारिन और मेघराज के बीच रोचक संवाद और डोली की मांग है।",
+    description: "ग्रामीण कृषि संस्कृति की अमर गाथा, जो वर्षा, श्रम और पारिवारिक रिश्तों को एक साथ पिरोती है।",
+    audioSrc: "Bagiya Ma Aaye Bhagwan - Awadhi Folk Song.mp3",
+    devanagariLyrics: [
+      "पनिया भरन गए ससुरे सगरवा हो, मेघा छेकेई पनिया के घटवा हो ना,",
+      "रामा मेघा छेकेई पनिया के घटवा हो ना॥",
+      "छोड़बे जो मेघबा तैं मोरा पानी घटवा ता, तोहि देबई लहुरी ननदिया हो ना,",
+      "मेघा तोहि देबई लहुरी ननदिया हो ना॥",
+      "एतनी बचन सुनी दौड़े आबा मेघवा हो, आई पहुंचा ससुर दुअरबा हो ना॥",
+      "भीतरे हां भौजी कि बाहरे सरहजिया हो, भेजी दे तू लहुरी ननदिया हो ना॥",
+      "कैसे कै भेजी मेघउ लहुरी ननदिया का, तोहरे ना घरवा दुअरवा हो ना॥",
+      "एतनी बचन सुनी दौड़े आबा मेघवा हो, बनवाई लागे दुमहला हो ना॥",
+      "भीतरे हां भौजी कि बाहरे सरहजिया हो, भेजी दे तू लहुरी ननदिया हो ना॥",
+      "कैसे कै भेजी मेघाउ तोहरे निसंगवा हो, नाही लाया डोलिया कहरवा हो ना॥",
+      "एतनी वचन जब सुनी लीन्हे मेघाउ ता, डोलिया कहार लई के आवई हो ना॥",
+      "भीतरे हां भौजी कि बाहरे सरहजिया हो, भेजी दे तू लहुरी ननदिया हो ना॥",
+      "मेघबा के साथे भौजी ननदी बियाही हो, मेघा लई के चला गा ननदिया हो ना।",
+      "रामा मेघा लई के चला गा ननदिया हो ना॥"
+    ],
+    romanLyrics: [
+      "Paniya bharan gaye sasure sagarwa ho, Megha chhekei paniya ke ghatwa ho na.",
+      "Chhodabe jo Meghba tain mora paani ghatwa ta, tohi debai lahuri nanadiya ho na.",
+      "Eteni bachan suni daude aaba Meghwa ho, aai pahuncha sasur duarba ho na.",
+      "Bheetare haan bhauji ki baahare sarahajiya ho, bheji de tu lahuri nanadiya ho na.",
+      "Kaise kai bheji Meghau lahuri nanadiya ka, tohare na gharwa duarwa ho na.",
+      "Banwaai laage dumahala ho na... Doliya kahaar lai ke aawai ho na...",
+      "Meghba ke saathe bhauji nanadi biyaahi ho, Megha lai ke chala ga nanadiya ho na."
+    ]
+  },
+
+  // 18. DADRA GEET (HAMARI GULABI CHUNARIYA)
+  {
+    id: "dadra-gulabi-chunariya",
+    title: "Dadra Shringar Geet (गुलाबी चुनरिया)",
+    hindiTitle: "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे - दादरा",
+    category: "seasonal",
+    categoryLabel: "शृंगार व दादरा • विंध्य लोक उत्सव",
+    dialect: "बघेली व बुंदेली (रीवा, सतना)",
+    ritualContext: "पारिवारिक उत्सवों, हल्दी और बारात आगमन पर बाग में फूल तोड़ने, यमुना में जल भरने और महल की खिड़की पर चुनरी उड़ने का प्रसिद्ध शृंगार दादरा।",
+    description: "ढोलक और तबले पर गाई जाने वाली अत्यंत मधुर और लोकप्रिय पारंपरिक रचना।",
+    audioSrc: "More Raja - Bagheli Lokgeet.mp3",
+    devanagariLyrics: [
+      "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे।",
+      "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे॥",
+      "बागा गई थी फुलवा तोड़न का, बागा गई थी फुलवा तोड़न का,",
+      "भँवरे की लग गई नजरिया, हमैं लग जइहैं नजरिया रे।",
+      "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे॥",
+      "यमुना गई थी पनिया भरन का, यमुना गई थी पनिया भरन का,",
+      "कान्हा ने तोड़ी गगरिया, हमैं लग जइहैं नजरिया रे।",
+      "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे॥",
+      "महलन गई थी खिड़की झंकन का, महलन गई थी खिड़की झंकन का,",
+      "खिड़की से उड़ गई चुनरिया, हमैं लग जइहैं नजरिया रे।",
+      "हमरी गुलाबी चुनरिया, हमैं लग जइहैं नजरिया रे॥"
+    ],
+    romanLyrics: [
+      "Hamari gulaabi chunariya, hamain lag jaihain nazariya re.",
+      "Baaga gayi thi phulwa todan ka, bhanware ki lag gayi nazariya hamain lag jaihain nazariya re.",
+      "Yamuna gayi thi paniya bharan ka, Kaanha ne todi gagariya hamain lag jaihain nazariya re.",
+      "Mahalan gayi thi khidaki jhankan ka, khidaki se ud gayi chunariya hamain lag jaihain nazariya re.",
+      "Hamari gulaabi chunariya, hamain lag jaihain nazariya re."
+    ]
+  },
+
+  // 19. KAJRI DHUN PAR GANESH BHAJAN (Prameesh Mishra)
+  {
+    id: "kajri-ganesh-bhajan",
+    title: "Kajri Dhun par Ganesh Bhajan (गणेश वंदना)",
+    hindiTitle: "हरे रामा अँगना पधारे गनराज - कजरी धुन गणेश भजन",
     category: "bhakti",
-    categoryLabel: "भक्ति व लोक जागरण • देवी जस",
-    dialect: "बघेली व विंध्याचली (मैहर, रीवा, विंध्याचल)",
-    ritualContext: "चैत्र व शारदीय नवरात्रि में मैहर त्रिकूट पर्वत पर शारदा भवानी और शीतला माता के जागरण में ढाक और झांझ पर गाया जाने वाला जस।",
-    description: "माँ भगवती के वात्सल्य और शक्ति रूप का अलौकिक व श्रद्धापूर्ण लोक भजन।",
+    categoryLabel: "भक्ति व कजरी • रचना: प्रमीश मिश्रा",
+    dialect: "बघेली व अवधी",
+    authorNote: "मूल रचना: प्रमीश मिश्रा (Prameesh Mishra). पारंपरिक कजरी धुन पर रचित विशिष्ट भक्ति लोक रचना।",
+    ritualContext: "किसी भी शुभ कार्य, विवाह या उत्सव के आरंभ में कजरी की लयबद्ध धुन (कहरवा ताल) पर गजानन श्री गणेश का आह्वान और मोदक भोग वंदना।",
+    description: "प्रमीश मिश्रा द्वारा रचित अत्यंत भावपूर्ण और झूमने वाली कजरी शैली की गणेश स्तुति।",
+    audioSrc: "Bagiya Ma Aaye Bhagwan - Awadhi Folk Song.mp3",
+    devanagariLyrics: [
+      "हरे रामा... अँगना पधारे... गनराज...",
+      "हरे रामा अँगना पधारे गनराज, मगन संसारी रे हारी,",
+      "हरे रामा अँगना पधारे गनराज, मगन संसारी रे हारी॥",
+      "हरे रामा, माथे म तोहरे तिलक सजाई रामा,",
+      "हरे रामा लडुअन के हम भोग लगाई रामा।",
+      "हरे रामा लिहे आरती के थार, मगन संसारी रे हारी,",
+      "हरे रामा अँगना पधारे गनराज, मगन संसारी रे हारी॥",
+      "हरे रामा दीनन के तू सदा सहाई रामा,",
+      "हरे रामा सब दुखियन का पार लगाई रामा।",
+      "हरे रामा दिहे अभय वरदान, मगन संसारी रे हारी,",
+      "हरे रामा अँगना पधारे गनराज, मगन संसारी रे हारी॥"
+    ],
+    romanLyrics: [
+      "Hare Rama... Angana padhaare... Ganraaj...",
+      "Hare Rama angana padhaare Ganraaj, magan sansaari re haari.",
+      "Hare Rama, maathe ma tohare tilak sajaai Rama, laduan ke hum bhog lagaai Rama.",
+      "Hare Rama lihe aarti ke thaar, magan sansaari re haari.",
+      "Hare Rama deenan ke tu sada sahaai Rama, sab dukhiyan ka paar lagaai Rama.",
+      "Hare Rama dihe abhay varadaan, magan sansaari re haari, angana padhaare Ganraaj."
+    ]
+  },
+
+  // 20. LAMTERA GEET / BABA BHOLA GEET (Prameesh Mishra)
+  {
+    id: "lamtera-bhola-geet",
+    title: "Lamtera Geet / Baba Bhola Geet (शिव भक्ति)",
+    hindiTitle: "दरस की ता बेरा भई हो, अब लउटा छबीले भोलेनाथ - लमतेरा",
+    category: "bhakti",
+    categoryLabel: "भक्ति व लमतेरा • रचना: प्रमीश मिश्रा",
+    dialect: "बघेली (रीवा, सतना, सीधी)",
+    authorNote: "मूल रचना: प्रमीश मिश्रा (Prameesh Mishra). विंध्य-बुंदेलखंड की पारंपरिक लमतेरा / भोला गीत शैली।",
+    ritualContext: "सावन मास, कांवड़ यात्रा और महाशिवरात्रि पर भगवान भोलेनाथ और माता गौरा के दर्शन, औघड़ छवि और जटा से गंगा प्रवाह की भावविभोर स्तुति।",
+    description: "ढोलक और बांसुरी की सुरम्य धुन पर प्रमीश मिश्रा द्वारा रचित विंध्य का अमर शिव लमतेरा भजन।",
     audioSrc: "Shiva Panchakshara Stotram - Stotra Chanting.mp3",
     devanagariLyrics: [
-      "निमिया की डार मैया झुलेली झुलनवा, पवन डोलावे डार।",
-      "माई के द्वारे सेवक तरसें, जय जय शारदा माय॥",
-      "सोने के छत्र गले मोतिन माला, सिंह चढ़ी महरानी।",
-      "त्रिकूट पर्वत पर वास तिहारो, मैहर की कल्याणी॥",
-      "जो जन ध्यावे सो फल पावे, संकट काटो मात।"
+      "दरस की ता बेरा भई हो, अब लउटा छबीले भोलेनाथ हो! दरस की ता...",
+      "भोलन तोरी औघड़ छबी हो, छबी मोहय सकल संसार हो! दरस की ता...",
+      "दरस की ता बेरा भई हो, अब लउटा ओ मोरे भोलेनाथ हो! दरस की ता...",
+      "शीशे मा तोहरे चंदा सोहय हो, चंदा सोहय निहारय संसार हो! दरस की ता...",
+      "दरस की ता बेरा भई हो, अब लउटा छबीले भोलेनाथ हो! दरस की ता...",
+      "जटा से तोहरे गंगा बहय हो, पावन करय सकल संसार हो! दरस की ता...",
+      "दरस की ता बेरा भई हो, चले आबा ओ मोरे शम्भूनाथ हो! दरस की ता...",
+      "मन्दिरबा ता सूना लागय हो, मोरे भोले गए हैं कैलाश हो! दरस की ता...",
+      "दरस की ता बेरा भई हो, चले आबा ओ मोरे भोलेनाथ हो!",
+      "ओ पट खोला छबीले भैरौनाथ हो...! दरस की ता...",
+      "दरस की ता बेरा भई हो, अब लउटा छबीले भोलेनाथ हो! दरस की ता..."
     ],
     romanLyrics: [
-      "Nimiya ki daar maiya jhooleli jhulanwa, pawan dolaave daar.",
-      "Maai ke dwaare sewak tarasen, jai jai Shaarada maay.",
-      "Sone ke chhatra gale motin maala, singh chadhee mahraani.",
-      "Trikoot parwat par waas tihaaro, Maihar ki kalyaani.",
-      "Jo jan dhyaave so phal paave, sankat kaato maat."
+      "Daras ki ta bera bhai ho, ab lauta chhabeele Bholenath ho! Daras ki ta...",
+      "Bholan tori aughad chhabi ho, chhabi mohay sakal sansaar ho!",
+      "Daras ki ta bera bhai ho, ab lauta o more Bholenath ho!",
+      "Sheeshe ma tohare chanda sohay ho, chanda sohay nihaaray sansaar ho!",
+      "Jata se tohare Ganga bahay ho, paawan karay sakal sansaar ho!",
+      "Daras ki ta bera bhai ho, chale aaba o more Shambhunath ho!",
+      "Mandirba ta soona laagay ho, more Bhole gaye hain Kailash ho!",
+      "O pat khola chhabeele Bhaironath ho! Daras ki ta bera bhai ho, ab lauta chhabeele Bholenath ho!"
     ]
   },
+
+  // 21. KAJARI RAM BHAJAN (BAGIYA MA AAYE BHAGWAN)
   {
-    id: "aalha-khand",
-    title: "Aalha Folk Ballad (आल्हा गायन - वीर रस)",
-    hindiTitle: "बारह बरस ले कूकुर जीवे - आल्हा वीर गाथा",
+    id: "kajari-ram-bhajan",
+    title: "Kajari Ram Bhajan (पुष्प वाटिका प्रसंग)",
+    hindiTitle: "बगिया म आए भगमान, देखन हम जाबय - कजरी राम भजन",
     category: "bhakti",
-    categoryLabel: "वीर रस व लोक गाथा • आल्हा-ऊदल",
-    dialect: "बुंदेली व बैसवाड़ी (महोबा, बुंदेलखंड)",
-    ritualContext: "वर्षा ऋतु में रातों के समय ढोलक और मंजीरे की गूंज पर महाबली आल्हा और ऊदल की 52 लड़ाइयों की वीरगाथा का गायन।",
-    description: "विश्व का सबसे बड़ा मौखिक वीर काव्य, जो भुजाओं में फड़कन और रक्त में शौर्य का संचार करता है।",
+    categoryLabel: "भक्ति व कजरी • जनकपुर वाटिका दर्शन",
+    dialect: "अवधी व बघेली (अयोध्या, जनकपुर)",
+    ritualContext: "सावन मास और विवाह प्रसंग में जनकपुर की पुष्प वाटिका में प्रभु श्रीराम के आगमन, उनके मुकुट, कुंडल, धनुष और बैजंती हार के मनोहारी दर्शन का भक्तिमय गान।",
+    description: "शास्त्रीय कजरी धुन पर श्रीराम के अलौकिक शृंगार का सर्वप्रिय वंदना भजन।",
+    audioSrc: "Bagiya Ma Aaye Bhagwan - Awadhi Folk Song.mp3",
     devanagariLyrics: [
-      "बारह बरस ले कूकुर जीवे, औ सोरह लै जिए सियार।",
-      "बरस अठारह छत्री जीवे, आगे जीवन को धिक्कार॥",
-      "जाके बैरी संमुख ठाढ़े, तेहि को नींद न आवे।",
-      "महोबे के आल्हा ऊदल वीरा, तलवारिन खनकावे॥",
-      "मातृभूमि की रक्षा खातिर, शीश दान दे जावे।"
+      "ओ हरे रमा, बगिया म आए भगमान, देखन हम जाबय रे... हारी!",
+      "हाँ हरे रमा, बगिया म आए श्री राम, देखन हम जाबय रे... हारी!॥",
+      "काने मा उनखे कुंडल सोहे, छबि अति सुंदर मन का मोहै,",
+      "रामा, काने मा उनखे कुंडल सोहे, छबि अति सुंदर मन का मोहै,",
+      "गले बैजंती हार, देखन हम जाबय रे... हारी!॥",
+      "सीस म उनखे मुकुट भल साजै, हाथे म सुन्दर धनुष बिराजै,",
+      "रामा, सीस म उनखे मुकुट भल साजै, हाथे म सुन्दर धनुष बिराजै,",
+      "सुन्दर तिलक लिलार, देखन हम जाबय रे... हारी!॥",
+      "हाँ हरे रामा, बगिया म आए श्री राम, देखन हम जाबय रे... हारी!",
+      "ओ हरे रामा, बगिया म आए भगमान, देखन हम जाबय रे... हारी!॥"
     ],
     romanLyrics: [
-      "Baarah baras le kookur jeeve, au sorah lai jiye siyaar.",
-      "Baras athaarah chhatri jeeve, aage jeevan ko dhikkaar.",
-      "Jaake bairi sammukh thaadhe, tehi ko neend na aave.",
-      "Mahobe ke Aalha Oodal veera, talwaarin khankaave.",
-      "Maatribhoomi ki raksha khaatir, sheesh daan de jaave."
+      "O hare Rama, bagiya ma aaye Bhagwaan, dekhan hum jaabay re... haari!",
+      "Haan hare Rama, bagiya ma aaye Shri Ram, dekhan hum jaabay re... haari!",
+      "Kaane ma unkhe kundal sohe, chhabi ati sundar man ka mohai, gale baijanti haar, dekhan hum jaabay re... haari!",
+      "Sees ma unkhe mukut bhal saajai, haathe ma sundar dhanush biraajai, sundar tilak lilaar, dekhan hum jaabay re... haari!",
+      "Haan hare Rama, bagiya ma aaye Shri Ram, dekhan hum jaabay re... haari!"
     ]
   }
 ];
@@ -308,6 +793,7 @@ export default function RegionalLyricsPage() {
       entry.hindiTitle.toLowerCase().includes(q) ||
       entry.dialect.toLowerCase().includes(q) ||
       entry.ritualContext.toLowerCase().includes(q) ||
+      (entry.authorNote && entry.authorNote.toLowerCase().includes(q)) ||
       entry.devanagariLyrics.some((l) => l.includes(q)) ||
       entry.romanLyrics.some((l) => l.toLowerCase().includes(q));
 
@@ -315,14 +801,14 @@ export default function RegionalLyricsPage() {
   });
 
   const handleCopy = (entry: LyricEntry) => {
-    const fullText = `${entry.hindiTitle} (${entry.title})\n\n[सांस्कृतिक संदर्भ]: ${entry.ritualContext}\n\n[बोल / लिरिक्स]:\n${entry.devanagariLyrics.join("\n")}\n\n— Media Mafias Regional Folk Archive (https://www.mediamafias.com/regional-music/lyrics)`;
+    const fullText = `${entry.hindiTitle} (${entry.title})\n\n[सांस्कृतिक संदर्भ / विधान]: ${entry.ritualContext}${entry.authorNote ? `\n[रचनाकार]: ${entry.authorNote}` : ""}\n\n[प्रामाणिक बोल / Lyrics]:\n${entry.devanagariLyrics.join("\n")}\n\n— Media Mafias Regional Folk Archive (https://www.mediamafias.com/regional-music/lyrics)`;
     navigator.clipboard.writeText(fullText);
     setCopiedId(entry.id);
     setTimeout(() => setCopiedId(null), 2500);
   };
 
   const handleShareWhatsApp = (entry: LyricEntry) => {
-    const shareText = `*${entry.hindiTitle}* (${entry.title})\n_${entry.ritualContext}_\n\n*बोल:*\n${entry.devanagariLyrics.slice(0, 4).join("\n")}\n...\n\nपूरी लिरिक्स और 20s ऑडियो सुनने के लिए यहाँ क्लिक करें:\nhttps://www.mediamafias.com/regional-music/lyrics#${entry.id}`;
+    const shareText = `*${entry.hindiTitle}* (${entry.title})\n_${entry.ritualContext}_\n\n*प्रामाणिक बोल:*\n${entry.devanagariLyrics.slice(0, 5).join("\n")}\n...\n\nपूरे बोल और 20s ऑडियो सुनने के लिए यहाँ क्लिक करें:\nhttps://www.mediamafias.com/regional-music/lyrics#${entry.id}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank");
   };
 
@@ -388,36 +874,36 @@ export default function RegionalLyricsPage() {
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] font-mono text-xs uppercase tracking-widest font-bold mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>क्षेत्रीय लोकगीत एवं विवाह संस्कार बोल संग्रह • 100% AUTHENTIC HERITAGE</span>
+            <span>21 प्रामाणिक लोकगीत • 100% AUTHENTIC HERITAGE LYRICS ARCHIVE</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white mb-3">
             DESI WEDDING RITES &amp; FOLK LYRICS VAULT
           </h1>
 
-          <div className="font-sans font-bold text-xl sm:text-2xl text-[#D4AF37] mb-4">
-            पारंपरिक विवाह संस्कार एवं क्षेत्रीय लोकगीत बोल संग्रह
+          <div className="font-sans font-bold text-xl sm:text-3xl text-[#D4AF37] mb-4">
+            विशुद्ध पारंपरिक क्षेत्रीय लोकगीत एवं विवाह संस्कार बोल संग्रह
           </div>
 
           <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-3xl mx-auto leading-relaxed mb-8">
-            रीवा, सतना, सीधी, शहडोल, बुंदेलखंड, अवध और पूर्वांचल के सदियों पुराने <strong className="text-white">परछन, दुआचार, बन्ना-बन्नी, समधी गारी, अंजुरी-गैलहाई (विदाई), सोहर-दादरा, कजरी, फाग, और देवी जस</strong> के प्रामाणिक बोल। एक क्लिक में बोल कॉपी करें, व्हाट्सएप पर साझा करें या 20 सेकंड का स्टूडियो प्रिव्यू सुनें।
+            रीवा, सतना, सीधी, शहडोल, बुंदेलखंड, अवध और पूर्वांचल के सदियों पुराने <strong className="text-white">दुआचार, बन्ना-बन्नी, परछन, बेलनहाई, गैलहाई (विदाई), सोहर-दादरा, कुआँ पूजन, कजरी, नचनहाई फाग, रोपाई और शिव लमतेरा</strong> के पूर्ण प्रामाणिक बोल। एक क्लिक में बोल कॉपी करें, पारिवारिक मंडली के साथ व्हाट्सएप पर साझा करें या स्टूडियो प्रिव्यू सुनें।
           </p>
 
           {/* Quick Category Filters */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {[
-              { label: "All Lyrics (सभी बोल)", value: "all" },
-              { label: "Wedding Rites (विवाह संस्कार)", value: "vivah" },
-              { label: "Childbirth & Sohar (सोहर दादरा)", value: "sohar" },
-              { label: "Seasonal Folk (कजरी व फाग)", value: "seasonal" },
-              { label: "Bhakti & Veer Ras (देवी जस व आल्हा)", value: "bhakti" }
+              { label: "All Lyrics (सभी 21 बोल)", value: "all" },
+              { label: "Wedding Rites (विवाह संस्कार: दुआचार, परछन, बन्ना, बेलनहाई, गैलहाई)", value: "vivah" },
+              { label: "Childbirth & Sohar (सोहर दादरा व कुआँ पूजन)", value: "sohar" },
+              { label: "Seasonal & Phagua (फाग, कजरी, नचनहाई, रोपाई, दादरा)", value: "seasonal" },
+              { label: "Bhakti & Devotional (गणेश वंदना, शिव लमतेरा, राम कजरी)", value: "bhakti" }
             ].map((cat) => (
               <button
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
                 className={`font-mono text-xs font-bold uppercase px-4 py-2 rounded-xl border transition-all cursor-pointer ${
                   activeCategory === cat.value
-                    ? "bg-[#D4AF37] text-black border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                    ? "bg-[#D4AF37] text-black border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)] font-black"
                     : "bg-[#141419] text-neutral-300 border-white/10 hover:border-[#D4AF37]/50 hover:text-white"
                 }`}
               >
@@ -433,10 +919,10 @@ export default function RegionalLyricsPage() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs font-bold uppercase bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30 px-3 py-1 rounded-full">
-              {filteredLyrics.length} HERITAGE COMPOSITIONS
+              {filteredLyrics.length} AUTHENTIC SONGS
             </span>
             <span className="font-mono text-xs text-neutral-400 hidden md:inline">
-              Devanagari Hindi &amp; English Transliteration
+              Devanagari Hindi &amp; English Transliteration • Zero Production Tags
             </span>
           </div>
 
@@ -446,7 +932,7 @@ export default function RegionalLyricsPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search Parchhan, Gari, Banna Banni, Sohar, Rewa..."
+              placeholder="Search Duarchaar, Banna, Sohar, Gailhai, Belnhai, Phaag..."
               className="w-full pl-9 pr-4 py-2 bg-[#16161D] border border-white/10 focus:border-[#D4AF37] rounded-xl font-mono text-xs text-white placeholder:text-neutral-500 outline-none transition-colors"
             />
           </div>
@@ -455,11 +941,10 @@ export default function RegionalLyricsPage() {
 
       {/* LYRICS CARDS GRID */}
       <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-10">
           {filteredLyrics.map((entry) => {
             const isPlaying = playingId === entry.id;
             const isCopied = copiedId === entry.id;
-            const showRomanized = showRoman[entry.id] || false;
 
             return (
               <article
@@ -478,6 +963,12 @@ export default function RegionalLyricsPage() {
                         <MapPin className="w-3 h-3 text-[#C0392B]" />
                         {entry.dialect}
                       </span>
+                      {entry.authorNote && (
+                        <span className="font-mono text-[10px] font-bold uppercase bg-amber-500/10 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded flex items-center gap-1">
+                          <Feather className="w-3 h-3" />
+                          {entry.authorNote}
+                        </span>
+                      )}
                     </div>
 
                     <h2 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">
@@ -567,7 +1058,7 @@ export default function RegionalLyricsPage() {
                         हिंदी / देवनागरी बोल (Authentic Lyrics)
                       </span>
                       <span className="font-mono text-[10px] text-neutral-500">
-                        स्थाई व अंतरा
+                        विशुद्ध पारंपरिक बोल
                       </span>
                     </div>
 
@@ -644,7 +1135,7 @@ export default function RegionalLyricsPage() {
             मध्य भारत के पारंपरिक वैवाहिक एवं मौसमी लोकगीतों की महत्ता
           </h3>
           <p className="font-mono text-xs sm:text-sm text-neutral-300 leading-relaxed">
-            बघेलखंड (रीवा, सतना, सीधी, शहडोल), बुंदेलखंड (झांसी, सागर, छतरपुर), अवध (अयोध्या, लखनऊ) और पूर्वांचल की लोक संस्कृति में विवाह केवल दो व्यक्तियों का नहीं, बल्कि दो कुलों और संस्कृतियों का मिलन है। द्वार पर दूल्हे की आरती उतारते समय <strong className="text-white">परछन गीत</strong>, मंडप प्रवेश पर <strong className="text-white">दुआचार</strong>, कन्यादान के समय शास्त्रीय वेद-मंत्रों के साथ लोकगीत, और बारात की पंगत में भोजन के समय समधियों के साथ प्रेममयी हास-परिहास के लिए <strong className="text-white">जेवनार व गारी गीत</strong> गाए जाते हैं। Media Mafias इन अनमोल मौखिक धरोहरों के मूल बोलों को उनके विशुद्ध रूप में लिपिबद्ध व स्टूडियो-रिकॉर्डेड संरक्षित करता है।
+            बघेलखंड (रीवा, सतना, सीधी, शहडोल), बुंदेलखंड (झांसी, सागर, छतरपुर), अवध (अयोध्या, लखनऊ) और पूर्वांचल की लोक संस्कृति में विवाह केवल दो व्यक्तियों का नहीं, बल्कि दो कुलों और संस्कृतियों का मिलन है। द्वार पर दूल्हे के आगमन पर <strong className="text-white">दुआचार एवं परछन गीत</strong>, मंडप में <strong className="text-white">बन्ना-बन्नी एवं बेलनहाई</strong>, संतान जन्म पर <strong className="text-white">सोहर-दादरा एवं कुआँ पूजन</strong>, और वर्षा ऋतु में <strong className="text-white">कजरी, नचनहाई फाग एवं धान रोपाई</strong> के बोल गाए जाते हैं। Media Mafias इन अनमोल मौखिक धरोहरों को उनके विशुद्ध मूल बोलों में लिपिबद्ध व सुरक्षित करता है।
           </p>
 
           <div className="pt-4 flex flex-wrap gap-4">
