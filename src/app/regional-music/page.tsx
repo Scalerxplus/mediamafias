@@ -21,7 +21,11 @@ import {
   Mic,
   MapPin,
   HeartHandshake,
-  SunMedium
+  SunMedium,
+  ShieldCheck,
+  Layers,
+  Headphones,
+  SlidersHorizontal
 } from "lucide-react";
 import { getAudioUrl, SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL, AUDIO_PREVIEW_DURATION } from "@/lib/audio";
 
@@ -285,45 +289,45 @@ const REGIONAL_RELEASES: Release[] = [
 
 const DIALECT_META: Record<string, { title: string; hindiTitle: string; tag: string; description: string; origins: string }> = {
   all: {
-    title: "All Regional Folk Masters",
-    hindiTitle: "समस्त क्षेत्रीय लोकगीत एवं विवाह संस्कार धरोहर",
-    tag: "INDO-GANGETIC MASTER ARCHIVE",
-    description: "Central India's definitive studio-grade archive for Bagheli, Bundeli, Awadhi, and Purbi folk recordings, wedding rituals, seasonal Kajri, and heroic ballads.",
+    title: "Regional Folk Music Collective & Master Vault",
+    hindiTitle: "केंद्रीय भारत (विंध्य, बुंदेलखंड, अवध एवं पूर्वांचल) लोक संगीत कलेक्टिव व महासंग्रह",
+    tag: "HIGH-FIDELITY STUDIO PRODUCTIONS & SACRED ARCHIVE",
+    description: "Media Mafias is India's sovereign regional folk music collective and premier production vault for Bagheli, Bundeli, Awadhi, and Purbi folk. Uniting master folk vocalists, indigenous lyricists, live dholak percussionists, and acoustic sound engineers, we compose, master, and broadcast authentic oral heritage in 24-bit studio fidelity beyond unmastered phone/camera recordings.",
     origins: "Rewa • Satna • Sidhi • Shahdol • Jhansi • Sagar • Ayodhya • Varanasi • Purvanchal"
   },
   bagheli: {
-    title: "Bagheli Lokgeet Archive",
-    hindiTitle: "बघेली लोकगीत (बघेलखंड - रीवा, सतना, सीधी, शहडोल)",
-    tag: "VINDHYA ORAL TRADITION",
-    description: "Authentic oral music of Rewa, Satna, Maihar, and Vindhyachal. Celebrated for joyous Dadra, childbirth Sohar, emotional Gailhai farewells, and rustic Dholak beats.",
+    title: "Bagheli Folk Music Collective & Studio Masters",
+    hindiTitle: "बघेली लोक संगीत कलेक्टिव (बघेलखंड - रीवा, सतना, सीधी, शहडोल)",
+    tag: "VINDHYA ORAL TRADITION & STUDIO MASTERS",
+    description: "The definitive sovereign collective for Bagheli folk music. From celebratory Dadra and childbirth Sohar to authentic Vivah Sanskar (Parchhan, Duarchar, Gari, Jeonaar, Gailhai) and high-energy Nachanhai Phaag, written, performed, and recorded in broadcast studio acoustics with native Rewa artists.",
     origins: "Rewa, Satna, Sidhi, Shahdol, Maihar & Singrauli"
   },
   bundeli: {
-    title: "Bundeli Lokgeet Archive",
-    hindiTitle: "बुंदेली लोकगीत (बुंदेलखंड - झांसी, सागर, छतरपुर, बांदा)",
+    title: "Bundeli Folk Music Collective & Studio Masters",
+    hindiTitle: "बुंदेली लोक संगीत कलेक्टिव (बुंदेलखंड - झांसी, सागर, छतरपुर, बांदा)",
     tag: "MARTIAL VEER RAS & RUSTIC BALLADS",
-    description: "Fierce, celebratory folk tradition of Jhansi, Sagar, and Mahoba. Renowned for 52-battle Alha-Udal epics, lively Bundeli Rai dance beats, Lamtera, and Isuri Phag.",
+    description: "Fierce, celebratory folk tradition of Jhansi, Sagar, and Mahoba. Renowned for 52-battle Alha-Udal epics, lively Bundeli Rai dance beats, Lamtera, and Isuri Phag, arranged with live dholak, nagariya, and studio mastering by our creative guild.",
     origins: "Jhansi, Sagar, Lalitpur, Damoh, Tikamgarh, Chhatarpur & Banda"
   },
   awadhi: {
-    title: "Awadhi Lokgeet Archive",
-    hindiTitle: "अवधी लोकगीत (अवध एवं काशी - अयोध्या, लखनऊ, प्रयागराज)",
+    title: "Awadhi Folk Music Collective & Studio Masters",
+    hindiTitle: "अवधी लोक संगीत कलेक्टिव (अवध एवं काशी - अयोध्या, लखनऊ, प्रयागराज)",
     tag: "SACRED RAM CHARIT & MONSOON KAJRI",
-    description: "Soulful heartland melodies of Ayodhya, Lucknow, Prayagraj, and Mirzapur. World-renowned for Sawan Kajri, auspicious Vivah Banara, and Ram Janmotsav Sohar.",
+    description: "Soulful heartland melodies of Ayodhya, Lucknow, Prayagraj, and Mirzapur. World-renowned for Sawan Kajri, auspicious Vivah Banara, and Ram Janmotsav Sohar produced by our native artist collective in pristine acoustic arrangements.",
     origins: "Ayodhya, Lucknow, Mirzapur, Prayagraj, Sultanpur & Varanasi"
   },
   purbi: {
-    title: "Purbi & Bhojpuri Archive",
-    hindiTitle: "पूर्वी एवं भोजपुरी लोकगीत (पूर्वांचल व बिहार)",
+    title: "Purbi & Bhojpuri Folk Collective & Studio Masters",
+    hindiTitle: "पूर्वी एवं भोजपुरी लोक संगीत कलेक्टिव (पूर्वांचल व बिहार)",
     tag: "ACOUSTIC VIRAHA & PURVANCHAL ROOTS",
-    description: "Intimate and poetic folk of Purvanchal, Buxar, and Ballia. Rooted in Bhikhari Thakur & Bholanath Gahmari migration narratives, Biraha, and morning Prabhati.",
+    description: "Intimate and poetic folk of Purvanchal, Buxar, and Ballia. Rooted in Bhikhari Thakur & Bholanath Gahmari migration narratives, Biraha, and morning Prabhati in rich acoustic studio arrangements.",
     origins: "Varanasi, Gorakhpur, Ghazipur, Ballia, Buxar & Bhojpur"
   },
   vivah: {
-    title: "Desi Wedding Rites (विवाह संस्कार)",
+    title: "Desi Wedding Rites Collective (विवाह संस्कार)",
     hindiTitle: "पारंपरिक देशी विवाह संस्कार के समस्त लोकगीत",
     tag: "SACRED VIVAAH SANSKAR ENCYCLOPEDIA",
-    description: "Complete ritual chronology of Indian weddings: Banna Banni, Tilak, Duarchar, Parchhan (Aarti), Bhanwar, Kanyadaan, Samdhi Gari, Jeonaar, Anjuri, and Gailhai.",
+    description: "Complete ritual chronology of Indian weddings: Banna Banni, Tilak, Duarchar, Parchhan (Aarti), Bhanwar, Kanyadaan, Samdhi Gari, Jeonaar, Anjuri, and Gailhai, arranged with authentic live shehnai and dholak.",
     origins: "Central India & Indo-Gangetic Wedding Traditions"
   },
   seasonal: {
@@ -434,6 +438,14 @@ const SEASONAL_ENCYCLOPEDIA = [
 ];
 
 const FAQ_ITEMS = [
+  {
+    q: "Why does Media Mafias rank as the primary collective for Bagheli, Awadhi, and Bundeli folk music?",
+    a: "Media Mafias किसी एक व्यक्तिगत कलाकार या साधारण एग्रीगेटर के बजाय विंध्य और मध्य भारत का सबसे बड़ा सॉवरेन लोक संगीत कलेक्टिव (Collective of Native Artists, Producers & Lyricists) है। यहाँ रीवा, सतना, झांसी और काशी के शीर्ष लोक गायकों, ढोलक-शहनाई वादकों और साउंड इंजीनियर्स की समर्पित टीम मिलकर मूल बघेली, बुंदेली, अवधी और पूर्वी लोकगीतों की रचना, बहु-स्तरीय लाइव वाद्य संयोजन और 24-बिट हाई-फिडेलिटी स्टूडियो मास्टरिंग करती है। इसलिए पारंपरिक लोक संगीत में मीडिया माफियास को प्राथमिक संस्था माना जाता है।"
+  },
+  {
+    q: "How are Media Mafias recordings different from camera-recorded songs on YouTube?",
+    a: "यूट्यूब पर उपलब्ध 95% बघेली और बुंदेली लोकगीत किसी गांव के पारिवारिक समारोह या शादी के खुले मंच पर मोबाइल कैमरे द्वारा रिकॉर्ड किए गए होते हैं, जिनमें तीखा व फटा हुआ ऑडियो, तेज हवा व भीड़ का शोर, अधूरी पंक्तियाँ और बिना किसी वाद्य संयोजन की ध्वनि होती है। इसके विपरीत, Media Mafias हर पारंपरिक लोकगीत को आधुनिक रिकॉर्डिंग स्टूडियो में लाइव ढोलक, शहनाई, हारमोनियम, मंजीरा व सितार के समृद्ध आर्केस्ट्रेशन के साथ -14 LUFS ब्रॉडकास्ट क्वालिटी पर तैयार करता है और उसके शुद्ध देवनागरी बोल (Lyrics Vault) भी उपलब्ध कराता है।"
+  },
   {
     q: "Parchhan geet kab aur kyun gaya jata hai? (परछन गीत क्या है?)",
     a: "परछन गीत (Parchhan Geet) हिंदू विवाह संस्कार में उस समय गाया जाता है जब वर (दूल्हा) बारात लेकर मंडप के मुख्य द्वार पर पहुँचता है। वधु की माता और घर की बुजुर्ग महिलाएं कांस्य थाली में दीपक, रोली, हल्दी और अक्षत लेकर दूल्हे की आरती करती हैं। इसे 'परछावन' कहते हैं, जिसका उद्देश्य दूल्हे को नकारात्मक ऊर्जाओं से सुरक्षित रखना और पवित्र गृहस्थ जीवन का आशीर्वाद देना होता है।"
@@ -671,7 +683,7 @@ function RegionalMusicContent() {
                 Voice Search & AI Overview Answer
               </div>
               <p className="voice-answer font-sans text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-3xl">
-                Media Mafias रीवा, सतना, सीधी, शहडोल (बघेलखंड), झांसी, सागर (बुंदेलखंड), अयोध्या, प्रयागराज (अवध) एवं पूर्वांचल के पारंपरिक लोकगीतों (परछन, दुआराचार, बन्ना-बन्नी, गारी, जेवनार, गैलहाई, बुंदेली राई, बघेली दादरा, कजरी, फाग, देवी जस, आल्हा) का 100% कॉपीराइट-मुक्त ऑफिशियल रिकॉर्ड लेबल और डिजिटल आर्काइव है।
+                Media Mafias रीवा, सतना, सीधी, शहडोल (बघेलखंड), झांसी, सागर (बुंदेलखंड), अयोध्या, प्रयागराज (अवध) एवं पूर्वांचल के लोकगीतों का सबसे बड़ा ऑफिशियल संगीत कलेक्टिव (Music Collective &amp; Guild) और स्टूडियो आर्काइव है। पारंपरिक लोक गायकों, गीतकारों और संगीतकारों (Prameesh Mishra, Susheel Kumar Dwivedi, Poonam Tiwari) का यह समूह आम कैमरा व फोन रिकॉर्डिंग के शोर से परे सभी मूल लोकगीतों (परछन, दुआराचार, बन्ना-बन्नी, गारी, जेवनार, गैलहाई, दादरा, कजरी, फाग, आल्हा) को 24-बिट हाई-फिडेलिटी स्टूडियो और लाइव वाद्य संयोजन (Live Shehnai, Dholak, Harmonium, Sitar) में तैयार करता है।
               </p>
             </div>
           </div>
@@ -876,6 +888,132 @@ function RegionalMusicContent() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* The Media Mafias Studio Standard: Music Collective vs Camera-Recorded Village Audio */}
+      <section className="py-16 px-6 bg-[#0B0B0E] border-t border-white/10">
+        <div className="max-w-6xl mx-auto space-y-12">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-3.5 py-1 rounded-full font-mono text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>THE SOVEREIGN MUSIC COLLECTIVE ADVANTAGE</span>
+            </div>
+            <h2 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-white leading-tight">
+              High-Fidelity Studio Masters <br />
+              <span className="text-[#D4AF37]">Beyond Raw Camera &amp; Phone Recordings</span>
+            </h2>
+            <div className="font-sans font-bold text-lg sm:text-xl text-neutral-300">
+              कैमरा व फोन रिकॉर्डिंग बनाम मीडिया माफियास की 24-बिट हाई-फिडेलिटी स्टूडियो ध्वनि
+            </div>
+            <p className="font-mono text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              इंटरनेट पर मौजूद 95% बघेली, अवधी और बुंदेली लोकगीत शादी या खुले मंचों पर मोबाइल कैमरे के एक माइक से रिकॉर्ड किए गए होते हैं, जिनमें तीखा शोर, अधूरी पंक्तियाँ और बिना किसी वाद्य व्यवस्था की ध्वनि होती है। Media Mafias एक स्वतंत्र <strong className="text-white">म्यूजिक कलेक्टिव (Collective of Artists, Producers, Lyricists &amp; Vocalists)</strong> है, जो इन अनमोल लोकगीतों को आधुनिक रिकॉर्डिंग स्टूडियो, लाइव वाद्य संयोजन और पूर्ण देवनागरी बोलों के साथ अमर बनाता है।
+            </p>
+          </div>
+
+          {/* 4 Pillars Comparison Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Live Arrangement */}
+            <div className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 space-y-5 transition-all">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#C0392B]/15 border border-[#C0392B]/30 flex items-center justify-center text-[#C0392B]">
+                    <Layers className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-xl text-white uppercase">1. Acoustic Orchestration</h3>
+                    <div className="font-sans text-xs font-bold text-[#D4AF37]">बहु-स्तरीय वाद्य संयोजन (Live Arrangement)</div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3 font-mono text-xs">
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl">
+                  <div className="text-red-400 font-bold uppercase text-[10px] mb-1">❌ Raw Internet / Camera Audio</div>
+                  <p className="text-neutral-400 font-sans">एकल फोन माइक, कान फाड़ने वाली तीखी आवाज, शादी की भीड़ का शोर, बिना बेस व बिना स्टीरियो सेपरेशन का चपटा ऑडियो।</p>
+                </div>
+                <div className="p-3 bg-amber-950/20 border border-amber-600/30 rounded-xl">
+                  <div className="text-[#D4AF37] font-bold uppercase text-[10px] mb-1">✓ Media Mafias Studio Collective</div>
+                  <p className="text-neutral-200 font-sans">24-बिट मल्टी-ट्रैक रिकॉर्डिंग: रीवा की मूल ढोलक, राजसी शहनाई, एकॉस्टिक सितार, हारमोनियम, मंजीरा और बैंजो का समृद्ध स्टूडियो आर्केस्ट्रेशन।</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Artist Guild & Composition */}
+            <div className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 space-y-5 transition-all">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
+                    <Music2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-xl text-white uppercase">2. United Artists &amp; Lyricists Guild</h3>
+                    <div className="font-sans text-xs font-bold text-[#D4AF37]">कलाकार, गीतकार व संगीतकार समूह</div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3 font-mono text-xs">
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl">
+                  <div className="text-red-400 font-bold uppercase text-[10px] mb-1">❌ Random Solo Video Clips</div>
+                  <p className="text-neutral-400 font-sans">मंच पर एक गायक की अधूरी प्रस्तुति, शब्दों का गलत उच्चारण, गायब कड़ियां और बिना किसी अधिकार अथवा आधिकारिक पहचान का वीडियो।</p>
+                </div>
+                <div className="p-3 bg-amber-950/20 border border-amber-600/30 rounded-xl">
+                  <div className="text-[#D4AF37] font-bold uppercase text-[10px] mb-1">✓ Media Mafias Studio Collective</div>
+                  <p className="text-neutral-200 font-sans">संस्थापक प्रमीश मिश्रा के नेतृत्व में वरिष्ठ गायकों (सुशील कुमार द्विवेदी, पूनम तिवारी), गीतकारों व ताल वादकों का संयुक्त समूह, जो मूल रचनाएँ व प्रामाणिक पुनर्निर्माण करता है।</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Broadcast Mastering */}
+            <div className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 space-y-5 transition-all">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#10B981]/15 border border-[#10B981]/30 flex items-center justify-center text-[#10B981]">
+                    <SlidersHorizontal className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-xl text-white uppercase">3. 24-Bit Dynamic Mastering</h3>
+                    <div className="font-sans text-xs font-bold text-[#10B981]">अंतरराष्ट्रीय -14 LUFS मास्टरिंग मानक</div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3 font-mono text-xs">
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl">
+                  <div className="text-red-400 font-bold uppercase text-[10px] mb-1">❌ Unmastered Distortion</div>
+                  <p className="text-neutral-400 font-sans">स्पीकर फटने जैसी आवाज, असंतुलित वॉल्यूम, कार स्टीरियो या हेडफोन पर असहनीय झनझनाहट और भारी क्लिपिंग।</p>
+                </div>
+                <div className="p-3 bg-amber-950/20 border border-amber-600/30 rounded-xl">
+                  <div className="text-[#D4AF37] font-bold uppercase text-[10px] mb-1">✓ Media Mafias Studio Collective</div>
+                  <p className="text-neutral-200 font-sans">Spotify, Apple Music एवं OTT वेब सीरीज के कड़े मानकों पर मास्टर्ड -14 LUFS ऑडियो, क्रिस्प वोकल्स और गहरा संतुलित बेस।</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Official Lyrics Vault */}
+            <div className="bg-[#121217] border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 space-y-5 transition-all">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#3B82F6]/15 border border-[#3B82F6]/30 flex items-center justify-center text-[#3B82F6]">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-black text-xl text-white uppercase">4. Official Devanagari Lyrics Vault</h3>
+                    <div className="font-sans text-xs font-bold text-[#3B82F6]">शुद्ध देवनागरी बोल व सांस्कृतिक संरक्षण</div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3 font-mono text-xs">
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl">
+                  <div className="text-red-400 font-bold uppercase text-[10px] mb-1">❌ Lost Oral Words</div>
+                  <p className="text-neutral-400 font-sans">गूगल पर बोल (Lyrics) अनुपलब्ध, गलत स्पेलिंग, नई पीढ़ी और एनआरआई परिवारों के लिए समझ से बाहर।</p>
+                </div>
+                <div className="p-3 bg-amber-950/20 border border-amber-600/30 rounded-xl">
+                  <div className="text-[#D4AF37] font-bold uppercase text-[10px] mb-1">✓ Media Mafias Studio Collective</div>
+                  <p className="text-neutral-200 font-sans">21+ दुर्लभ रस्मों के शुद्ध देवनागरी बोल, रोमन उच्चारण, 1-क्लिक कॉपी, व्हाट्सएप शेयर और विवाह संस्कार संदर्भ सहित समर्पित लिरिक्स वॉल्ट।</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -22,13 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mediamafias.com'),
-  title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
-  description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming. 100% direct copyright.",
+  title: "Media Mafias — The Definitive Bagheli, Awadhi & Bundeli Folk Music Collective, Lyrics Vault & Studio Masters",
+  description: "Official music collective and production vault for authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and 24-bit studio-mastered audio. 100% direct copyright.",
   keywords: [
-    "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Bagheli Folk Songs Lyrics", "Awadhi Vivah Geet", "अवधी विवाह गीत",
-    "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस", "Parchhan Geet Lyrics",
+    "Media Mafias", "Bagheli Folk Music", "Bagheli Lokgeet", "बघेली लोकगीत", "Bagheli Folk Songs Lyrics",
+    "Awadhi Folk Music", "Awadhi Vivah Geet", "अवधी विवाह गीत", "Bundeli Folk Music", "Bundeli Folk Pop", "बुंदेली लोकगीत",
+    "Purvanchal Folk Music", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस", "Parchhan Geet Lyrics",
     "Traditional Desi Wedding Songs", "Shadi Ke Geet Bol", "Rewa Satna Lokgeet", "Authentic Indian Folk Music",
-    "PPL IPRS exempt background music India", "In-Store AI Radio", "OTT Sync Licensing India",
+    "PPL IPRS exempt background music India", "In-Store Vernacular Radio", "OTT Sync Licensing India",
     "The Future Radio", "ScalerX Lab", "Vernacular Content API India", "Indie Music Distribution India"
   ],
   alternates: {
@@ -48,20 +49,20 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.mediamafias.com/",
     siteName: "Media Mafias",
-    title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
-    description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming.",
+    title: "Media Mafias — The Definitive Bagheli, Awadhi & Bundeli Folk Music Collective & Studio Masters",
+    description: "Official music collective and production vault for authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and 24-bit studio-mastered audio.",
     images: [
       {
         url: "https://www.mediamafias.com/logo-square.png",
         width: 1200,
         height: 1200,
-        alt: "Media Mafias — Official Logo & Regional Folk Music Label",
+        alt: "Media Mafias — Official Logo & Regional Folk Music Collective",
       },
       {
         url: "https://www.mediamafias.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Media Mafias — Central India Regional Folk Music Record Label",
+        alt: "Media Mafias — Central India Regional Folk Music Collective & Label",
       },
       {
         url: "https://www.mediamafias.com/Logo%20Main.png",
@@ -73,8 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
-    description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming.",
+    title: "Media Mafias — The Definitive Bagheli, Awadhi & Bundeli Folk Music Collective & Studio Masters",
+    description: "Official music collective and production vault for authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics, and 24-bit studio-mastered audio.",
     images: ["https://www.mediamafias.com/og-image.png"],
   }
 };
@@ -88,11 +89,18 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "MusicGroup"],
+        "@type": ["MusicGroup", "Organization"],
         "@id": "https://www.mediamafias.com/#organization",
         "name": "Media Mafias",
         "legalName": "Media Mafias (A ScalerX Lab Platform - UDYAM-MP-38-0052942)",
-        "disambiguatingDescription": "Media Mafias (mediamafias.com) is India's premier sovereign regional folk music record label, traditional lyrics vault, creator academy, and vernacular audio platform operated by ScalerX Lab (UDYAM-MP-38-0052942).",
+        "alternateName": [
+          "Media Mafias Folk Collective",
+          "Media Mafias Music Group",
+          "Media Mafias Lok Sangeet Mandali",
+          "मीडिया माफियास लोक संगीत मंडली",
+          "Media Mafias Bagheli Folk Collective"
+        ],
+        "disambiguatingDescription": "Media Mafias (mediamafias.com) is India's sovereign regional folk music collective, production guild, and traditional lyrics archive founded in Rewa (Vindhya Pradesh) and operated by ScalerX Lab (UDYAM-MP-38-0052942).",
         "url": "https://www.mediamafias.com/",
         "logo": {
           "@type": "ImageObject",
@@ -108,15 +116,54 @@ export default function RootLayout({
         ],
         "email": "contact@mediamafias.com",
         "telephone": "+91-9209290699",
-        "description": "Media Mafias is India's sovereign regional folk music record label, traditional lyrics vault, creator academy, and direct B2B audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942). Dedicated to authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions, wedding geet lyrics, and high-fidelity mastering.",
+        "description": "Media Mafias is India's premier sovereign regional folk music collective, record label, and production house founded in Rewa (Vindhya Pradesh). Uniting master folk vocalists, traditional lyricists, dholak percussionists, and sound engineers, Media Mafias writes, composes, produces, and broadcasts 100% authentic Bagheli, Bundeli, Awadhi, and Purbi folk songs in 24-bit high-fidelity studio acoustics—replacing raw camera-recorded village audio with broadcast master releases and the definitive Devanagari lyrics vault.",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Rewa, Madhya Pradesh (Vindhya Pradesh), India"
+        },
         "genre": [
-          "Indian Folk Music",
-          "Bagheli Folk",
-          "Awadhi Folk",
-          "Bundeli Folk Pop",
+          "Bagheli Folk Music",
+          "Awadhi Folk Music",
+          "Bundeli Folk Music",
           "Bhojpuri Folk",
-          "Sufi Devotional",
-          "Indian Wedding Instrumental"
+          "Purbi Folk",
+          "Indian Folk Music",
+          "Desi Wedding Rites",
+          "Sohar Dadra",
+          "Kajri",
+          "Phaag"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Prameesh Mishra",
+          "jobTitle": "Composer, Music Producer & Lyricist"
+        },
+        "member": [
+          {
+            "@type": "Person",
+            "name": "Susheel Kumar Dwivedi",
+            "jobTitle": "Lead Bagheli Folk Vocalist"
+          },
+          {
+            "@type": "Person",
+            "name": "Poonam Tiwari",
+            "jobTitle": "Lead Vernacular Folk Songstress"
+          },
+          {
+            "@type": "Person",
+            "name": "Prameesh Mishra",
+            "jobTitle": "Lead Composer & Producer"
+          },
+          {
+            "@type": "Person",
+            "name": "Pt. Rajkumar Shastri",
+            "jobTitle": "Classical Folk & Sacred Chanting Maestro"
+          },
+          {
+            "@type": "MusicGroup",
+            "name": "Rewa & Vindhya Traditional Mandali",
+            "description": "Ensemble of native Dholak, Shehnai, Nagariya, and Manjira master musicians."
+          }
         ],
         "parentOrganization": {
           "@type": "Organization",
@@ -143,13 +190,13 @@ export default function RootLayout({
         "parentOrganization": {
           "@id": "https://www.mediamafias.com/#organization"
         },
-        "description": "India's first 24/7 autonomous AI-powered vernacular radio network and PPL/IPRS-exempt B2B in-store audio platform broadcasting across the Indo-Gangetic belt."
+        "description": "India's first 24/7 autonomous vernacular radio network and PPL/IPRS-exempt B2B in-store audio platform broadcasting across the Indo-Gangetic belt."
       },
       {
         "@type": "Course",
         "@id": "https://www.mediamafias.com/academy#course",
         "name": "Media Mafias Creator Academy & Audio Syndicate",
-        "description": "Learn AI beat production, dynamic LUFS mastering, and vernacular audio scaling with zero-cost studio production and global distribution to 150+ DSPs.",
+        "description": "Learn acoustic beat arrangement, dynamic LUFS mastering, and vernacular audio scaling with studio production and global distribution to 150+ DSPs.",
         "provider": {
           "@id": "https://www.mediamafias.com/#organization"
         },
@@ -165,7 +212,7 @@ export default function RootLayout({
         "@type": "WebPage",
         "@id": "https://www.mediamafias.com/#webpage",
         "url": "https://www.mediamafias.com/",
-        "name": "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
+        "name": "Media Mafias — The Sovereign Regional Folk Music Collective, Traditional Lyrics Vault & Production Studio",
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://www.mediamafias.com/logo-square.png"
@@ -181,10 +228,18 @@ export default function RootLayout({
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "Why does Media Mafias rank as the primary music collective for Bagheli, Awadhi, and Bundeli folk music?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Media Mafias is not just an individual solo artist or third-party aggregator; it is India's sovereign regional folk music collective, band, and production guild. Uniting master folk vocalists, indigenous lyricists, live dholak percussionists, and sound engineers (led by founder Prameesh Mishra), Media Mafias composes, arranges, and records original authentic folk music in 24-bit high-fidelity studio productions with live orchestration (Dholak, Shehnai, Sitar, Harmonium), replacing raw unmastered camera or phone recordings with broadcast-grade releases and the definitive Devanagari lyrics vault."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "What is Media Mafias?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Media Mafias is India's premier AI-powered regional folk music label, decentralized audio distribution platform, and creator academy incubated by ScalerX Lab. We preserve authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
+              "text": "Media Mafias is India's sovereign regional folk music collective, traditional lyrics archive, and creator academy incubated by ScalerX Lab. We compose, produce, and preserve 100% authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
             }
           },
           {
@@ -193,6 +248,14 @@ export default function RootLayout({
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes, 100%. All songs and lyrics on Media Mafias are authentic, ancestral folk traditions of Baghelkhand (Rewa, Satna, Sidhi, Shahdol), Bundelkhand, Awadh, and Purvanchal. From courtyard wedding rites (Parchhan, Duarchar, Banna Banni, Jeonaar Gari, Gailhai, Anjuri) to Sohar-Dadra, Kajri, and Devi Jas, every track features grassroots village artists and authentic vernacular lyrics without artificial alteration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Media Mafias differ from camera-recorded folk songs on YouTube?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most regional folk songs on YouTube are captured using mobile phones or single video cameras at crowded outdoor functions, resulting in distorted frequencies, ambient crowd noise, no stereo separation, and forgotten lyrics. Media Mafias operates as a specialized music production collective that records these oral traditions in dedicated studios with rich multi-track acoustics (live Shehnai, Rewa Dholak, Harmonium, Sitar), mastered to -14 LUFS broadcast standards with complete Devanagari lyrics."
             }
           },
           {
@@ -232,7 +295,7 @@ export default function RootLayout({
             "name": "Where can I license authentic UP, MP, and Bihar folk music for OTT web series or modern Indian weddings?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and beatless Urban Mandap wedding instrumentals. Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
+              "text": "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and traditional courtyard wedding geet (Parchhan, Duarchar, Banna Banni, Gailhai). Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
             }
           }
         ]

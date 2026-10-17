@@ -19,7 +19,7 @@ export const Hero = () => {
         {/* Eyebrow Tag: Studio Console Style */}
         <div className="inline-flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 px-4 py-1.5 rounded-full text-amber-300 font-mono text-xs font-bold uppercase tracking-widest mb-6">
           <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
-          <span>INDIA&apos;S VERNACULAR FOLK LABEL &amp; DIRECT LICENSING NETWORK</span>
+          <span>INDIA&apos;S SOVEREIGN FOLK MUSIC COLLECTIVE &amp; PRODUCTION GUILD</span>
         </div>
 
         {/* Brand Display Title */}
@@ -31,14 +31,14 @@ export const Hero = () => {
 
         {/* H1 Heading */}
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-display font-bold uppercase tracking-tight text-neutral-200 mb-6 max-w-4xl leading-tight">
-          Authentic Indo-Gangetic Folk Music. <br className="hidden sm:inline" />
-          <span className="text-amber-400">Verified by Local Artists, Mastered for Global Broadcast.</span>
+          Authentic Regional Folk Music Collective. <br className="hidden sm:inline" />
+          <span className="text-amber-400">High-Fidelity Studio Masters Beyond Raw Phone Recordings.</span>
         </h1>
 
         {/* #entity-summary Paragraph (Speakable for Voice & AI Search) */}
         <div className="w-full max-w-4xl bg-white/[0.03] border border-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 mb-12 text-left sm:text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           <p id="entity-summary" className="text-sm sm:text-base font-sans text-neutral-300 leading-relaxed font-normal">
-            Media Mafias is India&apos;s sovereign regional folk music record label and traditional lyrics archive. Collaborating with authentic grassroots artists across Baghelkhand, Awadh, Bundelkhand, and Purvanchal, we document and broadcast 100% authentic ancestral Bagheli, Awadhi, Bundeli, and Bhojpuri folk songs, courtyard wedding geet (Parchhan, Gari, Sohar, Kajri, Banna Banni), and Devanagari lyrics—streaming globally on 150+ platforms and 24/7 on The Future Radio.
+            Media Mafias is India&apos;s sovereign regional folk music collective, production guild, and traditional lyrics archive. As a unified group of native folk singers, indigenous lyricists, live master percussionists, and sound engineers, Media Mafias writes, arranges, and produces original, authentic Bagheli, Bundeli, Awadhi, and Purbi folk songs in 24-bit high-fidelity studio acoustics. We elevate living courtyard traditions (Parchhan, Duarchar, Banna Banni, Sohar-Dadra, Gailhai, Phaag, Kajri) beyond unmastered camera-recorded clips into broadcast-grade master audio streaming across 150+ platforms and 24/7 on The Future Radio.
           </p>
         </div>
 

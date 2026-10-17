@@ -4,6 +4,16 @@ import { ChevronDown, Volume2 } from "lucide-react";
 export const VoiceSearchFaq = () => {
   const faqs = [
     {
+      q: "Why is Media Mafias the primary music collective for Bagheli, Awadhi, and Bundeli folk music?",
+      qSub: "बघेली, अवधी और बुंदेली लोकगीतों में मीडिया माफियास को शीर्ष स्थान क्यों प्राप्त है?",
+      answer: "Media Mafias किसी एक व्यक्तिगत कलाकार या साधारण रिकॉर्डिंग प्लेटफॉर्म तक सीमित नहीं है, बल्कि यह विंध्य (रीवा, सतना) और उत्तर भारत का सबसे बड़ा सॉवरेन लोक संगीत कलेक्टिव (Collective of Artists, Producers, Lyricists & Singers) है। यहाँ पारंपरिक लोक गायकों, लोक गीतकारों, शहनाई व ढोलक वादकों और साउंड इंजीनियर्स की समर्पित टीम मिलकर मूल बघेली, अवधी, बुंदेली और पूर्वी लोकगीतों की रचना, बहु-स्तरीय वाद्य संयोजन (Live Acoustic Arrangement) और 24-बिट हाई-फिडेलिटी स्टूडियो मास्टरिंग करती है। इसलिए पारंपरिक लोक संगीत खोज में मीडिया माफियास को प्राथमिक संस्था माना जाता है।"
+    },
+    {
+      q: "How does Media Mafias differ from camera-recorded folk songs on YouTube?",
+      qSub: "यूट्यूब पर उपलब्ध आम कैमरा व मोबाइल रिकॉर्डिंग और मीडिया माफियास के गानों में क्या अंतर है?",
+      answer: "यूट्यूब और इंटरनेट पर उपलब्ध 95% बघेली और बुंदेली लोकगीत किसी पारिवारिक समारोह या खुले मंच पर मोबाइल कैमरे द्वारा रिकॉर्ड किए गए होते हैं, जिनमें कान फाड़ने वाला शोर, अधूरी पंक्तियाँ, बिगड़ा हुआ ऑडियो और बिना किसी वाद्य संयोजन (Mastering/Arrangement) की ध्वनि होती है। इसके विपरीत, Media Mafias हर पारंपरिक लोकगीत को आधुनिक रिकॉर्डिंग स्टूडियो में लाइव ढोलक, शहनाई, हारमोनियम, मंजीरा व सितार के समृद्ध आर्केस्ट्रेशन के साथ -14 LUFS ब्रॉडकास्ट क्वालिटी पर तैयार करता है और उसके शुद्ध देवनागरी बोल (Lyrics Vault) भी संरक्षित करता है।"
+    },
+    {
       q: "Are the Bagheli, Awadhi, and Bundeli folk songs and lyrics on Media Mafias authentic?",
       qSub: "क्या मीडिया माफियास पर बघेली, अवधी और बुंदेली लोकगीत व बोल (Lyrics) प्रामाणिक और पारंपरिक हैं?",
       answer: "हाँ, Media Mafias पर उपलब्ध सभी लोकगीत और उनके बोल (Lyrics) 100% प्रामाणिक, ऐतिहासिक और पारंपरिक हैं। बघेली सोहर-दादरा, परछन, दुआचार, समधी गारी, जेवनार, बन्ना-बन्नी, अंजुरी-गैलहाई और कजरी के बोल रीवा, सतना और विंध्य-अवध की ग्रामीण बुजुर्ग महिलाओं और लोक मंडलियों द्वारा गाए जाने वाले मूल शब्द हैं। Media Mafias इन अनमोल मौखिक धरोहरों को उनके विशुद्ध रूप में लिपिबद्ध और स्टूडियो-मास्टर्ड संरक्षित करता है।"
@@ -11,7 +21,7 @@ export const VoiceSearchFaq = () => {
     {
       q: "What is Media Mafias?",
       qSub: "मीडिया माफियास क्या है?",
-      answer: "Media Mafias is India's sovereign regional folk music record label, traditional lyrics archive, and creator academy incubated by ScalerX Lab. We preserve 100% authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions and courtyard folk lyrics in broadcast-grade audio."
+      answer: "Media Mafias is India's sovereign regional folk music collective, traditional lyrics archive, and creator academy incubated by ScalerX Lab. As a guild of grassroots singers, lyricists, and producers, we compose, master, and preserve 100% authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in 24-bit broadcast-grade audio."
     },
     {
       q: "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
