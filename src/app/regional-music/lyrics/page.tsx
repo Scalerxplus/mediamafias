@@ -772,6 +772,200 @@ const LYRICS_DATA: LyricEntry[] = [
       "Sees ma unkhe mukut bhal saajai, haathe ma sundar dhanush biraajai, sundar tilak lilaar, dekhan hum jaabay re... haari!",
       "Haan hare Rama, bagiya ma aaye Shri Ram, dekhan hum jaabay re... haari!"
     ]
+  },
+
+  // 22. DEVI JHOOLA GEET (AMWA KAI DAAR PE MAA)
+  {
+    id: "devi-jhoola-geet",
+    title: "Devi Jhoola Geet (अमवा कै डार पे माँ)",
+    hindiTitle: "झूला डरा है अमवा कै डार पे माँ - देवी झूला व हिंडोला गीत",
+    category: "bhakti",
+    categoryLabel: "देवी भक्ति व ऋतु गीत • सावन व नवरात्र हिंडोला",
+    dialect: "बघेली व अवधी (रीवा, सतना, विंध्याचल)",
+    ritualContext: "सावन मास एवं चैत्र-शारदीय नवरात्र में देवी मंदिरों और घरों में महिलाओं द्वारा ढोलक और मंजीरे की थाप पर गाया जाने वाला पारंपरिक हिंडोला गीत, जिसमें माता भवानी के आम के वृक्ष पर झूलने, लंगुरिया (भैरव) और हनुमान जी द्वारा झूला झुलाने का अलौकिक वर्णन होता है।",
+    description: "चंदन पाट के हिंडोले और रेशम की डोर पर झूलती जगजननी माता का उल्लासमय पारंपरिक महिला मंडली लोकगीत।",
+    devanagariLyrics: [
+      "झूला डरा है अमवा कै डार पे माँ,",
+      "झूला डरा है अमवा कै डार पे माँ।",
+      "झूलैं मोरी मइया, ओ झूलैं मोरी मइया,",
+      "अमवा कै डार पे माँ...",
+      "झूला डरा है अमवा कै डार पे माँ॥",
+      "काहे से मइया कै बना हिंडोरा,",
+      "काहे से मइया कै बना हिंडोरा,",
+      "काहे कै लागी डोर मोरी मइया,",
+      "अमवा कै डार पे माँ...",
+      "झूला डरा है अमवा कै डार पे माँ॥",
+      "चन्दन पाट कै बना हिंडोरा,",
+      "चन्दन पाट कै बना हिंडोरा,",
+      "रेशम कै लागी डोर मोरी मइया,",
+      "अमवा कै डार पे माँ...",
+      "झूला डरा है अमवा कै डार पे माँ॥",
+      "कौना झूलैं कौन झुलावै,",
+      "कौना झूलैं कौन झुलावै,",
+      "कौना खींचै डोर मोरी मइया,",
+      "अमवा कै डार पे माँ...",
+      "झूला डरा है अमवा कै डार पे माँ॥",
+      "मइया झूलैं, लंगुरा झुलामय,",
+      "मइया झूलैं, लंगुरा झुलामय,",
+      "हनुमत खींचे डोर मोरी मइया,",
+      "अमवा कै डार पे माँ...",
+      "झूला डरा है अमवा कै डार पे माँ॥",
+      "झूला डरा है अमवा कै डार पे माँ,",
+      "झूलैं मोरी मइया, ओ झूलैं मोरी मइया,",
+      "अमवा कै डार पे माँ...॥"
+    ],
+    romanLyrics: [
+      "Jhula dara hai amwa kai daar pe Maa, jhula dara hai amwa kai daar pe Maa.",
+      "Jhoolain mori Maiya, o jhoolain mori Maiya, amwa kai daar pe Maa... Jhula dara hai amwa kai daar pe Maa.",
+      "Kaahe se Maiya kai bana hindora, kaahe se Maiya kai bana hindora, kaahe kai laagi dor mori Maiya, amwa kai daar pe Maa...",
+      "Chandan paat kai bana hindora, chandan paat kai bana hindora, resham kai laagi dor mori Maiya, amwa kai daar pe Maa...",
+      "Kauna jhoolain kaun jhulaavai, kauna jhoolain kaun jhulaavai, kauna kheenchain dor mori Maiya, amwa kai daar pe Maa...",
+      "Maiya jhoolain, langura jhulaamay, Maiya jhoolain, langura jhulaamay, Hanumat kheenchain dor mori Maiya, amwa kai daar pe Maa...",
+      "Jhula dara hai amwa kai daar pe Maa, jhoolain mori Maiya, o jhoolain mori Maiya, amwa kai daar pe Maa..."
+    ]
+  },
+
+  // 23. DEVI JAS AALHA GEET (AALHA KAI DHWAJA AAYI HO MAA)
+  {
+    id: "devi-jas-aalha-geet",
+    title: "Devi Jas Aalha Geet (आल्हा कै ध्वजा - मैहर धाम जस)",
+    hindiTitle: "तीन ध्वजा तीनो लोक से आई, आल्हा कै ध्वजा - देवी जस आल्हा",
+    category: "bhakti",
+    categoryLabel: "मैहर धाम जस • आल्हा वीर रस ध्वजा अर्पण",
+    dialect: "बघेली व बुंदेली (मैहर, विंध्य, बुंदेलखंड)",
+    ritualContext: "मैहर धाम (माँ शारदा भवानी) और विंध्याचल की विश्व-प्रसिद्ध मान्यता, जहाँ अमर योद्धा आल्हा आज भी नित्य प्रथम पूजा और ध्वजा अर्पण करने आते हैं। नगाड़े, झांझ और तेज ढोलक की गूंज पर गाया जाने वाला यह सर्वाधिक ओजस्वी देवी जस है।",
+    description: "तीनों लोकों की ध्वजा और आल्हा की अमर भक्ति, सोने की झरिया से जल और गुड़हल के फूल चढ़ाने का पारंपरिक जस।",
+    devanagariLyrics: [
+      "तीन ध्वजा तीनो लोक से आई...",
+      "तीन ध्वजा तीनो लोक से आई,",
+      "आल्हा कै ध्वजा देखा आई हो माँ!",
+      "हाँ मैय्या! आल्हा कै ध्वजा अब आई हो माँ!॥",
+      "तोरे मढूलिआ कै द्वार खड़े हैं,",
+      "तोरे मढूलिआ कै द्वार खड़े हैं,",
+      "दरस की आस लगाए हो माँ!",
+      "हाँ मैय्या! दरस की आस लगाए हो माँ!॥",
+      "तीन ध्वजा तीनो लोक से आई,",
+      "आल्हा कै ध्वजा अब आई हो माँ!॥",
+      "ढोल मृदंग बजे शहनाई,",
+      "ढोल मृदंग बजे शहनाई,",
+      "जय जय होत पुकार हो माँ!",
+      "हाँ मैय्या! जय जय होत पुकार हो माँ!॥",
+      "तीन ध्वजा तीनो लोक से आई,",
+      "आल्हा कै ध्वजा अब आई हो माँ!॥",
+      "सोने कै झरिया म जल भर लायों,",
+      "सोने कै झरिया म जल भर लायों,",
+      "गुड़हर फूल सजायों हो माँ!",
+      "हाँ मैय्या! गुड़हर फूल सजायों हो माँ!॥",
+      "धूप दीप नैवेद्य आरती,",
+      "धूप दीप नैवेद्य आरती,",
+      "नरियर कै भरमार हो माँ!",
+      "हाँ मैय्या! नरियर कै भरमार हो माँ!॥",
+      "तीन ध्वजा तीनो लोक से आई...",
+      "तीन ध्वजा तीनो लोक से आई,",
+      "आल्हा कै ध्वजा देखा आई हो माँ!",
+      "हाँ मैय्या! आल्हा कै ध्वजा अब आई हो माँ!",
+      "आल्हा कै ध्वजा... देखा आई हो माँ!॥"
+    ],
+    romanLyrics: [
+      "Teen dhwaja teeno lok se aayi... Teen dhwaja teeno lok se aayi, Aalha kai dhwaja dekha aayi ho Maa!",
+      "Haan Maiyya! Aalha kai dhwaja ab aayi ho Maa!",
+      "Tore madhulia kai dwaar khade hain, daras ki aas lagaye ho Maa! Haan Maiyya! Daras ki aas lagaye ho Maa!",
+      "Teen dhwaja teeno lok se aayi, Aalha kai dhwaja ab aayi ho Maa!",
+      "Dhol mridang baje shehnai, dhol mridang baje shehnai, jai jai hot pukaar ho Maa! Haan Maiyya! Jai jai hot pukaar ho Maa!",
+      "Sone kai jhariya ma jal bhar laayon, sone kai jhariya ma jal bhar laayon, gudhar phool sajayon ho Maa! Haan Maiyya! Gudhar phool sajayon ho Maa!",
+      "Dhoop deep naivedya aarati, dhoop deep naivedya aarati, nariyar kai bharmaar ho Maa! Haan Maiyya! Nariyar kai bharmaar ho Maa!",
+      "Teen dhwaja teeno lok se aayi... Aalha kai dhwaja dekha aayi ho Maa!"
+    ]
+  },
+
+  // 24. DEVI STUTI (JAG JANANI BARDANI)
+  {
+    id: "devi-stuti-adi-bhavani",
+    title: "Devi Stuti (जग जननी बरदानी - आदि भवानी वंदना)",
+    hindiTitle: "जग जननी बरदानी, जय हो मोरी आदि भवानी - देवी स्तुति",
+    category: "bhakti",
+    categoryLabel: "आदि शक्ति वंदना • आत्मिक ध्यान व करुण स्तुति",
+    dialect: "बघेली व अवधी (विंध्य, काशी, अवध)",
+    ritualContext: "नवरात्र घटस्थापना, प्रातः कालीन देवी ध्यान एवं संध्या आरती के समय गाई जाने वाली अत्यंत भावपूर्ण एवं आध्यात्मिक स्तुति। समस्त सृष्टि रचना, भव-दुःख निवारण और अंधकार से प्रकाश की ओर ले जाने की आर्त पुकार।",
+    description: "सब खुशियों की दाता आदि भवानी के चरणों में सर्वस्व समर्पण और करुण प्रार्थना का पावन स्तोत्र।",
+    devanagariLyrics: [
+      "जग जननी बरदानी,",
+      "जय हो मोरी आदि भवानी।",
+      "सब खुशिअन की दानी,",
+      "सुन मोरी आदि भवानी॥",
+      "सृष्टि रची है तोरे हाथन से मैय्या,",
+      "सृष्टि रची है तोरे हाथन से मैय्या,",
+      "सब म आप समानी,",
+      "सुन मोरी आदि भवानी।",
+      "सब खुशिअन की दानी,",
+      "सुन मोरी आदि भवानी॥",
+      "शरण म तोरी जब कोउ आबै,",
+      "शरण म तोरी जब कोउ आबै।",
+      "दुःख हर बनी कल्याणी,",
+      "सुन मोरी आदि भवानी।",
+      "सब खुशिअन की दानी,",
+      "सुन मोरी आदि भवानी॥",
+      "जीवन म अंधियार है मैय्या,",
+      "जीवन म अंधियार है मैय्या।",
+      "तर मोरी करुण कहानी,",
+      "सुन मोरी आदि भवानी।",
+      "सब खुशिअन की दानी,",
+      "सुन मोरी आदि भवानी॥",
+      "भक्तन कै तैं ढाल जगत मा,",
+      "भक्तन कै तैं ढाल जगत मा,",
+      "किरपा कर महारानी!",
+      "सुन मोरी आदि भवानी।",
+      "जय हो मोरी... आदि भवानी॥"
+    ],
+    romanLyrics: [
+      "Jag janani bardani, jai ho mori Aadi Bhavani. Sab khushian ki daani, sun mori Aadi Bhavani.",
+      "Srishti rachi hai tore haathan se Maiyya, srishti rachi hai tore haathan se Maiyya, sab ma aap samaani, sun mori Aadi Bhavani.",
+      "Sharan ma tori jab kou aabai, sharan ma tori jab kou aabai, dukh har bani kalyaani, sun mori Aadi Bhavani.",
+      "Jeevan ma andhiyaar hai Maiyya, jeevan ma andhiyaar hai Maiyya, tar mori karun kahani, sun mori Aadi Bhavani.",
+      "Bhaktan kai tain dhaal jagat ma, bhaktan kai tain dhaal jagat ma, kirpa kar Maharani! Sun mori Aadi Bhavani. Jai ho mori... Aadi Bhavani."
+    ]
+  },
+
+  // 25. DEVI JAS & BHAGAR (DUI BIRIYA AARTI)
+  {
+    id: "devi-jas-bhagar-aarti",
+    title: "Devi Jas & Bhagar (दुई बिरिया आरती - भगतिया जस)",
+    hindiTitle: "दुई बिरिया, करैं भगत माई आरती - देवी जस व भगर",
+    category: "bhakti",
+    categoryLabel: "भगतिया जस व भगर • विंध्य-मैहर नवदुर्गा आरती",
+    dialect: "बघेली व विंध्य (रीवा, सतना, मैहर, सीधी)",
+    ritualContext: "बघेलखंड और विंध्य क्षेत्र में नवदुर्गा उत्सव के दौरान भगत (भगर) मंडली द्वारा देवी के मढ़िया/चौरा पर दोनों पहर (प्रातः एवं संध्या - दुई बिरिया) की जाने वाली पारंपरिक तांत्रिक व भक्ति आरती। सोने की थाली, गुड़हल के फूल, लाल चुनरी और सोलह शृंगार अर्पण करने का पारंपरिक विधान।",
+    description: "दोनों पहर भक्तों द्वारा माता की महाआरती, लाल चुनरिया और सोलह शृंगार सजाने का लोक-प्रसिद्ध 'दुई बिरिया' देवी भगर जस।",
+    devanagariLyrics: [
+      "दुई बिरिया, ओ माई दुई बिरिया...",
+      "दुई बिरिया, ओ माई दुई बिरिया...",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!॥",
+      "सोने कै थारी म भोग लगायों, माई दुई बिरिया...",
+      "सोने कै थारी म भोग लगायों, माई दुई बिरिया...",
+      "गुड़हर फूल कै हार बनायों, तोहि दुइ बिरिया...",
+      "गुड़हर फूल कै हार बनायों, तोहि दुइ बिरिया...",
+      "तोरे मढूलिया के द्वार बखारौं, दुई बिरिया...",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!॥",
+      "लाल चुनरिया मैं तोहि ओढायों, माई दुई बिरिया...",
+      "लाल चुनरिया मैं तोहि ओढायों, माई दुई बिरिया...",
+      "सोला सिंगार से तोहि सजायों, माई दुई बिरिया...",
+      "सोला सिंगार से तोहि सजायों, माई दुई बिरिया...",
+      "सेवा म तोरी दरबार लगायों, दुई बिरिया...",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!॥",
+      "दुई बिरिया, ओ माई दुई बिरिया...",
+      "दुई बिरिया, ओ माई दुई बिरिया...",
+      "करैं भगत माई आरती, तोरी दुई बिरिया!",
+      "करैं भगत माई आरती... तोरी दुई बिरिया...॥"
+    ],
+    romanLyrics: [
+      "Dui biriya, o Maai dui biriya... Dui biriya, o Maai dui biriya... Karain bhagat Maai aarati, tori dui biriya!",
+      "Sone kai thaari ma bhog lagaayon, Maai dui biriya... Gudhar phool kai haar banaayon, tohi dui biriya... Tore madhuliya ke dwaar bakhaaroun, dui biriya... Karain bhagat Maai aarati, tori dui biriya!",
+      "Laal chunariya main tohi odhaayon, Maai dui biriya... Sola singaar se tohi sajaayon, Maai dui biriya... Sewa ma tori darbaar lagaayon, dui biriya... Karain bhagat Maai aarati, tori dui biriya!",
+      "Dui biriya, o Maai dui biriya... Karain bhagat Maai aarati, tori dui biriya! Karain bhagat Maai aarati... tori dui biriya..."
+    ]
   }
 ];
 
@@ -874,7 +1068,7 @@ export default function RegionalLyricsPage() {
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] font-mono text-xs uppercase tracking-widest font-bold mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>21 प्रामाणिक लोकगीत • 100% AUTHENTIC HERITAGE LYRICS ARCHIVE</span>
+            <span>25 प्रामाणिक लोकगीत • 100% AUTHENTIC HERITAGE LYRICS ARCHIVE</span>
           </div>
 
           <h1 className="font-display font-black text-4xl sm:text-6xl uppercase tracking-tight text-white mb-3">
@@ -886,17 +1080,17 @@ export default function RegionalLyricsPage() {
           </div>
 
           <p className="font-mono text-xs sm:text-sm text-neutral-300 max-w-3xl mx-auto leading-relaxed mb-8">
-            रीवा, सतना, सीधी, शहडोल, बुंदेलखंड, अवध और पूर्वांचल के सदियों पुराने <strong className="text-white">दुआचार, बन्ना-बन्नी, परछन, बेलनहाई, गैलहाई (विदाई), सोहर-दादरा, कुआँ पूजन, कजरी, नचनहाई फाग, रोपाई और शिव लमतेरा</strong> के पूर्ण प्रामाणिक बोल। एक क्लिक में बोल कॉपी करें, पारिवारिक मंडली के साथ व्हाट्सएप पर साझा करें या स्टूडियो प्रिव्यू सुनें।
+            रीवा, सतना, सीधी, शहडोल, बुंदेलखंड, अवध और पूर्वांचल के सदियों पुराने <strong className="text-white">दुआचार, बन्ना-बन्नी, परछन, बेलनहाई, गैलहाई (विदाई), सोहर-दादरा, कुआँ पूजन, कजरी, नचनहाई फाग, रोपाई, देवी झूला, मैहर आल्हा जस, आदि भवानी स्तुति, भगतिया भगर और शिव लमतेरा</strong> के पूर्ण प्रामाणिक बोल। एक क्लिक में बोल कॉपी करें, पारिवारिक मंडली के साथ व्हाट्सएप पर साझा करें या स्टूडियो प्रिव्यू सुनें।
           </p>
 
           {/* Quick Category Filters */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {[
-              { label: "All Lyrics (सभी 21 बोल)", value: "all" },
+              { label: "All Lyrics (सभी 25 बोल)", value: "all" },
               { label: "Wedding Rites (विवाह संस्कार: दुआचार, परछन, बन्ना, बेलनहाई, गैलहाई)", value: "vivah" },
               { label: "Childbirth & Sohar (सोहर दादरा व कुआँ पूजन)", value: "sohar" },
               { label: "Seasonal & Phagua (फाग, कजरी, नचनहाई, रोपाई, दादरा)", value: "seasonal" },
-              { label: "Bhakti & Devotional (गणेश वंदना, शिव लमतेरा, राम कजरी)", value: "bhakti" }
+              { label: "Bhakti, Devi Jas & Bhagar (देवी झूला, आल्हा ध्वजा, भगर, गणेश, शिव लमतेरा)", value: "bhakti" }
             ].map((cat) => (
               <button
                 key={cat.value}
