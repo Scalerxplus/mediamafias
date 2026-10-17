@@ -1,4 +1,37 @@
+# Media Mafias Sovereign Folk Music Archive & Studio Collective
+# Allow all standard and AI search crawlers full access to music, lyrics, and metadata
+
 User-agent: *
+Allow: /
+
+# Google Search & Google AI Overviews
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: Claude-Web
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# Apple Search & Siri
+User-agent: Applebot
 Allow: /
 
 Sitemap: https://www.mediamafias.com/sitemap.xml
