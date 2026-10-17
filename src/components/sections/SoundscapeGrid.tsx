@@ -150,9 +150,9 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     ]
   },
   "wedding-mandap": {
-    label: "Urban Mandap & Wedding BGM",
-    hindiLabel: "विवाह गीत एवं शहनाई-सितार",
-    desc: "Strictly wedding and sacred matrimonial music (#UrbanMandapStyle) — beatless acoustic refinement.",
+    label: "Desi Wedding Rites & Vivah Geet",
+    hindiLabel: "विवाह संस्कार एवं पारंपरिक मंगल गीत",
+    desc: "Authentic ancestral wedding rites songs (Parchhan, Duarchar, Banna Banni, Gari, Gailhai) with pure traditional lyrics.",
     tracks: [
       {
         id: "wm-1",
@@ -170,7 +170,7 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
         title: "Sohaag (Vivaah Geet)",
         hindiTitle: "सुहाग - मांगलिक विवाह गीत",
         dialect: "Acoustic Classical",
-        genre: "#UrbanMandapStyle",
+        genre: "Traditional Vivah Folk",
         bpm: 76,
         description: "Sacred matrimonial folk ballad capturing bride vidai and shringar blessings with acoustic purity.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
@@ -181,7 +181,7 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
         title: "Biyah Laye Raghubar (Parchhan Geet)",
         hindiTitle: "ब्याह लाए रघुबर - परछन गीत",
         dialect: "Acoustic Ceremonial",
-        genre: "Mandap Ambient BGM",
+        genre: "Traditional Parchhan Folk",
         bpm: 82,
         description: "Auspicious wedding ritual melody sung during the traditional welcome of the groom procession.",
         youtubeUrl: "https://www.youtube.com/@MediaMafias",
@@ -479,13 +479,19 @@ export const SoundscapeGrid = () => {
               Explore Complete Catalog &amp; Dialect Filters
             </div>
             <p className="font-mono text-xs text-neutral-400">
-              Filter by Bagheli, Bundeli, Awadhi, Bhojpuri, and Urban Mandap wedding scores.
+              Filter by Bagheli, Bundeli, Awadhi, Bhojpuri, and 100% Authentic Wedding Folk Songs &amp; Lyrics.
             </p>
           </div>
-          <div className="flex gap-3 shrink-0">
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <a
+              href="/regional-music/lyrics"
+              className="bg-[#D4AF37] hover:bg-[#e5be47] text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-amber-400 transition-all shadow-md"
+            >
+              Lyrics Vault (बोल संग्रह) ➔
+            </a>
             <a
               href="/regional-music"
-              className="bg-amber-500 hover:bg-amber-400 text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-amber-400 transition-all shadow-md"
+              className="bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-white/20 transition-all"
             >
               Open Full Catalog ➔
             </a>

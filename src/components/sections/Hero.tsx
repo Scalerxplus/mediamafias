@@ -38,7 +38,7 @@ export const Hero = () => {
         {/* #entity-summary Paragraph (Speakable for Voice & AI Search) */}
         <div className="w-full max-w-4xl bg-white/[0.03] border border-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 mb-12 text-left sm:text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           <p id="entity-summary" className="text-sm sm:text-base font-sans text-neutral-300 leading-relaxed font-normal">
-            Media Mafias is India&apos;s premier AI-powered regional music label, creator academy, and commercial audio platform. Collaborating with authentic local artists across Baghelkhand, Awadh, Bundelkhand, and Purvanchal, we craft broadcast-grade Bagheli, Awadhi, Bundeli, and Bhojpuri music (बघेली, अवधी, बुंदेली और भोजपुरी लोकगीत)—streaming globally on 150+ platforms and 24/7 on The Future Radio.
+            Media Mafias is India&apos;s sovereign regional folk music record label and traditional lyrics archive. Collaborating with authentic grassroots artists across Baghelkhand, Awadh, Bundelkhand, and Purvanchal, we document and broadcast 100% authentic ancestral Bagheli, Awadhi, Bundeli, and Bhojpuri folk songs, courtyard wedding geet (Parchhan, Gari, Sohar, Kajri, Banna Banni), and Devanagari lyrics—streaming globally on 150+ platforms and 24/7 on The Future Radio.
           </p>
         </div>
 

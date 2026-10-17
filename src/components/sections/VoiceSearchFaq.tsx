@@ -4,9 +4,14 @@ import { ChevronDown, Volume2 } from "lucide-react";
 export const VoiceSearchFaq = () => {
   const faqs = [
     {
+      q: "Are the Bagheli, Awadhi, and Bundeli folk songs and lyrics on Media Mafias authentic?",
+      qSub: "क्या मीडिया माफियास पर बघेली, अवधी और बुंदेली लोकगीत व बोल (Lyrics) प्रामाणिक और पारंपरिक हैं?",
+      answer: "हाँ, Media Mafias पर उपलब्ध सभी लोकगीत और उनके बोल (Lyrics) 100% प्रामाणिक, ऐतिहासिक और पारंपरिक हैं। बघेली सोहर-दादरा, परछन, दुआचार, समधी गारी, जेवनार, बन्ना-बन्नी, अंजुरी-गैलहाई और कजरी के बोल रीवा, सतना और विंध्य-अवध की ग्रामीण बुजुर्ग महिलाओं और लोक मंडलियों द्वारा गाए जाने वाले मूल शब्द हैं। Media Mafias इन अनमोल मौखिक धरोहरों को उनके विशुद्ध रूप में लिपिबद्ध और स्टूडियो-मास्टर्ड संरक्षित करता है।"
+    },
+    {
       q: "What is Media Mafias?",
       qSub: "मीडिया माफियास क्या है?",
-      answer: "Media Mafias is India's premier AI-powered regional folk music label, decentralized audio distribution platform, and creator academy incubated by ScalerX Lab. We preserve authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
+      answer: "Media Mafias is India's sovereign regional folk music record label, traditional lyrics archive, and creator academy incubated by ScalerX Lab. We preserve 100% authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions and courtyard folk lyrics in broadcast-grade audio."
     },
     {
       q: "How can I play background music in my retail store, hospital, or restaurant in India without a PPL or IPRS license?",
@@ -16,7 +21,7 @@ export const VoiceSearchFaq = () => {
     {
       q: "How do independent creators and folk artists earn royalties on Media Mafias?",
       qSub: "लोक कलाकार और स्वतंत्र संगीतकार मीडिया माफियास पर रॉयल्टी कैसे कमाते हैं?",
-      answer: "Folk vocalists join the ₹499 Creator Academy, submit raw vocals via WhatsApp (+91 9209290699), and receive studio-mastered releases distributed to 150+ platforms with an 80% creator-first streaming and sync royalty share paid directly via UPI."
+      answer: "Folk vocalists join the Creator Academy, submit raw vocals via WhatsApp (+91 9209290699), and receive studio-mastered releases distributed to 150+ platforms with an 80% creator-first streaming and sync royalty share paid directly via UPI."
     },
     {
       q: "Which streaming platforms does Media Mafias distribute music to?",
@@ -31,7 +36,7 @@ export const VoiceSearchFaq = () => {
     {
       q: "Where can I license authentic UP, MP, and Bihar folk music for OTT web series or modern Indian weddings?",
       qSub: "ओटीटी वेब सीरीज या शादी के लिए अवधी, बुंदेली और बघेली लोकगीत कैसे लाइसेंस करें?",
-      answer: "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and beatless Urban Mandap wedding instrumentals. Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
+      answer: "Media Mafias offers pre-cleared, one-stop sync licensing for authentic Bagheli, Awadhi, Bundeli, and Bhojpuri folk music, including Sohar, Kajri, Devi Jas, and traditional wedding rites songs (Parchhan, Duarchar, Banna Banni, Jeonaar Gari, Gailhai). Because Media Mafias controls 100% of master and publishing rights, OTT music supervisors and wedding planners receive instant clearance."
     }
   ];
 

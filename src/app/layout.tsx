@@ -22,14 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mediamafias.com'),
-  title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
-  description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+  title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
+  description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming. 100% direct copyright.",
   keywords: [
-    "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Awadhi Vivah Geet", "अवधी विवाह गीत",
-    "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस",
+    "Media Mafias", "Bagheli Lokgeet", "बघेली लोकगीत", "Bagheli Folk Songs Lyrics", "Awadhi Vivah Geet", "अवधी विवाह गीत",
+    "Bundeli Folk Pop", "बुंदेली लोकगीत", "Bhojpuri Sohar Kajri", "सोहर कजरी देवी जस", "Parchhan Geet Lyrics",
+    "Traditional Desi Wedding Songs", "Shadi Ke Geet Bol", "Rewa Satna Lokgeet", "Authentic Indian Folk Music",
     "PPL IPRS exempt background music India", "In-Store AI Radio", "OTT Sync Licensing India",
-    "Urban Mandap Wedding BGM", "AI Music Creator Academy India", "The Future Radio", "ScalerX Lab",
-    "Vernacular Content API India", "Indie Music Distribution India"
+    "The Future Radio", "ScalerX Lab", "Vernacular Content API India", "Indie Music Distribution India"
   ],
   alternates: {
     canonical: "https://www.mediamafias.com/",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://www.mediamafias.com/",
     siteName: "Media Mafias",
-    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
-    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
+    description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming.",
     images: [
       {
         url: "https://www.mediamafias.com/logo-square.png",
@@ -73,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Mafias — AI Folk Music Label, Creator Academy & Audio Distribution Platform India",
-    description: "Distribute regional folk & indie music to 150+ platforms, join the ₹499 Creator Academy, or license PPL/IPRS-exempt In-Store AI Radio & Content API in India.",
+    title: "Media Mafias — Authentic Regional Folk Music, Lyrics & Desi Wedding Rites Archive India",
+    description: "Official digital archive for 100% authentic Bagheli, Bundeli, Awadhi & Bhojpuri folk songs, traditional wedding lyrics (Parchhan, Gari, Sohar, Kajri, Banna Banni), and broadcast-grade audio streaming.",
     images: ["https://www.mediamafias.com/og-image.png"],
   }
 };
@@ -92,7 +92,7 @@ export default function RootLayout({
         "@id": "https://www.mediamafias.com/#organization",
         "name": "Media Mafias",
         "legalName": "Media Mafias (A ScalerX Lab Platform - UDYAM-MP-38-0052942)",
-        "disambiguatingDescription": "Media Mafias (mediamafias.com) is an Indian AI-powered regional folk music record label, decentralized audio distribution platform, creator academy, and B2B in-store radio provider operated by ScalerX Lab. It is an independent music and audio technology platform and is NOT affiliated with the Varanasi digital marketing agency Media Mafia (mediamafia.in) or mediamafia.co.za.",
+        "disambiguatingDescription": "Media Mafias (mediamafias.com) is India's premier sovereign regional folk music record label, traditional lyrics vault, creator academy, and vernacular audio platform operated by ScalerX Lab (UDYAM-MP-38-0052942).",
         "url": "https://www.mediamafias.com/",
         "logo": {
           "@type": "ImageObject",
@@ -108,7 +108,7 @@ export default function RootLayout({
         ],
         "email": "contact@mediamafias.com",
         "telephone": "+91-9209290699",
-        "description": "Media Mafias is an Indian AI-powered regional folk music label, decentralized creator academy, and direct B2B audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942). Specializing in human-verified Bagheli, Awadhi, Bundeli, and Bhojpuri music.",
+        "description": "Media Mafias is India's sovereign regional folk music record label, traditional lyrics vault, creator academy, and direct B2B audio licensing platform incubated by ScalerX Lab (UDYAM-MP-38-0052942). Dedicated to authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions, wedding geet lyrics, and high-fidelity mastering.",
         "genre": [
           "Indian Folk Music",
           "Bagheli Folk",
@@ -185,6 +185,14 @@ export default function RootLayout({
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Media Mafias is India's premier AI-powered regional folk music label, decentralized audio distribution platform, and creator academy incubated by ScalerX Lab. We preserve authentic Bagheli, Awadhi, Bundeli, and Bhojpuri oral traditions in broadcast-grade audio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the Bagheli, Awadhi, and Bundeli lyrics and songs on Media Mafias authentic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. All songs and lyrics on Media Mafias are authentic, ancestral folk traditions of Baghelkhand (Rewa, Satna, Sidhi, Shahdol), Bundelkhand, Awadh, and Purvanchal. From courtyard wedding rites (Parchhan, Duarchar, Banna Banni, Jeonaar Gari, Gailhai, Anjuri) to Sohar-Dadra, Kajri, and Devi Jas, every track features grassroots village artists and authentic vernacular lyrics without artificial alteration."
             }
           },
           {
