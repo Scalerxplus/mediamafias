@@ -38,8 +38,9 @@ export const Header = () => {
     { name: "All Regional Masters", href: "/regional-music", desc: "केंद्रीय भारत लोक संगीत महासंग्रह (100% Studio Masters)" }
   ];
 
-  // 6 Other Navigation Links
+  // 7 Other Navigation Links
   const navItems: { name: string; href: string; badge?: string }[] = [
+    { name: "Shorts & Reels", href: "/shorts", badge: "HOT" },
     { name: "Lyrics Vault", href: "/regional-music/lyrics", badge: "25 GEET" },
     { name: "Top Creators", href: "/creators" },
     { name: "Sync Licensing", href: "/licensing" },

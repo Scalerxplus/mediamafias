@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Disc3, FileText, Sparkles, ListMusic } from "lucide-react";
+import { Disc3, FileText, Sparkles, ListMusic, Flame } from "lucide-react";
 import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
 import { JioSaavnIcon } from "@/components/icons/JioSaavnIcon";
 import { SPOTIFY_OAC_BASE, YOUTUBE_OAC_BASE, JIOSAAVN_SEARCH_BASE } from "@/data/playlists";
@@ -45,14 +45,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "wm-1",
-        title: "Duarchaar (Leen Dhanush Banna)",
-        hindiTitle: "लीन धनुष बन्ना ठाढ़ो री - दुआचार गीत",
+        title: "Leen Dhanush Banna (Duarchaar Geet)",
+        hindiTitle: "लीन्हे धनुष बन्ना ठाढ़ो री - कोउ जोड़ी तो मिलाय दो",
         dialect: "Bagheli / Awadhi",
         genre: "Vivah Duarchaar",
         bpm: 92,
         description: "मर्यादा पुरुषोत्तम श्रीराम के स्वरूप में द्वार पर उपस्थित दूल्हे के स्वागत व कलगी-मौर शृंगार का मांगलिक दुआचार गीत।",
-        youtubeVideoId: "GwUH0hQkVqg",
-        youtubeUrl: "https://www.youtube.com/watch?v=GwUH0hQkVqg",
+        youtubeVideoId: "6muAW-JQykk",
+        youtubeUrl: "https://www.youtube.com/watch?v=6muAW-JQykk",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Leen%20Dhanush%20Banna%20Media%20Mafias`,
         lyricsVaultSlug: "duarchaar-geet",
@@ -60,14 +60,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "wm-2",
-        title: "Banna Banni (Ram Banra Ban Aayo)",
+        title: "Ram Banra Ban Aayo Re (Banna Banni)",
         hindiTitle: "मोरे दशरथ राज दुलार आज बनरा बन आयो रे",
         dialect: "Bagheli",
         genre: "Banna Banni",
         bpm: 114,
         description: "राजसी शहनाई, सजीव ढोलक और मंजीरे की तेज थाप पर जनकपुर में श्रीराम के दूल्हा बनकर आगमन का उल्लास गीत।",
-        youtubeVideoId: "g492vR-B2uc",
-        youtubeUrl: "https://www.youtube.com/watch?v=g492vR-B2uc",
+        youtubeVideoId: "GwUH0hQkVqg",
+        youtubeUrl: "https://www.youtube.com/watch?v=GwUH0hQkVqg",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Ram%20Banra%20Ban%20Aayo%20Re%20Media%20Mafias`,
         lyricsVaultSlug: "banna-banni-geet",
@@ -75,8 +75,8 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "wm-3",
-        title: "Parchhan (Biyah Laye Raghubar)",
-        hindiTitle: "ब्याह लाए रघुबर सीता सिया - परछन गीत",
+        title: "Biyah Laye Raghubar (Parchhan Geet)",
+        hindiTitle: "बिआह लाये रघुबर जानकी का | Ram Sita Vivah Geet",
         dialect: "Heartland Vivah",
         genre: "Parchhan Rites",
         bpm: 88,
@@ -90,8 +90,8 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "wm-4",
-        title: "Karahba (Poori Belan Belanhai)",
-        hindiTitle: "करहबा - माटी कोड़न व पूड़ी बेलन रस्म",
+        title: "Raja Janakji Ke Chadha Re Karahba",
+        hindiTitle: "राजा जनकजी के चढ़ा रे करहबा | Belanhai Geet",
         dialect: "Awadhi / Bagheli",
         genre: "Karahba Folk",
         bpm: 96,
@@ -113,14 +113,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "ms-1",
-        title: "Mahua Ujari Ga (Nachanhai Dance)",
-        hindiTitle: "महुआ उजारी गा - देसी शादी डांस",
+        title: "Mor Mahua Ujari Ga (Rustic Dance)",
+        hindiTitle: "मोर महुआ उजरि गा - जरै भिनसारे कै निंदिया",
         dialect: "Bagheli",
         genre: "Desi Sangeet Dance",
         bpm: 124,
         description: "गाँव-जवार की शादी और महिला संगीत में सबसे ज्यादा बजने वाला हाई-एनर्जी ढोलक लोकगीत।",
-        youtubeVideoId: "OQZ4VOtW_ms",
-        youtubeUrl: "https://www.youtube.com/watch?v=OQZ4VOtW_ms",
+        youtubeVideoId: "fEx9Nr_Pxw0",
+        youtubeUrl: "https://www.youtube.com/watch?v=fEx9Nr_Pxw0",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Mahua%20Ujari%20Ga%20Media%20Mafias`,
         lyricsVaultSlug: "mahua-ujari-ga",
@@ -128,14 +128,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "ms-2",
-        title: "Rasiya (Sangeet Thumka)",
-        hindiTitle: "रसिया - महिला संगीत थुमका",
+        title: "Kahau Baajat Hai Been Sunau Rasiya",
+        hindiTitle: "कहौं बाजत है बीन सुनौ रसिया | Bagheli Nachanhai",
         dialect: "Bagheli / Bundeli",
         genre: "Folk Dance Pop",
         bpm: 120,
         description: "आधुनिक बास और सजीव ढोलक के अद्भुत मिश्रण पर रचित महिलाओं का चहेता डांस ट्रैक।",
-        youtubeVideoId: "mWIWMUFkjHw",
-        youtubeUrl: "https://www.youtube.com/watch?v=mWIWMUFkjHw",
+        youtubeVideoId: "Mj_2EvQ6TQQ",
+        youtubeUrl: "https://www.youtube.com/watch?v=Mj_2EvQ6TQQ",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Rasiya%20Media%20Mafias`,
         lyricsVaultSlug: "rasiya",
@@ -143,14 +143,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "ms-3",
-        title: "Sainya Na Aaye (Bhabhi-Nanad)",
-        hindiTitle: "सइयां न आए - भाभी ननद संवाद",
+        title: "More Saiyan Na Aaye (Gailhai Fusion)",
+        hindiTitle: "मोरे सैंयाँ न आये - झरी गए अमिलिया के पाती हो",
         dialect: "Awadhi / Bagheli",
         genre: "Rustic Vivah Groove",
         bpm: 112,
         description: "शादी के आंगन में भाभी और ननद के बीच मीठी नोकझोंक पर आधारित पारंपरिक गीत।",
-        youtubeVideoId: "6muAW-JQykk",
-        youtubeUrl: "https://www.youtube.com/watch?v=6muAW-JQykk",
+        youtubeVideoId: "GEtNJ8wopMs",
+        youtubeUrl: "https://www.youtube.com/watch?v=GEtNJ8wopMs",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Sainya%20Na%20Aaye%20Media%20Mafias`,
         lyricsVaultSlug: "sainya-na-aaye",
@@ -158,14 +158,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "ms-4",
-        title: "Gulabi Chunariya",
-        hindiTitle: "गुलाबी चुनरिया - मेहंदी व हल्दी गीत",
+        title: "Hamri Gulabi Chunariya (Acoustic)",
+        hindiTitle: "Hamri Gulabi Chunariya: हमरी गुलाबी चुनरिया",
         dialect: "Heartland Folk",
         genre: "Mehndi Sangeet",
         bpm: 116,
         description: "हल्दी और मेहंदी की रस्म पर सखियों द्वारा गाया जाने वाला शृंगारिक व उल्लासपूर्ण लोकगीत।",
-        youtubeVideoId: "tdrpJg_IRmU",
-        youtubeUrl: "https://www.youtube.com/watch?v=tdrpJg_IRmU",
+        youtubeVideoId: "zeiJP71XkYA",
+        youtubeUrl: "https://www.youtube.com/watch?v=zeiJP71XkYA",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Gulabi%20Chunariya%20Media%20Mafias`,
         lyricsVaultSlug: "gulabi-chunariya",
@@ -181,14 +181,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "bagh-1",
-        title: "Ehi Angana Ma (Sohar Dadra)",
-        hindiTitle: "एही अँगना म लाखन लुटाई देब - सोहर दादरा",
+        title: "Ehi Angana Ma Lakhan Lutai Deb",
+        hindiTitle: "एही अंगना मा लाखन लुटाई देब (सोहर दादरा)",
         dialect: "Bagheli",
         genre: "Sohar / Dadra",
         bpm: 96,
         description: "संतान जन्मोत्सव का सबसे पवित्र व पारंपरिक बघेली सोहर दादरा, हारमोनियम व ढोलक पर सजीव रिकॉर्डेड।",
-        youtubeVideoId: "ExMplqEjARg",
-        youtubeUrl: "https://www.youtube.com/watch?v=ExMplqEjARg",
+        youtubeVideoId: "8JsCYE5pVzE",
+        youtubeUrl: "https://www.youtube.com/watch?v=8JsCYE5pVzE",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Ehi%20Angana%20Ma%20Media%20Mafias`,
         lyricsVaultSlug: "sohar-geet",
@@ -196,14 +196,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "bagh-2",
-        title: "More Raja (Celebration Folk)",
-        hindiTitle: "मोरे राजा - बघेली लोकगीत",
+        title: "Chale Aawa More Raja Mahaliya M",
+        hindiTitle: "चले आवा मोरे राजा महलिया म | Bagheli Lokgeet",
         dialect: "Bagheli",
         genre: "Folk Pop",
         bpm: 118,
         description: "रीवा अंचल का पारंपरिक उल्लास गीत, विंध्य की सोंधी खुशबू और ब्रास-ढोलक की तेज रिदम।",
-        youtubeVideoId: "WjhZf59gKEY",
-        youtubeUrl: "https://www.youtube.com/watch?v=WjhZf59gKEY",
+        youtubeVideoId: "OQZ4VOtW_ms",
+        youtubeUrl: "https://www.youtube.com/watch?v=OQZ4VOtW_ms",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}More%20Raja%20Media%20Mafias`,
         lyricsVaultSlug: "banna-banni-geet",
@@ -212,7 +212,7 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       {
         id: "bagh-3",
         title: "Jal Bharao Hilore (Kuan Pujan)",
-        hindiTitle: "जल भराव हिलोरे (कुंआ पूजन सोहर)",
+        hindiTitle: "जल भरौं हिलोर हिलोर - रेशम की डोरी (कुंआ पूजन)",
         dialect: "Bagheli",
         genre: "Pastoral Country Folk",
         bpm: 104,
@@ -225,14 +225,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "bagh-4",
-        title: "Lakhan Lutai Deb (Female Mandali)",
-        hindiTitle: "लाखन लुटाई देब - सोहर दादरा",
+        title: "Lalna Ke Luturi Jhalariya (Modern Sohar)",
+        hindiTitle: "ललना के लुटुरी झलरिया - Modern Sohar Geet",
         dialect: "Bagheli",
         genre: "Traditional Sohar",
         bpm: 94,
-        description: "विशुद्ध बघेली महिला मंडली द्वारा गाया गया पारंपरिक जन्मोत्सव बधाई गीत।",
-        youtubeVideoId: "vXGNtV3JYYg",
-        youtubeUrl: "https://www.youtube.com/watch?v=vXGNtV3JYYg",
+        description: "पारंपरिक बघेली-भोजपुरी सोहर फ्यूजन, बाल गोपाल के जन्म पर घर-घर बधाई बांटने का मधुर सोहर।",
+        youtubeVideoId: "WjhZf59gKEY",
+        youtubeUrl: "https://www.youtube.com/watch?v=WjhZf59gKEY",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Lakhan%20Lutai%20Deb%20Media%20Mafias`,
         coverBg: "from-[#854D0E] to-[#422006]"
@@ -247,14 +247,14 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "db-1",
-        title: "Amwa Ki Daar (Devi Jhoola Geet)",
-        hindiTitle: "झूला डरा है अमवा कै डार पे माँ - देवी झूला",
+        title: "Jhoola Dara Hai Amwa Kai Daar Pe",
+        hindiTitle: "झूला डरा है अमवा कै डार पे | Raw Folk Devi Geet",
         dialect: "Bagheli / Awadhi",
         genre: "Devi Jhoola Geet",
         bpm: 100,
-        description: "माता रानी के झूले और नीम की छांव पर 15 महिलाओं की मंडली द्वारा गाया गया पारंपरिक देवी झूला गीत।",
-        youtubeVideoId: "3C1hoEGVRy8",
-        youtubeUrl: "https://www.youtube.com/watch?v=3C1hoEGVRy8",
+        description: "माता रानी के झूले और नीम की छांव पर महिलाओं की मंडली द्वारा गाया गया पारंपरिक देवी झूला गीत।",
+        youtubeVideoId: "WNsUbYLZqJE",
+        youtubeUrl: "https://www.youtube.com/watch?v=WNsUbYLZqJE",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Amwa%20Ki%20Daar%20Media%20Mafias`,
         lyricsVaultSlug: "devi-jhoola-geet",
@@ -262,44 +262,44 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
       },
       {
         id: "db-2",
-        title: "Jagannath Raksha Stotram",
-        hindiTitle: "जगन्नाथ रक्ष माम् (शाश्वत स्तुति)",
-        dialect: "Sanskrit Devotional",
-        genre: "Sacred Stotram",
-        bpm: 72,
-        description: "भगवान जगन्नाथ का शाश्वत वैदिक स्तोत्र, शांत तानपूरे व सजीव मंजीरे के साथ ध्यानमग्न प्रस्तुति।",
-        youtubeVideoId: "YsxZRxp06zY",
-        youtubeUrl: "https://www.youtube.com/watch?v=YsxZRxp06zY",
+        title: "Sun Mori Aadi Bhawani (Maihar Jas)",
+        hindiTitle: "सुन मोरी आदि भवानी | मैहर शारदा माई के जस",
+        dialect: "Bagheli Devotional",
+        genre: "Sacred Jas",
+        bpm: 108,
+        description: "माँ शारदा मैहर धाम का अलौकिक व सुप्रसिद्ध देवी जस, त्रिकूट पर्वत पर गूंजने वाला भक्ति रस।",
+        youtubeVideoId: "ObWEt4Gq59o",
+        youtubeUrl: "https://www.youtube.com/watch?v=ObWEt4Gq59o",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Jagannath%20Raksha%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Sun%20Mori%20Aadi%20Bhawani%20Media%20Mafias`,
         coverBg: "from-[#991B1B] to-[#450A0A]"
       },
       {
         id: "db-3",
-        title: "Chadariya Jheeni (Nirgun Kabir)",
-        hindiTitle: "चदरिया झीनी रे बीनी - निर्गुण भजन",
-        dialect: "Sant Bhasha",
-        genre: "Nirgun Kabir Bhajan",
-        bpm: 80,
-        description: "संत कबीर का कालजयी दर्शन, मनुष्य देह की नश्वरता और आत्मिक शांति का आत्मीय लोक भजन।",
-        youtubeVideoId: "jD7URyO0J2M",
-        youtubeUrl: "https://www.youtube.com/watch?v=jD7URyO0J2M",
+        title: "Aalha Ki Dhwaja Ab Aai Ho Maa",
+        hindiTitle: "आल्हा की ध्वजा अब आई हो माँ | बघेली भगत रॉक",
+        dialect: "Bagheli / Bundeli",
+        genre: "Aalha Jas Rock",
+        bpm: 114,
+        description: "मैहर धाम में अमर योद्धा आल्हा की ध्वजा व नगाड़े का ओजस्वी व शक्तिशाली वीर-भक्ति गान।",
+        youtubeVideoId: "N6nPH2Okz2Q",
+        youtubeUrl: "https://www.youtube.com/watch?v=N6nPH2Okz2Q",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Chadariya%20Jheeni%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Aalha%20Ki%20Dhwaja%20Media%20Mafias`,
         coverBg: "from-[#7F1D1D] to-[#450A0A]"
       },
       {
         id: "db-4",
-        title: "Ram Gaadi Wale (Nirgun Bhajan)",
-        hindiTitle: "राम गाड़ी वाले - निर्गुण भजन",
-        dialect: "Folk Devotional",
-        genre: "Nirgun Bhajan",
-        bpm: 78,
-        description: "जीवन यात्रा और मुक्ति का रूपक, विंध्य अंचल के सन्यासी गायकों की आध्यात्मिक वाणी।",
-        youtubeVideoId: "CHSPDEt3Uoo",
-        youtubeUrl: "https://www.youtube.com/watch?v=CHSPDEt3Uoo",
+        title: "Chadariya Jheeni Re Jheeni (Kabir Vani)",
+        hindiTitle: "Chadariya Jheeni Re Jheeni - कबीर वाणी",
+        dialect: "Sant Bhasha",
+        genre: "Nirgun Kabir Bhajan",
+        bpm: 80,
+        description: "संत कबीर का कालजयी दर्शन, मनुष्य देह की नश्वरता और आत्मिक शांति का आत्मीय लोक भजन।",
+        youtubeVideoId: "mfbWLIal7S0",
+        youtubeUrl: "https://www.youtube.com/watch?v=mfbWLIal7S0",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Ram%20Gaadi%20Wale%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Chadariya%20Jheeni%20Media%20Mafias`,
         coverBg: "from-[#9A3412] to-[#431407]"
       }
     ]
@@ -312,56 +312,56 @@ const CATEGORIES: Record<string, { label: string; hindiLabel: string; desc: stri
     tracks: [
       {
         id: "ba-1",
-        title: "Badariya Kari Re Hari (Monsoon)",
-        hindiTitle: "बदरिया कारी रे हरी (बुंदेली भाव)",
-        dialect: "Bundeli",
-        genre: "Veer Ras / Monsoon",
+        title: "Lachhman Lihe Baan Rama (Folk Ballad)",
+        hindiTitle: "लछिमन लिहे बाण रामा, हिरनिया मारैं",
+        dialect: "Bundeli / Bagheli",
+        genre: "Veer Ras / Folk Ballad",
         bpm: 112,
-        description: "बुंदेलखंड का वर्षा ऋतु गीत, घनघोर बादलों और मिट्टी की गंध को समेटे सजीव ढोलक थाप।",
+        description: "मारीच माया रूपी मृग और लखन लाल की वीरता की सदियों पुरानी पारंपरिक बघेली-बुंदेली लोकगाथा।",
         youtubeVideoId: "85EbahRiYWI",
         youtubeUrl: "https://www.youtube.com/watch?v=85EbahRiYWI",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Badariya%20Kari%20Re%20Hari%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Lachhman%20Lihe%20Baan%20Media%20Mafias`,
         coverBg: "from-[#1E3A8A] to-[#172554]"
       },
       {
         id: "ba-2",
-        title: "Bagiya Ma Aaye Bhagwan (Kajari)",
-        hindiTitle: "बगिया म आए भगवान - कजरी",
-        dialect: "Awadhi",
+        title: "Hare Rama Piya Gaye Pardes (Sawan Kajri)",
+        hindiTitle: "हरे रमा पिया गए परदेस | सावन कजरी",
+        dialect: "Awadhi / Bagheli",
         genre: "Monsoon Kajri",
         bpm: 88,
-        description: "मिर्जापुर और वाराणसी की सावन कजरी, झूला झूलती सखियों के भक्तिभाव का मधुर चित्रण।",
+        description: "सावन मास की रिमझिम फुहारों और विरह-वेदना का भावपूर्ण व प्रामाणिक कजरी लोकगीत।",
         youtubeVideoId: "SgKgK92O46s",
         youtubeUrl: "https://www.youtube.com/watch?v=SgKgK92O46s",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Bagiya%20Ma%20Aaye%20Bhagwan%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Hare%20Rama%20Piya%20Gaye%20Pardes%20Media%20Mafias`,
         coverBg: "from-[#065F46] to-[#064E3B]"
       },
       {
         id: "ba-3",
-        title: "Garda Udaay Deb (Bundeli Josh)",
-        hindiTitle: "गरदा उड़ाय देब (देसी बुंदेली जोश)",
-        dialect: "Bundeli",
-        genre: "Rustic Folk Anthem",
-        bpm: 120,
-        description: "बुंदेली माटी का अक्खड़ स्वाभिमान और अखाड़े की ऊर्जा समेटे जोशीला लोक एंथम।",
-        youtubeVideoId: "GwUH0hQkVqg",
-        youtubeUrl: "https://www.youtube.com/watch?v=GwUH0hQkVqg",
+        title: "Kanhaiya! Yaad Hai Kuchh Bhi Hamari?",
+        hindiTitle: "कन्हैया! याद है कुछ भी हमारी? | अवधी विरह ठुमरी",
+        dialect: "Awadhi",
+        genre: "Virah Geet Thumri",
+        bpm: 84,
+        description: "गोपियों और कन्हैया के अलौकिक विरह का आत्मीय व शास्त्रीय स्पर्श लिए दिल छू लेने वाला गीत।",
+        youtubeVideoId: "5iKCIN2lveE",
+        youtubeUrl: "https://www.youtube.com/watch?v=5iKCIN2lveE",
         spotifyUrl: SPOTIFY_OAC_BASE,
-        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Garda%20Udaay%20Deb%20Media%20Mafias`,
+        jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Kanhaiya%20Yaad%20Hai%20Media%20Mafias`,
         coverBg: "from-[#831843] to-[#500724]"
       },
       {
         id: "ba-4",
-        title: "Dhan Dhan Nagar Ayodhya (Sohar)",
-        hindiTitle: "धन धन नगर अयोध्या - सोहर",
+        title: "Dhan Dhan Nagar Ayodhya (Ram Janm)",
+        hindiTitle: "धन धन नगर अयोध्या | राम जन्म सोहर",
         dialect: "Awadhi",
         genre: "Awadhi Sohar",
         bpm: 92,
         description: "अयोध्या धाम में प्रभु श्रीराम के जन्मोत्सव पर गाए जाने वाला आनंदमय पारंपरिक सोहर।",
-        youtubeVideoId: "CHSPDEt3Uoo",
-        youtubeUrl: "https://www.youtube.com/watch?v=CHSPDEt3Uoo",
+        youtubeVideoId: "vXGNtV3JYYg",
+        youtubeUrl: "https://www.youtube.com/watch?v=vXGNtV3JYYg",
         spotifyUrl: SPOTIFY_OAC_BASE,
         jiosaavnUrl: `${JIOSAAVN_SEARCH_BASE}Dhan%20Dhan%20Nagar%20Ayodhya%20Media%20Mafias`,
         coverBg: "from-[#C2410C] to-[#7C2D12]"
@@ -540,39 +540,37 @@ export const SoundscapeGrid = () => {
           <div className="space-y-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-1.5 text-amber-300 font-mono text-xs font-bold uppercase mb-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>EXPLORE ALL 6 CURATED HIGH-VOLUME PLAYLISTS</span>
+              <span>EXPLORE ALL 6 CURATED HIGH-VOLUME PLAYLISTS &amp; REELS</span>
             </div>
             <div className="font-display font-bold text-2xl sm:text-3xl uppercase tracking-wider text-white">
-              Complete Wedding, Sangeet &amp; Regional Vaults
+              Complete Wedding, Sangeet &amp; Shorts Vaults
             </div>
             <p className="font-mono text-xs text-neutral-400 max-w-xl">
-              विवाह संस्कार (6 रस्मी गीत), महिला संगीत डांस, बघेली सोहर-दादरा, देवी जस पचरा, अवधी कजरी और बुंदेली राई।
+              विवाह संस्कार (6 रस्मी गीत), महिला संगीत डांस, बघेली सोहर-दादरा, देवी जस पचरा, अवधी कजरी और 14+ वायरल रील्स।
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <Link
+              href="/shorts"
+              className="bg-red-600 hover:bg-red-500 text-white font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-red-500 transition-all shadow-md flex items-center gap-2"
+            >
+              <Flame className="w-4 h-4 fill-current" />
+              <span>Shorts &amp; Reels (रील्स) ➔</span>
+            </Link>
             <Link
               href="/playlists"
               className="bg-[#D4AF37] hover:bg-[#e5be47] text-black font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-amber-400 transition-all shadow-md flex items-center gap-2"
             >
               <ListMusic className="w-4 h-4" />
-              <span>Browse All Playlists ➔</span>
+              <span>Playlists Hub</span>
             </Link>
             <Link
               href="/regional-music/lyrics"
-              className="bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase px-5 py-3 rounded-xl border border-white/20 transition-all flex items-center gap-2"
+              className="bg-white/10 hover:bg-white/20 text-white font-mono font-bold text-xs uppercase px-4 py-3 rounded-xl border border-white/20 transition-all flex items-center gap-2"
             >
               <FileText className="w-4 h-4" />
-              <span>Lyrics Vault (25+ Geet)</span>
+              <span>Lyrics Vault</span>
             </Link>
-            <a
-              href={YOUTUBE_OAC_BASE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-red-500/15 border border-red-500/40 hover:bg-red-600 text-red-300 hover:text-white font-mono font-bold text-xs uppercase px-4 py-3 rounded-xl flex items-center gap-1.5 transition-all"
-            >
-              <YoutubeIcon className="w-4 h-4 fill-current" />
-              <span>YouTube @MediaMafias</span>
-            </a>
           </div>
         </div>
 
