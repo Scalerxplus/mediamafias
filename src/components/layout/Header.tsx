@@ -5,8 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles, ChevronDown, Radio } from "lucide-react";
+import { Menu, X, Sparkles, ChevronDown, ListMusic, BookOpen, Layers } from "lucide-react";
 import { SPOTIFY_ARTIST_URL, YOUTUBE_OAC_URL } from "@/lib/audio";
+import { ALL_PLAYLISTS_LIST } from "@/data/playlists";
 
 const YoutubeIcon = ({ className = "w-4 h-4 fill-current" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
@@ -23,36 +24,37 @@ const SpotifyIcon = ({ className = "w-4 h-4 fill-current" }: { className?: strin
 export const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [isRegionalDropdownOpen, setIsRegionalDropdownOpen] = React.useState(false);
-  const [isMobileRegionalOpen, setIsMobileRegionalOpen] = React.useState(false);
+  const [isDialectsDropdownOpen, setIsDialectsDropdownOpen] = React.useState(false);
+  const [isPlaylistsDropdownOpen, setIsPlaylistsDropdownOpen] = React.useState(false);
+  const [isMobileDialectsOpen, setIsMobileDialectsOpen] = React.useState(false);
+  const [isMobilePlaylistsOpen, setIsMobilePlaylistsOpen] = React.useState(false);
 
-  // 4 Regional Dialect sub-menu items
-  const regionalSubmenu = [
-    { name: "बघेली (Bagheli Folk)", href: "/regional-music?dialect=bagheli", desc: "Rewa & Satna Dadra, Sohar & Gailhai" },
-    { name: "बुंदेली (Bundeli Folk)", href: "/regional-music?dialect=bundeli", desc: "Jhansi & Mahoba Veer Ras & Lokgeet" },
-    { name: "अवधी (Awadhi Folk)", href: "/regional-music?dialect=awadhi", desc: "Monsoon Kajri & Vivah Banara" },
-    { name: "पूर्वी / भोजपुरी (Purbi Folk)", href: "/regional-music?dialect=purbi", desc: "Purvanchal Viraha & Acoustic Lok" },
-    { name: "Lyrics Vault (बोल संग्रह)", href: "/regional-music/lyrics", desc: "Parchhan, Gari, Banna Banni & Sohar Lyrics" },
-    { name: "All Regional Music", href: "/regional-music", desc: "Complete Indo-Gangetic Master Archive" }
+  // 4 Regional Dialects sub-menu items
+  const dialectsSubmenu = [
+    { name: "बघेली (Bagheli Folk)", href: "/regional-music?dialect=bagheli", desc: "रीवा, सतना, सीधी — सोहर, दादरा, दुआचार व करहबा" },
+    { name: "बुंदेली (Bundeli Folk)", href: "/regional-music?dialect=bundeli", desc: "झांसी, सागर, छतरपुर — राई, ईसुरी फाग व लमतेरा" },
+    { name: "अवधी (Awadhi Folk)", href: "/regional-music?dialect=awadhi", desc: "अयोध्या, काशी, मिर्जापुर — सावन कजरी व राम भजन" },
+    { name: "पूर्वी / भोजपुरी (Purbi Folk)", href: "/regional-music?dialect=purbi", desc: "पूर्वांचल व बिहार — बिरहा, बिदेसिया व रोपाई" },
+    { name: "All Regional Masters", href: "/regional-music", desc: "केंद्रीय भारत लोक संगीत महासंग्रह (100% Studio Masters)" }
   ];
 
   // 6 Other Navigation Links
   const navItems: { name: string; href: string; badge?: string }[] = [
+    { name: "Lyrics Vault", href: "/regional-music/lyrics", badge: "25 GEET" },
     { name: "Top Creators", href: "/creators" },
-    { name: "Top Songs", href: "/top-songs" },
-    { name: "Business & Sync", href: "/licensing" },
+    { name: "Sync Licensing", href: "/licensing" },
     { name: "Academy", href: "/academy" },
-    { name: "Insights", href: "/insights" },
-    { name: "About Us", href: "/about" }
+    { name: "About", href: "/about" }
   ];
 
-  const isRegionalActive = pathname.startsWith("/regional-music") || pathname.startsWith("/catalog");
+  const isDialectsActive = pathname === "/regional-music";
+  const isPlaylistsActive = pathname.startsWith("/playlists");
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 lg:px-8 py-2.5 flex items-center justify-between bg-[#0B0B0E]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
         
-        {/* Left: Official Sunborn Logo from Canva */}
+        {/* Left: Official Logo */}
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center hover:opacity-90 transition-opacity" aria-label="Media Mafias Home">
             <Image
@@ -70,30 +72,31 @@ export const Header = () => {
           </span>
         </div>
 
-        {/* Desktop Nav: Studio Styled */}
+        {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-1 xl:gap-1.5 items-center text-xs font-medium font-mono uppercase" aria-label="Main Navigation">
           
-          {/* 1. Regional Music with Dropdown Sub-menu */}
+          {/* 1. DIALECTS (बोलियां) Dropdown */}
           <div 
             className="relative"
-            onMouseEnter={() => setIsRegionalDropdownOpen(true)}
-            onMouseLeave={() => setIsRegionalDropdownOpen(false)}
+            onMouseEnter={() => setIsDialectsDropdownOpen(true)}
+            onMouseLeave={() => setIsDialectsDropdownOpen(false)}
           >
             <Link
               href="/regional-music"
               className={`px-3 py-2 transition-all rounded-lg flex items-center gap-1 border ${
-                isRegionalActive
+                isDialectsActive
                   ? "bg-amber-500/15 text-amber-300 border-amber-500/40"
                   : "border-transparent text-neutral-300 hover:text-white hover:bg-white/5 hover:border-white/10"
               }`}
             >
-              <span>Regional Music</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform text-neutral-400 ${isRegionalDropdownOpen ? "rotate-180" : ""}`} />
+              <Layers className="w-3.5 h-3.5 text-amber-400" />
+              <span>Dialects (बोलियां)</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform text-neutral-400 ${isDialectsDropdownOpen ? "rotate-180" : ""}`} />
             </Link>
 
             {/* Dropdown Panel */}
             <AnimatePresence>
-              {isRegionalDropdownOpen && (
+              {isDialectsDropdownOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -102,14 +105,15 @@ export const Header = () => {
                   className="absolute left-0 top-full pt-2 w-72 z-50"
                 >
                   <div className="bg-[#141318] border border-white/15 rounded-xl p-2 shadow-2xl backdrop-blur-2xl">
-                    <div className="px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-neutral-400 border-b border-white/10">
-                      Explore By Dialect
+                    <div className="px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-amber-400 border-b border-white/10 flex items-center justify-between">
+                      <span>क्षेत्रीय बोलियां</span>
+                      <span className="text-neutral-500 text-[9px]">4 REGIONS</span>
                     </div>
-                    {regionalSubmenu.map((sub, i) => (
+                    {dialectsSubmenu.map((sub, i) => (
                       <Link
                         key={i}
                         href={sub.href}
-                        onClick={() => setIsRegionalDropdownOpen(false)}
+                        onClick={() => setIsDialectsDropdownOpen(false)}
                         className="block px-3 py-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group"
                       >
                         <div className="font-display font-bold text-sm text-neutral-200 group-hover:text-amber-300 transition-colors">
@@ -126,9 +130,67 @@ export const Header = () => {
             </AnimatePresence>
           </div>
 
-          {/* Other 6 Core Navigation Links */}
+          {/* 2. PLAYLISTS (प्लेलिस्ट्स) Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsPlaylistsDropdownOpen(true)}
+            onMouseLeave={() => setIsPlaylistsDropdownOpen(false)}
+          >
+            <Link
+              href="/playlists"
+              className={`px-3 py-2 transition-all rounded-lg flex items-center gap-1 border ${
+                isPlaylistsActive
+                  ? "bg-amber-500/15 text-amber-300 border-amber-500/40"
+                  : "border-transparent text-neutral-300 hover:text-white hover:bg-white/5 hover:border-white/10"
+              }`}
+            >
+              <ListMusic className="w-3.5 h-3.5 text-amber-400" />
+              <span>Playlists (प्लेलिस्ट्स)</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform text-neutral-400 ${isPlaylistsDropdownOpen ? "rotate-180" : ""}`} />
+            </Link>
+
+            {/* Dropdown Panel */}
+            <AnimatePresence>
+              {isPlaylistsDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute left-0 top-full pt-2 w-80 z-50"
+                >
+                  <div className="bg-[#141318] border border-white/15 rounded-xl p-2 shadow-2xl backdrop-blur-2xl">
+                    <div className="px-3 py-1.5 font-mono text-[10px] font-bold uppercase text-amber-400 border-b border-white/10 flex items-center justify-between">
+                      <span>SEO Curated Playlists</span>
+                      <Link href="/playlists" className="text-[#D4AF37] underline text-[9px]">View All</Link>
+                    </div>
+                    {ALL_PLAYLISTS_LIST.map((pl) => (
+                      <Link
+                        key={pl.slug}
+                        href={`/playlists/${pl.slug}`}
+                        onClick={() => setIsPlaylistsDropdownOpen(false)}
+                        className="block px-3 py-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group"
+                      >
+                        <div className="font-display font-bold text-xs text-neutral-200 group-hover:text-amber-300 transition-colors flex items-center justify-between">
+                          <span className="truncate">{pl.hindiTitle}</span>
+                          <span className="font-mono text-[9px] text-[#D4AF37] bg-white/5 px-1.5 py-0.5 rounded shrink-0">
+                            {pl.tracks.length} Tracks
+                          </span>
+                        </div>
+                        <div className="font-mono text-[10px] text-neutral-400 truncate mt-0.5">
+                          {pl.seoTitle}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* 3. Core Links */}
           {navItems.map((item) => {
-            const isActive = pathname === item.href || (item.href === "/insights" && pathname.startsWith("/blog"));
+            const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -151,7 +213,7 @@ export const Header = () => {
 
           <div className="h-4 w-[1px] bg-white/15 mx-1" />
 
-          {/* Official Spotify Artist Profile Button */}
+          {/* Spotify Outbound Profile */}
           <a
             href={SPOTIFY_ARTIST_URL}
             target="_blank"
@@ -163,7 +225,7 @@ export const Header = () => {
             <SpotifyIcon className="w-3.5 h-3.5 fill-current" />
           </a>
 
-          {/* YouTube Official Artist Channel (OAC) Button */}
+          {/* YouTube OAC */}
           <a
             href={YOUTUBE_OAC_URL}
             target="_blank"
@@ -175,28 +237,23 @@ export const Header = () => {
             <YoutubeIcon className="w-3.5 h-3.5 fill-current" />
           </a>
 
-          {/* Primary CTA: Join Academy */}
+          {/* Join Academy CTA */}
           <Link
             href="/academy"
-            className="bg-amber-500 hover:bg-amber-400 text-black border border-amber-400 px-3.5 py-1.5 font-bold text-xs uppercase tracking-wider transition-all rounded-lg flex items-center gap-1.5 shrink-0 shadow-[0_0_15px_rgba(212,175,55,0.25)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+            className="bg-[#D4AF37] hover:bg-[#e5be47] text-black font-mono font-bold text-xs uppercase px-3.5 py-2 rounded-xl transition-all shadow-md ml-1"
           >
-            <Sparkles className="w-3.5 h-3.5 text-black" />
-            <span>JOIN ACADEMY</span>
+            Academy
           </Link>
         </nav>
 
-        {/* Mobile Nav Toggle */}
+        {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={SPOTIFY_ARTIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1.5 border border-white/15 bg-white/5 text-[#1DB954] rounded-lg"
-            aria-label="Spotify"
+          <Link
+            href="/playlists"
+            className="text-[11px] font-mono font-bold text-[#D4AF37] bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg"
           >
-            <SpotifyIcon className="w-4 h-4 fill-current" />
-          </a>
-
+            Playlists
+          </Link>
           <button
             className="text-neutral-200 p-1.5 border border-white/15 bg-white/5 hover:bg-white/10 rounded-lg cursor-pointer"
             onClick={() => setIsMobileMenuOpen(true)}
@@ -207,7 +264,7 @@ export const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -235,22 +292,25 @@ export const Header = () => {
                 </button>
               </div>
 
-              {/* Navigation Items */}
+              {/* Mobile Navigation List */}
               <div className="flex flex-col gap-3 py-6 font-mono text-sm uppercase font-bold">
                 
-                {/* Mobile Regional Music Accordion */}
+                {/* 1. Mobile Dialects Accordion */}
                 <div>
                   <button
-                    onClick={() => setIsMobileRegionalOpen(!isMobileRegionalOpen)}
+                    onClick={() => setIsMobileDialectsOpen(!isMobileDialectsOpen)}
                     className="w-full flex items-center justify-between p-3 rounded-xl border border-white/15 bg-white/5 text-white"
                   >
-                    <span>Regional Music (लोक संगीत)</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobileRegionalOpen ? "rotate-180" : ""}`} />
+                    <span className="flex items-center gap-2">
+                      <Layers className="w-4 h-4 text-amber-400" />
+                      <span>Dialects (क्षेत्रीय बोलियां)</span>
+                    </span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobileDialectsOpen ? "rotate-180" : ""}`} />
                   </button>
 
-                  {isMobileRegionalOpen && (
+                  {isMobileDialectsOpen && (
                     <div className="mt-2 ml-3 pl-3 border-l-2 border-amber-500/40 space-y-2">
-                      {regionalSubmenu.map((sub, i) => (
+                      {dialectsSubmenu.map((sub, i) => (
                         <Link
                           key={i}
                           href={sub.href}
@@ -264,6 +324,43 @@ export const Header = () => {
                   )}
                 </div>
 
+                {/* 2. Mobile Playlists Accordion */}
+                <div>
+                  <button
+                    onClick={() => setIsMobilePlaylistsOpen(!isMobilePlaylistsOpen)}
+                    className="w-full flex items-center justify-between p-3 rounded-xl border border-white/15 bg-white/5 text-white"
+                  >
+                    <span className="flex items-center gap-2">
+                      <ListMusic className="w-4 h-4 text-amber-400" />
+                      <span>Playlists (प्लेलिस्ट्स)</span>
+                    </span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isMobilePlaylistsOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {isMobilePlaylistsOpen && (
+                    <div className="mt-2 ml-3 pl-3 border-l-2 border-amber-500/40 space-y-2">
+                      <Link
+                        href="/playlists"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block py-1.5 text-xs font-bold text-amber-400 underline"
+                      >
+                        All Playlists Directory ➔
+                      </Link>
+                      {ALL_PLAYLISTS_LIST.map((pl) => (
+                        <Link
+                          key={pl.slug}
+                          href={`/playlists/${pl.slug}`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-1.5 text-xs text-neutral-300 hover:text-amber-300"
+                        >
+                          {pl.hindiTitle}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Other Links */}
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
@@ -312,7 +409,7 @@ export const Header = () => {
                 className="w-full py-3 bg-amber-500 text-black font-mono font-bold text-xs uppercase rounded-xl flex items-center justify-center gap-2"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>Join Academy</span>
+                <span>Join Creator Academy</span>
               </Link>
             </div>
           </motion.div>
