@@ -33,6 +33,7 @@ export interface PlaylistItemTrack {
   culturalNote: string;
   youtubeUrl: string;
   youtubeVideoId?: string; // e.g. for direct iframe embedding
+  thumbnailUrl?: string;
   spotifyUrl: string;
   jiosaavnUrl: string;
   lyricsVaultSlug?: string;

@@ -17,6 +17,7 @@ interface Track {
   description: string;
   youtubeUrl: string;
   youtubeVideoId?: string;
+  thumbnailUrl?: string;
   spotifyUrl: string;
   jiosaavnUrl: string;
   lyricsVaultSlug?: string;
@@ -426,6 +427,7 @@ export const SoundscapeGrid = () => {
                 <YouTubeEmbed
                   videoId={track.youtubeVideoId}
                   videoUrl={track.youtubeUrl}
+                  thumbnailUrl={track.thumbnailUrl}
                   title={track.title}
                   hindiTitle={track.hindiTitle}
                   coverBg={track.coverBg}

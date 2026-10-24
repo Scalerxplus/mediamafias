@@ -199,6 +199,7 @@ export default async function PlaylistDetailPage({ params }: PageProps) {
                 <YouTubeEmbed
                   videoId={track.youtubeVideoId}
                   videoUrl={track.youtubeUrl}
+                  thumbnailUrl={track.thumbnailUrl}
                   title={track.title}
                   hindiTitle={track.hindiTitle}
                   coverBg={track.coverBg}
