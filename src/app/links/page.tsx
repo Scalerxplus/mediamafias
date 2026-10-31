@@ -6,7 +6,6 @@ import Link from "next/link";
 import {
   CheckCircle2,
   Share2,
-  Copy,
   Check,
   ExternalLink,
   Flame,
@@ -44,7 +43,7 @@ const STREAMING_PLATFORMS: StreamingPlatform[] = [
     subtitle: "Official Artist Profile • Stream Full Albums & Singles",
     url: "https://open.spotify.com/artist/1mwA0Fbjp1AnnEEfj2Sroy",
     brandColor: "#1DB954",
-    glowColor: "rgba(29, 185, 84, 0.35)",
+    glowColor: "rgba(29, 185, 84, 0.45)",
     badge: "POPULAR",
     icon: <SpotifyBrandIcon className="w-7 h-7 text-[#1DB954] shrink-0" />
   },
@@ -54,7 +53,7 @@ const STREAMING_PLATFORMS: StreamingPlatform[] = [
     subtitle: "Complete Discography in Lossless & Spatial Audio",
     url: "https://music.apple.com/in/artist/6800178631",
     brandColor: "#FA243C",
-    glowColor: "rgba(250, 36, 60, 0.35)",
+    glowColor: "rgba(250, 36, 60, 0.45)",
     badge: "LOSSLESS",
     icon: <AppleMusicBrandIcon className="w-7 h-7 text-[#FA243C] shrink-0" />
   },
@@ -64,9 +63,9 @@ const STREAMING_PLATFORMS: StreamingPlatform[] = [
     subtitle: "Music Videos, 4K Studio Masters & Live Mandali Sessions",
     url: "https://www.youtube.com/@MediaMafiasRoots",
     brandColor: "#FF0000",
-    glowColor: "rgba(255, 0, 0, 0.35)",
+    glowColor: "rgba(255, 0, 0, 0.45)",
     badge: "4K VIDEO",
-    icon: <YouTubeBrandIcon className="w-7 h-7 text-[#FF0000] shrink-0" />
+    icon: <YouTubeBrandIcon className="w-7 h-7 shrink-0" />
   },
   {
     name: "JioSaavn",
@@ -74,7 +73,7 @@ const STREAMING_PLATFORMS: StreamingPlatform[] = [
     subtitle: "High-Fidelity Regional Folk Audio & Curated Playlists",
     url: "https://www.jiosaavn.com/artist/media-mafias-songs/0fdN1qZoWow_",
     brandColor: "#00BFA5",
-    glowColor: "rgba(0, 191, 165, 0.35)",
+    glowColor: "rgba(0, 191, 165, 0.45)",
     badge: "HI-FI",
     icon: <JioSaavnBrandIcon className="w-7 h-7 text-[#00BFA5] shrink-0" />
   },
@@ -84,7 +83,7 @@ const STREAMING_PLATFORMS: StreamingPlatform[] = [
     subtitle: "HD Audio Streaming on Mobile, Alexa & Echo Devices",
     url: "https://music.amazon.in/artists/B0HDSSN53L/media-mafias?marketplaceId=A3K6Y4MI8GDYMT&musicTerritory=IN&ref=dm_sh_RZDIC5a0G61flcgd0pBTel2lS",
     brandColor: "#00A8E1",
-    glowColor: "rgba(0, 168, 225, 0.35)",
+    glowColor: "rgba(0, 168, 225, 0.45)",
     badge: "HD AUDIO",
     icon: <AmazonMusicBrandIcon className="w-7 h-7 text-[#00A8E1] shrink-0" />
   }
@@ -106,7 +105,7 @@ export default function LinksPage() {
         await navigator.share(shareData);
         return;
       } catch (err) {
-        // User cancelled or unsupported; fallback to clipboard
+        // Fallback to clipboard
       }
     }
 
@@ -248,17 +247,16 @@ export default function LinksPage() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-[#141318]/90 hover:bg-[#1A1922] border border-white/10 hover:border-amber-400/60 backdrop-blur-md transition-all duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)] hover:-translate-y-0.5"
-              style={{
-                // Custom accent ring on hover
-              }}
+              className="group relative flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-[#141318]/95 hover:bg-[#1A1922] border border-white/10 hover:border-amber-400/60 backdrop-blur-md transition-all duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(0,0,0,0.6)] hover:-translate-y-0.5"
             >
               {/* Left Brand Emblem & Texts */}
               <div className="flex items-center gap-3.5 min-w-0">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 bg-black/50 group-hover:scale-105 transition-transform shrink-0"
+                  className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center border transition-all duration-300 group-hover:scale-105 shrink-0 shadow-lg"
                   style={{
-                    boxShadow: `0 0 15px ${platform.glowColor}`
+                    backgroundColor: `${platform.brandColor}22`,
+                    borderColor: `${platform.brandColor}66`,
+                    boxShadow: `0 0 20px ${platform.glowColor}`
                   }}
                 >
                   {platform.icon}
@@ -273,25 +271,25 @@ export default function LinksPage() {
                       className="font-mono text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border border-white/10 shrink-0"
                       style={{
                         color: platform.brandColor,
-                        backgroundColor: `${platform.brandColor}15`
+                        backgroundColor: `${platform.brandColor}20`
                       }}
                     >
                       {platform.badge}
                     </span>
                   </div>
 
-                  <p className="font-mono text-[11px] text-neutral-400 truncate max-w-[210px] sm:max-w-xs mt-0.5">
+                  <p className="font-mono text-[11px] text-neutral-400 truncate max-w-[200px] sm:max-w-xs mt-0.5">
                     {platform.subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Right Action Button */}
-              <div className="flex items-center gap-1 text-neutral-400 group-hover:text-white transition-colors shrink-0 ml-2">
-                <span className="font-mono text-xs font-bold uppercase hidden sm:inline text-amber-400">
-                  Open
+              <div className="flex items-center gap-1.5 text-neutral-300 group-hover:text-white transition-colors shrink-0 ml-2">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-amber-300 hidden sm:inline">
+                  OPEN
                 </span>
-                <div className="p-2 rounded-xl bg-white/5 group-hover:bg-amber-500 group-hover:text-black transition-all">
+                <div className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 group-hover:bg-[#D4AF37] group-hover:text-black group-hover:border-[#D4AF37] transition-all">
                   <ExternalLink className="w-4 h-4" />
                 </div>
               </div>
