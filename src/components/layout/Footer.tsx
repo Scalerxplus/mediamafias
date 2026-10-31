@@ -48,6 +48,7 @@ export const Footer = () => {
         <div className="space-y-3">
           <h4 className="font-display text-xl font-bold tracking-wider text-white uppercase">Navigation</h4>
           <ul className="space-y-2 font-mono text-xs uppercase font-medium text-neutral-400">
+            <li><Link href="/links" className="hover:text-amber-300 transition-colors">Listen Everywhere (Link in Bio)</Link></li>
             <li><Link href="/regional-music" className="hover:text-amber-300 transition-colors">Regional Music (लोक संगीत)</Link></li>
             <li><Link href="/regional-music/lyrics" className="hover:text-amber-300 transition-colors">Folk Lyrics Vault (लोकगीत बोल)</Link></li>
             <li><Link href="/creators" className="hover:text-amber-300 transition-colors">Top Regional Creators</Link></li>
